@@ -8,7 +8,6 @@ You can edit this file as you like.
     [ "argonaut"
     , "console"
     , "effect"
-    , "format-nix"
     , "node-fs-aff"
     , "optparse"
     , "psci-support"
