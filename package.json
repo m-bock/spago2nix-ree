@@ -1,0 +1,12 @@
+{
+  "name": "spago2nix",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:thought2/spago.dhall2nix.git",
+  "author": "Michael Bock <me@thought2.de>",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel": "^1.12.4",
+    "purescript-psa": "^0.7.3"
+  }
+}

@@ -8,3 +8,6 @@
 /.purs*
 /.psa*
 /.spago
+.spago2nix
+.cache
+/dist

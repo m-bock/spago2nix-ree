@@ -15,14 +15,14 @@ import Data.String as String
 import Data.Traversable (for)
 import Data.Tuple (Tuple(..))
 import Effect (Effect)
-import Effect.Aff (Aff, runAff_, try)
+import Effect.Aff (Aff, Error, runAff_, try)
 import Effect.Class (liftEffect)
 import Effect.Class.Console as Console
 import Foreign.Object (Object, keys, lookup)
+import Foreign.Object as Object
 import Node.ChildProcess (Exit(..), defaultSpawnOptions)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
-import Node.Process (lookupEnv)
 import Node.Process as Node
 import Node.Process as Process
 import Options.Applicative (Parser, ParserInfo, execParser, fullDesc, header, help, helper, info, long, metavar, progDesc, showDefault, strOption, value, (<**>))
@@ -30,8 +30,14 @@ import Partial.Unsafe (unsafeCrashWith)
 import Record (union)
 import Sunde as Sunde
 
+-- CONFIG 
+--
+type Config
+  = { | Env (CliArgs ()) }
+
 type Env r
   = ( debug :: Boolean
+    , pure :: Boolean
     , dhallToJson :: String
     , nixFormat :: String
     , nixPrefetchGit :: String
@@ -44,47 +50,80 @@ type CliArgs r
     | r
     )
 
-type Config
-  = { | Env (CliArgs ()) }
-
 parseCliArgs :: Parser { | CliArgs () }
 parseCliArgs =
   (\spagoConfig target -> { spagoConfig, target })
     <$> strOption
         ( long "spagoConfig"
             <> metavar "SPAGO_CONFIG"
-            <> help "path to spago.dhall"
+            <> help "Path to spago config"
             <> showDefault
             <> value "spago.dhall"
         )
     <*> strOption
         ( long "target"
             <> metavar "TARGET"
-            <> help "path to spago.nix"
+            <> help "Path to target file"
             <> showDefault
             <> value "spago.nix"
         )
 
 parseEnv :: Object String -> Either ErrorStack { | Env () }
-parseEnv obj = ado
-  debug <-
-    lookupOptional "DEBUG" false parseEnvBool obj
-  dhallToJson <-
-    lookupOptional "DHALL_TO_JSON" "dhall-to-json" parseEnvString obj
-  nixFormat <-
-    lookupOptional "NIX_FORMAT" "nixfmt" parseEnvString obj
-  nixPrefetchGit <-
-    lookupOptional "NIX_PREFETCH_GIT" "nix-prefetch-git" parseEnvString obj
-  in { debug, dhallToJson, nixFormat, nixPrefetchGit }
-  where
-  lookup' key obj = lookup key obj # note [ "Expected `" <> key <> "`." ]
+parseEnv obj = do
+  _debug <-
+    lookupEnv
+      { name: "DEBUG"
+      , default: Just false
+      , parse: parseEnvBool
+      }
+      obj
+  _pure <-
+    lookupEnv
+      { name: "PURE"
+      , default: Just false
+      , parse: parseEnvBool
+      }
+      obj
+  _dhallToJson <-
+    lookupEnv
+      { name: "DHALL_TO_JSON"
+      , default: guard (not _pure) Just "dhall-to-json"
+      , parse: parseEnvString
+      }
+      obj
+  _nixFormat <-
+    lookupEnv
+      { name: "NIX_FORMAT"
+      , default: guard (not _pure) Just "nixfmt"
+      , parse: parseEnvString
+      }
+      obj
+  _nixPrefetchGit <-
+    lookupEnv
+      { name: "NIX_PREFETCH_GIT"
+      , default: guard (not _pure) Just "nix-prefetch-git"
+      , parse: parseEnvString
+      }
+      obj
+  pure
+    { debug: _debug
+    , pure: _pure
+    , dhallToJson: _dhallToJson
+    , nixFormat: _nixFormat
+    , nixPrefetchGit: _nixPrefetchGit
+    }
 
-lookupOptional ::
+lookupEnv ::
   forall a.
-  String -> a -> (String -> Either ErrorStack a) -> Object String -> Either ErrorStack a
-lookupOptional key def cont obj = case lookup key obj of
-  Just value -> cont value # lmap (cons ("Read `" <> key <> "`."))
-  Nothing -> Right def
+  { name :: String
+  , default :: Maybe a
+  , parse :: String -> Either ErrorStack a
+  } ->
+  Object String -> Either ErrorStack a
+lookupEnv { name, default, parse } obj = case Object.lookup name obj, default of
+  Just value, _ -> parse value
+  Nothing, Just default' -> Right default'
+  _, _ -> Left [ "Expected " <> tick name <> "." ]
 
 parseEnvBool :: String -> Either ErrorStack Boolean
 parseEnvBool = case _ of
@@ -97,18 +136,25 @@ parseEnvString = Right
 
 parseEnvDebug :: Object String -> Boolean
 parseEnvDebug obj =
-  lookup "DEBUG" obj # note []
-    >>= parseEnvBool
+  lookupEnv
+    { name: "DEBUG"
+    , default: Just false
+    , parse: parseEnvBool
+    }
+    obj
     # either (const false) identity
 
 opts :: ParserInfo { | CliArgs () }
 opts =
   info (parseCliArgs <**> helper)
     ( fullDesc
-        <> progDesc ""
-        <> header "spago.dhall2nix - Generate nix expressions from spago config files"
+        <> progDesc "BAR"
+        <> progDesc "FOOO"
+        <> header "spago2nix-re - Generate nix expressions from spago config files"
     )
 
+-- SPAGO CONFIG
+--
 newtype SpagoConfig
   = SpagoConfig
   { name :: String
@@ -124,7 +170,7 @@ newtype SpagoConfig
 
 instance decodeJsonSpagoConfig :: DecodeJson SpagoConfig where
   decodeJson json = do
-    _obj <- toObject json # note "Expexted an object."
+    _obj <- toObject json # note "Expected an object."
     name <- _obj .: "name"
     dependencies <- _obj .: "dependencies"
     packages <- "packages" `lookup` _obj # note "Expected key `packages`." >>= (decodeMap decodeJson)
@@ -136,16 +182,18 @@ decodeMap decodeA json = do
   obj <- toObject json # note "Expexted an object."
   pairs <-
     for (keys obj) \key ->
-      lookup key obj # note ("Expected key `" <> key <> "`.") >>= decodeA <#> (\v -> Tuple key v)
+      lookup key obj # note ("Expected key " <> tick key <> ".") >>= decodeA <#> (\v -> Tuple key v)
   pure $ Map.fromFoldable pairs
 
+-- NIX
+--
 data NixExpr
 
 printNixExpr :: NixExpr -> String
-printNixExpr = \_ -> unsafeCrashWith "printNixExpr"
+printNixExpr = \_ -> unsafeCrashWith "TODO: printNixExpr"
 
 generateNix :: SpagoConfig -> NixExpr
-generateNix = \_ -> unsafeCrashWith "generateNix"
+generateNix = \_ -> unsafeCrashWith "TODO: generateNix"
 
 type ErrorStack
   = Array String
@@ -168,14 +216,13 @@ getCliArgs =
 dhallToJson :: String -> String -> ExceptT ErrorStack Aff String
 dhallToJson cmd dhallCode =
   -- TODO: Check why error is not catched
-  ( try
-      $ Sunde.spawn
-          { cmd
-          , args: []
-          , stdin: Just dhallCode
-          }
-          defaultSpawnOptions
-  )
+  Sunde.spawn
+    { cmd
+    , args: []
+    , stdin: Just dhallCode
+    }
+    defaultSpawnOptions
+    # try
     <#> case _ of
         Right { exit: Normally 0, stdout } -> Right stdout
         Right { stderr } -> Left [ stderr ]
@@ -188,13 +235,13 @@ getSpagoConfig config =
   dhallToJson config.dhallToJson
     ("./" <> config.spagoConfig)
     # (mapExceptT <<< map <<< bindFlipped) decodeJsonFromString
-    # withExceptT (cons "Read spago config.")
+    # withExceptT (cons $ "Read spago config at " <> tick config.spagoConfig <> ".")
 
 writeTextFile :: String -> String -> ExceptT ErrorStack Aff Unit
 writeTextFile path content =
   try (FS.writeTextFile UTF8 path content)
     # ExceptT
-    # withExceptT (const $ [ "Cannot write to file:", path ])
+    # withExceptT (const [ "Cannot write to file " <> tick path <> "." ])
 
 -- UTIL
 --
@@ -208,6 +255,14 @@ printErrorStack :: ErrorStack -> String
 printErrorStack errorStack =
   ([ "Something went wrong along the way..." ] <> (errorStack <#> (" - " <> _)))
     # String.joinWith "\n\n"
+
+tick :: String -> String
+tick str = "`" <> str <> "`"
+
+nativeErrorToStack :: Boolean -> Error -> ErrorStack
+nativeErrorToStack debug unknownError =
+  [ "Unknown error." ]
+    <> guard debug [ show unknownError ]
 
 -- MAIN
 --
@@ -226,11 +281,7 @@ main = do
   runExceptT run
     # runAff_ case _ of
         Left unknownError -> do
-          Console.error
-            $ printErrorStack
-                ( [ "Unknown error." ]
-                    <> guard debug [ show unknownError ]
-                )
+          Console.error $ printErrorStack $ nativeErrorToStack debug unknownError
           Process.exit 1
         Right (Left errorStack) -> do
           Console.error $ printErrorStack errorStack
