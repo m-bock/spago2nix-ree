@@ -11,3 +11,4 @@
 .spago2nix
 .cache
 /dist
+/result
