@@ -29,27 +29,27 @@ type EnvVars r
     )
 
 type CliArgs r
-  = ( spagoConfig :: String
+  = ( spagoPackages :: String
     , target :: String
     | r
     )
 
 parseCliArgs :: Parser { | CliArgs () }
 parseCliArgs =
-  (\spagoConfig target -> { spagoConfig, target })
+  (\spagoPackages target -> { spagoPackages, target })
     <$> strOption
-        ( long "spagoConfig"
-            <> metavar "SPAGO_CONFIG"
-            <> help "Path to spago config"
+        ( long "spagoPackages"
+            <> metavar "SPAGO_PACKAGES"
+            <> help "Path to spago packages file"
             <> showDefault
-            <> value "spago.dhall"
+            <> value "packages.dhall"
         )
     <*> strOption
         ( long "target"
             <> metavar "TARGET"
             <> help "Path to target file"
             <> showDefault
-            <> value "spago.nix"
+            <> value "packages.nix"
         )
 
 parseEnvVars :: Object String -> Either ErrorStack { | EnvVars () }
