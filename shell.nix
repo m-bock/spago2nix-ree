@@ -18,6 +18,8 @@ yarn ? pkgs.yarn,
 
 nix ? pkgs.nix,
 
+nix-prefetch-git ? pkgs.nix-prefetch-git,
+
 # EASY PURESCRIPT
 easy-purescript-nix ? easy-purescript-nix',
 
@@ -45,7 +47,8 @@ let
   };
 in pkgs.stdenv.mkDerivation {
   name = "spago.dhall2nix";
-  buildInputs = [ yarnPackage dhall-json spago2nix niv.niv yarn purs nix ];
+  buildInputs =
+    [ yarnPackage dhall-json spago2nix niv.niv yarn purs nix nix-prefetch-git ];
   buildCommand = ''
     mkdir $out
   '';

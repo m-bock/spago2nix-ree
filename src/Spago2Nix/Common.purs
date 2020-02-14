@@ -15,6 +15,9 @@ import Data.Traversable (traverse)
 import Effect.Exception (Error)
 import Foreign.Object as Object
 
+type NixPrefetchGitResult
+  = { url :: String, rev :: String, sha256 :: String }
+
 -- ERROR STACK
 --
 type ErrorStack
@@ -67,4 +70,4 @@ joinStrings :: Array String -> String
 joinStrings = String.joinWith ""
 
 joinNl :: Array String -> String
-joinNl = String.joinWith ""
+joinNl = String.joinWith "\n"

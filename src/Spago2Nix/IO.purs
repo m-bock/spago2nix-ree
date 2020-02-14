@@ -22,7 +22,7 @@ import Node.FS.Aff as FS
 import Node.Process as Node
 import Options.Applicative (execParser)
 import Record (union)
-import Spago2Nix.Common (ErrorStack, decodeJson, decodeMapFromObject, joinSpaces, joinStrings, jsonParser, tick)
+import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, joinNl, joinSpaces, joinStrings, jsonParser, tick)
 import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
 import Spago2Nix.SpagoPackage (SpagoPackage)
 import Spago2Nix.SpagoPackage as SpagoPackage
@@ -81,19 +81,15 @@ dhallToJson config dhallCode =
 nixPrefetchGit ::
   forall cfg.
   { nixPrefetchGit :: String | cfg } ->
-  { repo :: String, rev :: String } -> ExceptT ErrorStack Aff String
-nixPrefetchGit config { repo, rev } = do
-  log $ String.joinWith " " [ "fetching", tick repo, "..." ]
-  result <-
-    spawn
-      { cmd: config.nixPrefetchGit
-      , args: [ repo, rev ]
-      , stdin: Nothing
-      }
-      # withExceptT (cons "nixPrefetchGit")
-  log "done"
-  log ""
-  pure result
+  { repo :: String, rev :: String } -> ExceptT ErrorStack Aff NixPrefetchGitResult
+nixPrefetchGit config { repo, rev } =
+  spawn
+    { cmd: config.nixPrefetchGit
+    , args: [ repo, "--rev", rev ]
+    , stdin: Nothing
+    }
+    # (mapExceptT <<< map <<< bindFlipped) (jsonParser >=> decodeJson)
+    # withExceptT (cons "nixPrefetchGit")
 
 nixFormat ::
   forall cfg.
@@ -152,13 +148,13 @@ runCli = do
             withCliState
               (CliState_NixPrefetch { index, length, spagoPackage })
               ( do
-                  nixSHA <-
+                  git <-
                     nixPrefetchGit config
                       { repo: spagoPackage.repo
                       , rev: spagoPackage.version
                       }
                   let
-                    value = spagoPackage `union` { nixSHA }
+                    value = spagoPackage `union` { git }
                   pure $ key /\ value
               )
         )
@@ -183,8 +179,9 @@ runCli = do
 -- UTIL
 printCliState :: CliState -> Maybe String
 printCliState = case _ of
-  CliState_Idle -> Nothing
-  CliState_GetConfig -> Nothing
+  -- TODO: Remove Maybe
+  CliState_Idle -> Just "done\n"
+  CliState_GetConfig -> Just "Get config"
   CliState_ReadInput { path } ->
     Just
       $ joinSpaces
@@ -193,10 +190,13 @@ printCliState = case _ of
           ]
   CliState_NixPrefetch { index, length, spagoPackage } ->
     Just
-      $ joinStrings
-          [ show (index + 1)
-          , "/"
-          , show length
+      $ joinNl
+          [ joinStrings
+              [ show (index + 1)
+              , "/"
+              , show length
+              ]
+          , joinSpaces [ "fetching", tick spagoPackage.repo, "..." ]
           ]
   CliState_Format -> Just "Format result"
   CliState_WriteOutput { path } ->

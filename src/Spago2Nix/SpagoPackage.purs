@@ -8,12 +8,13 @@ import Data.Map as Map
 import Data.Tuple.Nested ((/\), type (/\))
 import NixAST (NixExpr)
 import NixAST as Nix
+import Spago2Nix.Common (NixPrefetchGitResult)
 
 type SpagoPackage
   = SpagoPackageSpec ()
 
 type SpagoPackageEnriched
-  = SpagoPackageSpec ( nixSHA :: String )
+  = SpagoPackageSpec ( git :: NixPrefetchGitResult )
 
 type SpagoPackageSpec r
   = { dependencies :: Array String
@@ -27,22 +28,19 @@ toNix spagoPackages =
   Nix.AttrSet
     ( spagoPackages
         # Array.fromFoldable
-        <#> (\(key /\ value) -> key /\ spagoPackageEnriched_toNix value)
+        <#> (\(key /\ value) -> key /\ spagoPackageEnriched_toNix (key /\ value))
     )
 
-spagoPackageEnriched_toNix :: SpagoPackageEnriched -> NixExpr
-spagoPackageEnriched_toNix { dependencies, version, repo, nixSHA } =
+spagoPackageEnriched_toNix :: String /\ SpagoPackageEnriched -> NixExpr
+spagoPackageEnriched_toNix (name /\ { dependencies, version, repo, git }) =
   Nix.AttrSet
-    [ "dependencies" /\ Nix.List (dependencies <#> Nix.String)
+    [ "name" /\ Nix.String name
+    , "dependencies" /\ Nix.List (dependencies <#> Nix.String)
     , "version" /\ Nix.String version
-    , "source"
-        /\ identity
-            ( Nix.App (Nix.DotAccess [ "pkgs", "fetchgit" ])
-                [ Nix.AttrSet
-                    [ "url" /\ Nix.String repo
-                    , "sha256" /\ Nix.String nixSHA
-                    , "rev" /\ Nix.String version
-                    ]
-                ]
-            )
+    , "git"
+        /\ Nix.AttrSet
+            [ "url" /\ Nix.String git.url
+            , "sha256" /\ Nix.String git.sha256
+            , "rev" /\ Nix.String git.rev
+            ]
     ]
