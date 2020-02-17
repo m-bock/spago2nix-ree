@@ -1,46 +1,21 @@
-module Spago2Nix.SpagoPackage (SpagoPackage, SpagoPackageEnriched, SpagoPackageSpec, toNix) where
-
-import Prelude
-import Data.Array as Array
-import Data.Foldable (class Foldable)
-import Data.Map (Map)
-import Data.Map as Map
-import Data.Tuple.Nested ((/\), type (/\))
-import NixAST (NixExpr)
-import NixAST as Nix
-import Spago2Nix.Common (NixPrefetchGitResult)
+module Spago2Nix.SpagoPackage
+  ( SpagoPackage
+  , SpagoPackageFields
+  , SpagoPackageLock
+  ) where
 
 type SpagoPackage
-  = SpagoPackageSpec ()
+  = SpagoPackageFields ()
 
-type SpagoPackageEnriched
-  = SpagoPackageSpec ( git :: NixPrefetchGitResult )
-
-type SpagoPackageSpec r
+type SpagoPackageFields r
   = { dependencies :: Array String
     , version :: String
     , repo :: String
     | r
     }
 
-toNix :: forall f. Foldable f => f (String /\ SpagoPackageEnriched) -> NixExpr
-toNix spagoPackages =
-  Nix.AttrSet
-    ( spagoPackages
-        # Array.fromFoldable
-        <#> (\(key /\ value) -> key /\ spagoPackageEnriched_toNix (key /\ value))
-    )
-
-spagoPackageEnriched_toNix :: String /\ SpagoPackageEnriched -> NixExpr
-spagoPackageEnriched_toNix (name /\ { dependencies, version, repo, git }) =
-  Nix.AttrSet
-    [ "name" /\ Nix.String name
-    , "dependencies" /\ Nix.List (dependencies <#> Nix.String)
-    , "version" /\ Nix.String version
-    , "git"
-        /\ Nix.AttrSet
-            [ "url" /\ Nix.String git.url
-            , "sha256" /\ Nix.String git.sha256
-            , "rev" /\ Nix.String git.rev
-            ]
-    ]
+type SpagoPackageLock
+  = SpagoPackageFields
+      ( rev :: String
+      , nixSha256 :: String
+      )

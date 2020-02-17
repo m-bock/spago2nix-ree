@@ -49,7 +49,7 @@ parseCliArgs =
             <> metavar "TARGET"
             <> help "Path to target file"
             <> showDefault
-            <> value "packages.nix"
+            <> value "packages-lock.json"
         )
 
 parseEnvVars :: Object String -> Either ErrorStack { | EnvVars () }
@@ -111,9 +111,8 @@ cliParserInfo :: ParserInfo { | CliArgs () }
 cliParserInfo =
   info (parseCliArgs <**> helper)
     ( fullDesc
-        <> progDesc "BAR"
-        <> progDesc "FOOO"
-        <> header "spago2nix-re - Generate nix expressions from spago config files"
+        <> progDesc "Generate a nix specific lock file from all packages of `packages.dhall`"
+        <> header "spago2nix-ree"
     )
 
 -- ENV TYPES

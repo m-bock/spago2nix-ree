@@ -3,29 +3,30 @@ module Spago2Nix.IO (runCli) where
 import Prelude
 import Control.Bind (bindFlipped)
 import Control.Monad.Except (ExceptT(..), lift, mapExceptT, withExceptT)
-import Data.Array (cons)
+import Control.Parallel (class Parallel, parTraverse)
+import Data.Argonaut (encodeJson)
+import Data.Array (cons, mapWithIndex)
+import Data.Array as Array
 import Data.Bifunctor (lmap)
 import Data.Either (Either(..))
 import Data.Map (Map)
 import Data.Map as Map
 import Data.Maybe (Maybe(..))
-import Data.String as String
+import Data.Traversable (sequence)
 import Data.TraversableWithIndex (traverseWithIndex)
 import Data.Tuple.Nested ((/\))
 import Effect.Aff (Aff, try)
 import Effect.Class (liftEffect)
 import Effect.Class.Console (log)
-import NixAST as NixAST
 import Node.ChildProcess (Exit(..), defaultSpawnOptions)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
 import Node.Process as Node
 import Options.Applicative (execParser)
 import Record (union)
-import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, joinNl, joinSpaces, joinStrings, jsonParser, tick)
+import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, encodeMapToObject, joinNl, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
 import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
 import Spago2Nix.SpagoPackage (SpagoPackage)
-import Spago2Nix.SpagoPackage as SpagoPackage
 import Sunde as Sunde
 
 data CliState
@@ -33,6 +34,7 @@ data CliState
   | CliState_GetConfig
   | CliState_ReadInput { path :: String }
   | CliState_NixPrefetch { index :: Int, length :: Int, spagoPackage :: SpagoPackage }
+  | CliState_NixPrefetchChunk { index :: Int, chunkSize :: Int, length :: Int }
   | CliState_Format
   | CliState_WriteOutput { path :: String }
   | CliState_Done
@@ -141,40 +143,47 @@ runCli = do
       (getSpagoPackages config)
   let
     length = Map.size spagoPackages
+
+    chunkSize = 20
   spagoPackages
     # (Map.toUnfoldable :: _ -> Array _)
+    # mapWithIndex (/\)
+    # chunks chunkSize
+    <#> parTraverse
+        ( \(index /\ (key /\ spagoPackage)) -> do
+            nixPrefetchGitResult <-
+              nixPrefetchGit config
+                { repo: spagoPackage.repo
+                , rev: spagoPackage.version
+                }
+            let
+              value = spagoPackage `union` nixPrefetchGitResult
+            pure $ key /\ value
+        )
     # traverseWithIndex
-        ( \index (key /\ spagoPackage) ->
-            withCliState
-              (CliState_NixPrefetch { index, length, spagoPackage })
-              ( do
-                  git <-
-                    nixPrefetchGit config
-                      { repo: spagoPackage.repo
-                      , rev: spagoPackage.version
-                      }
-                  let
-                    value = spagoPackage `union` { git }
-                  pure $ key /\ value
-              )
+        ( \index x ->
+            withCliState (CliState_NixPrefetchChunk { chunkSize, index, length })
+              x
         )
-    >>= identity
-        ( \spagoPackagesEnriched ->
-            withCliState
-              CliState_Format
-              ( spagoPackagesEnriched
-                  # SpagoPackage.toNix
-                  # NixAST.print
-                  # (\source -> nixFormat config { source })
-              )
-        )
-    >>= identity
-        ( \result ->
-            withCliState
-              (CliState_WriteOutput { path: config.target })
-              (writeTextFile config.target result)
-        )
+    <#> join
+    >>= ( \result ->
+          withCliState
+            (CliState_WriteOutput { path: config.target })
+            ( result
+                # Map.fromFoldable
+                # encodeMapToObject encodeJson
+                # stringifyPretty 2
+                # writeTextFile config.target
+            )
+      )
     >>= (const $ setCliState CliState_Done)
+
+parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
+parTraverse' { max } f xs =
+  chunks max xs
+    <#> parTraverse f
+    # sequence
+    <#> join
 
 -- UTIL
 printCliState :: CliState -> Maybe String
@@ -198,6 +207,19 @@ printCliState = case _ of
               ]
           , joinSpaces [ "fetching", tick spagoPackage.repo, "..." ]
           ]
+  CliState_NixPrefetchChunk { index, chunkSize, length } ->
+    Just
+      $ joinSpaces
+          [ "fetching chunk "
+          , joinStrings
+              [ show (index * chunkSize)
+              , "-"
+              , show $ min ((index + 1) * chunkSize) length
+              , "/"
+              , show length
+              ]
+          , "..."
+          ]
   CliState_Format -> Just "Format result"
   CliState_WriteOutput { path } ->
     Just
@@ -206,3 +228,8 @@ printCliState = case _ of
           , tick path
           ]
   CliState_Done -> Just "done"
+
+chunks :: forall a. Int -> Array a -> Array (Array a)
+chunks n [] = []
+
+chunks n xs = [ Array.take n xs ] <> chunks n (Array.drop n xs)

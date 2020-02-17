@@ -1,11 +1,12 @@
 module Spago2Nix.Common where
 
 import Prelude
-import Data.Argonaut (class DecodeJson, Json, toObject)
+import Data.Argonaut (class DecodeJson, Json, fromObject, toObject)
 import Data.Argonaut as Argonaut
 import Data.Array (cons, mapWithIndex)
 import Data.Bifunctor (lmap)
 import Data.Either (Either, note)
+import Data.Function.Uncurried (Fn2, runFn2)
 import Data.Map (Map)
 import Data.Map as Map
 import Data.Monoid (guard)
@@ -63,6 +64,14 @@ decodeMapFromObject decodeA json =
     <#> (Object.toUnfoldable :: _ -> Array _)
     >>> Map.fromFoldable
 
+encodeMapToObject :: forall a. (a -> Json) -> Map String a -> Json
+encodeMapToObject encodeA m =
+  m
+    <#> encodeA
+    # (Map.toUnfoldable :: _ -> Array _)
+    # Object.fromFoldable
+    # fromObject
+
 joinSpaces :: Array String -> String
 joinSpaces = String.joinWith " "
 
@@ -71,3 +80,8 @@ joinStrings = String.joinWith ""
 
 joinNl :: Array String -> String
 joinNl = String.joinWith "\n"
+
+foreign import implStringifyPretty :: Fn2 Int Json String
+
+stringifyPretty :: Int -> Json -> String
+stringifyPretty = runFn2 implStringifyPretty
