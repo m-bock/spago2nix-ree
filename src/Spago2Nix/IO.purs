@@ -5,7 +5,7 @@ import Control.Bind (bindFlipped)
 import Control.Monad.Except (ExceptT(..), lift, mapExceptT, withExceptT)
 import Control.Parallel (class Parallel, parTraverse)
 import Data.Argonaut (encodeJson)
-import Data.Array (cons, mapWithIndex)
+import Data.Array (cons)
 import Data.Array as Array
 import Data.Bifunctor (lmap)
 import Data.Either (Either(..))
@@ -24,7 +24,7 @@ import Node.FS.Aff as FS
 import Node.Process as Node
 import Options.Applicative (execParser)
 import Record (union)
-import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, encodeMapToObject, joinNl, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
+import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, encodeMapToObject, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
 import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
 import Spago2Nix.SpagoPackage (SpagoPackage)
 import Sunde as Sunde
@@ -33,7 +33,6 @@ data CliState
   = CliState_Idle
   | CliState_GetConfig
   | CliState_ReadInput { path :: String }
-  | CliState_NixPrefetch { index :: Int, length :: Int, spagoPackage :: SpagoPackage }
   | CliState_NixPrefetchChunk { index :: Int, chunkSize :: Int, length :: Int }
   | CliState_Format
   | CliState_WriteOutput { path :: String }
@@ -53,7 +52,10 @@ getCliArgs =
     # lift
 
 getConfig :: ExceptT ErrorStack Aff Config
-getConfig = union <$> getCliArgs <*> getEnvVars
+getConfig = do
+  envVars <- getEnvVars
+  cliArgs <- getCliArgs
+  pure $ envVars `union` cliArgs
 
 spawn ::
   { cmd :: String, args :: Array String, stdin :: Maybe String } ->
@@ -133,10 +135,7 @@ withCliState cliState m = do
 
 runCli :: ExceptT ErrorStack Aff Unit
 runCli = do
-  config <-
-    withCliState
-      CliState_GetConfig
-      getConfig
+  config <- getConfig
   spagoPackages <-
     withCliState
       (CliState_ReadInput { path: config.spagoPackages })
@@ -147,23 +146,23 @@ runCli = do
     chunkSize = 20
   spagoPackages
     # (Map.toUnfoldable :: _ -> Array _)
-    # mapWithIndex (/\)
     # chunks chunkSize
-    <#> parTraverse
-        ( \(index /\ (key /\ spagoPackage)) -> do
-            nixPrefetchGitResult <-
-              nixPrefetchGit config
-                { repo: spagoPackage.repo
-                , rev: spagoPackage.version
-                }
-            let
-              value = spagoPackage `union` nixPrefetchGitResult
-            pure $ key /\ value
-        )
     # traverseWithIndex
-        ( \index x ->
-            withCliState (CliState_NixPrefetchChunk { chunkSize, index, length })
-              x
+        ( \chunkIndex x ->
+            withCliState (CliState_NixPrefetchChunk { chunkSize, index: chunkIndex, length })
+              ( x
+                  # parTraverse
+                      ( \(key /\ spagoPackage) -> do
+                          nixPrefetchGitResult <-
+                            nixPrefetchGit config
+                              { repo: spagoPackage.repo
+                              , rev: spagoPackage.version
+                              }
+                          let
+                            value = spagoPackage `union` nixPrefetchGitResult
+                          pure $ key /\ value
+                      )
+              )
         )
     <#> join
     >>= ( \result ->
@@ -188,24 +187,13 @@ parTraverse' { max } f xs =
 -- UTIL
 printCliState :: CliState -> Maybe String
 printCliState = case _ of
-  -- TODO: Remove Maybe
   CliState_Idle -> Just "done\n"
-  CliState_GetConfig -> Just "Get config"
+  CliState_GetConfig -> Nothing
   CliState_ReadInput { path } ->
     Just
       $ joinSpaces
           [ "Reading"
           , tick path
-          ]
-  CliState_NixPrefetch { index, length, spagoPackage } ->
-    Just
-      $ joinNl
-          [ joinStrings
-              [ show (index + 1)
-              , "/"
-              , show length
-              ]
-          , joinSpaces [ "fetching", tick spagoPackage.repo, "..." ]
           ]
   CliState_NixPrefetchChunk { index, chunkSize, length } ->
     Just

@@ -6,6 +6,7 @@ let
   easy-purescript-nix' = import sources.easy-purescript-nix { pkgs = nixpkgs; };
 
   yarn2nix' = import sources.yarn2nix { pkgs = nixpkgs; };
+
 in {
 # PKGS
 pkgs ? nixpkgs,
@@ -25,15 +26,16 @@ jq ? pkgs.jq,
 # EASY PURESCRIPT
 easy-purescript-nix ? easy-purescript-nix',
 
-spago2nix ? easy-purescript-nix'.spago2nix,
+spago2nix ? easy-purescript-nix.spago2nix,
 
-purs ? easy-purescript-nix'.purs,
+purs ? easy-purescript-nix.purs,
 
 # YARN2NIX
 
 yarn2nix ? yarn2nix'
 
 }:
+
 let
   yarnPackage = yarn2nix.mkYarnPackage {
     src = pkgs.runCommand "src" { } ''
@@ -46,66 +48,20 @@ let
     publishBinsFor = [ "purescript-psa" "parcel" ];
   };
 
-  spago2nix = pkgs.stdenv.mkDerivation {
-    name = "spago2nix";
-
-    phases = [
-      "preBuildPhase"
-      "buildPhase"
-      "checkPhase"
-      "installPhase"
-      "preFixupPhase"
-      "fixupPhase"
-      "installCheckPhase"
-    ];
-
-    buildInputs = [ yarnPackage purs nodejs yarn pkgs.makeWrapper ];
-
-    doCheck = true;
-
-    doInstallCheck = true;
-
-    src = pkgs.runCommand "src" { } ''
-      mkdir $out
-
-      ln -s ${./Makefile} $out/Makefile
-      ln -s ${./src} $out/src
-      ln -s ${./test} $out/test
-    '';
-
-    preBuildPhase = ''
-      TMP=`mktemp -d`
-      cd $TMP
-
-      ln -s $src/* -t .
-      bash ${(pkgs.callPackage ./spago-packages.nix { }).installSpagoStyle}
-    '';
-
-    installPhase = ''
-      mkdir $out
-      cp -r $TMP/dist/* -t $out 
-    '';
-
-    preFixupPhase = ''
-      mv $out/bin/spago2nix $out/bin/spago2nix-unpure
-
-      makeWrapper $out/bin/spago2nix-unpure $out/bin/spago2nix \
-        --set PURE true \
-        --set DHALL_TO_JSON ${dhall-json}/bin/dhall-to-json \
-        --set NIX_FORMAT ${nixfmt}/bin/nixfmt \
-        --set NIX_PREFETCH_GIT ${nix-prefetch-git}/bin/nix-prefetch-git
-    '';
-
-  };
-
   buildProject = { spagoPackages, spagoConfig }:
-    {
-
+    let
+      projectPackage = {
+        name = "foo";
+        dependencies = [ ];
+        source = pkgs.runCommand "source" "";
+      };
+    in buildPackage {
+      inherit spagoPackages;
+      package = projectPackage;
     };
 
-  build = { spagoPackages, entry }:
+  buildPackage = { spagoPackages, package }:
     let
-      package = builtins.getAttr entry spagoPackages;
 
       dependencies =
         map (key: builtins.getAttr key spagoPackages) package.dependencies;
@@ -113,7 +69,7 @@ let
       source = pkgs.fetchgit package.git;
 
       dependenciesBuilt = map (dep:
-        build {
+        buildPackage {
           inherit spagoPackages;
           entry = dep.name;
         }) dependencies;
@@ -128,9 +84,9 @@ let
         ${forEach (dep: "ln -sf ${dep.sources}/* -t $out") dependenciesBuilt}
 
         # Link in own sources
-        dir=$out/${package.name}/
+        dir=$out/${package.name}
         mkdir $dir
-        ln -s ${source} $dir/${package.version}
+        ln -s ${source} $dir/${package.version} 
       '';
       output = pkgs.runCommand "purescript-${package.name}-output" { } ''
         tmp=`mktemp -d`
@@ -165,6 +121,7 @@ let
       '';
     };
 in {
-  inherit spago2nix;
-  inherit build;
+  spago2nix = import ./spago2nix-cli.nix { };
+  inherit buildProject;
+  inherit buildPackage;
 }

@@ -23,7 +23,6 @@ type EnvVars r
   = ( debug :: Boolean
     , pure :: Boolean
     , dhallToJson :: String
-    , nixFormat :: String
     , nixPrefetchGit :: String
     | r
     )
@@ -75,13 +74,6 @@ parseEnvVars obj = do
       , parse: envString
       }
       obj
-  _nixFormat <-
-    lookupEnv
-      { name: "NIX_FORMAT"
-      , default: guard (not _pure) Just "nixfmt"
-      , parse: envString
-      }
-      obj
   _nixPrefetchGit <-
     lookupEnv
       { name: "NIX_PREFETCH_GIT"
@@ -93,7 +85,6 @@ parseEnvVars obj = do
     { debug: _debug
     , pure: _pure
     , dhallToJson: _dhallToJson
-    , nixFormat: _nixFormat
     , nixPrefetchGit: _nixPrefetchGit
     }
 
