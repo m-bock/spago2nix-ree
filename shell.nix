@@ -1,38 +1,41 @@
-let
-  sources = import ./nix/sources.nix;
+let sources = import ./nix/sources.nix;
 
-  nixpkgs = import sources.nixpkgs { };
-
-  easy-purescript-nix' = import sources.easy-purescript-nix { pkgs = nixpkgs; };
-
-  niv' = import sources.niv { pkgs = nixpkgs; };
-
-  yarn2nix' = import sources.yarn2nix { pkgs = nixpkgs; };
 in {
 # PKGS
-pkgs ? nixpkgs,
+pkgs ? import sources.nixpkgs { },
 
 dhall-json ? pkgs.dhall-json,
 
+nodejs ? pkgs.nodejs,
+
 yarn ? pkgs.yarn,
 
-nix ? pkgs.nix,
+nixfmt ? pkgs.nixfmt,
 
 nix-prefetch-git ? pkgs.nix-prefetch-git,
 
+jq ? pkgs.jq,
+
+nix ? pkgs.nix,
+
 # EASY PURESCRIPT
-easy-purescript-nix ? easy-purescript-nix',
+easy-purescript-nix ? import sources.easy-purescript-nix { },
 
-spago2nix ? easy-purescript-nix'.spago2nix,
+spago2nix ? easy-purescript-nix.spago2nix,
 
-purs ? easy-purescript-nix'.purs,
-
-# NIV
-niv ? niv',
+purs ? easy-purescript-nix.purs,
 
 # YARN2NIX
 
-yarn2nix ? yarn2nix'
+yarn2nix ? import sources.yarn2nix { },
+
+# NIV
+
+niv ? import sources.niv { },
+
+# NIX LINTER
+
+nix-linter ? import sources.nix-linter { }
 
 }:
 
@@ -47,8 +50,17 @@ let
   };
 in pkgs.stdenv.mkDerivation {
   name = "spago.dhall2nix";
-  buildInputs =
-    [ yarnPackage dhall-json spago2nix niv.niv yarn purs nix nix-prefetch-git ];
+  buildInputs = [
+    yarnPackage
+    dhall-json
+    spago2nix
+    niv.niv
+    yarn
+    purs
+    nix
+    nix-prefetch-git
+    nix-linter.nix-linter
+  ];
   buildCommand = ''
     mkdir $out
   '';
