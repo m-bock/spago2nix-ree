@@ -1,13 +1,7 @@
-# spago2nix-re
+# spago2nix-ree
 
-## Usage
+Work in progress re-implementation of [spago2nix](https://github.com/justinwoo/spago2nix).
+The idea is that dependencies don't need to be rebuilt for every change in your project. Instead they get cached with nix derivations.
+Works only partly until now.
 
-```bash
-nix-env -i https://github.com/thought2/spago2nix-re
-
-mkdir project
-cd project
-
-spago init
-spago2nix-re
-```
+Not yet recommended to use.

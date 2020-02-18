@@ -19,7 +19,8 @@ type SpagoConfigLock
     }
 
 type SpagoPackageLock
-  = { dependencies :: Array String
+  = { name :: String
+    , dependencies :: Array String
     , version :: String
     , repo :: String
     , rev :: String
@@ -30,7 +31,8 @@ codec_SpagoPackageLock ∷ JsonCodec SpagoPackageLock
 codec_SpagoPackageLock =
   Codec.object "SpagoPackageLock"
     $ Codec.Record.record
-        { dependencies: Codec.array Codec.string
+        { name: Codec.string
+        , dependencies: Codec.array Codec.string
         , version: Codec.string
         , repo: Codec.string
         , rev: Codec.string

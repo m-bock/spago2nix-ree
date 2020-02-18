@@ -1,16 +1,4 @@
 {
-    "dhall-haskell": {
-        "branch": "master",
-        "description": "Maintainable configuration files",
-        "homepage": "https://dhall-lang.org/",
-        "owner": "dhall-lang",
-        "repo": "dhall-haskell",
-        "rev": "24f19270cac17eff8451b9ee492a461e5d833c6e",
-        "sha256": "004s3gsdkrmphyz6cwscx09pxx43fg440qd8v9nhcdklljg7d2qs",
-        "type": "tarball",
-        "url": "https://github.com/dhall-lang/dhall-haskell/archive/24f19270cac17eff8451b9ee492a461e5d833c6e.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
-    },
     "easy-purescript-nix": {
         "branch": "master",
         "description": "Easy PureScript (and other tools) with Nix",

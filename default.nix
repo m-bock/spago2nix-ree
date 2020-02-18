@@ -27,10 +27,6 @@ purs ? easy-purescript-nix.purs,
 
 yarn2nix ? import sources.yarn2nix { inherit pkgs; },
 
-#
-
-dhall-haskell ? (import sources.dhall-haskell)
-
 }:
 with builtins;
 let
@@ -39,38 +35,43 @@ let
 
   buildProject = {
 
-    spagoPackages ? ./packages-lock.json,
+    src ? ./.,
 
-    spagoConfig ? "spago.dhall",
-
-    src ? ./.
+    spagoLock ? src + "/spago-lock.json"
 
     }:
     let
 
-      spagoConfig' = import (pkgs.runCommand "yx" { } ''
-        cd ${src};
-        echo "./${spagoConfig}" | ${dhall-haskell.dhall-nix}/bin/dhall-to-nix > $out
-      '');
+      spagoLock' = fromJSON (readFile spagoLock);
 
       projectPackage = {
-        name = spagoConfig'.name;
-        dependencies = spagoConfig'.dependencies;
-        source = pkgs.runCommand "source" ''
+        name = spagoLock'.name;
+        dependencies = spagoLock'.dependencies;
+        version = "v0.0.0";
+        source = pkgs.runCommand "source" { } ''
           mkdir $out
-          ln -s ${./src} $out/src
+          ln -s ${src}/src $out/src
         '';
       };
-    in pkgs.runCommand "x" { } "touch $out; echo ${spagoConfig'.x}"
-    /* buildPackage {
-         inherit spagoPackages;
-         package = projectPackage;
-       }
-    */
-  ;
+
+      spagoPackages = mapAttrs (_: package:
+        let
+          source = pkgs.fetchgit {
+            sha256 = package.nixSha256;
+            url = package.repo;
+            inherit (package) rev;
+          };
+
+        in package // { inherit source; }
+
+      ) spagoLock'.packages;
+
+    in (buildPackage {
+      inherit spagoPackages;
+      package = projectPackage;
+    });
 
 in {
   spago2nix = import ./spago2nix-cli.nix { };
   inherit buildProject;
-  inherit buildPackage;
 }

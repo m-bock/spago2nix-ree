@@ -167,6 +167,7 @@ runCli = do
                                   `union`
                                     { rev: nixPrefetchGitResult.rev
                                     , nixSha256: nixPrefetchGitResult.sha256
+                                    , name: key
                                     }
                             pure $ key /\ value
                         )
