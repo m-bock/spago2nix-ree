@@ -113,6 +113,30 @@ let
         installPhase = "ln -s $src $out";
       };
 
+    "codec" = pkgs.stdenv.mkDerivation {
+        name = "codec";
+        version = "v3.0.0";
+        src = pkgs.fetchgit {
+          url = "https://github.com/garyb/purescript-codec.git";
+          rev = "d58400694c69863f6ef5304b3d6d043b51e3f2bd";
+          sha256 = "0jk0j4yss3d6scyb715p926ld8rmsfnv1h85zxpywv85xdingw9w";
+        };
+        phases = "installPhase";
+        installPhase = "ln -s $src $out";
+      };
+
+    "codec-argonaut" = pkgs.stdenv.mkDerivation {
+        name = "codec-argonaut";
+        version = "v7.1.0";
+        src = pkgs.fetchgit {
+          url = "https://github.com/garyb/purescript-codec-argonaut.git";
+          rev = "93265396a942ee322047bb31400e1ca9c16e0e3a";
+          sha256 = "13aqci36xgxbahgpcxf2hsq9nsp0ljjd7nkzvpwxhhvy4n8yk1kk";
+        };
+        phases = "installPhase";
+        installPhase = "ln -s $src $out";
+      };
+
     "console" = pkgs.stdenv.mkDerivation {
         name = "console";
         version = "v4.4.0";
@@ -876,6 +900,18 @@ let
           url = "https://github.com/purescript/purescript-unsafe-coerce.git";
           rev = "fa6a5ca9b4581c00ee0b8539306a49badb7bee60";
           sha256 = "0k9255mk2mz6xjb11pwkgfcblmmyvr86ig5kr92jwy95xim09zip";
+        };
+        phases = "installPhase";
+        installPhase = "ln -s $src $out";
+      };
+
+    "variant" = pkgs.stdenv.mkDerivation {
+        name = "variant";
+        version = "v6.0.1";
+        src = pkgs.fetchgit {
+          url = "https://github.com/natefaubion/purescript-variant.git";
+          rev = "31e620334124d2ca8b1e608c27d74b607a5831e9";
+          sha256 = "0cn227q57zbqm6r1aw5kvnp1x8zkc1x7wx28yyz311lmy7k1mkql";
         };
         phases = "installPhase";
         installPhase = "ln -s $src $out";
