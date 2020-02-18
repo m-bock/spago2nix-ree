@@ -1,7 +1,9 @@
 let sources = import ./nix/sources.nix;
 
 in {
+
 # PKGS
+
 pkgs ? import sources.nixpkgs { },
 
 dhall-json ? pkgs.dhall-json,
@@ -17,6 +19,7 @@ nix-prefetch-git ? pkgs.nix-prefetch-git,
 jq ? pkgs.jq,
 
 # EASY PURESCRIPT
+
 easy-purescript-nix ? import sources.easy-purescript-nix { inherit pkgs; },
 
 spago2nix ? easy-purescript-nix.spago2nix,
@@ -35,7 +38,7 @@ let
 
   buildProject = {
 
-    src ? ./.,
+    src,
 
     spagoLock ? src + "/spago-lock.json"
 
