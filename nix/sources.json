@@ -1,4 +1,16 @@
 {
+    "dhall-haskell": {
+        "branch": "master",
+        "description": "Maintainable configuration files",
+        "homepage": "https://dhall-lang.org/",
+        "owner": "dhall-lang",
+        "repo": "dhall-haskell",
+        "rev": "24f19270cac17eff8451b9ee492a461e5d833c6e",
+        "sha256": "004s3gsdkrmphyz6cwscx09pxx43fg440qd8v9nhcdklljg7d2qs",
+        "type": "tarball",
+        "url": "https://github.com/dhall-lang/dhall-haskell/archive/24f19270cac17eff8451b9ee492a461e5d833c6e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "easy-purescript-nix": {
         "branch": "master",
         "description": "Easy PureScript (and other tools) with Nix",
@@ -21,6 +33,18 @@
         "sha256": "01j6727cws8blg1npp54b4w6xa0gpgyzhyws2vqgp8clnlnmqqhi",
         "type": "tarball",
         "url": "https://github.com/nmattia/niv/archive/2ecfd86b631714b457e56d70dd83fa60435baeb6.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nix-linter": {
+        "branch": "master",
+        "description": "Linter for the Nix expression language",
+        "homepage": "",
+        "owner": "Synthetica9",
+        "repo": "nix-linter",
+        "rev": "8f1037ddb3c03a12f285b4a9702e73c0eb15f972",
+        "sha256": "0ghlr8pvhps75y4c4nxkdfkl0v0rrk7mc1n5nwp3cfyyn2zl6w94",
+        "type": "tarball",
+        "url": "https://github.com/Synthetica9/nix-linter/archive/8f1037ddb3c03a12f285b4a9702e73c0eb15f972.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nixpkgs": {
