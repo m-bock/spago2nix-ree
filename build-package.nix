@@ -29,8 +29,9 @@ let
           inherit spagoPackages;
           package = dep;
         }) dependencies;
-
+      # TODO: Use more linking instead of copying
     in pkgs.runCommand "purescript-${package.name}" { } ''
+      echo AAAAAA
       mkdir $out
 
       mkdir $out/.spago
@@ -46,7 +47,7 @@ let
       cp -r ${source} $dir/${package.version} 
 
       # Link in dependency builds
-      ${forEach (dep: "cp -ru ${dep}/output/* -t $out/output")
+      ${forEach (dep: "cp -ru --preserve=all ${dep}/output/* -t $out/output")
       dependenciesBuilt}
       rm -f $out/output/cache-db.json
 
@@ -56,8 +57,8 @@ let
       ${jq}/bin/jq -s \
           'reduce .[] as $item ({}; . + $item)' \
           ${
-            toString
-            (map (dep: "${dep}/output/cache-db.json") dependenciesBuilt)
+            toString (map (dep: "${dep}/output/cache-db.json")
+              (pkgs.lib.reverseList dependenciesBuilt))
           } \
           > $out/output/cache-db.json
 

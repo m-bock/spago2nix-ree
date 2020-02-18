@@ -66,10 +66,10 @@ let
 
       ) spagoLock'.packages;
 
-    in (buildPackage {
+    in buildPackage {
       inherit spagoPackages;
       package = projectPackage;
-    });
+    };
 
 in {
   spago2nix = import ./spago2nix-cli.nix { };
