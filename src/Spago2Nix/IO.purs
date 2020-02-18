@@ -4,12 +4,11 @@ import Prelude
 import Control.Bind (bindFlipped)
 import Control.Monad.Except (ExceptT(..), lift, mapExceptT, withExceptT)
 import Control.Parallel (class Parallel, parTraverse)
-import Data.Argonaut (encodeJson)
 import Data.Array (cons)
 import Data.Array as Array
 import Data.Bifunctor (lmap)
+import Data.Codec.Argonaut as Codec
 import Data.Either (Either(..))
-import Data.Map (Map)
 import Data.Map as Map
 import Data.Maybe (Maybe(..))
 import Data.Traversable (sequence)
@@ -24,9 +23,10 @@ import Node.FS.Aff as FS
 import Node.Process as Node
 import Options.Applicative (execParser)
 import Record (union)
-import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decodeJson, decodeMapFromObject, encodeMapToObject, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
+import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decode, decodeJson, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
 import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
-import Spago2Nix.SpagoPackage (SpagoPackage)
+import Spago2Nix.SpagoConfig (SpagoConfig, codec_SpagoConfig)
+import Spago2Nix.SpagoConfigLock (codec_SpagoConfigLock)
 import Sunde as Sunde
 
 data CliState
@@ -107,13 +107,13 @@ nixFormat config options =
     }
     # withExceptT (cons "nixFormat")
 
-getSpagoPackages :: Config -> ExceptT ErrorStack Aff (Map String SpagoPackage)
-getSpagoPackages config =
+getSpagoConfig :: Config -> ExceptT ErrorStack Aff SpagoConfig
+getSpagoConfig config =
   dhallToJson config
-    ("./" <> config.spagoPackages)
+    ("./" <> config.spagoConfig)
     # (mapExceptT <<< map <<< bindFlipped)
-        (jsonParser >=> decodeMapFromObject decodeJson)
-    # withExceptT (cons $ "Read spago config at " <> tick config.spagoPackages <> ".")
+        (jsonParser >=> decode codec_SpagoConfig)
+    # withExceptT (cons $ "Read spago config at " <> tick config.spagoConfig <> ".")
 
 writeTextFile :: String -> String -> ExceptT ErrorStack Aff Unit
 writeTextFile path content =
@@ -135,46 +135,54 @@ withCliState cliState m = do
 
 runCli :: ExceptT ErrorStack Aff Unit
 runCli = do
-  config <- getConfig
-  spagoPackages <-
+  config <- withCliState CliState_GetConfig getConfig
+  spagoConfig <-
     withCliState
-      (CliState_ReadInput { path: config.spagoPackages })
-      (getSpagoPackages config)
+      (CliState_ReadInput { path: config.spagoConfig })
+      (getSpagoConfig config)
   let
+    spagoPackages = spagoConfig.packages
+
     length = Map.size spagoPackages
 
     chunkSize = 20
-  spagoPackages
-    # (Map.toUnfoldable :: _ -> Array _)
-    # chunks chunkSize
-    # traverseWithIndex
-        ( \chunkIndex x ->
-            withCliState (CliState_NixPrefetchChunk { chunkSize, index: chunkIndex, length })
-              ( x
-                  # parTraverse
-                      ( \(key /\ spagoPackage) -> do
-                          nixPrefetchGitResult <-
-                            nixPrefetchGit config
-                              { repo: spagoPackage.repo
-                              , rev: spagoPackage.version
-                              }
-                          let
-                            value = spagoPackage `union` nixPrefetchGitResult
-                          pure $ key /\ value
-                      )
-              )
-        )
-    <#> join
-    >>= ( \result ->
-          withCliState
-            (CliState_WriteOutput { path: config.target })
-            ( result
-                # Map.fromFoldable
-                # encodeMapToObject encodeJson
-                # stringifyPretty 2
-                # writeTextFile config.target
-            )
-      )
+  spagoPackagesLock <-
+    spagoPackages
+      # (Map.toUnfoldable :: _ -> Array _)
+      # chunks chunkSize
+      # traverseWithIndex
+          ( \chunkIndex keyValue ->
+              withCliState (CliState_NixPrefetchChunk { chunkSize, index: chunkIndex, length })
+                ( keyValue
+                    # parTraverse
+                        ( \(key /\ spagoPackage) -> do
+                            nixPrefetchGitResult <-
+                              nixPrefetchGit config
+                                { repo: spagoPackage.repo
+                                , rev: spagoPackage.version
+                                }
+                            let
+                              value =
+                                spagoPackage
+                                  `union`
+                                    { rev: nixPrefetchGitResult.rev
+                                    , nixSha256: nixPrefetchGitResult.sha256
+                                    }
+                            pure $ key /\ value
+                        )
+                )
+          )
+      <#> join
+      <#> Map.fromFoldable
+  let
+    spagoConfigLock = spagoConfig { packages = spagoPackagesLock }
+  withCliState
+    (CliState_WriteOutput { path: config.target })
+    ( spagoConfigLock
+        # Codec.encode codec_SpagoConfigLock
+        # stringifyPretty 2
+        # writeTextFile config.target
+    )
     >>= (const $ setCliState CliState_Done)
 
 parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
@@ -188,7 +196,7 @@ parTraverse' { max } f xs =
 printCliState :: CliState -> Maybe String
 printCliState = case _ of
   CliState_Idle -> Just "done\n"
-  CliState_GetConfig -> Nothing
+  CliState_GetConfig -> Just "Get config"
   CliState_ReadInput { path } ->
     Just
       $ joinSpaces
@@ -198,7 +206,7 @@ printCliState = case _ of
   CliState_NixPrefetchChunk { index, chunkSize, length } ->
     Just
       $ joinSpaces
-          [ "fetching chunk "
+          [ "fetching chunk"
           , joinStrings
               [ show (index * chunkSize)
               , "-"

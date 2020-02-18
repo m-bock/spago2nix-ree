@@ -5,15 +5,20 @@ import Data.Argonaut (class DecodeJson, Json, fromObject, toObject)
 import Data.Argonaut as Argonaut
 import Data.Array (cons, mapWithIndex)
 import Data.Bifunctor (lmap)
+import Data.Codec.Argonaut (JsonCodec, prismaticCodec)
+import Data.Codec.Argonaut as Codec
+import Data.Codec.Argonaut.Compat as Codec.Compat
 import Data.Either (Either, note)
 import Data.Function.Uncurried (Fn2, runFn2)
 import Data.Map (Map)
 import Data.Map as Map
+import Data.Maybe (Maybe(..))
 import Data.Monoid (guard)
 import Data.String (Pattern(..))
 import Data.String as String
 import Data.Traversable (traverse)
 import Effect.Exception (Error)
+import Foreign.Object (Object)
 import Foreign.Object as Object
 
 type NixPrefetchGitResult
@@ -53,24 +58,26 @@ jsonParser = Argonaut.jsonParser >>> lmap (pure >>> cons "Invalid JSON")
 decodeJson :: forall a. DecodeJson a => Json -> Either ErrorStack a
 decodeJson = Argonaut.decodeJson >>> lmap (pure >>> cons "Invalid JSON structure")
 
-decodeMapFromObject ::
-  forall a.
-  (Json -> Either ErrorStack a) ->
-  Json -> Either ErrorStack (Map String a)
-decodeMapFromObject decodeA json =
-  toObject json
-    # note [ "Expexted an object." ]
-    >>= traverse decodeA
-    <#> (Object.toUnfoldable :: _ -> Array _)
-    >>> Map.fromFoldable
+decode :: forall a. JsonCodec a -> Json -> Either ErrorStack a
+decode codec value = Codec.decode codec value # lmap (Codec.printJsonDecodeError >>> pure)
 
-encodeMapToObject :: forall a. (a -> Json) -> Map String a -> Json
-encodeMapToObject encodeA m =
-  m
-    <#> encodeA
-    # (Map.toUnfoldable :: _ -> Array _)
-    # Object.fromFoldable
-    # fromObject
+codec_map :: forall v. JsonCodec v -> JsonCodec (Map String v)
+codec_map codecA =
+  prismaticCodec decoder encoder
+    $ Codec.Compat.foreignObject codecA
+  where
+  decoder :: Object v -> Maybe (Map String v)
+  decoder obj =
+    obj
+      # (Object.toUnfoldable :: _ -> Array _)
+      # Map.fromFoldable
+      # Just
+
+  encoder :: Map String v -> Object v
+  encoder xs =
+    xs
+      # (Map.toUnfoldable :: _ -> Array _)
+      # Object.fromFoldable
 
 joinSpaces :: Array String -> String
 joinSpaces = String.joinWith " "

@@ -6,6 +6,7 @@ You can edit this file as you like.
     "spago2nix-re"
 , dependencies =
     [ "argonaut"
+    , "codec-argonaut"
     , "console"
     , "effect"
     , "node-fs-aff"
