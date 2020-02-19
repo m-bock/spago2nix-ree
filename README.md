@@ -12,8 +12,7 @@
 ```
 spago init
 
-nix-env -i -A spago2nix-ree \
-  -f https://github.com/thought2/spago2nix-ree/archive/master.tar.gz
+nix-env -i -f https://github.com/thought2/spago2nix-ree/archive/master.tar.gz
 
 spago2nix-ree
 
@@ -32,6 +31,8 @@ nix-build
 ```
 
 You can also use `buildProjectDependencies` to just build the dependencies instead.
+
+To see the main feature, edit one of your project source files and run `nix-build` again. Only your local modules get recompiled.
 
 ## Prior Work
 
