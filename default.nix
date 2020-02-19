@@ -34,6 +34,16 @@ yarn2nix ? import sources.yarn2nix { inherit pkgs; },
 with builtins;
 let
 
+  resolvePackage = package:
+    let
+      source = pkgs.fetchgit {
+        sha256 = package.nixSha256;
+        url = package.repo;
+        inherit (package) rev;
+      };
+
+    in package // { inherit source; };
+
   buildPackage = import ./build-package.nix { };
 
   buildProject = {
@@ -58,6 +68,7 @@ let
       };
 
       spagoPackages = mapAttrs (_: package:
+        # TODO: use resolvePackage
         let
           source = pkgs.fetchgit {
             sha256 = package.nixSha256;
@@ -74,7 +85,33 @@ let
       package = projectPackage;
     };
 
+  buildProjectDependencies = {
+
+    src,
+
+    spagoLock ? src + "/spago-lock.json"
+
+    }:
+    let
+
+      spagoLock' = fromJSON (readFile spagoLock);
+
+      projectPackage = {
+        name = spagoLock'.name + "-dependencies";
+        dependencies = spagoLock'.dependencies;
+        version = "v0.0.0";
+        source = pkgs.runCommand "source" { } "mkdir $out";
+      };
+
+      spagoPackages = mapAttrs (_: resolvePackage) spagoLock'.packages;
+
+    in buildPackage {
+      inherit spagoPackages;
+      package = projectPackage;
+    };
+
 in {
   spago2nix = import ./spago2nix-cli.nix { };
   inherit buildProject;
+  inherit buildProjectDependencies;
 }

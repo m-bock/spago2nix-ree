@@ -31,7 +31,6 @@ let
         }) dependencies;
       # TODO: Use more linking instead of copying
     in pkgs.runCommand "purescript-${package.name}" { } ''
-      echo AAAAAA
       mkdir $out
 
       mkdir $out/.spago
