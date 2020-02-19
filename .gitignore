@@ -12,3 +12,5 @@
 .cache
 /dist
 /result
+result
+result-*

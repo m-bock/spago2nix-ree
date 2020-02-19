@@ -60,7 +60,7 @@ let
       projectPackage = rec {
         name = spagoLock'.name;
         dependencies = spagoLock'.dependencies;
-        version = "v0.0.0";
+        version = "no-version";
         source = pkgs.runCommand "${name}-source" { } ''
           mkdir $out
 
@@ -97,7 +97,7 @@ let
       projectPackage = rec {
         name = spagoLock'.name + "-dependencies";
         dependencies = spagoLock'.dependencies;
-        version = "v0.0.0";
+        version = "no-version";
         source = pkgs.runCommand "${name}-source" { } "mkdir $out";
       };
 
@@ -109,7 +109,7 @@ let
     };
 
 in {
-  spago2nix = import ./spago2nix-cli.nix { };
+  spago2nix-ree = import ./spago2nix-ree-cli.nix { };
   inherit buildProject;
   inherit buildProjectDependencies;
 }

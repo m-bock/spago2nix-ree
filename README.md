@@ -2,7 +2,39 @@
 
 [![Build Status](https://travis-ci.com/thought2/spago2nix-ree.svg?branch=master)](https://travis-ci.com/thought2/spago2nix-ree)
 
-Work in progress re-implementation of [spago2nix](https://github.com/justinwoo/spago2nix).
-The idea is that dependencies don't need to be rebuilt for every change in your project.
+`spago2nix-ree`
 
-The main functionality works, but it's not yet tested in many projects. So use at own risk.
+- re-uses already built purescript dependencies.
+- so you don't have to re-compile them for every change in your project.
+
+## Usage
+
+```
+spago init
+
+nix-env -i -A spago2nix-ree \
+  -f https://github.com/thought2/spago2nix-ree/archive/master.tar.gz
+
+spago2nix-ree
+
+# creates spago-lock.json
+```
+
+Add a `default.nix` like:
+
+```
+let spago2nix-ree = import ../default.nix { };
+in spago2nix-ree.buildProject { src = ./.; }
+```
+
+```
+nix-build
+```
+
+You can also use `buildProjectDependencies` to just build the dependencies instead.
+
+## Prior Work
+
+- [justinwoo/spago2nix](https://github.com/justinwoo/spago2nix)
+
+  Aweseome tool that I used in many projects. However, for my usecase CI builds were not fast enough.

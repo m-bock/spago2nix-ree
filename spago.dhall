@@ -1,9 +1,6 @@
-{-
-Welcome to a Spago project!
-You can edit this file as you like.
--}
+
 { name =
-    "spago2nix-re"
+    "spago2nix-ree"
 , dependencies =
     [ "argonaut"
     , "codec-argonaut"

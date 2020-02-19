@@ -9,13 +9,13 @@ build:
 	$(psa) 'src/**/*.purs' 'test/**/*.purs'
 	parcel build --target node --no-source-maps  src/index.js .
 	mkdir -p dist/bin
-	echo "#!/usr/bin/env node" > dist/bin/spago2nix
-	cat dist/index.js >> dist/bin/spago2nix
-	chmod +x dist/bin/spago2nix
+	echo "#!/usr/bin/env node" > dist/bin/spago2nix-ree
+	cat dist/index.js >> dist/bin/spago2nix-ree
+	chmod +x dist/bin/spago2nix-ree
 	rm dist/index.js
 
 check:
 	node -e "require('./output/Test.Main').main()"
 
 installcheck:
-	$$out/bin/spago2nix --help
+	$$out/bin/spago2nix-ree --help
