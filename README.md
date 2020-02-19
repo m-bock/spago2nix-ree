@@ -9,26 +9,43 @@
 
 ## Usage
 
-```
-spago init
+- Create spago project
 
-nix-env -i -f https://github.com/thought2/spago2nix-ree/tarball/master
+  ```
+  spago init
+  ```
 
-spago2nix-ree
+- Add a `default.nix` like:
 
-# creates spago-lock.json
-```
+  ```
+  { pkgs ? import <nixpkgs> { } }:
+  let
+    spago2nix-ree = import
+      (builtins.fetchGit { url = "https://github.com/thought2/spago2nix-ree"; })
+      { };
+  in pkgs.stdenv.mkDerivation {
 
-Add a `default.nix` like:
+    name = "my-project";
 
-```
-let spago2nix-ree = import ../default.nix { };
-in spago2nix-ree.buildProject { src = ./.; }
-```
+    buildCommand = ''
+      ln -s ${spago2nix-ree.buildProject { src = ./.; }} $out
+    '';
 
-```
-nix-build
-```
+    buildInputs = [ spago2nix-ree.spago2nix-ree ];
+  }
+  ```
+
+- Build it with nix
+
+  ```
+  nix-shell
+
+  spago2nix-ree
+
+  # creates spago-lock.json
+
+  nix-build
+  ```
 
 You can also use `buildProjectDependencies` to just build the dependencies instead.
 
