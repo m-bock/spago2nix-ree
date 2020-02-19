@@ -12,7 +12,7 @@
 ```
 spago init
 
-nix-env -i -f https://github.com/thought2/spago2nix-ree/archive/master.tar.gz
+nix-env -i -f https://github.com/thought2/spago2nix-ree/tarball/master
 
 spago2nix-ree
 
