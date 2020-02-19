@@ -17,7 +17,7 @@
 
 - Add a `default.nix` like:
 
-  ```
+  ```nix
   { pkgs ? import <nixpkgs> { } }:
   let
     spago2nix-ree = import
