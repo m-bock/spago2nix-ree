@@ -57,28 +57,26 @@ let
 
       spagoLock' = fromJSON (readFile spagoLock);
 
-      projectPackage = {
+      projectPackage = rec {
         name = spagoLock'.name;
         dependencies = spagoLock'.dependencies;
         version = "v0.0.0";
-        source = pkgs.runCommand "source" { } ''
+        source = pkgs.runCommand "${name}-source" { } ''
           mkdir $out
-          ln -s ${src}/src $out/src
+
+          shopt -s globstar
+
+          pushd ${src}
+            for path in ${toString (spagoLock'.sources)}
+            do
+              mkdir -p $out/src/`dirname $path`
+              cp $path $out/src/$path 
+            done
+          popd
         '';
       };
 
-      spagoPackages = mapAttrs (_: package:
-        # TODO: use resolvePackage
-        let
-          source = pkgs.fetchgit {
-            sha256 = package.nixSha256;
-            url = package.repo;
-            inherit (package) rev;
-          };
-
-        in package // { inherit source; }
-
-      ) spagoLock'.packages;
+      spagoPackages = mapAttrs (_: resolvePackage) spagoLock'.packages;
 
     in buildPackage {
       inherit spagoPackages;
@@ -96,11 +94,11 @@ let
 
       spagoLock' = fromJSON (readFile spagoLock);
 
-      projectPackage = {
+      projectPackage = rec {
         name = spagoLock'.name + "-dependencies";
         dependencies = spagoLock'.dependencies;
         version = "v0.0.0";
-        source = pkgs.runCommand "source" { } "mkdir $out";
+        source = pkgs.runCommand "${name}-source" { } "mkdir $out";
       };
 
       spagoPackages = mapAttrs (_: resolvePackage) spagoLock'.packages;
