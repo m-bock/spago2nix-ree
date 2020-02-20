@@ -137,9 +137,8 @@ runCli :: ExceptT ErrorStack Aff Unit
 runCli = do
   config <- withCliState CliState_GetConfig getConfig
   spagoConfig <-
-    withCliState
-      (CliState_ReadInput { path: config.spagoConfig })
-      (getSpagoConfig config)
+    setCliState (CliState_ReadInput { path: config.spagoConfig })
+      *> getSpagoConfig config
   let
     spagoPackages = spagoConfig.packages
 
@@ -197,7 +196,7 @@ parTraverse' { max } f xs =
 printCliState :: CliState -> Maybe String
 printCliState = case _ of
   CliState_Idle -> Just "done\n"
-  CliState_GetConfig -> Just "Get config"
+  CliState_GetConfig -> Nothing
   CliState_ReadInput { path } ->
     Just
       $ joinSpaces
