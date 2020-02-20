@@ -49,7 +49,7 @@ let
     publishBinsFor = [ "purescript-psa" "parcel" ];
   };
 in pkgs.stdenv.mkDerivation {
-  name = "spago.dhall2nix";
+  name = "spago2nix-ree-env";
   buildInputs = [
     yarnPackage
     dhall-json
