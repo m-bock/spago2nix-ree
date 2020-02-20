@@ -20,18 +20,32 @@
   ```nix
   { pkgs ? import <nixpkgs> { } }:
   let
-    spago2nix-ree = import
-      (builtins.fetchGit { url = "https://github.com/thought2/spago2nix-ree"; })
-      { };
+    spago2nix-ree = import (builtins.fetchGit {
+
+      url = "https://github.com/thought2/spago2nix-ree";
+
+      # ... ideally you'd specify a concrete revision here
+
+    }) { };
+
+    spagoProject = spago2nix-ree.buildProject {
+
+      src = ./.;
+
+    };
+
   in pkgs.stdenv.mkDerivation {
 
     name = "my-project";
 
     buildCommand = ''
-      ln -s ${spago2nix-ree.buildProject { src = ./.; }} $out
+      ln -s ${spagoProject} $out
     '';
 
-    buildInputs = [ spago2nix-ree.spago2nix-ree ];
+    buildInputs = [
+      # Puts the CLI on the path in a nix shell
+      spago2nix-ree.spago2nix-ree
+    ];
   }
   ```
 
@@ -50,6 +64,34 @@
 You can also use `buildProjectDependencies` to just build the dependencies instead.
 
 To see the main feature, edit one of your project source files and run `nix-build` again. Only your local modules get recompiled.
+
+## API
+
+- `buildProject`
+
+  ```nix
+  { src                           # path
+  , spagoLock                     # string
+      ? src + "/spago-lock.json"
+  }
+  # returns: derivation (.spago/*, output/*)
+  ```
+
+- `buildProjectDependencies`
+
+  ```nix
+  { src                           # path
+  , spagoLock                     # string
+      ? src + "/spago-lock.json"
+  }
+  # returns: derivation (.spago/*, output/*)
+  ```
+
+- `spago2nix-ree`
+
+  ```nix
+  # derivation (bin/spago2nix-ree)
+  ```
 
 ## Prior Work
 
