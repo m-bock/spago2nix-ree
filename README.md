@@ -67,6 +67,8 @@ To see the main feature, edit one of your project source files and run `nix-buil
 
 ## API
 
+### v0.1.0
+
 - `buildProject`
 
   ```nix
