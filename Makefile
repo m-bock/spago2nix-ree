@@ -19,3 +19,7 @@ check:
 
 installcheck:
 	$$out/bin/spago2nix-ree --help
+
+version:
+	sed -i 's/$(OLD)/$(NEW)/g' README.md
+	sed -i 's/$(OLD)/$(NEW)/g' spago2nix-ree-cli.nix

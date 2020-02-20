@@ -44,7 +44,10 @@ let
   };
 
 in pkgs.stdenv.mkDerivation {
+
   name = "spago2nix-ree";
+
+  version = "v0.1.1";
 
   phases = [
     "preBuildPhase"
