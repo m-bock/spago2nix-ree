@@ -185,7 +185,6 @@ runCli = do
         # stringifyPretty 2
         # writeTextFile config.target
     )
-    >>= (const $ setCliState CliState_Done)
 
 parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
 parTraverse' { max } f xs =
