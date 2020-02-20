@@ -23,3 +23,5 @@ installcheck:
 version:
 	sed -i 's/$(OLD)/$(NEW)/g' README.md
 	sed -i 's/$(OLD)/$(NEW)/g' spago2nix-ree-cli.nix
+	sed -i 's/$(OLD)/$(NEW)/g' package.json
+	git tag $(NEW)
