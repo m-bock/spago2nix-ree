@@ -135,7 +135,9 @@ withCliState cliState m = do
 
 runCli :: ExceptT ErrorStack Aff Unit
 runCli = do
-  config <- withCliState CliState_GetConfig getConfig
+  config <-
+    setCliState CliState_GetConfig
+      *> getConfig
   spagoConfig <-
     setCliState (CliState_ReadInput { path: config.spagoConfig })
       *> getSpagoConfig config
