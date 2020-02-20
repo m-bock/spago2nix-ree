@@ -88,6 +88,7 @@ in pkgs.stdenv.mkDerivation {
 
   preFixupPhase = ''
     wrapProgram $out/bin/spago2nix-ree \
+      --argv0 spago2nix-ree \
       --set PURE true \
       --set DHALL_TO_JSON ${dhall-json}/bin/dhall-to-json \
       --set NIX_PREFETCH_GIT ${nix-prefetch-git}/bin/nix-prefetch-git
