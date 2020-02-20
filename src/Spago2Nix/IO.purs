@@ -139,8 +139,8 @@ runCli = do
     setCliState CliState_GetConfig
       *> getConfig
   spagoConfig <-
-    setCliState (CliState_ReadInput { path: config.spagoConfig })
-      *> getSpagoConfig config
+    withCliState (CliState_ReadInput { path: config.spagoConfig })
+      (getSpagoConfig config)
   let
     spagoPackages = spagoConfig.packages
 
