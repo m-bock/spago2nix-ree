@@ -31,32 +31,28 @@ let
 
       source = package.source;
 
-      OLDdependenciesBuilt = map (dep:
-        buildPackage' {
-          inherit spagoPackages;
-          inherit cache;
-          package = dep;
-        }) dependencies;
+      dependenciesBuilt = builtins.foldl' (memo: unbuildPackage:
 
-      dependenciesBuilt = builtins.foldl' (m: x:
-
-        if (builtins.hasAttr x.name m.cache) then
+        if (builtins.hasAttr unbuildPackage.name memo.cache) then
 
         {
-          cache = m.cache;
-          packages = [ builtins.getAttr x.name m.cache ] ++ m.packages;
+          cache = memo.cache;
+          packages = [ (builtins.getAttr unbuildPackage.name memo.cache) ]
+            ++ memo.packages;
         }
 
         else
           let
             result = buildPackage' {
               inherit spagoPackages;
-              cache = m.cache;
-              package = x;
+              cache = memo.cache;
+              package = unbuildPackage;
             };
           in {
-            cache = result.cache;
-            packages = [ result.package ] ++ m.packages;
+            cache = result.cache
+              // (pkgs.lib.setAttrByPath [ unbuildPackage.name ]
+                result.package);
+            packages = [ result.package ] ++ memo.packages;
           }
 
       ) {
