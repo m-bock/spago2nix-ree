@@ -17,6 +17,13 @@ let
   forEach = f: xs: builtins.concatStringsSep "\n" (map f xs);
 
   buildPackage = { spagoPackages, package }:
+    (buildPackage' {
+      inherit spagoPackages;
+      inherit package;
+      cache = { };
+    }).package;
+
+  buildPackage' = { spagoPackages, package, cache }:
     let
 
       dependencies =
@@ -24,47 +31,73 @@ let
 
       source = package.source;
 
-      dependenciesBuilt = map (dep:
-        buildPackage {
-          inherit spagoPackages;
-          package = dep;
-        }) dependencies;
-      # TODO: Use more linking instead of copying
-    in pkgs.runCommand "purescript-${package.name}" { } ''
-      mkdir $out
+      dependenciesBuilt = builtins.foldl' (memo: unbuildPackage:
 
-      mkdir $out/.spago
-      mkdir $out/output
+        if (builtins.hasAttr unbuildPackage.name memo.cache) then
 
-      # Link in dependency sources
-      ${forEach (dep: "cp -ru ${dep}/.spago/* -t $out/.spago")
-      dependenciesBuilt}
+        {
+          cache = memo.cache;
+          packages = [ (builtins.getAttr unbuildPackage.name memo.cache) ]
+            ++ memo.packages;
+        }
 
-      # Link in own sources
-      dir=$out/.spago/${package.name}
-      mkdir $dir
-      cp -r ${source} $dir/${package.version} 
+        else
+          let
+            result = buildPackage' {
+              inherit spagoPackages;
+              cache = memo.cache;
+              package = unbuildPackage;
+            };
+          in {
+            cache = result.cache
+              // (pkgs.lib.setAttrByPath [ unbuildPackage.name ]
+                result.package);
+            packages = [ result.package ] ++ memo.packages;
+          }
 
-      # Link in dependency builds
-      ${forEach (dep: "cp -ru --preserve=all ${dep}/output/* -t $out/output")
-      dependenciesBuilt}
-      rm -f $out/output/cache-db.json
+      ) {
+        inherit cache;
+        packages = [ ];
+      } dependencies;
 
-      chmod -R +w $out/output
+    in {
+      package = pkgs.runCommand "purescript-${package.name}" { } ''
+        mkdir $out
 
-      # Shallow merge of cache-db json files
-      ${jq}/bin/jq -s \
-          'reduce .[] as $item ({}; . + $item)' \
-          ${
-            toString (map (dep: "${dep}/output/cache-db.json")
-              (pkgs.lib.reverseList dependenciesBuilt))
-          } \
-          > $out/output/cache-db.json
+        mkdir $out/.spago
+        mkdir $out/output
 
-      chmod -R +w $out/output
+        # Link in dependency sources
+        ${forEach (dep: "cp -ru ${dep}/.spago/* -t $out/.spago")
+        dependenciesBuilt.packages}
 
-      cd $out
-      ${purs}/bin/purs compile '.spago/*/*/src/**/*.purs'
-    '';
+        # Link in own sources
+        dir=$out/.spago/${package.name}
+        mkdir $dir
+        cp -r ${source} $dir/${package.version} 
+
+        # Link in dependency builds
+        ${forEach (dep: "cp -ru --preserve=all ${dep}/output/* -t $out/output")
+        dependenciesBuilt.packages}
+        rm -f $out/output/cache-db.json
+
+        chmod -R +w $out/output
+
+        # Shallow merge of cache-db json files
+        ${jq}/bin/jq -s \
+            'reduce .[] as $item ({}; . + $item)' \
+            ${
+              toString (map (dep: "${dep}/output/cache-db.json")
+                (pkgs.lib.reverseList dependenciesBuilt.packages))
+            } \
+            > $out/output/cache-db.json
+
+        chmod -R +w $out/output
+
+        cd $out
+        ${purs}/bin/purs compile '.spago/*/*/src/**/*.purs'
+      '';
+      cache = dependenciesBuilt.cache;
+    };
 
 in buildPackage
