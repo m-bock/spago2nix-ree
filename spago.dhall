@@ -1,18 +1,17 @@
-
-{ name =
-    "spago2nix-ree"
+{ name = "spago2nix-ree"
 , dependencies =
-    [ "argonaut"
-    , "codec-argonaut"
-    , "console"
-    , "effect"
-    , "node-fs-aff"
-    , "optparse"
-    , "psci-support"
-    , "sunde"
-    ]
-, packages =
-    ./packages.dhall
-, sources =
-    [ "src/**/*.purs", "test/**/*.purs" ]
+  [ "argonaut"
+  , "codec-argonaut"
+  , "console"
+  , "effect"
+  , "env-vars"
+  , "foreign-object"
+  , "node-fs-aff"
+  , "optparse"
+  , "pathy"
+  , "simple-text"
+  , "sunde"
+  ]
+, packages = ./packages.dhall
+, sources = [ "src/**/*.purs" ]
 }

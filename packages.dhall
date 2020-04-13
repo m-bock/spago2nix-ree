@@ -26,6 +26,28 @@ let additions =
           , dependencies =
               [ "profunctor", "transformers" ]
           }
+      , env-vars =
+          { repo =
+              "https://github.com/thought2/purescript-env-vars.git"
+          , version =
+              "v1.0.0"
+          , dependencies =
+              [ "either"
+              , "foreign-object"
+              , "integers"
+              , "node-process"
+              , "simple-text"
+              ]
+          }
+      , simple-text =
+          { repo =
+              "https://github.com/thought2/purescript-simple-text.git"
+          , version =
+              "v1.0.0"
+          , dependencies =
+              [ "strings"
+              ]
+          }
       }
 
 in  upstream ⫽ overrides ⫽ additions

@@ -60,24 +60,6 @@ decodeJson = Argonaut.decodeJson >>> lmap (pure >>> cons "Invalid JSON structure
 decode :: forall a. JsonCodec a -> Json -> Either ErrorStack a
 decode codec value = Codec.decode codec value # lmap (Codec.printJsonDecodeError >>> pure)
 
-codec_map :: forall v. JsonCodec v -> JsonCodec (Map String v)
-codec_map codecA =
-  prismaticCodec decoder encoder
-    $ Codec.Compat.foreignObject codecA
-  where
-  decoder :: Object v -> Maybe (Map String v)
-  decoder obj =
-    obj
-      # (Object.toUnfoldable :: _ -> Array _)
-      # Map.fromFoldable
-      # Just
-
-  encoder :: Map String v -> Object v
-  encoder xs =
-    xs
-      # (Map.toUnfoldable :: _ -> Array _)
-      # Object.fromFoldable
-
 joinSpaces :: Array String -> String
 joinSpaces = String.joinWith " "
 

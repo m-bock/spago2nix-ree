@@ -8,7 +8,7 @@ import Data.Array (cons)
 import Data.Array as Array
 import Data.Bifunctor (lmap)
 import Data.Codec.Argonaut as Codec
-import Data.Either (Either(..))
+import Data.Either (Either(..), either)
 import Data.Map as Map
 import Data.Maybe (Maybe(..))
 import Data.Traversable (sequence)
@@ -22,11 +22,16 @@ import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
 import Node.Process as Node
 import Options.Applicative (execParser)
+import Pathy as Pathy
+import Pathy.Extra.Unsandboxed (printAnyFile)
 import Record (union)
+import SimpleText (SimpleText)
+import SimpleText as SimpleText
 import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decode, decodeJson, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
 import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
-import Spago2Nix.SpagoConfig (SpagoConfig, codec_SpagoConfig)
-import Spago2Nix.SpagoConfigLock (codec_SpagoConfigLock)
+import Spago2Nix.Config.IO as Config.IO
+import Spago2Nix.Data.PackagesLock (PackagesLock, codecPackagesLock)
+import Spago2nix.Data.PackagesDhall (PackagesDhall, codecPackagesDhall)
 import Sunde as Sunde
 
 data CliState
@@ -37,25 +42,6 @@ data CliState
   | CliState_Format
   | CliState_WriteOutput { path :: String }
   | CliState_Done
-
-getEnvVars :: ExceptT ErrorStack Aff { | EnvVars () }
-getEnvVars =
-  Node.getEnv
-    # liftEffect
-    <#> (parseEnvVars >>> lmap (cons "Read Environment variables."))
-    # ExceptT
-
-getCliArgs :: ExceptT ErrorStack Aff { | CliArgs () }
-getCliArgs =
-  execParser cliParserInfo
-    # liftEffect
-    # lift
-
-getConfig :: ExceptT ErrorStack Aff Config
-getConfig = do
-  envVars <- getEnvVars
-  cliArgs <- getCliArgs
-  pure $ envVars `union` cliArgs
 
 spawn ::
   { cmd :: String, args :: Array String, stdin :: Maybe String } ->
@@ -107,13 +93,31 @@ nixFormat config options =
     }
     # withExceptT (cons "nixFormat")
 
-getSpagoConfig :: Config -> ExceptT ErrorStack Aff SpagoConfig
-getSpagoConfig config =
-  dhallToJson config
-    ("./" <> config.spagoConfig)
-    # (mapExceptT <<< map <<< bindFlipped)
-        (jsonParser >=> decode codec_SpagoConfig)
-    # withExceptT (cons $ "Read spago config at " <> tick config.spagoConfig <> ".")
+getPackagesDhall :: Config -> ExceptT ErrorStack Aff PackagesDhall
+getPackagesDhall config =
+  let
+    fileStr = printAnyFile Pathy.posixPrinter config.target
+
+    errorMsg _ =
+      SimpleText.Sentence
+        $ SimpleText.Texts
+            [ SimpleText.Text "Cannot read packages file at"
+            , SimpleText.Backtick $ SimpleText.Text $ fileStr
+            ]
+  in
+    dhallToJson config
+      ("./" <> fileStr)
+      # (mapExceptT <<< map <<< bindFlipped)
+          (jsonParser >=> decode codecPackagesDhall)
+      # withExceptT (cons $ SimpleText.print $ errorMsg unit)
+
+writePackagesLock :: Config -> PackagesLock -> ExceptT ErrorStack Aff Unit
+writePackagesLock config packagesLock =
+  packagesLock
+    # Codec.encode codecPackagesLock
+    # stringifyPretty 2
+    # writeTextFile
+        (printAnyFile Pathy.posixPrinter config.target)
 
 writeTextFile :: String -> String -> ExceptT ErrorStack Aff Unit
 writeTextFile path content =
@@ -137,54 +141,47 @@ runCli :: ExceptT ErrorStack Aff Unit
 runCli = do
   config <-
     setCliState CliState_GetConfig
-      *> getConfig
-  spagoConfig <-
-    withCliState (CliState_ReadInput { path: config.spagoConfig })
-      (getSpagoConfig config)
+      *> Config.IO.getConfig
+  packagesDhall <-
+    withCliState (CliState_ReadInput { path: printAnyFile Pathy.posixPrinter config.packagesDhall })
+      (getPackagesDhall config)
   let
-    spagoPackages = spagoConfig.packages
-
-    length = Map.size spagoPackages
+    length = Map.size packagesDhall
 
     chunkSize = 20
-  spagoPackagesLock <-
-    spagoPackages
+  packagesLock <-
+    packagesDhall
       # (Map.toUnfoldable :: _ -> Array _)
       # chunks chunkSize
       # traverseWithIndex
           ( \chunkIndex keyValue ->
               withCliState (CliState_NixPrefetchChunk { chunkSize, index: chunkIndex, length })
                 ( keyValue
-                    # parTraverse
-                        ( \(key /\ spagoPackage) -> do
-                            nixPrefetchGitResult <-
-                              nixPrefetchGit config
-                                { repo: spagoPackage.repo
-                                , rev: spagoPackage.version
-                                }
-                            let
-                              value =
-                                spagoPackage
-                                  `union`
-                                    { rev: nixPrefetchGitResult.rev
-                                    , nixSha256: nixPrefetchGitResult.sha256
-                                    , name: key
-                                    }
-                            pure $ key /\ value
-                        )
+                    # parTraverse handleLocation
                 )
           )
       <#> join
       <#> Map.fromFoldable
-  let
-    spagoConfigLock = spagoConfig { packages = spagoPackagesLock }
   withCliState
-    (CliState_WriteOutput { path: config.target })
-    ( spagoConfigLock
-        # Codec.encode codec_SpagoConfigLock
-        # stringifyPretty 2
-        # writeTextFile config.target
-    )
+    (CliState_WriteOutput { path: printAnyFile Pathy.posixPrinter config.target })
+    (writePackagesLock config packagesLock)
+
+handleLocation (key /\ spagoPackage) = do
+      nixPrefetchGitResult <-
+        nixPrefetchGit config
+          { repo: spagoPackage.repo
+          , rev: spagoPackage.version
+          }
+      let
+        value =
+          spagoPackage
+            `union`
+              { rev: nixPrefetchGitResult.rev
+              , nixSha256: nixPrefetchGitResult.sha256
+              , name: key
+              }
+      pure $ key /\ value
+  )
 
 parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
 parTraverse' { max } f xs =

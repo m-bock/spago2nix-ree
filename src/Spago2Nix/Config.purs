@@ -8,13 +8,17 @@ module Spago2Nix.Config
   ) where
 
 import Prelude
-import Spago2Nix.Common (ErrorStack, tick)
 import Data.Either (Either(..), either)
 import Data.Maybe (Maybe(..))
 import Data.Monoid (guard)
+import Data.Symbol (SProxy(..))
+import EnvVars as EnvVars
+import EnvVars.Match as EnvVars.Match
 import Foreign.Object (Object)
-import Foreign.Object as Object
-import Options.Applicative (Parser, ParserInfo, fullDesc, header, help, helper, info, long, metavar, progDesc, showDefault, strOption, value, (<**>))
+import Options.Applicative (Parser, ParserInfo, fullDesc, header, help, helper, info, long, metavar, option, progDesc, showDefaultWith, value, (<**>))
+import Options.Applicative.Compat.Pathy (readAnyFile, showDefaultAnyFile)
+import Pathy (AnyFile)
+import Pathy as Pathy
 
 type Config
   = { | EnvVars (CliArgs ()) }
@@ -28,57 +32,62 @@ type EnvVars r
     )
 
 type CliArgs r
-  = ( spagoConfig :: String
-    , target :: String
+  = ( packagesDhall :: AnyFile
+    , target :: AnyFile
     | r
     )
 
 parseCliArgs :: Parser { | CliArgs () }
 parseCliArgs =
-  { spagoConfig: _, target: _ }
-    <$> strOption
-        ( long "spagoConfig"
-            <> metavar "SPAGO_CONFIG"
-            <> help "Path to spago project config file"
-            <> showDefault
-            <> value "spago.dhall"
+  { packagesDhall: _, target: _ }
+    <$> option (readAnyFile Pathy.posixParser)
+        ( long "packagesDhall"
+            <> metavar "PACKAGES_DHALL"
+            <> help "Path to spago packages file"
+            <> showDefaultWith (showDefaultAnyFile Pathy.posixPrinter)
+            <> value
+                ( Right $ Pathy.file (SProxy :: SProxy "packages.dhall")
+                )
         )
-    <*> strOption
-        ( long "target"
-            <> metavar "TARGET"
-            <> help "Path to target file"
-            <> showDefault
-            <> value "spago-lock.json"
-        )
+    <*> ( option (readAnyFile Pathy.posixParser)
+          ( long "target"
+              <> metavar "TARGET"
+              <> help "Path to target file"
+              <> showDefaultWith (showDefaultAnyFile Pathy.posixPrinter)
+              <> value
+                  ( Right $ Pathy.file (SProxy :: SProxy "spago-lock.json")
+                  )
+          )
+      )
 
-parseEnvVars :: Object String -> Either ErrorStack { | EnvVars () }
+parseEnvVars :: Object String -> Either String { | EnvVars () }
 parseEnvVars obj = do
   _debug <-
-    lookupEnv
+    EnvVars.lookupEnv
       { name: "DEBUG"
       , default: Just false
-      , parse: envBool
+      , parse: EnvVars.Match.boolean
       }
       obj
   _pure <-
-    lookupEnv
+    EnvVars.lookupEnv
       { name: "PURE"
       , default: Just false
-      , parse: envBool
+      , parse: EnvVars.Match.boolean
       }
       obj
   _dhallToJson <-
-    lookupEnv
+    EnvVars.lookupEnv
       { name: "DHALL_TO_JSON"
       , default: guard (not _pure) Just "dhall-to-json"
-      , parse: envString
+      , parse: EnvVars.Match.string
       }
       obj
   _nixPrefetchGit <-
-    lookupEnv
+    EnvVars.lookupEnv
       { name: "NIX_PREFETCH_GIT"
       , default: guard (not _pure) Just "nix-prefetch-git"
-      , parse: envString
+      , parse: EnvVars.Match.string
       }
       obj
   pure
@@ -90,10 +99,10 @@ parseEnvVars obj = do
 
 parseEnvDebug :: Object String -> Boolean
 parseEnvDebug obj =
-  lookupEnv
+  EnvVars.lookupEnv
     { name: "DEBUG"
     , default: Just false
-    , parse: envBool
+    , parse: EnvVars.Match.boolean
     }
     obj
     # either (const false) identity
@@ -105,26 +114,3 @@ cliParserInfo =
         <> progDesc "Generate a nix specific lock file from all packages of `packages.dhall`"
         <> header "spago2nix-ree"
     )
-
--- ENV TYPES
-envBool :: String -> Either ErrorStack Boolean
-envBool = case _ of
-  "true" -> Right true
-  "false" -> Right false
-  _ -> Left [ "Invalid boolean." ]
-
-envString :: String -> Either ErrorStack String
-envString = Right
-
--- UTIL
-lookupEnv ::
-  forall a.
-  { name :: String
-  , default :: Maybe a
-  , parse :: String -> Either ErrorStack a
-  } ->
-  Object String -> Either ErrorStack a
-lookupEnv { name, default, parse } obj = case Object.lookup name obj, default of
-  Just value, _ -> parse value
-  Nothing, Just default' -> Right default'
-  _, _ -> Left [ "Expected " <> tick name <> "." ]
