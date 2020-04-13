@@ -43,4 +43,4 @@ showDefaultAnyFile :: Pathy.Printer -> AnyFile -> String
 showDefaultAnyFile printer = either (showDefaultPath printer) (showDefaultPath printer)
 
 showDefaultPath :: forall a b. IsRelOrAbs a => IsDirOrFile b => Pathy.Printer -> Path a b -> String
-showDefaultPath printer = Pathy.sandboxAny >>> Pathy.printPath printer
+showDefaultPath printer = Pathy.sandboxAny >>> Pathy.unsafePrintPath printer

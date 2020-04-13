@@ -20,7 +20,7 @@ import Node.ChildProcess (Exit(..), defaultSpawnOptions)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
 import Pathy as Pathy
-import Pathy.Extra.Unsandboxed (printAnyFile)
+import Pathy.Extra.Unsandboxed (unsafePrintAnyFile)
 import Record (union)
 import SimpleText as SimpleText
 import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decode, decodeJson, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
@@ -96,7 +96,7 @@ nixFormat config options =
 getPackagesDhall :: Config -> ExceptT ErrorStack Aff PackagesDhall
 getPackagesDhall config =
   let
-    fileStr = printAnyFile Pathy.posixPrinter config.target
+    fileStr = unsafePrintAnyFile Pathy.posixPrinter config.target
 
     errorMsg _ =
       SimpleText.Sentence
@@ -117,7 +117,7 @@ writePackagesLock config packagesLock =
     # Codec.encode codecPackagesLock
     # stringifyPretty 2
     # writeTextFile
-        (printAnyFile Pathy.posixPrinter config.target)
+        (unsafePrintAnyFile Pathy.posixPrinter config.target)
 
 writeTextFile :: String -> String -> ExceptT ErrorStack Aff Unit
 writeTextFile path content =
@@ -143,7 +143,7 @@ runCli = do
     setCliState CliState_GetConfig
       *> Config.IO.getConfig
   packagesDhall <-
-    withCliState (CliState_ReadInput { path: printAnyFile Pathy.posixPrinter config.packagesDhall })
+    withCliState (CliState_ReadInput { path: unsafePrintAnyFile Pathy.posixPrinter config.packagesDhall })
       (getPackagesDhall config)
   let
     length = Map.size packagesDhall
@@ -163,7 +163,7 @@ runCli = do
       <#> join
       <#> Map.fromFoldable
   withCliState
-    (CliState_WriteOutput { path: printAnyFile Pathy.posixPrinter config.target })
+    (CliState_WriteOutput { path: unsafePrintAnyFile Pathy.posixPrinter config.target })
     (writePackagesLock config packagesLock)
 
 handleLocation ::

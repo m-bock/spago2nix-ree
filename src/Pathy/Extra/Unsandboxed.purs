@@ -1,12 +1,12 @@
-module Pathy.Extra.Unsandboxed where
+module Pathy.Extra.Unsandboxed (unsafePrintAnyFile) where
 
 import Prelude
 import Data.Either (either)
 import Pathy (class IsDirOrFile, class IsRelOrAbs, AnyFile, Path)
 import Pathy as Pathy
 
-printPath :: forall a b. IsRelOrAbs a => IsDirOrFile b => Pathy.Printer -> Path a b -> String
-printPath printer = Pathy.sandboxAny >>> Pathy.printPath printer
-
-printAnyFile :: Pathy.Printer -> AnyFile -> String
-printAnyFile printer = either (printPath printer) (printPath printer)
+unsafePrintAnyFile :: Pathy.Printer -> AnyFile -> String
+unsafePrintAnyFile printer = either print' print'
+  where
+  print' :: forall a b. IsRelOrAbs a => IsDirOrFile b => Path a b -> String
+  print' = Pathy.sandboxAny >>> Pathy.unsafePrintPath printer
