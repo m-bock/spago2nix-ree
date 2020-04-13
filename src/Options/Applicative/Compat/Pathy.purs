@@ -3,7 +3,6 @@ module Options.Applicative.Compat.Pathy where
 import Prelude
 import Control.Alt ((<|>))
 import Data.Either (Either(..), either)
-import Data.Lens (Iso')
 import Data.Maybe (Maybe(..))
 import Options.Applicative (ReadM)
 import Options.Applicative as Options.Applicative
