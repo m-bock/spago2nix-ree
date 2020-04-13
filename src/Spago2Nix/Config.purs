@@ -17,7 +17,7 @@ import EnvVars.Match as EnvVars.Match
 import Foreign.Object (Object)
 import Options.Applicative (Parser, ParserInfo, fullDesc, header, help, helper, info, long, metavar, option, progDesc, showDefaultWith, value, (<**>))
 import Options.Applicative.Compat.Pathy (readAnyFile, showDefaultAnyFile)
-import Pathy (AnyFile)
+import Pathy (AnyFile, (</>))
 import Pathy as Pathy
 
 type Config
@@ -46,7 +46,7 @@ parseCliArgs =
             <> help "Path to spago packages file"
             <> showDefaultWith (showDefaultAnyFile Pathy.posixPrinter)
             <> value
-                ( Right $ Pathy.file (SProxy :: SProxy "packages.dhall")
+                ( Right $ Pathy.currentDir </> Pathy.file (SProxy :: SProxy "packages.dhall")
                 )
         )
     <*> ( option (readAnyFile Pathy.posixParser)
@@ -55,7 +55,7 @@ parseCliArgs =
               <> help "Path to target file"
               <> showDefaultWith (showDefaultAnyFile Pathy.posixPrinter)
               <> value
-                  ( Right $ Pathy.file (SProxy :: SProxy "spago-lock.json")
+                  ( Right $ Pathy.currentDir </> Pathy.file (SProxy :: SProxy "spago-lock.json")
                   )
           )
       )
