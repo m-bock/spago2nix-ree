@@ -101,7 +101,7 @@ getPackagesDhall config =
     errorMsg _ =
       SimpleText.Sentence
         $ SimpleText.Texts
-            [ SimpleText.Text "Cannot read packages file at"
+            [ SimpleText.Text "Read packages file at"
             , SimpleText.Backtick $ SimpleText.Text $ fileStr
             ]
   in

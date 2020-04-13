@@ -6,14 +6,15 @@ module Spago2Nix.Data.PackagesDhall.PackageLocation
   ) where
 
 import Prelude
-import Data.Codec.Argonaut (JsonCodec)
+import Control.Alt ((<|>))
+import Data.Argonaut (Json)
+import Data.Codec (basicCodec, decode, encode)
+import Data.Codec.Argonaut (JsonCodec, JsonDecodeError(..))
 import Data.Codec.Argonaut as Codec
 import Data.Codec.Argonaut.Record as Codec.Record
-import Data.Codec.Argonaut.Variant as Codec.Variant
 import Data.Either (Either(..))
-import Data.Profunctor (dimap)
-import Data.Variant (SProxy(..))
-import Data.Variant as Variant
+import Data.Either as Either
+import Data.Maybe (Maybe, maybe)
 import Pathy (AnyDir)
 import Pathy as Pathy
 import Spago2Nix.Data.Codec.Argonaut.Compat.Pathy.Unsandboxed (codecAnyDir)
@@ -49,21 +50,22 @@ codecPackageLocal =
     , printer: Pathy.posixPrinter
     }
 
-codecPackageLocation ∷ JsonCodec PackageLocation
-codecPackageLocation =
-  dimap toVariant fromVariant
-    ( Codec.Variant.variantMatch
-        { remote: Right codecPackageRemote
-        , local: Right codecPackageLocal
-        }
-    )
+codecPackageLocation :: JsonCodec PackageLocation
+codecPackageLocation = jsonPrimCodec "PackageLocation" dec enc
   where
-  toVariant = case _ of
-    Remote x -> Variant.inj (SProxy :: _ "remote") x
-    Local x -> Variant.inj (SProxy :: _ "local") x
+  dec x =
+    (decode codecPackageRemote x <#> Remote)
+      <|> (decode codecPackageRemote x <#> Remote)
+      # Either.hush
 
-  fromVariant =
-    Variant.match
-      { remote: Remote
-      , local: Local
-      }
+  enc = case _ of
+    Remote x -> encode codecPackageRemote x
+    Local x -> encode codecPackageLocal x
+
+jsonPrimCodec ∷
+  ∀ a.
+  String →
+  (Json → Maybe a) →
+  (a → Json) →
+  JsonCodec a
+jsonPrimCodec ty f = basicCodec (maybe (Left (TypeMismatch ty)) pure <<< f)
