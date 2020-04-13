@@ -1,36 +1,17 @@
 module Spago2Nix.Data.PackagesLock
-  ( PackagesLock
-  , PackageLock
+  ( module Export
+  , PackagesLock
   , codecPackagesLock
   ) where
 
-import Prelude
 import Data.Codec.Argonaut (JsonCodec)
-import Data.Codec.Argonaut as Codec
-import Data.Codec.Argonaut.Extra (codecMap)
-import Data.Codec.Argonaut.Record as Codec.Record
+import Data.Codec.Argonaut.Extra as Codec.Extra
 import Data.Map (Map)
-import Spago2Nix.Data.PackageLocation (PackageLocation, codecPackageLocation)
+import Spago2Nix.Data.PackagesLock.PackageLocation as PackagesLock.PackageLocation
+import Spago2Nix.Data.PackagesLock.PackageLocation (PackageLocation(..)) as Export
 
 type PackagesLock
-  = Map String PackageLock
-
-type PackageLock
-  = { name :: String
-    , dependencies :: Array String
-    , version :: String
-    , location :: PackageLocation
-    }
-
-codecPackageLock ∷ JsonCodec PackageLock
-codecPackageLock =
-  Codec.object "PackageLock"
-    $ Codec.Record.record
-        { name: Codec.string
-        , dependencies: Codec.array Codec.string
-        , version: Codec.string
-        , location: codecPackageLocation
-        }
+  = Map String PackagesLock.PackageLocation.PackageLocation
 
 codecPackagesLock ∷ JsonCodec PackagesLock
-codecPackagesLock = codecMap codecPackageLock
+codecPackagesLock = Codec.Extra.codecMap PackagesLock.PackageLocation.codecPackageLocation

@@ -2,36 +2,36 @@ module Spago2Nix.IO (runCli) where
 
 import Prelude
 import Control.Bind (bindFlipped)
-import Control.Monad.Except (ExceptT(..), lift, mapExceptT, withExceptT)
+import Control.Monad.Except (ExceptT(..), mapExceptT, withExceptT)
 import Control.Parallel (class Parallel, parTraverse)
 import Data.Array (cons)
 import Data.Array as Array
 import Data.Bifunctor (lmap)
 import Data.Codec.Argonaut as Codec
-import Data.Either (Either(..), either)
+import Data.Either (Either(..))
 import Data.Map as Map
 import Data.Maybe (Maybe(..))
 import Data.Traversable (sequence)
 import Data.TraversableWithIndex (traverseWithIndex)
-import Data.Tuple.Nested ((/\))
+import Data.Tuple.Nested ((/\), type (/\))
 import Effect.Aff (Aff, try)
-import Effect.Class (liftEffect)
 import Effect.Class.Console (log)
 import Node.ChildProcess (Exit(..), defaultSpawnOptions)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
-import Node.Process as Node
-import Options.Applicative (execParser)
 import Pathy as Pathy
 import Pathy.Extra.Unsandboxed (printAnyFile)
 import Record (union)
-import SimpleText (SimpleText)
 import SimpleText as SimpleText
 import Spago2Nix.Common (ErrorStack, NixPrefetchGitResult, decode, decodeJson, joinSpaces, joinStrings, jsonParser, stringifyPretty, tick)
-import Spago2Nix.Config (CliArgs, Config, EnvVars, cliParserInfo, parseEnvVars)
+import Spago2Nix.Config (Config)
 import Spago2Nix.Config.IO as Config.IO
+import Spago2Nix.Data.PackagesDhall (PackagesDhall, codecPackagesDhall)
+import Spago2Nix.Data.PackagesDhall as PackagesDhall
 import Spago2Nix.Data.PackagesLock (PackagesLock, codecPackagesLock)
-import Spago2nix.Data.PackagesDhall (PackagesDhall, codecPackagesDhall)
+import Spago2Nix.Data.PackagesLock as PackagesLock
+import Spago2Nix.Data.URI (URI)
+import Spago2Nix.Data.URI as URI
 import Sunde as Sunde
 
 data CliState
@@ -71,11 +71,11 @@ dhallToJson config dhallCode =
 nixPrefetchGit ::
   forall cfg.
   { nixPrefetchGit :: String | cfg } ->
-  { repo :: String, rev :: String } -> ExceptT ErrorStack Aff NixPrefetchGitResult
+  { repo :: URI, rev :: String } -> ExceptT ErrorStack Aff NixPrefetchGitResult
 nixPrefetchGit config { repo, rev } =
   spawn
     { cmd: config.nixPrefetchGit
-    , args: [ repo, "--rev", rev ]
+    , args: [ URI.print repo, "--rev", rev ]
     , stdin: Nothing
     }
     # (mapExceptT <<< map <<< bindFlipped) (jsonParser >=> decodeJson)
@@ -157,7 +157,7 @@ runCli = do
           ( \chunkIndex keyValue ->
               withCliState (CliState_NixPrefetchChunk { chunkSize, index: chunkIndex, length })
                 ( keyValue
-                    # parTraverse handleLocation
+                    # parTraverse (handleLocation config)
                 )
           )
       <#> join
@@ -166,22 +166,27 @@ runCli = do
     (CliState_WriteOutput { path: printAnyFile Pathy.posixPrinter config.target })
     (writePackagesLock config packagesLock)
 
-handleLocation (key /\ spagoPackage) = do
-      nixPrefetchGitResult <-
-        nixPrefetchGit config
-          { repo: spagoPackage.repo
-          , rev: spagoPackage.version
-          }
-      let
-        value =
-          spagoPackage
-            `union`
-              { rev: nixPrefetchGitResult.rev
-              , nixSha256: nixPrefetchGitResult.sha256
-              , name: key
-              }
-      pure $ key /\ value
-  )
+handleLocation ::
+  Config ->
+  String /\ PackagesDhall.PackageLocation ->
+  ExceptT ErrorStack Aff (String /\ PackagesLock.PackageLocation)
+handleLocation config (key /\ packageLocation) = case packageLocation of
+  PackagesDhall.Local x -> pure $ key /\ PackagesLock.Local x
+  PackagesDhall.Remote package -> do
+    nixPrefetchGitResult <-
+      nixPrefetchGit config
+        { repo: package.repo
+        , rev: package.version
+        }
+    let
+      value =
+        package
+          `union`
+            { rev: nixPrefetchGitResult.rev
+            , nixSha256: nixPrefetchGitResult.sha256
+            , name: key
+            }
+    pure $ key /\ PackagesLock.Remote value
 
 parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
 parTraverse' { max } f xs =

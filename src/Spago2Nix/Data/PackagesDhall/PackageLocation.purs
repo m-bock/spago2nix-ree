@@ -1,6 +1,8 @@
-module Spago2Nix.Data.PackageLocation
+module Spago2Nix.Data.PackagesDhall.PackageLocation
   ( codecPackageLocation
-  , PackageLocation
+  , PackageLocation(..)
+  , PackageRemote
+  , PackageLocal
   ) where
 
 import Prelude

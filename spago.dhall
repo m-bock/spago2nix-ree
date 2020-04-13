@@ -8,9 +8,11 @@
   , "foreign-object"
   , "node-fs-aff"
   , "optparse"
+  , "parsing"
   , "pathy"
   , "simple-text"
   , "sunde"
+  , "uri"
   ]
 , packages = ./packages.dhall
 , sources = [ "src/**/*.purs" ]
