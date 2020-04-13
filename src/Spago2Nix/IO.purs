@@ -105,8 +105,7 @@ getPackagesDhall config =
             , SimpleText.Backtick $ SimpleText.Text $ fileStr
             ]
   in
-    dhallToJson config
-      ("./" <> fileStr)
+    dhallToJson config fileStr
       # (mapExceptT <<< map <<< bindFlipped)
           (jsonParser >=> decode codecPackagesDhall)
       # withExceptT (cons $ SimpleText.print $ errorMsg unit)

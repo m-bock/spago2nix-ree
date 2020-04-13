@@ -55,7 +55,7 @@ parseCliArgs =
               <> help "Path to target file"
               <> showDefaultWith (showDefaultAnyFile Pathy.posixPrinter)
               <> value
-                  ( Right $ Pathy.currentDir </> Pathy.file (SProxy :: SProxy "spago-lock.json")
+                  ( Right $ Pathy.currentDir </> Pathy.file (SProxy :: SProxy "packages-lock.json")
                   )
           )
       )
