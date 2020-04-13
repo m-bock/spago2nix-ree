@@ -1,12 +1,7 @@
 {
-  "dependencies": [
-    "console",
-    "effect",
-    "psci-support"
-  ],
-  "name": "my-project",
-  "packages": {
-    "aff": {
+  "aff": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "effect",
@@ -21,8 +16,11 @@
       "repo": "https://github.com/slamdata/purescript-aff.git",
       "rev": "78916a9c7e6d203f1d9f441c8eaa257d6475e978",
       "version": "v5.1.2"
-    },
-    "aff-bus": {
+    }
+  },
+  "aff-bus": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "avar",
         "prelude"
@@ -32,8 +30,11 @@
       "repo": "https://github.com/slamdata/purescript-aff-bus.git",
       "rev": "5f60dc3b29b6a37f08eacd210c979dbdfbc8ed76",
       "version": "v4.0.0"
-    },
-    "aff-coroutines": {
+    }
+  },
+  "aff-coroutines": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "avar",
@@ -45,8 +46,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-aff-coroutines.git",
       "rev": "f2f410f3cc9030487ddadf9ffdaab75ba508bde9",
       "version": "v7.0.0"
-    },
-    "aff-promise": {
+    }
+  },
+  "aff-promise": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "foreign"
@@ -56,8 +60,11 @@
       "repo": "https://github.com/nwolverson/purescript-aff-promise.git",
       "rev": "033d6b90252e0390b0de7845e21de919bc4c3a0e",
       "version": "v2.1.0"
-    },
-    "aff-retry": {
+    }
+  },
+  "aff-retry": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "psci-support",
         "console",
@@ -74,8 +81,11 @@
       "repo": "https://github.com/Unisay/purescript-aff-retry.git",
       "rev": "936fad803e3610f149df724ead288657a905cb84",
       "version": "v1.2.1"
-    },
-    "affjax": {
+    }
+  },
+  "affjax": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "argonaut-core",
@@ -96,8 +106,11 @@
       "repo": "https://github.com/slamdata/purescript-affjax.git",
       "rev": "200bad76c420935550bb9ef0ea6a548caea2ba42",
       "version": "v10.0.0"
-    },
-    "ansi": {
+    }
+  },
+  "ansi": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "lists",
@@ -108,8 +121,11 @@
       "repo": "https://github.com/hdgarrood/purescript-ansi.git",
       "rev": "e060b4a7c9a0df9359871cb0c5773139e5525d2f",
       "version": "v5.0.0"
-    },
-    "argonaut": {
+    }
+  },
+  "argonaut": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-codecs",
         "argonaut-core",
@@ -120,8 +136,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-argonaut.git",
       "rev": "3365736b862ec6d8948ea31debebd04d0abf12fc",
       "version": "v6.0.0"
-    },
-    "argonaut-codecs": {
+    }
+  },
+  "argonaut-codecs": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-core",
         "arrays",
@@ -137,8 +156,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-argonaut-codecs.git",
       "rev": "b0317d576e10aa73600c43f835bfad45679d0aff",
       "version": "v6.0.2"
-    },
-    "argonaut-core": {
+    }
+  },
+  "argonaut-core": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "control",
@@ -157,8 +179,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-argonaut-core.git",
       "rev": "50a0af2a5d9338721a251ca288fc20909a574697",
       "version": "v5.0.1"
-    },
-    "argonaut-generic": {
+    }
+  },
+  "argonaut-generic": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-codecs",
         "argonaut-core",
@@ -170,8 +195,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-argonaut-generic.git",
       "rev": "fbaa763f8cc6771c66c6207bf9c00fa56cc44a57",
       "version": "v5.0.0"
-    },
-    "argonaut-traversals": {
+    }
+  },
+  "argonaut-traversals": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-codecs",
         "argonaut-core",
@@ -182,8 +210,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-argonaut-traversals.git",
       "rev": "6613254947961686341eaa1ed23886c9d2587d93",
       "version": "v7.0.0"
-    },
-    "array-views": {
+    }
+  },
+  "array-views": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "control",
@@ -201,8 +232,11 @@
       "repo": "https://github.com/klntsky/purescript-array-views.git",
       "rev": "3882708f782eed8979435ec4b159f04e5fcd1c63",
       "version": "v0.0.2"
-    },
-    "arraybuffer": {
+    }
+  },
+  "arraybuffer": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "effect",
@@ -220,16 +254,22 @@
       "repo": "https://github.com/jacereda/purescript-arraybuffer.git",
       "rev": "7f90bc44247dcbeab70caef5d373833286468266",
       "version": "v10.0.2"
-    },
-    "arraybuffer-types": {
+    }
+  },
+  "arraybuffer-types": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "arraybuffer-types",
       "nixSha256": "059a8n49yhl46l1b1j2qj4ichzq6dzj29ajkfvw88npzj5w2rshy",
       "repo": "https://github.com/purescript-contrib/purescript-arraybuffer-types.git",
       "rev": "505aa3de50a1400e5f2fce4a8e7b1a39abaa8fd9",
       "version": "v2.0.0"
-    },
-    "arrays": {
+    }
+  },
+  "arrays": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -249,8 +289,11 @@
       "repo": "https://github.com/purescript/purescript-arrays.git",
       "rev": "463dcacb99455de5e28ac4a3312bb795f293d2d9",
       "version": "v5.3.1"
-    },
-    "assert": {
+    }
+  },
+  "assert": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -261,8 +304,11 @@
       "repo": "https://github.com/purescript/purescript-assert.git",
       "rev": "2044562f3c7c49c36ef4e63490031ed534589f6c",
       "version": "v4.1.0"
-    },
-    "avar": {
+    }
+  },
+  "avar": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "effect",
@@ -276,8 +322,11 @@
       "repo": "https://github.com/slamdata/purescript-avar.git",
       "rev": "17914413130490318a475e9de6a9244aaaa097d2",
       "version": "v3.0.0"
-    },
-    "b64": {
+    }
+  },
+  "b64": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "either",
@@ -294,8 +343,11 @@
       "repo": "https://github.com/menelaos/purescript-b64.git",
       "rev": "694b9675cce744864c49a16c7c1c53b12fefa83f",
       "version": "v0.0.6"
-    },
-    "basic-auth": {
+    }
+  },
+  "basic-auth": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "crypto",
         "node-http"
@@ -305,8 +357,11 @@
       "repo": "https://github.com/oreshinya/purescript-basic-auth.git",
       "rev": "c6e86a5153ccaee42211fb6471de9922c364acd4",
       "version": "v1.0.3"
-    },
-    "behaviors": {
+    }
+  },
+  "behaviors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "event",
@@ -323,8 +378,11 @@
       "repo": "https://github.com/paf31/purescript-behaviors.git",
       "rev": "0fc50530f71a3026bba12dd8df435bdbd9ef076a",
       "version": "v8.0.0"
-    },
-    "bifunctors": {
+    }
+  },
+  "bifunctors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "newtype",
         "prelude"
@@ -334,8 +392,11 @@
       "repo": "https://github.com/purescript/purescript-bifunctors.git",
       "rev": "1062425892b4a1c734ec653dded22546e3063b27",
       "version": "v4.0.0"
-    },
-    "bigints": {
+    }
+  },
+  "bigints": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "integers",
         "maybe",
@@ -346,8 +407,11 @@
       "repo": "https://github.com/sharkdp/purescript-bigints.git",
       "rev": "b29a2487899abc3701124701b82993a5fe129378",
       "version": "v4.0.0"
-    },
-    "biscotti-cookie": {
+    }
+  },
+  "biscotti-cookie": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "effect",
@@ -371,8 +435,11 @@
       "repo": "https://github.com/drewolson/purescript-biscotti-cookie.git",
       "rev": "f2483aa395a9ee296673bb62494c7697cb769ae6",
       "version": "v0.2.0"
-    },
-    "biscotti-session": {
+    }
+  },
+  "biscotti-session": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "argonaut",
@@ -392,8 +459,11 @@
       "repo": "https://github.com/drewolson/purescript-biscotti-session.git",
       "rev": "3508121be9a5e4f29b05187aecdefd09599f9cf3",
       "version": "v0.1.1"
-    },
-    "bower-json": {
+    }
+  },
+  "bower-json": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "generics-rep",
@@ -411,8 +481,11 @@
       "repo": "https://github.com/klntsky/purescript-bower-json.git",
       "rev": "c2880c35a99d500e71964fe4831f43a1bb7a2228",
       "version": "v1.0.0"
-    },
-    "bucketchain": {
+    }
+  },
+  "bucketchain": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "console",
@@ -425,8 +498,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain.git",
       "rev": "76b440a4f72ec50fea074098657c7392be5d23f9",
       "version": "v0.3.0"
-    },
-    "bucketchain-basic-auth": {
+    }
+  },
+  "bucketchain-basic-auth": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "basic-auth",
         "bucketchain"
@@ -436,8 +512,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-basic-auth.git",
       "rev": "146dad06ba0b7042c275f25df4db56918a10aac9",
       "version": "v0.2.0"
-    },
-    "bucketchain-conditional": {
+    }
+  },
+  "bucketchain-conditional": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain",
         "js-date"
@@ -447,8 +526,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-conditional.git",
       "rev": "2a3e4e125f49d68c1641f3ec0022d3e908695c96",
       "version": "v0.2.0"
-    },
-    "bucketchain-cors": {
+    }
+  },
+  "bucketchain-cors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain",
         "bucketchain-header-utils",
@@ -459,8 +541,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-cors.git",
       "rev": "df3d5c19af0177a0ed09df11d3edbbe66fe2711a",
       "version": "v0.3.0"
-    },
-    "bucketchain-csrf": {
+    }
+  },
+  "bucketchain-csrf": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -469,8 +554,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-csrf.git",
       "rev": "702d62c35e0fa5d498982a869e98e036009450d4",
       "version": "v0.1.0"
-    },
-    "bucketchain-header-utils": {
+    }
+  },
+  "bucketchain-header-utils": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -479,8 +567,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-header-utils.git",
       "rev": "899b4230d53a2d74e52e356e90f956d034e38e60",
       "version": "v0.3.0"
-    },
-    "bucketchain-health": {
+    }
+  },
+  "bucketchain-health": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -489,8 +580,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-health.git",
       "rev": "1022ee6cec55f49f624b904c824254cbc426cae8",
       "version": "v0.2.0"
-    },
-    "bucketchain-history-api-fallback": {
+    }
+  },
+  "bucketchain-history-api-fallback": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -499,8 +593,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-history-api-fallback.git",
       "rev": "125beca6f91e3b20cb0aad7f8eb48ec84f5c2b8f",
       "version": "v0.3.0"
-    },
-    "bucketchain-logger": {
+    }
+  },
+  "bucketchain-logger": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain",
         "js-date",
@@ -511,8 +608,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-logger.git",
       "rev": "e0d612384747eaeb630751ff33c0afcd9ded79f8",
       "version": "v0.3.0"
-    },
-    "bucketchain-secure": {
+    }
+  },
+  "bucketchain-secure": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -521,8 +621,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-secure.git",
       "rev": "d51f484c5162b2b37c129efca6b5cba01ea68565",
       "version": "v0.1.0"
-    },
-    "bucketchain-simple-api": {
+    }
+  },
+  "bucketchain-simple-api": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain",
         "media-types",
@@ -534,8 +637,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-simple-api.git",
       "rev": "d1809a5371f96970b372669d5ec802866b395046",
       "version": "v3.0.0"
-    },
-    "bucketchain-sslify": {
+    }
+  },
+  "bucketchain-sslify": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain"
       ],
@@ -544,8 +650,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-sslify.git",
       "rev": "4bb3dfdf8ea444ab43b4b81a7a48ecca509a778f",
       "version": "v0.2.0"
-    },
-    "bucketchain-static": {
+    }
+  },
+  "bucketchain-static": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bucketchain",
         "node-fs-aff"
@@ -555,8 +664,11 @@
       "repo": "https://github.com/Bucketchain/purescript-bucketchain-static.git",
       "rev": "0c8b21f957e6c8dd66c789cebf2ab92b1b26dc2d",
       "version": "v0.3.0"
-    },
-    "bytestrings": {
+    }
+  },
+  "bytestrings": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "effect",
@@ -577,8 +689,11 @@
       "repo": "https://github.com/rightfold/purescript-bytestrings.git",
       "rev": "60a75042e0c1dd5663cf1f46bd2a737399843f38",
       "version": "v8.0.0"
-    },
-    "canvas": {
+    }
+  },
+  "canvas": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "effect",
@@ -591,8 +706,11 @@
       "repo": "https://github.com/purescript-web/purescript-canvas.git",
       "rev": "bbdc02388f2cc612324aa8c1eef7877666bf1bd2",
       "version": "v4.0.0"
-    },
-    "cartesian": {
+    }
+  },
+  "cartesian": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -604,8 +722,11 @@
       "repo": "https://github.com/Ebmtranceboy/purescript-cartesian.git",
       "rev": "b752b0a53f007ca8aa9e319eb91fd6a997c14365",
       "version": "v1.0.4"
-    },
-    "catenable-lists": {
+    }
+  },
+  "catenable-lists": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "foldable-traversable",
@@ -620,8 +741,11 @@
       "repo": "https://github.com/purescript/purescript-catenable-lists.git",
       "rev": "d81b7df30d9879d0bb531b3102fb36f429c2f12e",
       "version": "v5.0.1"
-    },
-    "checked-exceptions": {
+    }
+  },
+  "checked-exceptions": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "transformers",
@@ -632,8 +756,11 @@
       "repo": "https://github.com/natefaubion/purescript-checked-exceptions.git",
       "rev": "b73844cfb6e128afb521a3d5aa61410fbe9992dc",
       "version": "v3.1.0"
-    },
-    "cheerio": {
+    }
+  },
+  "cheerio": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -646,8 +773,11 @@
       "repo": "https://github.com/icyrockcom/purescript-cheerio.git",
       "rev": "a2f0cb8c4e3e591a9209d924a50f05bee6d33e0a",
       "version": "v0.2.1"
-    },
-    "chirashi": {
+    }
+  },
+  "chirashi": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "exceptions",
         "prelude",
@@ -659,8 +789,11 @@
       "repo": "https://github.com/justinwoo/purescript-chirashi.git",
       "rev": "3589e247a0f269b0f7552828876b965eaa2fcafd",
       "version": "v1.0.0"
-    },
-    "choco-pie": {
+    }
+  },
+  "choco-pie": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "event",
         "prelude",
@@ -672,8 +805,11 @@
       "repo": "https://github.com/justinwoo/purescript-chocopie.git",
       "rev": "c842beb9468e8cedb17f7a31b3e8166be05b0856",
       "version": "v5.0.0"
-    },
-    "colors": {
+    }
+  },
+  "colors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "integers",
@@ -686,8 +822,11 @@
       "repo": "https://github.com/sharkdp/purescript-colors.git",
       "rev": "fb582d3626e566371d20d4ef0b8d2795ee80f024",
       "version": "v5.0.0"
-    },
-    "concur-core": {
+    }
+  },
+  "concur-core": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "arrays",
@@ -704,8 +843,11 @@
       "repo": "https://github.com/purescript-concur/purescript-concur-core.git",
       "rev": "cf567149de0cff3e6fc4ea079204c3739ad0fa10",
       "version": "v0.4.1"
-    },
-    "concur-react": {
+    }
+  },
+  "concur-react": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "arrays",
@@ -726,8 +868,11 @@
       "repo": "https://github.com/purescript-concur/purescript-concur-react.git",
       "rev": "720879aba03c0cdfaad0d813d7b0fb5f32e8d614",
       "version": "v0.4.1"
-    },
-    "console": {
+    }
+  },
+  "console": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "prelude"
@@ -737,8 +882,11 @@
       "repo": "https://github.com/purescript/purescript-console.git",
       "rev": "9b48f83997168b94418d64d9e7b5c1763b30bdab",
       "version": "v4.4.0"
-    },
-    "const": {
+    }
+  },
+  "const": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "contravariant",
         "foldable-traversable",
@@ -751,8 +899,11 @@
       "repo": "https://github.com/purescript/purescript-const.git",
       "rev": "bc5db27b0ed3947fa5e2074ccbab01236eec3fa4",
       "version": "v4.1.0"
-    },
-    "contravariant": {
+    }
+  },
+  "contravariant": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "newtype",
@@ -764,8 +915,11 @@
       "repo": "https://github.com/purescript/purescript-contravariant.git",
       "rev": "cb69db0253c2e2ed3fef784dad58f3418a8ee834",
       "version": "v4.0.1"
-    },
-    "control": {
+    }
+  },
+  "control": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "newtype"
@@ -775,8 +929,11 @@
       "repo": "https://github.com/purescript/purescript-control.git",
       "rev": "05d40c5855a0eda3bc396a3d815eaf213a0534e6",
       "version": "v4.2.0"
-    },
-    "coroutines": {
+    }
+  },
+  "coroutines": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freet",
         "parallel",
@@ -787,8 +944,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-coroutines.git",
       "rev": "67a076b704f4b176f9332e8dc82d531a357e00ac",
       "version": "v5.0.1"
-    },
-    "crypto": {
+    }
+  },
+  "crypto": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "node-buffer"
       ],
@@ -797,8 +957,11 @@
       "repo": "https://github.com/oreshinya/purescript-crypto.git",
       "rev": "0acc404042b5effa63d5aee08ffcc1b3e1e0e5ce",
       "version": "v2.0.1"
-    },
-    "css": {
+    }
+  },
+  "css": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "colors",
         "console",
@@ -814,8 +977,11 @@
       "repo": "https://github.com/slamdata/purescript-css.git",
       "rev": "0164325e66dd59b3b5a4ea53ac8adf7d389b4c8e",
       "version": "v4.0.0"
-    },
-    "cssom": {
+    }
+  },
+  "cssom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect"
       ],
@@ -824,8 +990,11 @@
       "repo": "https://github.com/danieljharvey/purescript-cssom.git",
       "rev": "bd1fffc883f18cc6a79ce41e1e688b5a0f0351f7",
       "version": "v0.0.2"
-    },
-    "data-algebrae": {
+    }
+  },
+  "data-algebrae": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "foreign-object",
@@ -841,8 +1010,11 @@
       "repo": "https://github.com/i-am-tom/purescript-data-algebrae.git",
       "rev": "0085f81647b7a84f79d75e13428ce4eed35cc9be",
       "version": "v4.0.0"
-    },
-    "datetime": {
+    }
+  },
+  "datetime": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -866,8 +1038,11 @@
       "repo": "https://github.com/purescript/purescript-datetime.git",
       "rev": "9e76abe96f45a68eb0bb23d0afd56031a8070bee",
       "version": "v4.1.1"
-    },
-    "debug": {
+    }
+  },
+  "debug": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -876,8 +1051,11 @@
       "repo": "https://github.com/garyb/purescript-debug.git",
       "rev": "b1484b8aac685dc83c1d938d71407495ae2a2259",
       "version": "v4.0.0"
-    },
-    "decimals": {
+    }
+  },
+  "decimals": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe"
       ],
@@ -886,8 +1064,11 @@
       "repo": "https://github.com/sharkdp/purescript-decimals.git",
       "rev": "4911f744fb7db6519758b6993edc28d0f81e0a89",
       "version": "v5.0.0"
-    },
-    "distributive": {
+    }
+  },
+  "distributive": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "identity",
         "newtype",
@@ -898,8 +1079,11 @@
       "repo": "https://github.com/purescript/purescript-distributive.git",
       "rev": "3a43c0690883816e9ebeac510698423cfff5c174",
       "version": "v4.0.0"
-    },
-    "dom-filereader": {
+    }
+  },
+  "dom-filereader": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "arraybuffer-types",
@@ -911,8 +1095,11 @@
       "repo": "https://github.com/nwolverson/purescript-dom-filereader.git",
       "rev": "14ef7eb23c7b90113c3a9d0e745359a6efecbff1",
       "version": "v5.0.0"
-    },
-    "dom-indexed": {
+    }
+  },
+  "dom-indexed": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "media-types",
         "prelude",
@@ -924,8 +1111,11 @@
       "repo": "https://github.com/slamdata/purescript-dom-indexed.git",
       "rev": "c449ae115bffe1fce89e145da62b862ad16ed935",
       "version": "v7.0.0"
-    },
-    "dotenv": {
+    }
+  },
+  "dotenv": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "node-fs-aff",
@@ -942,8 +1132,11 @@
       "repo": "https://github.com/nsaunders/purescript-dotenv.git",
       "rev": "641fd4cdd48c30faea233c094f06e1b7ddb87c77",
       "version": "v1.0.0"
-    },
-    "drawing": {
+    }
+  },
+  "drawing": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "canvas",
         "colors",
@@ -957,8 +1150,11 @@
       "repo": "https://github.com/paf31/purescript-drawing.git",
       "rev": "60dafc4cf155896e307a8cc1696d95d53cff8acb",
       "version": "v4.0.0"
-    },
-    "effect": {
+    }
+  },
+  "effect": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -967,8 +1163,11 @@
       "repo": "https://github.com/purescript/purescript-effect.git",
       "rev": "6caa8e1e162a21eed025613c2c19194b996ef779",
       "version": "v2.0.1"
-    },
-    "either": {
+    }
+  },
+  "either": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -982,8 +1181,11 @@
       "repo": "https://github.com/purescript/purescript-either.git",
       "rev": "8b4b38a729f8e88750b03e5c7baf2b3863ce4742",
       "version": "v4.1.1"
-    },
-    "email-validate": {
+    }
+  },
+  "email-validate": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "generics-rep",
@@ -995,8 +1197,11 @@
       "repo": "https://github.com/cdepillabout/purescript-email-validate.git",
       "rev": "b73471c0f479b6a5ad6fb903d3388013a9b79810",
       "version": "v5.0.0"
-    },
-    "encoding": {
+    }
+  },
+  "encoding": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "either",
@@ -1009,8 +1214,11 @@
       "repo": "https://github.com/menelaos/purescript-encoding.git",
       "rev": "e45941150c75f26ab53cb5e34207cc347b375942",
       "version": "v0.0.6"
-    },
-    "enums": {
+    }
+  },
+  "enums": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "either",
@@ -1028,8 +1236,11 @@
       "repo": "https://github.com/purescript/purescript-enums.git",
       "rev": "19800105b556798ea5650f8a01bfe5ea17cfc6eb",
       "version": "v4.0.1"
-    },
-    "errors": {
+    }
+  },
+  "errors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "effect",
@@ -1042,8 +1253,11 @@
       "repo": "https://github.com/passy/purescript-errors.git",
       "rev": "30abf43a6e6b62552e18769c0b624c1d7ef10f7d",
       "version": "v4.1.0"
-    },
-    "event": {
+    }
+  },
+  "event": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -1059,8 +1273,11 @@
       "repo": "https://github.com/paf31/purescript-event.git",
       "rev": "5c3cf3866c01d8faed1763bb9f738db22a5ff4bb",
       "version": "v1.3.0"
-    },
-    "exceptions": {
+    }
+  },
+  "exceptions": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "either",
@@ -1072,8 +1289,11 @@
       "repo": "https://github.com/purescript/purescript-exceptions.git",
       "rev": "9012eb08749e9ccd5da45bdece5d576e5fc0b0db",
       "version": "v4.0.0"
-    },
-    "exists": {
+    }
+  },
+  "exists": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "unsafe-coerce"
       ],
@@ -1082,8 +1302,11 @@
       "repo": "https://github.com/purescript/purescript-exists.git",
       "rev": "ef53359aebc09bf863800ca86ad1dcd76f0b08ae",
       "version": "v4.0.0"
-    },
-    "exitcodes": {
+    }
+  },
+  "exitcodes": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "enums"
       ],
@@ -1092,8 +1315,11 @@
       "repo": "https://github.com/Risto-Stevcev/purescript-exitcodes.git",
       "rev": "8a9a93fd1776aba4a14cdc9a31094c9e05b05348",
       "version": "v4.0.0"
-    },
-    "expect-inferred": {
+    }
+  },
+  "expect-inferred": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "typelevel-prelude"
@@ -1103,8 +1329,11 @@
       "repo": "https://github.com/justinwoo/purescript-expect-inferred.git",
       "rev": "68d560ed30919cb0146a1136e3826c9b4c8264a4",
       "version": "v2.0.0"
-    },
-    "express": {
+    }
+  },
+  "express": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "foreign",
@@ -1117,8 +1346,11 @@
       "repo": "https://github.com/nkly/purescript-express.git",
       "rev": "7fb13122e864590abc71a0b1675a1818db399254",
       "version": "v0.8.0"
-    },
-    "filterable": {
+    }
+  },
+  "filterable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "either",
@@ -1132,8 +1364,11 @@
       "repo": "https://github.com/LiamGoodacre/purescript-filterable.git",
       "rev": "b7bff31576261bc66bf29bfeca7679c2b107d68e",
       "version": "v3.0.2"
-    },
-    "fixed-points": {
+    }
+  },
+  "fixed-points": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "exists",
         "newtype",
@@ -1145,8 +1380,11 @@
       "repo": "https://github.com/slamdata/purescript-fixed-points.git",
       "rev": "44ae7a7135bd17dc6d865d31f166a8cf5fa65c7e",
       "version": "v5.1.0"
-    },
-    "flare": {
+    }
+  },
+  "flare": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "canvas",
         "datetime",
@@ -1164,8 +1402,11 @@
       "repo": "https://github.com/sharkdp/purescript-flare.git",
       "rev": "1846a3d0cadd31945a4ee81e1ae5442c777c7479",
       "version": "v6.0.0"
-    },
-    "float32": {
+    }
+  },
+  "float32": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "prelude"
@@ -1175,8 +1416,11 @@
       "repo": "https://github.com/athanclark/purescript-float32.git",
       "rev": "1ca78fedb0b2da65b9ec0969d16c0bb7155e4f29",
       "version": "v0.1.1"
-    },
-    "flow-id": {
+    }
+  },
+  "flow-id": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "simple-json"
@@ -1186,8 +1430,11 @@
       "repo": "https://github.com/i-am-the-slime/purescript-flow-id.git",
       "rev": "127459a340241fe0e056237b19314bbf9b2d3caa",
       "version": "v1.0.0"
-    },
-    "foldable-traversable": {
+    }
+  },
+  "foldable-traversable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -1201,8 +1448,11 @@
       "repo": "https://github.com/purescript/purescript-foldable-traversable.git",
       "rev": "29d5b873cc86f17e0082d777629819a96bdbc7a1",
       "version": "v4.1.1"
-    },
-    "folds": {
+    }
+  },
+  "folds": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "ordered-collections",
@@ -1213,8 +1463,11 @@
       "repo": "https://github.com/paf31/purescript-folds.git",
       "rev": "996d88ac0d71df73f3a2e80eca80e41347fef01a",
       "version": "v5.2.0"
-    },
-    "foreign": {
+    }
+  },
+  "foreign": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "functions",
@@ -1231,8 +1484,11 @@
       "repo": "https://github.com/purescript/purescript-foreign.git",
       "rev": "3b8f3ae608db339ed5cff35d2017a07efb905b4d",
       "version": "v5.0.0"
-    },
-    "foreign-generic": {
+    }
+  },
+  "foreign-generic": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "exceptions",
@@ -1249,8 +1505,11 @@
       "repo": "https://github.com/paf31/purescript-foreign-generic.git",
       "rev": "46f09996bd54efc146bc1725783789dbac7d6a5b",
       "version": "v10.0.0"
-    },
-    "foreign-object": {
+    }
+  },
+  "foreign-object": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "foldable-traversable",
@@ -1270,8 +1529,11 @@
       "repo": "https://github.com/purescript/purescript-foreign-object.git",
       "rev": "8a7dc21c48e3e6d31e253b0e58dd95a3bbd7f6e7",
       "version": "v2.0.3"
-    },
-    "fork": {
+    }
+  },
+  "fork": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff"
       ],
@@ -1280,8 +1542,11 @@
       "repo": "https://github.com/slamdata/purescript-fork.git",
       "rev": "27b9f223645a08b42731531a154892eaa263b590",
       "version": "v4.0.0"
-    },
-    "form-urlencoded": {
+    }
+  },
+  "form-urlencoded": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "globals",
         "maybe",
@@ -1295,8 +1560,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-form-urlencoded.git",
       "rev": "acccb8ae3e38ffc5d2803d576bb6e409adee7195",
       "version": "v5.0.0"
-    },
-    "format": {
+    }
+  },
+  "format": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "effect",
@@ -1311,8 +1579,11 @@
       "repo": "https://github.com/sharkdp/purescript-format.git",
       "rev": "764c4f4a9f7d01f9572cf34449d6a0ffbe3bb89a",
       "version": "v4.0.0"
-    },
-    "format-nix": {
+    }
+  },
+  "format-nix": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "motsunabe",
@@ -1323,8 +1594,11 @@
       "repo": "https://github.com/justinwoo/format-nix.git",
       "rev": "ca32a16deee11127b620470e63a1370d77a48975",
       "version": "v0.3.0"
-    },
-    "formatters": {
+    }
+  },
+  "formatters": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "fixed-points",
@@ -1339,8 +1613,11 @@
       "repo": "https://github.com/slamdata/purescript-formatters.git",
       "rev": "c39ae1fef63a4c5ed6ccb9faf80e6b99922a369b",
       "version": "v4.0.1"
-    },
-    "free": {
+    }
+  },
+  "free": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "catenable-lists",
         "control",
@@ -1362,8 +1639,11 @@
       "repo": "https://github.com/purescript/purescript-free.git",
       "rev": "f686f5fc07766f3ca9abc83b47b6ad3da326759a",
       "version": "v5.2.0"
-    },
-    "freeap": {
+    }
+  },
+  "freeap": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "const",
         "exists",
@@ -1375,8 +1655,11 @@
       "repo": "https://github.com/ethul/purescript-freeap.git",
       "rev": "8f7bebc36c267794c31d5af1a5737746645e59df",
       "version": "v5.0.1"
-    },
-    "freedom": {
+    }
+  },
+  "freedom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "console",
@@ -1391,8 +1674,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom.git",
       "rev": "1fb6005768e2cbbc45b687f2960dc25fa0869348",
       "version": "v1.4.1"
-    },
-    "freedom-now": {
+    }
+  },
+  "freedom-now": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom",
         "js-timers"
@@ -1402,8 +1688,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-now.git",
       "rev": "a0fdc1fd1648f29f1d0dd7b2d4803e7c491231f2",
       "version": "v2.0.0"
-    },
-    "freedom-portal": {
+    }
+  },
+  "freedom-portal": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom"
       ],
@@ -1412,8 +1701,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-portal.git",
       "rev": "8ab5580739d0098d494dc1170b3d162144fd141d",
       "version": "v1.0.0"
-    },
-    "freedom-router": {
+    }
+  },
+  "freedom-router": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom",
         "profunctor"
@@ -1423,8 +1715,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-router.git",
       "rev": "bf759ae5af1ab28abd66111c3741b67e728a4fdb",
       "version": "v1.0.1"
-    },
-    "freedom-transition": {
+    }
+  },
+  "freedom-transition": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom",
         "js-timers"
@@ -1434,8 +1729,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-transition.git",
       "rev": "9eb2e6bc30d2fb1f34e24736248f1c63df978d4d",
       "version": "v1.0.1"
-    },
-    "freedom-virtualized": {
+    }
+  },
+  "freedom-virtualized": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom"
       ],
@@ -1444,8 +1742,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-virtualized.git",
       "rev": "4005d846f8b90b708817f5635d3d7f113408c658",
       "version": "v2.0.0"
-    },
-    "freedom-window-resize": {
+    }
+  },
+  "freedom-window-resize": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freedom"
       ],
@@ -1454,8 +1755,11 @@
       "repo": "https://github.com/purescript-freedom/purescript-freedom-window-resize.git",
       "rev": "a801a362c65813661af05616e4c06396d50e9ade",
       "version": "v1.0.0"
-    },
-    "freet": {
+    }
+  },
+  "freet": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "effect",
@@ -1471,8 +1775,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-freet.git",
       "rev": "aecca5b389aecf15a37e369b76d7d0064223996d",
       "version": "v5.0.0"
-    },
-    "functions": {
+    }
+  },
+  "functions": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -1481,8 +1788,11 @@
       "repo": "https://github.com/purescript/purescript-functions.git",
       "rev": "c63451ae74f6fba7a4eede5f87208a73c537af77",
       "version": "v4.0.0"
-    },
-    "functors": {
+    }
+  },
+  "functors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "const",
@@ -1500,8 +1810,11 @@
       "repo": "https://github.com/purescript/purescript-functors.git",
       "rev": "96bcf8a970a40115a76a20d19e50aa3b524adcf3",
       "version": "v3.1.1"
-    },
-    "fuzzy": {
+    }
+  },
+  "fuzzy": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "foreign-object",
@@ -1519,8 +1832,11 @@
       "repo": "https://github.com/citizennet/purescript-fuzzy.git",
       "rev": "3c63d2a61b582f795644c3e2697746a87f96427a",
       "version": "v0.2.1"
-    },
-    "gen": {
+    }
+  },
+  "gen": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "foldable-traversable",
@@ -1538,8 +1854,11 @@
       "repo": "https://github.com/purescript/purescript-gen.git",
       "rev": "36f36f03f082b57e402c27f1513f8935caa54101",
       "version": "v2.1.1"
-    },
-    "generics-rep": {
+    }
+  },
+  "generics-rep": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "enums",
         "foldable-traversable",
@@ -1552,8 +1871,11 @@
       "repo": "https://github.com/purescript/purescript-generics-rep.git",
       "rev": "aae27ba1de21dda342dcdfc8b3cc5b951bd5b3ec",
       "version": "v6.1.1"
-    },
-    "globals": {
+    }
+  },
+  "globals": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "functions",
         "maybe"
@@ -1563,8 +1885,11 @@
       "repo": "https://github.com/purescript/purescript-globals.git",
       "rev": "8e6d69c36b6fd8c988a3664fc033ad11dbdd5860",
       "version": "v4.1.0"
-    },
-    "gomtang-basic": {
+    }
+  },
+  "gomtang-basic": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -1577,8 +1902,11 @@
       "repo": "https://github.com/justinwoo/purescript-gomtang-basic.git",
       "rev": "8c47355f29b85a6a64c61f90190d525dcc9221d9",
       "version": "v0.2.0"
-    },
-    "group": {
+    }
+  },
+  "group": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "lists"
       ],
@@ -1587,8 +1915,11 @@
       "repo": "https://github.com/morganthomas/purescript-group.git",
       "rev": "8e1fcc20c636d3c67732f09c30b46f9e14ba8af4",
       "version": "v4.1.1"
-    },
-    "halogen": {
+    }
+  },
+  "halogen": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "avar",
@@ -1616,8 +1947,11 @@
       "repo": "https://github.com/slamdata/purescript-halogen.git",
       "rev": "dd301747260620946956048a86e07e9efe1b6380",
       "version": "v5.0.0-rc.7"
-    },
-    "halogen-bootstrap": {
+    }
+  },
+  "halogen-bootstrap": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "halogen"
       ],
@@ -1626,8 +1960,11 @@
       "repo": "https://github.com/slamdata/purescript-halogen-bootstrap.git",
       "rev": "9289a84f989c2572fbdbd49af2fcdd8175d3d7a0",
       "version": "v8.0.0"
-    },
-    "halogen-bootstrap4": {
+    }
+  },
+  "halogen-bootstrap4": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "halogen"
       ],
@@ -1636,8 +1973,11 @@
       "repo": "https://github.com/mschristiansen/purescript-halogen-bootstrap4.git",
       "rev": "1f3c45119b1679766dfcaf6402c0a52d313991ea",
       "version": "v0.1.4"
-    },
-    "halogen-css": {
+    }
+  },
+  "halogen-css": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "css",
         "halogen"
@@ -1647,8 +1987,11 @@
       "repo": "https://github.com/slamdata/purescript-halogen-css.git",
       "rev": "1600df2902eccc3e3c73559a3446c99469885af6",
       "version": "v8.0.0"
-    },
-    "halogen-formless": {
+    }
+  },
+  "halogen-formless": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "halogen",
         "variant",
@@ -1661,8 +2004,11 @@
       "repo": "https://github.com/thomashoneyman/purescript-halogen-formless.git",
       "rev": "97aaa24d411cc061ee5da3d611477aa0cc4aa084",
       "version": "v1.0.0-rc.1"
-    },
-    "halogen-select": {
+    }
+  },
+  "halogen-select": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "halogen",
         "record"
@@ -1672,8 +2018,11 @@
       "repo": "https://github.com/citizennet/purescript-halogen-select.git",
       "rev": "f0a1ce0b45bb0e8c39bb123bb4d6577ce43b1a2d",
       "version": "v5.0.0-rc.4"
-    },
-    "halogen-vdom": {
+    }
+  },
+  "halogen-vdom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "effect",
@@ -1691,8 +2040,11 @@
       "repo": "https://github.com/slamdata/purescript-halogen-vdom.git",
       "rev": "34c032aa5f72b600d69ab970e2737ca533c6c118",
       "version": "v6.1.0"
-    },
-    "heterogeneous": {
+    }
+  },
+  "heterogeneous": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "functors",
@@ -1706,8 +2058,11 @@
       "repo": "https://github.com/natefaubion/purescript-heterogeneous.git",
       "rev": "854e6fe8e52c570954c22275aaf657ef068c73f8",
       "version": "v0.4.1"
-    },
-    "higher-order": {
+    }
+  },
+  "higher-order": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "catenable-lists",
         "const",
@@ -1724,8 +2079,11 @@
       "repo": "https://github.com/matthew-hilty/purescript-higher-order.git",
       "rev": "ca9dfe863a816ab7a210b8f895984965fe9a11b5",
       "version": "v0.2.0"
-    },
-    "http-methods": {
+    }
+  },
+  "http-methods": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "prelude",
@@ -1736,8 +2094,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-http-methods.git",
       "rev": "f3672edd166d323849b9dfd1e01c6eeb978fd56c",
       "version": "v4.0.2"
-    },
-    "httpure": {
+    }
+  },
+  "httpure": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "arrays",
@@ -1775,8 +2136,11 @@
       "repo": "https://github.com/cprussin/purescript-httpure.git",
       "rev": "a12e63b87984e3df3cf36bf931392f97790906fd",
       "version": "v0.10.0"
-    },
-    "httpure-contrib-biscotti": {
+    }
+  },
+  "httpure-contrib-biscotti": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "argonaut",
@@ -1798,8 +2162,11 @@
       "repo": "https://github.com/drewolson/purescript-httpure-contrib-biscotti.git",
       "rev": "5594edadc3c958cc9f8e98e6610854104ba6c104",
       "version": "v0.1.1"
-    },
-    "hyper": {
+    }
+  },
+  "hyper": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "avar",
@@ -1829,8 +2196,11 @@
       "repo": "https://github.com/purescript-hyper/hyper.git",
       "rev": "c3498d2e2d41e1bb86a1aaeae64058fd6ffe4c2d",
       "version": "v0.11.0"
-    },
-    "hypertrout": {
+    }
+  },
+  "hypertrout": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-generic",
         "console",
@@ -1843,8 +2213,11 @@
       "repo": "https://github.com/purescript-hyper/purescript-hypertrout.git",
       "rev": "b1643fed848e317c10f86eae34ec96d9c6b87b1b",
       "version": "v0.11.0"
-    },
-    "identity": {
+    }
+  },
+  "identity": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "foldable-traversable",
@@ -1857,8 +2230,11 @@
       "repo": "https://github.com/purescript/purescript-identity.git",
       "rev": "1b7938abdc8cb28c0ac5f80f63405d53e3173a8e",
       "version": "v4.1.0"
-    },
-    "identy": {
+    }
+  },
+  "identy": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "simple-json"
       ],
@@ -1867,8 +2243,11 @@
       "repo": "https://github.com/oreshinya/purescript-identy.git",
       "rev": "aa7ec7233f29d19893f4cf416a4dcc566ee822bc",
       "version": "v2.1.0"
-    },
-    "indexed-monad": {
+    }
+  },
+  "indexed-monad": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "newtype"
@@ -1878,8 +2257,11 @@
       "repo": "https://github.com/garyb/purescript-indexed-monad.git",
       "rev": "7793cdc95e583174b71e36a97c0a25529b220e42",
       "version": "v1.2.0"
-    },
-    "integers": {
+    }
+  },
+  "integers": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "globals",
         "math",
@@ -1891,8 +2273,11 @@
       "repo": "https://github.com/purescript/purescript-integers.git",
       "rev": "3850da9cd96b37c71685b6bc3bf0cb489baefc93",
       "version": "v4.0.0"
-    },
-    "invariant": {
+    }
+  },
+  "invariant": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -1901,8 +2286,11 @@
       "repo": "https://github.com/purescript/purescript-invariant.git",
       "rev": "b704c5bda262719ca5cc88a3f8554edff8f03256",
       "version": "v4.1.0"
-    },
-    "jajanmen": {
+    }
+  },
+  "jajanmen": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "node-sqlite3",
         "prelude",
@@ -1913,8 +2301,11 @@
       "repo": "https://github.com/justinwoo/purescript-jajanmen.git",
       "rev": "91c2ed5a54fd539d8d94f741a2027b774d0816a7",
       "version": "v1.0.0"
-    },
-    "jquery": {
+    }
+  },
+  "jquery": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -1926,8 +2317,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-jquery.git",
       "rev": "cb46882fc478fa01e9189561a146d3e9526e2a4c",
       "version": "v5.0.0"
-    },
-    "js-date": {
+    }
+  },
+  "js-date": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "exceptions",
@@ -1940,8 +2334,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-js-date.git",
       "rev": "f332c15f14322434ddd1945ca2db8040294447bf",
       "version": "v6.0.0"
-    },
-    "js-timers": {
+    }
+  },
+  "js-timers": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect"
       ],
@@ -1950,8 +2347,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-js-timers.git",
       "rev": "8206d3d8034357b4665828e52f7ff1b8cb46611e",
       "version": "v4.0.1"
-    },
-    "json-pointer": {
+    }
+  },
+  "json-pointer": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -1967,8 +2367,11 @@
       "repo": "https://github.com/reactormonk/purescript-json-pointer.git",
       "rev": "9400087fc48282c1720eb3e38f59a3c3fe72ec8d",
       "version": "v0.1.0"
-    },
-    "json-schema": {
+    }
+  },
+  "json-schema": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "prelude",
@@ -1979,8 +2382,11 @@
       "repo": "https://github.com/felixmulder/purescript-json-schema.git",
       "rev": "43a7e7fcb29ea80fabef128a55d166032baa959f",
       "version": "v0.0.1"
-    },
-    "jwt": {
+    }
+  },
+  "jwt": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-core",
         "arrays",
@@ -1997,8 +2403,11 @@
       "repo": "https://github.com/menelaos/purescript-jwt.git",
       "rev": "d543bcd54f4854057f2272654a8bf69f07bd9031",
       "version": "v0.0.7"
-    },
-    "kancho": {
+    }
+  },
+  "kancho": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foreign",
         "newtype",
@@ -2010,8 +2419,11 @@
       "repo": "https://github.com/justinwoo/purescript-kancho.git",
       "rev": "81df453734ea516a63940b4964810f01531d18b4",
       "version": "v2.0.0"
-    },
-    "kishimen": {
+    }
+  },
+  "kishimen": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "prelude",
@@ -2023,8 +2435,11 @@
       "repo": "https://github.com/justinwoo/purescript-kishimen.git",
       "rev": "8a9b11f9bcdaf4ff63c2e572def3d0b2a4e2c870",
       "version": "v1.0.1"
-    },
-    "lazy": {
+    }
+  },
+  "lazy": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "foldable-traversable",
@@ -2036,8 +2451,11 @@
       "repo": "https://github.com/purescript/purescript-lazy.git",
       "rev": "5bbd04f507a704f39aa756b5e12ed6665205fe2e",
       "version": "v4.0.0"
-    },
-    "lcg": {
+    }
+  },
+  "lcg": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "integers",
@@ -2052,8 +2470,11 @@
       "repo": "https://github.com/purescript/purescript-lcg.git",
       "rev": "596bcb17bd550397735220f919df52bcd0038fe0",
       "version": "v2.0.0"
-    },
-    "leibniz": {
+    }
+  },
+  "leibniz": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "unsafe-coerce"
@@ -2063,8 +2484,11 @@
       "repo": "https://github.com/paf31/purescript-leibniz.git",
       "rev": "ed1fa97012a01126c499f2d0e28dfea2919296b3",
       "version": "v5.0.0"
-    },
-    "lenient-html-parser": {
+    }
+  },
+  "lenient-html-parser": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "generics-rep",
@@ -2076,8 +2500,11 @@
       "repo": "https://github.com/justinwoo/purescript-lenient-html-parser.git",
       "rev": "9e249aa16279d6a63de0d87ef0b624203e9a7f7c",
       "version": "v4.0.0"
-    },
-    "lists": {
+    }
+  },
+  "lists": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -2097,8 +2524,11 @@
       "repo": "https://github.com/purescript/purescript-lists.git",
       "rev": "62900a56f6864638c952575dfd211a1cc55be7da",
       "version": "v5.4.1"
-    },
-    "machines": {
+    }
+  },
+  "machines": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "control",
@@ -2115,8 +2545,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-machines.git",
       "rev": "a600c024ce9a2a391898cc2195f1e144ef72e22f",
       "version": "v5.1.0"
-    },
-    "makkori": {
+    }
+  },
+  "makkori": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "functions",
         "node-http",
@@ -2128,16 +2561,22 @@
       "repo": "https://github.com/justinwoo/purescript-makkori.git",
       "rev": "bdd0e3899075b86e860b310fd69353ac80a85a98",
       "version": "v1.0.0"
-    },
-    "math": {
+    }
+  },
+  "math": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "math",
       "nixSha256": "1msmy9w7y6fij62sdc55w68gpwkhm6lhgc8qjisjk4sxx1wdg1rr",
       "repo": "https://github.com/purescript/purescript-math.git",
       "rev": "8be36d24f9d2d8795adf04791446bbc458297b9b",
       "version": "v2.1.1"
-    },
-    "matrices": {
+    }
+  },
+  "matrices": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "strings"
@@ -2147,8 +2586,11 @@
       "repo": "https://github.com/kritzcreek/purescript-matrices.git",
       "rev": "7ddcd2d09f94757374ddab3c9879d459a023ee17",
       "version": "v4.0.0"
-    },
-    "maybe": {
+    }
+  },
+  "maybe": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "invariant",
@@ -2160,8 +2602,11 @@
       "repo": "https://github.com/purescript/purescript-maybe.git",
       "rev": "81f0397636bcbca28642f62421aebfd9e1afa7fb",
       "version": "v4.0.1"
-    },
-    "media-types": {
+    }
+  },
+  "media-types": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "newtype",
         "prelude"
@@ -2171,8 +2616,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-media-types.git",
       "rev": "e304498356539547b4ed9a7f79513a847c907962",
       "version": "v4.0.1"
-    },
-    "memoize": {
+    }
+  },
+  "memoize": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "generics-rep",
@@ -2188,16 +2636,22 @@
       "repo": "https://github.com/paf31/purescript-memoize.git",
       "rev": "7f116edf1a8418d55dd864964456fe2b51dbf0a5",
       "version": "v5.0.0"
-    },
-    "metadata": {
+    }
+  },
+  "metadata": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "metadata",
       "nixSha256": "1ck7aa13ny3mb0c586dc8shakcg7v2mlj0ixbzpjykj2jzfrdn62",
       "repo": "https://github.com/spacchetti/purescript-metadata.git",
       "rev": "05a4fd5dd0f8269f3ebceb9b7a99ad289b1c65a7",
       "version": "v0.13.6"
-    },
-    "milkis": {
+    }
+  },
+  "milkis": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff-promise",
         "arraybuffer-types",
@@ -2210,8 +2664,11 @@
       "repo": "https://github.com/justinwoo/purescript-milkis.git",
       "rev": "cedf35448832cbb6fd56f0dcf26abc5a6ec6b76f",
       "version": "v7.4.0"
-    },
-    "minibench": {
+    }
+  },
+  "minibench": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -2227,8 +2684,11 @@
       "repo": "https://github.com/purescript/purescript-minibench.git",
       "rev": "a9cc6d74730bdcf21bd6962cd640a3744fe6c14b",
       "version": "v2.0.0"
-    },
-    "mmorph": {
+    }
+  },
+  "mmorph": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "free",
         "functors",
@@ -2239,8 +2699,11 @@
       "repo": "https://github.com/Thimoteus/purescript-mmorph.git",
       "rev": "e067ee63c9c08e67b632a8b55930f744ddfad980",
       "version": "v5.1.0"
-    },
-    "monad-logger": {
+    }
+  },
+  "monad-logger": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "ansi",
@@ -2266,8 +2729,11 @@
       "repo": "https://github.com/cprussin/purescript-monad-logger.git",
       "rev": "55441b4caf390bc38078a9c5c865efb105549cef",
       "version": "v1.3.1"
-    },
-    "monad-loops": {
+    }
+  },
+  "monad-loops": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe",
         "tailrec",
@@ -2280,8 +2746,11 @@
       "repo": "https://github.com/mlang/purescript-monad-loops.git",
       "rev": "9324b29cda6a4be8f896d42f2018fc6143607fe8",
       "version": "v0.5.0"
-    },
-    "money": {
+    }
+  },
+  "money": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "globals",
@@ -2298,8 +2767,11 @@
       "repo": "https://github.com/i-am-tom/purescript-money.git",
       "rev": "a57e25ea6e2db4c5319079902c052d48d86a7d55",
       "version": "v8.0.0"
-    },
-    "motsunabe": {
+    }
+  },
+  "motsunabe": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "lists",
         "strings"
@@ -2309,8 +2781,11 @@
       "repo": "https://github.com/justinwoo/purescript-motsunabe.git",
       "rev": "d016e6319fef40119abba726e31d066e7c211875",
       "version": "v2.0.0"
-    },
-    "mysql": {
+    }
+  },
+  "mysql": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "js-date",
@@ -2321,8 +2796,11 @@
       "repo": "https://github.com/oreshinya/purescript-mysql.git",
       "rev": "1551c8cca5982305965fc843821562a693e99748",
       "version": "v4.1.0"
-    },
-    "naporitan": {
+    }
+  },
+  "naporitan": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "record",
         "typelevel-prelude"
@@ -2332,8 +2810,11 @@
       "repo": "https://github.com/justinwoo/purescript-naporitan.git",
       "rev": "e911d10260897f5dec7caa034604691c7146f7ff",
       "version": "v1.0.0"
-    },
-    "naturals": {
+    }
+  },
+  "naturals": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe",
         "prelude",
@@ -2344,8 +2825,11 @@
       "repo": "https://github.com/LiamGoodacre/purescript-naturals.git",
       "rev": "53aaa11516cd1bb8429f33032802bf43a5b04644",
       "version": "v3.0.0"
-    },
-    "newtype": {
+    }
+  },
+  "newtype": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -2354,8 +2838,11 @@
       "repo": "https://github.com/purescript/purescript-newtype.git",
       "rev": "7d85fa6a040208c010b05f7c23af6a943ba08763",
       "version": "v3.0.0"
-    },
-    "node-buffer": {
+    }
+  },
+  "node-buffer": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "effect",
@@ -2368,8 +2855,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-buffer.git",
       "rev": "dac7d4734a739cea2cd379f6bae5226dbab26da2",
       "version": "v6.0.0"
-    },
-    "node-child-process": {
+    }
+  },
+  "node-child-process": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "exceptions",
         "foreign",
@@ -2386,8 +2876,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-child-process.git",
       "rev": "887b252ef85975f4cf31dfd9079f6d98d905fc1b",
       "version": "v6.0.0"
-    },
-    "node-electron": {
+    }
+  },
+  "node-electron": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign",
@@ -2406,8 +2899,11 @@
       "repo": "https://github.com/cprussin/purescript-node-electron.git",
       "rev": "19734790aa42c7a09e0efd725dad3828f6246c46",
       "version": "v0.0.2"
-    },
-    "node-fs": {
+    }
+  },
+  "node-fs": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "effect",
@@ -2433,8 +2929,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-fs.git",
       "rev": "02d610f237dc130edb5ee594fd46b16c691b79eb",
       "version": "v5.0.1"
-    },
-    "node-fs-aff": {
+    }
+  },
+  "node-fs-aff": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "either",
@@ -2446,16 +2945,22 @@
       "repo": "https://github.com/purescript-node/purescript-node-fs-aff.git",
       "rev": "d02c0a209824c3fce8254dddd94d85990e9ad1b6",
       "version": "v6.0.0"
-    },
-    "node-he": {
+    }
+  },
+  "node-he": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "node-he",
       "nixSha256": "00ha94m5ysv1r5lqfh90rnada9xp4jnncxqf4id1iskxhhkg3h28",
       "repo": "https://github.com/justinwoo/purescript-node-he.git",
       "rev": "d2e3b78863c163e62713ef776059b92a5a91d8f5",
       "version": "v0.2.0"
-    },
-    "node-http": {
+    }
+  },
+  "node-http": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "contravariant",
@@ -2476,8 +2981,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-http.git",
       "rev": "b18d054de436ad589d41acee0aca7f3bd6762aab",
       "version": "v5.0.2"
-    },
-    "node-net": {
+    }
+  },
+  "node-net": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "either",
@@ -2496,8 +3004,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-net.git",
       "rev": "1fd91c872ecff202ae86b848f2c8d054f7a751f3",
       "version": "v1.0.0"
-    },
-    "node-path": {
+    }
+  },
+  "node-path": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect"
       ],
@@ -2506,8 +3017,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-path.git",
       "rev": "e3a704d5fc7d25fa93c6cd0eb92dbce9e5ebd69a",
       "version": "v3.0.0"
-    },
-    "node-postgres": {
+    }
+  },
+  "node-postgres": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "arrays",
@@ -2526,8 +3040,11 @@
       "repo": "https://github.com/epost/purescript-node-postgres.git",
       "rev": "798526465af865381d8b4565c9766e89320a2fab",
       "version": "v5.0.0"
-    },
-    "node-process": {
+    }
+  },
+  "node-process": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign-object",
@@ -2542,8 +3059,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-process.git",
       "rev": "88871d84a69f47dd2d1d9eccd7cc942be4457d46",
       "version": "v7.0.0"
-    },
-    "node-readline": {
+    }
+  },
+  "node-readline": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign",
@@ -2557,8 +3077,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-readline.git",
       "rev": "0d61e645aa33142ddd46f63048fe16605f9b8b2a",
       "version": "v4.0.1"
-    },
-    "node-sqlite3": {
+    }
+  },
+  "node-sqlite3": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "foreign"
@@ -2568,8 +3091,11 @@
       "repo": "https://github.com/justinwoo/purescript-node-sqlite3.git",
       "rev": "84f1b4333800edf5db2477a5aec4f93aa5f301f0",
       "version": "v6.0.0"
-    },
-    "node-streams": {
+    }
+  },
+  "node-streams": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "either",
@@ -2582,8 +3108,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-streams.git",
       "rev": "88740eeda2017d3ddcde50eea59d57c7749d8524",
       "version": "v4.0.1"
-    },
-    "node-telegram-bot-api": {
+    }
+  },
+  "node-telegram-bot-api": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "foreign",
@@ -2595,8 +3124,11 @@
       "repo": "https://github.com/justinwoo/purescript-node-telegram-bot-api.git",
       "rev": "eaa1302f5daada0307c47993370d05239dc6f7c6",
       "version": "v4.0.0"
-    },
-    "node-url": {
+    }
+  },
+  "node-url": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "nullable"
       ],
@@ -2605,8 +3137,11 @@
       "repo": "https://github.com/purescript-node/purescript-node-url.git",
       "rev": "20eecd603124bf07b477f1f2be2135ae99c885fe",
       "version": "v4.0.0"
-    },
-    "nodemailer": {
+    }
+  },
+  "nodemailer": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "node-streams",
@@ -2617,8 +3152,11 @@
       "repo": "https://github.com/oreshinya/purescript-nodemailer.git",
       "rev": "5883df3b8e90eeb90a7780ba17c82da6b36f8fa6",
       "version": "v2.0.2"
-    },
-    "nodetrout": {
+    }
+  },
+  "nodetrout": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "form-urlencoded",
@@ -2631,8 +3169,11 @@
       "repo": "https://github.com/nsaunders/purescript-nodetrout.git",
       "rev": "ff685ca2c7d6682adcccdecd8305ff3d177c1408",
       "version": "v0.0.1"
-    },
-    "nonempty": {
+    }
+  },
+  "nonempty": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "foldable-traversable",
@@ -2646,8 +3187,11 @@
       "repo": "https://github.com/purescript/purescript-nonempty.git",
       "rev": "36ca3b2fa6d98b1c9d2ee05643341e496fbeab57",
       "version": "v5.0.0"
-    },
-    "now": {
+    }
+  },
+  "now": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "effect"
@@ -2657,8 +3201,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-now.git",
       "rev": "090feddf7c7dec2a812eca090cd211e87ccad606",
       "version": "v4.0.0"
-    },
-    "nullable": {
+    }
+  },
+  "nullable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "functions",
         "maybe"
@@ -2668,8 +3215,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-nullable.git",
       "rev": "8d413f02224b8281bfa8037e45fbbf9fe2e254fd",
       "version": "v4.1.1"
-    },
-    "numbers": {
+    }
+  },
+  "numbers": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "globals",
         "math",
@@ -2680,8 +3230,11 @@
       "repo": "https://github.com/sharkdp/purescript-numbers.git",
       "rev": "6262a5f17dcdfba11dfae03f4fa8eec02f7ed29f",
       "version": "v7.0.0"
-    },
-    "options": {
+    }
+  },
+  "options": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "contravariant",
         "foreign",
@@ -2694,8 +3247,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-options.git",
       "rev": "bc0109fb1a18d5f51aa32914618e96d1ec9d8cf5",
       "version": "v5.0.0"
-    },
-    "optparse": {
+    }
+  },
+  "optparse": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "console",
@@ -2715,8 +3271,11 @@
       "repo": "https://github.com/f-o-a-m/purescript-optparse.git",
       "rev": "14eb29f6d7c1ad455f39ace45f1c0dc53f1f7f4f",
       "version": "v3.0.1"
-    },
-    "ordered-collections": {
+    }
+  },
+  "ordered-collections": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "foldable-traversable",
@@ -2736,8 +3295,11 @@
       "repo": "https://github.com/purescript/purescript-ordered-collections.git",
       "rev": "54af8b281bf01acfc14e147debec76974901e93c",
       "version": "v1.6.1"
-    },
-    "orders": {
+    }
+  },
+  "orders": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "newtype",
         "prelude"
@@ -2747,8 +3309,11 @@
       "repo": "https://github.com/purescript/purescript-orders.git",
       "rev": "80e22c22c72c846e09ef9dfcdb40b3eee39118d6",
       "version": "v4.0.0"
-    },
-    "pairing": {
+    }
+  },
+  "pairing": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "free",
         "functors",
@@ -2759,8 +3324,11 @@
       "repo": "https://github.com/paf31/purescript-pairing.git",
       "rev": "779ac384f911a1ddb5b713864b9236203046c20c",
       "version": "v5.1.0"
-    },
-    "pairs": {
+    }
+  },
+  "pairs": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "distributive",
@@ -2772,8 +3340,11 @@
       "repo": "https://github.com/sharkdp/purescript-pairs.git",
       "rev": "8c220e4f51c33ef04291cab60af69729f768f8ea",
       "version": "v7.0.0"
-    },
-    "parallel": {
+    }
+  },
+  "parallel": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "effect",
@@ -2791,8 +3362,11 @@
       "repo": "https://github.com/purescript/purescript-parallel.git",
       "rev": "4d6c8b05041a36c300dfca2ba8f1f3443ca26bc6",
       "version": "v4.0.0"
-    },
-    "parsing": {
+    }
+  },
+  "parsing": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "either",
@@ -2810,16 +3384,22 @@
       "repo": "https://github.com/purescript-contrib/purescript-parsing.git",
       "rev": "e801a0ef42f3211b1602a94a269eef7ce551423f",
       "version": "v5.0.3"
-    },
-    "partial": {
+    }
+  },
+  "partial": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "partial",
       "nixSha256": "11qr80989g7xmvw1brnrclsbg2wdkbr5k3cqpngfip3nnirrypcn",
       "repo": "https://github.com/purescript/purescript-partial.git",
       "rev": "76b63a324f7eafbb859256771b5bb7404082af96",
       "version": "v2.0.1"
-    },
-    "pathy": {
+    }
+  },
+  "pathy": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "exceptions",
@@ -2837,8 +3417,11 @@
       "repo": "https://github.com/slamdata/purescript-pathy.git",
       "rev": "350ac0bc770c5492786cd40b9998d35fef510b09",
       "version": "v7.0.1"
-    },
-    "phoenix": {
+    }
+  },
+  "phoenix": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "options"
       ],
@@ -2847,8 +3430,11 @@
       "repo": "https://github.com/brandonhamilton/purescript-phoenix.git",
       "rev": "93d24c8b93e8ff1008bf3a2da429e36d1216d51b",
       "version": "v4.0.0"
-    },
-    "pipes": {
+    }
+  },
+  "pipes": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "lists",
@@ -2863,8 +3449,11 @@
       "repo": "https://github.com/felixSchl/purescript-pipes.git",
       "rev": "a9533035f6fe8e59a65c6d11a3a7c767f3c9ae67",
       "version": "v6.0.0"
-    },
-    "pointed-list": {
+    }
+  },
+  "pointed-list": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "lists",
         "prelude"
@@ -2874,8 +3463,11 @@
       "repo": "https://github.com/paluh/purescript-pointed-list.git",
       "rev": "606de7f6ebd953aea822747c21fa4d73ef5187bc",
       "version": "v0.4.0"
-    },
-    "polyform": {
+    }
+  },
+  "polyform": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foreign",
         "foreign-object",
@@ -2893,8 +3485,11 @@
       "repo": "https://github.com/paluh/purescript-polyform.git",
       "rev": "6c534095292f8f6c4c558d67b65a81fe30fb2304",
       "version": "v0.8.0"
-    },
-    "posix-types": {
+    }
+  },
+  "posix-types": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe",
         "prelude"
@@ -2904,8 +3499,11 @@
       "repo": "https://github.com/purescript-node/purescript-posix-types.git",
       "rev": "1d4cd274436cc1e470dc6bf7735bcfdf0092d884",
       "version": "v4.0.0"
-    },
-    "precise-datetime": {
+    }
+  },
+  "precise-datetime": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "console",
@@ -2931,16 +3529,22 @@
       "repo": "https://github.com/awakesecurity/purescript-precise-datetime.git",
       "rev": "2355b3471b758e16d17078e09bb79ee26d82b90a",
       "version": "v5.1.1"
-    },
-    "prelude": {
+    }
+  },
+  "prelude": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "prelude",
       "nixSha256": "1frvjrv0mr508r6683l1mp5rzm1y2dz76fz40zf4k2c64sy6y1xm",
       "repo": "https://github.com/purescript/purescript-prelude.git",
       "rev": "a96663b34364fdd0885a200955e35b99f4e58c43",
       "version": "v4.1.1"
-    },
-    "prettier": {
+    }
+  },
+  "prettier": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe",
         "prelude"
@@ -2950,8 +3554,11 @@
       "repo": "https://github.com/gcanti/purescript-prettier.git",
       "rev": "f79667f01f25ddc2e10b5fc8e7d18348f34f6fca",
       "version": "v0.2.0"
-    },
-    "profunctor": {
+    }
+  },
+  "profunctor": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "contravariant",
         "control",
@@ -2968,8 +3575,11 @@
       "repo": "https://github.com/purescript/purescript-profunctor.git",
       "rev": "9b3d014b38c69ea2dd4b1f597330b095034fe2c4",
       "version": "v4.1.0"
-    },
-    "profunctor-lenses": {
+    }
+  },
+  "profunctor-lenses": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "bifunctors",
@@ -2997,8 +3607,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-profunctor-lenses.git",
       "rev": "a058930ab7c73f5c4676a0cc91ea1a7433300c17",
       "version": "v6.2.0"
-    },
-    "promises": {
+    }
+  },
+  "promises": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "datetime",
@@ -3012,8 +3625,11 @@
       "repo": "https://github.com/thimoteus/purescript-promises.git",
       "rev": "76aac1f6583c39a3745f862636d16c7292d29690",
       "version": "v3.1.1"
-    },
-    "proxy": {
+    }
+  },
+  "proxy": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -3022,8 +3638,11 @@
       "repo": "https://github.com/purescript/purescript-proxy.git",
       "rev": "4a529b1f874fa2f32fc4c575cafaf46e0ab69fb6",
       "version": "v3.0.0"
-    },
-    "proxying": {
+    }
+  },
+  "proxying": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "generics-rep",
@@ -3035,8 +3654,11 @@
       "repo": "https://github.com/matthew-hilty/purescript-proxying.git",
       "rev": "996711d2aabaa71c03727b02e059183dd2f36f5b",
       "version": "v1.1.0"
-    },
-    "psa-utils": {
+    }
+  },
+  "psa-utils": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "ansi",
         "argonaut-codecs",
@@ -3060,8 +3682,11 @@
       "repo": "https://github.com/natefaubion/purescript-psa-utils.git",
       "rev": "3191b19ef0ca6863658e5f73cbf5baca7a9487fc",
       "version": "v6.0.0"
-    },
-    "psc-ide": {
+    }
+  },
+  "psc-ide": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "argonaut",
@@ -3078,8 +3703,11 @@
       "repo": "https://github.com/kRITZCREEK/purescript-psc-ide.git",
       "rev": "0f5c433c57391ae68ce1b285a0964bd19fdae073",
       "version": "v15.0.1"
-    },
-    "psci-support": {
+    }
+  },
+  "psci-support": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -3090,8 +3718,11 @@
       "repo": "https://github.com/purescript/purescript-psci-support.git",
       "rev": "a66a0fa8661eb8b5fe75cc862f4e2df2835c058d",
       "version": "v4.0.0"
-    },
-    "quantities": {
+    }
+  },
+  "quantities": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "lists",
         "foldable-traversable",
@@ -3104,8 +3735,11 @@
       "repo": "https://github.com/sharkdp/purescript-quantities.git",
       "rev": "92feca4ec665d129d40aa31dbd70da34414cb483",
       "version": "v10.0.0"
-    },
-    "querydsl": {
+    }
+  },
+  "querydsl": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "effect",
@@ -3128,8 +3762,11 @@
       "repo": "https://github.com/Dretch/purescript-querydsl.git",
       "rev": "26c112e6291ff2ff23f5fb27e8b632d9adecec82",
       "version": "v0.10.1"
-    },
-    "quickcheck": {
+    }
+  },
+  "quickcheck": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "console",
@@ -3165,8 +3802,11 @@
       "repo": "https://github.com/purescript/purescript-quickcheck.git",
       "rev": "6289a80570acd5aec3ea89dc673cf10cdaf5794a",
       "version": "v6.1.0"
-    },
-    "quickcheck-laws": {
+    }
+  },
+  "quickcheck-laws": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "enums",
         "proxy",
@@ -3177,8 +3817,11 @@
       "repo": "https://github.com/garyb/purescript-quickcheck-laws.git",
       "rev": "7f0160093340033f594dfb264422ac615cfac15e",
       "version": "v5.0.1"
-    },
-    "quotient": {
+    }
+  },
+  "quotient": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "proxy",
@@ -3189,8 +3832,11 @@
       "repo": "https://github.com/rightfold/purescript-quotient.git",
       "rev": "cd7ab1fd0ece7f14ba85a0e6a5b87d863426c054",
       "version": "v3.0.0"
-    },
-    "radox": {
+    }
+  },
+  "radox": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "effect",
@@ -3203,8 +3849,11 @@
       "repo": "https://github.com/danieljharvey/purescript-radox.git",
       "rev": "5ce2e46694a7391b921b975498bc4619b27b02e0",
       "version": "v1.0.0"
-    },
-    "random": {
+    }
+  },
+  "random": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "integers",
@@ -3215,8 +3864,11 @@
       "repo": "https://github.com/purescript/purescript-random.git",
       "rev": "75e6b21edbe0eec78c28ff3bd8265998f2ea0b45",
       "version": "v4.0.0"
-    },
-    "rationals": {
+    }
+  },
+  "rationals": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "integers",
         "prelude"
@@ -3226,8 +3878,11 @@
       "repo": "https://github.com/anttih/purescript-rationals.git",
       "rev": "8c52d8cc891d1223150a31416220aa9b99404442",
       "version": "v5.0.0"
-    },
-    "rave": {
+    }
+  },
+  "rave": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "checked-exceptions",
@@ -3243,8 +3898,11 @@
       "repo": "https://github.com/reactormonk/purescript-rave.git",
       "rev": "5375bba51f57ab272994da335b36ddfaedbc5940",
       "version": "v0.1.1"
-    },
-    "react": {
+    }
+  },
+  "react": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "exceptions",
@@ -3259,8 +3917,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-react.git",
       "rev": "4bf5a5a46ceb485f6941820f717f4507cc030674",
       "version": "v8.0.0"
-    },
-    "react-basic": {
+    }
+  },
+  "react-basic": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "console",
@@ -3280,8 +3941,11 @@
       "repo": "https://github.com/lumihq/purescript-react-basic.git",
       "rev": "feee3a51a531f65ff0c0802bffa77e9cd0bd0164",
       "version": "v13.0.0"
-    },
-    "react-basic-hooks": {
+    }
+  },
+  "react-basic-hooks": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "console",
@@ -3296,8 +3960,11 @@
       "repo": "https://github.com/spicydonuts/purescript-react-basic-hooks.git",
       "rev": "df73fc806a6d41a5ab11893f8761c280110f7471",
       "version": "v4.1.1"
-    },
-    "react-basic-native": {
+    }
+  },
+  "react-basic-native": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign-object",
@@ -3310,8 +3977,11 @@
       "repo": "https://github.com/dwhitney/purescript-react-basic-native.git",
       "rev": "f5a963df87ffa0cc8b2810cc5df78c724c9afcbe",
       "version": "v0.1.3"
-    },
-    "react-dom": {
+    }
+  },
+  "react-dom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "react",
@@ -3322,8 +3992,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-react-dom.git",
       "rev": "441e1705ab8fc5fb382d9b3b3516f40ef7234e6c",
       "version": "v6.1.0"
-    },
-    "react-radox": {
+    }
+  },
+  "react-radox": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "effect",
@@ -3335,8 +4008,11 @@
       "repo": "https://github.com/danieljharvey/purescript-react-radox.git",
       "rev": "8004820fa46f3078169638915174e77abdc7d38a",
       "version": "v0.0.5"
-    },
-    "react-stylesheet": {
+    }
+  },
+  "react-stylesheet": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "react",
@@ -3348,8 +4024,11 @@
       "repo": "https://github.com/danieljharvey/purescript-react-stylesheet.git",
       "rev": "f8079e5446a73fbc53ba3a8e841905029e1a0d37",
       "version": "v0.0.2"
-    },
-    "read": {
+    }
+  },
+  "read": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "maybe",
         "prelude",
@@ -3360,8 +4039,11 @@
       "repo": "https://github.com/truqu/purescript-read.git",
       "rev": "b3969a2091fea50c57ed806820e3d725c8ef8992",
       "version": "v1.0.1"
-    },
-    "record": {
+    }
+  },
+  "record": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "functions",
         "prelude",
@@ -3373,8 +4055,11 @@
       "repo": "https://github.com/purescript/purescript-record.git",
       "rev": "42a15ba34d860f4d8f899836956bf09659a0256b",
       "version": "v2.0.1"
-    },
-    "record-extra": {
+    }
+  },
+  "record-extra": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "functions",
@@ -3387,8 +4072,11 @@
       "repo": "https://github.com/justinwoo/purescript-record-extra.git",
       "rev": "987932b882e0e4eb920015804a73ea652c649138",
       "version": "v3.0.1"
-    },
-    "record-format": {
+    }
+  },
+  "record-format": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "record",
         "strings",
@@ -3399,8 +4087,11 @@
       "repo": "https://github.com/kcsongor/purescript-record-format.git",
       "rev": "c277a20030b8c3d831b9ef8b50fc70b1edd26831",
       "version": "v2.0.0"
-    },
-    "redux-devtools": {
+    }
+  },
+  "redux-devtools": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign",
@@ -3412,8 +4103,11 @@
       "repo": "https://github.com/justinwoo/purescript-redux-devtools.git",
       "rev": "e9fae256f444c5a3d63c54bdc99e0623c4f07208",
       "version": "v0.1.0"
-    },
-    "refined": {
+    }
+  },
+  "refined": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut",
         "effect",
@@ -3427,8 +4121,11 @@
       "repo": "https://github.com/danieljharvey/purescript-refined.git",
       "rev": "145e40a9f5d4131651020d2955a0490e6e040edf",
       "version": "v0.2.0"
-    },
-    "refs": {
+    }
+  },
+  "refs": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "prelude"
@@ -3438,8 +4135,11 @@
       "repo": "https://github.com/purescript/purescript-refs.git",
       "rev": "e8b175477661e433175e76548168290c40e0ce4b",
       "version": "v4.1.0"
-    },
-    "remotedata": {
+    }
+  },
+  "remotedata": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "either",
@@ -3451,8 +4151,11 @@
       "repo": "https://github.com/krisajenkins/purescript-remotedata.git",
       "rev": "8dbd12110f6a338c36afd6c3208dd5fa031c0573",
       "version": "v4.2.0"
-    },
-    "result": {
+    }
+  },
+  "result": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "either",
         "foldable-traversable",
@@ -3463,8 +4166,11 @@
       "repo": "https://github.com/ad-si/purescript-result.git",
       "rev": "a09ebc3749e3b902f8144fa4a22c95840ce46701",
       "version": "v1.0.3"
-    },
-    "ring-modules": {
+    }
+  },
+  "ring-modules": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude"
       ],
@@ -3473,8 +4179,11 @@
       "repo": "https://github.com/f-o-a-m/purescript-ring-modules.git",
       "rev": "48f72122e7f80dfd1efcc2bd5bb2f8fb92942f68",
       "version": "v5.0.1"
-    },
-    "routing": {
+    }
+  },
+  "routing": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "console",
@@ -3497,8 +4206,11 @@
       "repo": "https://github.com/slamdata/purescript-routing.git",
       "rev": "62742c314b7a30118399f1b98fdec27212f8f40e",
       "version": "v9.0.0"
-    },
-    "routing-duplex": {
+    }
+  },
+  "routing-duplex": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "control",
@@ -3517,8 +4229,11 @@
       "repo": "https://github.com/natefaubion/purescript-routing-duplex.git",
       "rev": "eceaba4ee9921250cc6640d5ead98bbfc44310f5",
       "version": "v0.4.1"
-    },
-    "run": {
+    }
+  },
+  "run": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "effect",
@@ -3539,8 +4254,11 @@
       "repo": "https://github.com/natefaubion/purescript-run.git",
       "rev": "68eec5b5957e6f36fc4e206a1d4dd2adc3095587",
       "version": "v3.0.1"
-    },
-    "run-profunctor-lenses": {
+    }
+  },
+  "run-profunctor-lenses": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "console",
@@ -3553,8 +4271,11 @@
       "repo": "https://github.com/sigilion/purescript-run-profunctor-lenses.git",
       "rev": "7ba2c63b9a8ed3b71768242add2a491e1c7236c8",
       "version": "v0.1.0"
-    },
-    "run-streaming": {
+    }
+  },
+  "run-streaming": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "run"
@@ -3564,8 +4285,11 @@
       "repo": "https://github.com/natefaubion/purescript-run-streaming.git",
       "rev": "ff42f0526db9e3b03f9729dcda64852e006c03d2",
       "version": "v2.0.0"
-    },
-    "safely": {
+    }
+  },
+  "safely": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "freet",
         "lists"
@@ -3575,8 +4299,11 @@
       "repo": "https://github.com/paf31/purescript-safely.git",
       "rev": "19f854737e17b4d058e5a1504a960821db36e4ab",
       "version": "v4.0.1"
-    },
-    "search-trie": {
+    }
+  },
+  "search-trie": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "arrays",
@@ -3590,8 +4317,11 @@
       "repo": "https://github.com/klntsky/purescript-search-trie.git",
       "rev": "028405e35e7b6cf085c4b68a86fa5364bb6775d0",
       "version": "v1.0.0"
-    },
-    "selection-foldable": {
+    }
+  },
+  "selection-foldable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "filterable",
         "foldable-traversable",
@@ -3603,8 +4333,11 @@
       "repo": "https://github.com/jamieyung/purescript-selection-foldable.git",
       "rev": "9e362beb4886263de1386a129b1519a54bcf82b8",
       "version": "v0.2.0"
-    },
-    "semirings": {
+    }
+  },
+  "semirings": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "lists",
@@ -3616,8 +4349,11 @@
       "repo": "https://github.com/purescript/purescript-semirings.git",
       "rev": "36aedc601d296607439eec1e71f8483adc373ffc",
       "version": "v5.0.0"
-    },
-    "server-sent-events": {
+    }
+  },
+  "server-sent-events": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "functions",
@@ -3631,8 +4367,11 @@
       "repo": "https://github.com/MichaelXavier/purescript-server-sent-events.git",
       "rev": "9797621c151e0becb24580d97cf771b62df78259",
       "version": "v0.2.0"
-    },
-    "shoronpo": {
+    }
+  },
+  "shoronpo": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "record-format"
@@ -3642,8 +4381,11 @@
       "repo": "https://github.com/justinwoo/purescript-shoronpo.git",
       "rev": "6427a2f64816ad005b152e11ef467ba513a18e22",
       "version": "v0.3.0"
-    },
-    "signal": {
+    }
+  },
+  "signal": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "foldable-traversable",
@@ -3656,8 +4398,11 @@
       "repo": "https://github.com/bodil/purescript-signal.git",
       "rev": "58e44e7f8c20e9d057bcaffbd231893935548bb5",
       "version": "v10.1.0"
-    },
-    "sijidou": {
+    }
+  },
+  "sijidou": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "record",
@@ -3668,8 +4413,11 @@
       "repo": "https://github.com/justinwoo/purescript-sijidou.git",
       "rev": "1535631b8659c40450f9d48de49f2420ff30c27d",
       "version": "v1.0.0"
-    },
-    "simple-emitter": {
+    }
+  },
+  "simple-emitter": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "ordered-collections",
         "refs"
@@ -3679,8 +4427,11 @@
       "repo": "https://github.com/oreshinya/purescript-simple-emitter.git",
       "rev": "b24c088297d981e480857184c67abb706aae2374",
       "version": "v1.0.0"
-    },
-    "simple-i18n": {
+    }
+  },
+  "simple-i18n": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "record-extra",
         "foreign-object"
@@ -3690,8 +4441,11 @@
       "repo": "https://github.com/oreshinya/purescript-simple-i18n.git",
       "rev": "c70562ec3075408aa33d0c16428f4d04928efe7b",
       "version": "v0.1.0"
-    },
-    "simple-json": {
+    }
+  },
+  "simple-json": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "exceptions",
@@ -3709,8 +4463,11 @@
       "repo": "https://github.com/justinwoo/purescript-simple-json.git",
       "rev": "d6c4163f6ad65be97b148ebf86c900cb821da5a8",
       "version": "v7.0.0"
-    },
-    "simple-json-generics": {
+    }
+  },
+  "simple-json-generics": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "simple-json"
@@ -3720,8 +4477,11 @@
       "repo": "https://github.com/justinwoo/purescript-simple-json-generics.git",
       "rev": "f7127b94bd2da73b28e863c299edb72a42ee4bce",
       "version": "v0.1.0"
-    },
-    "simple-json-utils": {
+    }
+  },
+  "simple-json-utils": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "motsunabe",
         "simple-json"
@@ -3731,8 +4491,11 @@
       "repo": "https://github.com/justinwoo/purescript-simple-json-utils.git",
       "rev": "ec5df413e1058959454e380de42f590046a43373",
       "version": "v0.1.0"
-    },
-    "simple-jwt": {
+    }
+  },
+  "simple-jwt": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "crypto",
         "simple-json",
@@ -3743,8 +4506,11 @@
       "repo": "https://github.com/oreshinya/purescript-simple-jwt.git",
       "rev": "9c79227bdb2ed8cce3fafe2643ceeacaaca3e597",
       "version": "v2.0.0"
-    },
-    "simple-timestamp": {
+    }
+  },
+  "simple-timestamp": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "datetime",
@@ -3761,8 +4527,11 @@
       "repo": "https://github.com/reactormonk/purescript-simple-timestamp.git",
       "rev": "a4a294153e9e6f82abe8daf8f69e0056dd39056d",
       "version": "v3.0.0"
-    },
-    "sized-matrices": {
+    }
+  },
+  "sized-matrices": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "sized-vectors",
         "prelude",
@@ -3780,8 +4549,11 @@
       "repo": "https://github.com/csicar/purescript-sized-matrices",
       "rev": "e5ac0ce9f3535e81b4daca953dd8c61de2b6d5fa",
       "version": "v0.2.1"
-    },
-    "sized-vectors": {
+    }
+  },
+  "sized-vectors": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "distributive",
@@ -3796,8 +4568,11 @@
       "repo": "https://github.com/bodil/purescript-sized-vectors.git",
       "rev": "b31f49310931886706bb366cfc6c945ee9fcf7d7",
       "version": "v4.0.0"
-    },
-    "slug": {
+    }
+  },
+  "slug": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "maybe",
@@ -3811,8 +4586,11 @@
       "repo": "https://github.com/thomashoneyman/purescript-slug.git",
       "rev": "51b5ce3f98105f8dd0d49390597517161797b455",
       "version": "v1.0.0"
-    },
-    "smolder": {
+    }
+  },
+  "smolder": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "catenable-lists",
@@ -3828,8 +4606,11 @@
       "repo": "https://github.com/bodil/purescript-smolder.git",
       "rev": "5548710e5467cf7b08d7def62c8fcf5ebfb6d9ae",
       "version": "v12.3.0"
-    },
-    "snabbdom": {
+    }
+  },
+  "snabbdom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "ordered-collections",
         "prelude",
@@ -3841,8 +4622,11 @@
       "repo": "https://github.com/LukaJCB/purescript-snabbdom.git",
       "rev": "fad4049c3cf70c466748d2d723def5c36f3e106c",
       "version": "v1.0.1"
-    },
-    "sodium": {
+    }
+  },
+  "sodium": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "nullable",
@@ -3855,8 +4639,11 @@
       "repo": "https://github.com/SodiumFRP/purescript-sodium.git",
       "rev": "913674e2f30d84c1790bead9c1888ea636176c17",
       "version": "v2.1.0"
-    },
-    "spec": {
+    }
+  },
+  "spec": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "ansi",
@@ -3877,8 +4664,11 @@
       "repo": "https://github.com/purescript-spec/purescript-spec.git",
       "rev": "a91d77654c4a6ac314b42bae941892dd576c4916",
       "version": "v4.0.1"
-    },
-    "spec-discovery": {
+    }
+  },
+  "spec-discovery": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "effect",
@@ -3891,8 +4681,11 @@
       "repo": "https://github.com/owickstrom/purescript-spec-discovery.git",
       "rev": "b90ca588dc054c951201488d982765226a8393e9",
       "version": "v4.0.0"
-    },
-    "spec-quickcheck": {
+    }
+  },
+  "spec-quickcheck": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "prelude",
@@ -3905,8 +4698,11 @@
       "repo": "https://github.com/owickstrom/purescript-spec-quickcheck.git",
       "rev": "77a426996f7869f8424ed2720ab55c1f8d45bc84",
       "version": "v3.1.0"
-    },
-    "spork": {
+    }
+  },
+  "spork": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "console",
@@ -3932,8 +4728,11 @@
       "repo": "https://github.com/natefaubion/purescript-spork.git",
       "rev": "131f07d669f2c09175faed39c3445c6a46ca924f",
       "version": "v1.0.0"
-    },
-    "st": {
+    }
+  },
+  "st": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "partial",
         "prelude",
@@ -3944,8 +4743,11 @@
       "repo": "https://github.com/purescript/purescript-st.git",
       "rev": "3fcc99181225c1a7693d63024d912ead1a62c495",
       "version": "v4.0.2"
-    },
-    "string-parsers": {
+    }
+  },
+  "string-parsers": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "bifunctors",
@@ -3963,8 +4765,11 @@
       "repo": "https://github.com/paf31/purescript-string-parsers.git",
       "rev": "6e0752ede167479c8d2b38e9a5a1524ecf3046a8",
       "version": "v5.0.1"
-    },
-    "strings": {
+    }
+  },
+  "strings": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "control",
@@ -3988,8 +4793,11 @@
       "repo": "https://github.com/purescript/purescript-strings.git",
       "rev": "94c843b93142d0edf1c31ec075c40b6984c3dc7b",
       "version": "v4.0.1"
-    },
-    "strings-extra": {
+    }
+  },
+  "strings-extra": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "either",
@@ -4005,8 +4813,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-strings-extra.git",
       "rev": "371883284f8f598690d16f75d8a73d6552986513",
       "version": "v2.0.0"
-    },
-    "stringutils": {
+    }
+  },
+  "stringutils": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "either",
@@ -4021,8 +4832,11 @@
       "repo": "https://github.com/menelaos/purescript-stringutils.git",
       "rev": "093a07ba7894dd9bdb3b91edccc372c65e362dd8",
       "version": "v0.0.10"
-    },
-    "strongcheck": {
+    }
+  },
+  "strongcheck": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "console",
@@ -4057,8 +4871,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-strongcheck.git",
       "rev": "6e681e66882c8bd6d7f99cc5cbcaf6fe0d3e6ee8",
       "version": "v4.1.1"
-    },
-    "struct": {
+    }
+  },
+  "struct": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut",
         "argonaut-codecs",
@@ -4074,8 +4891,11 @@
       "repo": "https://github.com/matthew-hilty/purescript-struct.git",
       "rev": "c1c51a63930e4ec1d3d5187b0902cadf2e839f6e",
       "version": "v1.1.0"
-    },
-    "stylesheet": {
+    }
+  },
+  "stylesheet": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "foreign",
@@ -4091,8 +4911,11 @@
       "repo": "https://github.com/danieljharvey/purescript-stylesheet.git",
       "rev": "baa2d1abeba470a1ff35a429ea618d9d081c4252",
       "version": "v0.0.3"
-    },
-    "subcategory": {
+    }
+  },
+  "subcategory": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "profunctor",
@@ -4105,8 +4928,11 @@
       "repo": "https://github.com/matthew-hilty/purescript-subcategory.git",
       "rev": "8fe8d65928a4c6a028986393a413c28ee780741f",
       "version": "v0.2.0"
-    },
-    "suggest": {
+    }
+  },
+  "suggest": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "node-buffer",
@@ -4121,8 +4947,11 @@
       "repo": "https://github.com/nwolverson/purescript-suggest.git",
       "rev": "bdce2322ddc5deef1c226937580c10df7d1930c1",
       "version": "v5.0.0"
-    },
-    "sunde": {
+    }
+  },
+  "sunde": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "effect",
@@ -4134,8 +4963,11 @@
       "repo": "https://github.com/justinwoo/purescript-sunde.git",
       "rev": "e9c898ac0ffd5e61d82a6c02606ab84241278709",
       "version": "v2.0.0"
-    },
-    "svg-parser": {
+    }
+  },
+  "svg-parser": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "prelude",
@@ -4146,8 +4978,11 @@
       "repo": "https://github.com/rnons/purescript-svg-parser.git",
       "rev": "3497fadad2af220f13fb01ef3c7d45cdd505a786",
       "version": "v1.0.0"
-    },
-    "svg-parser-halogen": {
+    }
+  },
+  "svg-parser-halogen": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "halogen",
         "prelude",
@@ -4158,8 +4993,11 @@
       "repo": "https://github.com/rnons/purescript-svg-parser-halogen.git",
       "rev": "a93c86579fbc8b4284250200153cbf5715423e0b",
       "version": "v1.0.0"
-    },
-    "tailrec": {
+    }
+  },
+  "tailrec": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "effect",
@@ -4175,8 +5013,11 @@
       "repo": "https://github.com/purescript/purescript-tailrec.git",
       "rev": "8946bf9d9f68a8469198b4d512593d4a2a97cada",
       "version": "v4.1.0"
-    },
-    "test-unit": {
+    }
+  },
+  "test-unit": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff",
         "avar",
@@ -4194,8 +5035,11 @@
       "repo": "https://github.com/bodil/purescript-test-unit.git",
       "rev": "351c55b632e0c0ebffae05837909995a03de3406",
       "version": "v15.0.0"
-    },
-    "these": {
+    }
+  },
+  "these": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "gen",
         "tuples"
@@ -4205,8 +5049,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-these.git",
       "rev": "fc19af52b34f8f128f9981aa27aab4becd7a79d5",
       "version": "v4.0.0"
-    },
-    "tolerant-argonaut": {
+    }
+  },
+  "tolerant-argonaut": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut-codecs",
         "argonaut-core",
@@ -4223,8 +5070,11 @@
       "repo": "https://github.com/matthew-hilty/purescript-tolerant-argonaut.git",
       "rev": "db221e8e0335221c0d2c644dc3980a44394ace78",
       "version": "v1.1.0"
-    },
-    "toppokki": {
+    }
+  },
+  "toppokki": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "aff-promise",
         "functions",
@@ -4238,8 +5088,11 @@
       "repo": "https://github.com/justinwoo/purescript-toppokki.git",
       "rev": "7247906f8126d70b17d4b3493bd051ddf76eb1c1",
       "version": "v2.3.0"
-    },
-    "tortellini": {
+    }
+  },
+  "tortellini": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foreign-object",
         "integers",
@@ -4258,8 +5111,11 @@
       "repo": "https://github.com/justinwoo/purescript-tortellini.git",
       "rev": "1ef407cb5e241209fb6207c48f4790d9bf38eaa3",
       "version": "v5.1.0"
-    },
-    "transformers": {
+    }
+  },
+  "transformers": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "control",
         "distributive",
@@ -4281,8 +5137,11 @@
       "repo": "https://github.com/purescript/purescript-transformers.git",
       "rev": "0e473e5ef0e294615ca0d9aab0bcffee47b2870d",
       "version": "v4.2.0"
-    },
-    "trout": {
+    }
+  },
+  "trout": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "argonaut",
         "media-types",
@@ -4295,8 +5154,11 @@
       "repo": "https://github.com/purescript-hyper/purescript-trout.git",
       "rev": "0bdf220531c31af8a519eb34d12c0201a0d9230b",
       "version": "v0.12.2"
-    },
-    "trout-client": {
+    }
+  },
+  "trout-client": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "affjax",
         "argonaut-generic",
@@ -4308,8 +5170,11 @@
       "repo": "https://github.com/purescript-hyper/purescript-trout-client.git",
       "rev": "b852e7f104195e1f388b3e385b9d2e304ac1e578",
       "version": "v0.12.0"
-    },
-    "tuples": {
+    }
+  },
+  "tuples": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -4326,16 +5191,22 @@
       "repo": "https://github.com/purescript/purescript-tuples.git",
       "rev": "0036bf9d99b721fd0f2e539d24e18e484b016927",
       "version": "v5.1.0"
-    },
-    "type-equality": {
+    }
+  },
+  "type-equality": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "type-equality",
       "nixSha256": "1b7szyca5s96gaawvgwrw7fa8r7gqsdff7xhz3vvngnylv2scl3w",
       "repo": "https://github.com/purescript/purescript-type-equality.git",
       "rev": "2cdae51c394401cd5fc04b03c341273b41532b7d",
       "version": "v3.0.0"
-    },
-    "type-isequal": {
+    }
+  },
+  "type-isequal": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "typelevel-prelude"
       ],
@@ -4344,8 +5215,11 @@
       "repo": "https://github.com/justinwoo/purescript-type-isequal.git",
       "rev": "f54e8071e75b979b1f711c354fd7c8a690273f25",
       "version": "v0.1.0"
-    },
-    "typedenv": {
+    }
+  },
+  "typedenv": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foreign-object",
         "generics-rep",
@@ -4360,8 +5234,11 @@
       "repo": "https://github.com/nsaunders/purescript-typedenv.git",
       "rev": "1a6caaa7181783b8efcd3abddb1d2c8cd6377e27",
       "version": "v0.0.1"
-    },
-    "typelevel": {
+    }
+  },
+  "typelevel": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "partial",
         "prelude",
@@ -4374,8 +5251,11 @@
       "repo": "https://github.com/bodil/purescript-typelevel.git",
       "rev": "c7917aa6d43440608e6e04332e4c916a45976313",
       "version": "v6.0.0"
-    },
-    "typelevel-prelude": {
+    }
+  },
+  "typelevel-prelude": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "prelude",
         "proxy",
@@ -4386,8 +5266,11 @@
       "repo": "https://github.com/purescript/purescript-typelevel-prelude.git",
       "rev": "9f8788ba16ddda8f70e54e5228422348c13c817c",
       "version": "v5.0.2"
-    },
-    "uint": {
+    }
+  },
+  "uint": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "generics-rep",
         "math",
@@ -4399,8 +5282,11 @@
       "repo": "https://github.com/zaquest/purescript-uint.git",
       "rev": "82c9cd148442169bdd74a48df9f347a300055a9d",
       "version": "v5.1.3"
-    },
-    "undefinable": {
+    }
+  },
+  "undefinable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "functions",
         "maybe"
@@ -4410,16 +5296,22 @@
       "repo": "https://github.com/ethul/purescript-undefinable.git",
       "rev": "9c5c863e638b93cf73e2cfde8dfbde91480ee011",
       "version": "v4.0.0"
-    },
-    "undefined": {
+    }
+  },
+  "undefined": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "undefined",
       "nixSha256": "0kj504j3r9wr7m3yhm53bcfdzai0c2g99d2pdxlfinxk4pmixyrd",
       "repo": "https://github.com/bklaric/purescript-undefined.git",
       "rev": "4012dc06b58feae301140bc081135d0f24c432b0",
       "version": "v1.0.2"
-    },
-    "unfoldable": {
+    }
+  },
+  "unfoldable": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "maybe",
@@ -4432,8 +5324,11 @@
       "repo": "https://github.com/purescript/purescript-unfoldable.git",
       "rev": "077e787108e02bd16a1b27e57847d5baede7dd61",
       "version": "v4.1.0"
-    },
-    "unicode": {
+    }
+  },
+  "unicode": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foldable-traversable",
         "maybe",
@@ -4444,8 +5339,11 @@
       "repo": "https://github.com/purescript-contrib/purescript-unicode.git",
       "rev": "bb70f5a17aa9bcad05104c5a3f191fd75bb3d2ce",
       "version": "v4.0.1"
-    },
-    "unordered-collections": {
+    }
+  },
+  "unordered-collections": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "enums",
         "functions",
@@ -4461,24 +5359,33 @@
       "repo": "https://github.com/fehrenbach/purescript-unordered-collections.git",
       "rev": "15bf60f1490ed15b81ff0436bcc3cc7f17a1eeef",
       "version": "v1.8.2"
-    },
-    "unsafe-coerce": {
+    }
+  },
+  "unsafe-coerce": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "unsafe-coerce",
       "nixSha256": "0k9255mk2mz6xjb11pwkgfcblmmyvr86ig5kr92jwy95xim09zip",
       "repo": "https://github.com/purescript/purescript-unsafe-coerce.git",
       "rev": "fa6a5ca9b4581c00ee0b8539306a49badb7bee60",
       "version": "v4.0.0"
-    },
-    "unsafe-reference": {
+    }
+  },
+  "unsafe-reference": {
+    "tag": "remote",
+    "value": {
       "dependencies": [],
       "name": "unsafe-reference",
       "nixSha256": "0q758dz59qz0li4s3w1qcg921xp5i5rh6i1l611iv7rr8cbj11al",
       "repo": "https://github.com/purescript-contrib/purescript-unsafe-reference.git",
       "rev": "79d7de7b9351346a73e6c060d80532c95ba1c7c1",
       "version": "v3.0.1"
-    },
-    "uri": {
+    }
+  },
+  "uri": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arrays",
         "generics-rep",
@@ -4496,8 +5403,11 @@
       "repo": "https://github.com/slamdata/purescript-uri.git",
       "rev": "e48b2e9153aeb06e6b234be98c79159dfc0f6d10",
       "version": "v7.0.0"
-    },
-    "uuid": {
+    }
+  },
+  "uuid": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "effect",
         "maybe"
@@ -4507,8 +5417,11 @@
       "repo": "https://github.com/spicydonuts/purescript-uuid.git",
       "rev": "6de5e57a8529eca6ac956103f6341c4fa7dfb25e",
       "version": "v6.0.0"
-    },
-    "validation": {
+    }
+  },
+  "validation": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "bifunctors",
         "control",
@@ -4522,8 +5435,11 @@
       "repo": "https://github.com/purescript/purescript-validation.git",
       "rev": "bef3f9da737516e69f00d35310334004c29355cb",
       "version": "v4.2.0"
-    },
-    "variant": {
+    }
+  },
+  "variant": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "enums",
         "lists",
@@ -4540,8 +5456,11 @@
       "repo": "https://github.com/natefaubion/purescript-variant.git",
       "rev": "31e620334124d2ca8b1e608c27d74b607a5831e9",
       "version": "v6.0.1"
-    },
-    "vectorfield": {
+    }
+  },
+  "vectorfield": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "effect",
@@ -4554,8 +5473,11 @@
       "repo": "https://github.com/csicar/purescript-vectorfield.git",
       "rev": "13ff5f45e190b5d7dd31825d443182514892b946",
       "version": "v1.0.1"
-    },
-    "web-clipboard": {
+    }
+  },
+  "web-clipboard": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "web-html"
       ],
@@ -4564,8 +5486,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-clipboard.git",
       "rev": "5c4fe20111b9e37d74c805101b5c558928808971",
       "version": "v2.0.0"
-    },
-    "web-dom": {
+    }
+  },
+  "web-dom": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "web-events"
       ],
@@ -4574,8 +5499,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-dom.git",
       "rev": "65d1b79f86c01f967fe822e2d8f7dabf711b66df",
       "version": "v4.0.0"
-    },
-    "web-events": {
+    }
+  },
+  "web-events": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "datetime",
         "enums",
@@ -4586,8 +5514,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-events.git",
       "rev": "7f19f24d7b61066bef0813734964f2dc6b085e3d",
       "version": "v2.0.1"
-    },
-    "web-file": {
+    }
+  },
+  "web-file": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "foreign",
         "media-types",
@@ -4598,8 +5529,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-file.git",
       "rev": "32fa296ff8103a72d52fc900b195f2ee05dc5627",
       "version": "v2.3.0"
-    },
-    "web-html": {
+    }
+  },
+  "web-html": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "js-date",
         "web-dom",
@@ -4611,8 +5545,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-html.git",
       "rev": "0aa27db6d393fc53454f549566f9058147cc008a",
       "version": "v2.3.0"
-    },
-    "web-socket": {
+    }
+  },
+  "web-socket": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "web-file"
@@ -4622,8 +5559,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-socket.git",
       "rev": "00f4ab583efb6fc60e0517d782d2ba2a89d8ec66",
       "version": "v2.0.0"
-    },
-    "web-storage": {
+    }
+  },
+  "web-storage": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "nullable",
         "web-events"
@@ -4633,8 +5573,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-storage.git",
       "rev": "c2dedea1ee10ca7e94af5547c90274fb63ab3bc6",
       "version": "v3.0.0"
-    },
-    "web-touchevents": {
+    }
+  },
+  "web-touchevents": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "web-uievents"
       ],
@@ -4643,8 +5586,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-touchevents.git",
       "rev": "cde8ea42d92035b1c46df4f1e1c38205aba7742a",
       "version": "v2.0.0"
-    },
-    "web-uievents": {
+    }
+  },
+  "web-uievents": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "web-html"
       ],
@@ -4653,8 +5599,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-uievents.git",
       "rev": "bdbc845bf8b06649c8361411085a0c0f788c9511",
       "version": "v2.0.0"
-    },
-    "web-xhr": {
+    }
+  },
+  "web-xhr": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "arraybuffer-types",
         "datetime",
@@ -4667,8 +5616,11 @@
       "repo": "https://github.com/purescript-web/purescript-web-xhr.git",
       "rev": "ca6e7b3b8186c026809e705ec6d8c2c943828ca8",
       "version": "v3.0.2"
-    },
-    "xiaomian": {
+    }
+  },
+  "xiaomian": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "naporitan"
       ],
@@ -4677,8 +5629,11 @@
       "repo": "https://github.com/justinwoo/purescript-xiaomian.git",
       "rev": "811264fd65cad9fa958ad3d0a5cff59450193b2a",
       "version": "v0.1.0"
-    },
-    "yargs": {
+    }
+  },
+  "yargs": {
+    "tag": "remote",
+    "value": {
       "dependencies": [
         "console",
         "either",
@@ -4692,9 +5647,5 @@
       "rev": "a517d190f15e7817a3144a982663281f125d28e8",
       "version": "v4.0.0"
     }
-  },
-  "sources": [
-    "src/**/*.purs",
-    "test/**/*.purs"
-  ]
+  }
 }

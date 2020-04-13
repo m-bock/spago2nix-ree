@@ -43,13 +43,16 @@ let
             url = package.value.repo;
             inherit (package.value) rev;
           };
-        in runCommand "src" { } "ln -s ${repo}/src $out"
+        in pkgs.runCommand "src" { } "ln -s ${repo}/src $out"
       else if package.tag == "local" then
         package.value + "/src"
       else
         { };
 
-    in package // { inherit source; };
+    in {
+      name = package.value.name;
+      inherit source;
+    };
 
   buildPackage = import ./build-package.nix { };
 
@@ -57,16 +60,23 @@ let
 
     src,
 
-    spagoLock ? src + "/spago-lock.json"
+    packagesLock,
+
+    spagoDhall ? "spago.dhall"
 
     }:
     let
 
-      spagoLock' = fromJSON (readFile spagoLock);
+      spagoConfig = fromJSON (readFile (pkgs.runCommand "spago.json" { } ''
+        cd ${src}
+        cat ${spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
+      ''));
+
+      packagesLock' = fromJSON (readFile packagesLock);
 
       projectPackage = rec {
-        name = spagoLock'.name;
-        dependencies = spagoLock'.dependencies;
+        name = spagoConfig.name;
+        dependencies = spagoConfig.dependencies;
         version = "no-version";
         source = pkgs.runCommand "${name}-source" { } ''
           mkdir $out
@@ -74,7 +84,7 @@ let
           shopt -s globstar
 
           pushd ${src}
-            for path in ${toString (spagoLock'.sources)}
+            for path in ${toString (spagoConfig.sources)}
             do
               mkdir -p $out/src/`dirname $path`
               cp $path $out/src/$path 
@@ -83,7 +93,7 @@ let
         '';
       };
 
-      spagoPackages = mapAttrs (_: resolvePackage) spagoLock'.packages;
+      spagoPackages = mapAttrs (_: resolvePackage) packagesLock';
 
     in buildPackage {
       inherit spagoPackages;
@@ -94,13 +104,15 @@ let
 
     src,
 
+    packagesLock ? "packages-lock.json",
+
     spagoDhall ? "spago.dhall"
 
     }:
     let
 
       spagoConfig = fromJSON (readFile (runCommand "spago.json" { } ''
-        cat ${src + spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
+        cat ${src + "/" + spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
       ''));
 
       projectPackage = rec {
@@ -110,7 +122,7 @@ let
         source = pkgs.runCommand "${name}-source" { } "mkdir $out";
       };
 
-      spagoPackages = mapAttrs (_: resolvePackage) spagoConfig.packages;
+      spagoPackages = mapAttrs (_: resolvePackage) packagesLock;
 
     in buildPackage {
       inherit spagoPackages;

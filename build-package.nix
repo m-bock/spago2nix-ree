@@ -72,9 +72,9 @@ let
         dependenciesBuilt.packages}
 
         # Link in own sources
-        dir=$out/.spago/${package.name}
-        mkdir $dir
-        cp -r ${source} $dir/${package.version} 
+        dir=$out/.spago/${package.name}/${package.version}
+        mkdir -p $dir
+        cp -r ${source} $dir/src 
 
         # Link in dependency builds
         ${forEach (dep: "cp -ru --preserve=all ${dep}/output/* -t $out/output")

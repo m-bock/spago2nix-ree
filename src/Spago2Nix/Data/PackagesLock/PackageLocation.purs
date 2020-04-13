@@ -34,7 +34,9 @@ type PackageRemote
     }
 
 type PackageLocal
-  = AnyDir
+  = { name :: String
+    , location :: AnyDir
+    }
 
 codecPackageRemote :: JsonCodec PackageRemote
 codecPackageRemote =
@@ -50,10 +52,15 @@ codecPackageRemote =
 
 codecPackageLocal :: JsonCodec PackageLocal
 codecPackageLocal =
-  codecAnyDir
-    { parser: Pathy.posixParser
-    , printer: Pathy.posixPrinter
-    }
+  Codec.object "PackageLocal"
+    $ Codec.Record.record
+        { name: Codec.string
+        , location:
+          codecAnyDir
+            { parser: Pathy.posixParser
+            , printer: Pathy.posixPrinter
+            }
+        }
 
 codecPackageLocation ∷ JsonCodec PackageLocation
 codecPackageLocation =

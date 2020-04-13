@@ -170,7 +170,14 @@ handleLocation ::
   String /\ PackagesDhall.PackageLocation ->
   ExceptT ErrorStack Aff (String /\ PackagesLock.PackageLocation)
 handleLocation config (key /\ packageLocation) = case packageLocation of
-  PackagesDhall.Local x -> pure $ key /\ PackagesLock.Local x
+  PackagesDhall.Local location ->
+    let
+      value =
+        { name: key
+        , location
+        }
+    in
+      pure $ key /\ PackagesLock.Local value
   PackagesDhall.Remote package -> do
     nixPrefetchGitResult <-
       nixPrefetchGit config
