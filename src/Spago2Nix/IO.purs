@@ -96,7 +96,7 @@ nixFormat config options =
 getPackagesDhall :: Config -> ExceptT ErrorStack Aff PackagesDhall
 getPackagesDhall config =
   let
-    fileStr = unsafePrintAnyFile Pathy.posixPrinter config.target
+    fileStr = unsafePrintAnyFile Pathy.posixPrinter config.packagesDhall
 
     errorMsg _ =
       SimpleText.Sentence
