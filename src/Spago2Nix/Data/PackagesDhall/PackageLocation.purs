@@ -62,10 +62,10 @@ codecPackageLocation = jsonPrimCodec "PackageLocation" dec enc
     Remote x -> encode codecPackageRemote x
     Local x -> encode codecPackageLocal x
 
-jsonPrimCodec ∷
-  ∀ a.
-  String →
-  (Json → Maybe a) →
-  (a → Json) →
+jsonPrimCodec ::
+  forall a.
+  String ->
+  (Json -> Maybe a) ->
+  (a -> Json) ->
   JsonCodec a
 jsonPrimCodec ty f = basicCodec (maybe (Left (TypeMismatch ty)) pure <<< f)

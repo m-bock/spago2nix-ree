@@ -36,11 +36,18 @@ let
 
   resolvePackage = package:
     let
-      source = pkgs.fetchgit {
-        sha256 = package.nixSha256;
-        url = package.repo;
-        inherit (package) rev;
-      };
+      source = if package.tag == "remote" then
+        let
+          repo = pkgs.fetchgit {
+            sha256 = package.value.nixSha256;
+            url = package.value.repo;
+            inherit (package.value) rev;
+          };
+        in runCommand "src" { } "ln -s ${repo}/src $out"
+      else if package.tag == "local" then
+        package.value + "/src"
+      else
+        { };
 
     in package // { inherit source; };
 
@@ -87,21 +94,23 @@ let
 
     src,
 
-    spagoLock ? src + "/spago-lock.json"
+    spagoDhall ? "spago.dhall"
 
     }:
     let
 
-      spagoLock' = fromJSON (readFile spagoLock);
+      spagoConfig = fromJSON (readFile (runCommand "spago.json" { } ''
+        cat ${src + spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
+      ''));
 
       projectPackage = rec {
-        name = spagoLock'.name + "-dependencies";
-        dependencies = spagoLock'.dependencies;
+        name = spagoConfig.name + "-dependencies";
+        dependencies = spagoConfig.dependencies;
         version = "no-version";
         source = pkgs.runCommand "${name}-source" { } "mkdir $out";
       };
 
-      spagoPackages = mapAttrs (_: resolvePackage) spagoLock'.packages;
+      spagoPackages = mapAttrs (_: resolvePackage) spagoConfig.packages;
 
     in buildPackage {
       inherit spagoPackages;
