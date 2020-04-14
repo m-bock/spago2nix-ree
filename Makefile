@@ -18,7 +18,7 @@ check:
 	node -e "require('./output/Test.Main').main()"
 
 installcheck:
-	$$out/bin/spago2nix-ree --help
+	$$out/bin/spago2nix-ree --help > /dev/null
 
 version:
 	sed -i 's/$(OLD)/$(NEW)/g' README.md
