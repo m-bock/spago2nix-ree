@@ -68,8 +68,8 @@ let
     let
 
       spagoConfig = fromJSON (readFile (pkgs.runCommand "spago.json" { } ''
-        cd ${src}
-        cat ${spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
+        cd ${src}/`dirname ${spagoDhall}`
+        cat `basename ${spagoDhall}` | ${dhall-json}/bin/dhall-to-json > $out
       ''));
 
       packagesLock' = fromJSON (readFile packagesLock);
@@ -112,7 +112,8 @@ let
     let
 
       spagoConfig = fromJSON (readFile (pkgs.runCommand "spago.json" { } ''
-        cat ${src + "/" + spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
+        cd ${src}/`dirname ${spagoDhall}`
+        cat `basename ${spagoDhall}` | ${dhall-json}/bin/dhall-to-json > $out
       ''));
 
       projectPackage = rec {

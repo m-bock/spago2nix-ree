@@ -7,19 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [2.0.0] - 2020-04-13
+## [1.0.0] - 2020-04-13
 
 ### Added
 
 - Support for local packages.
+- Better CLI documentation.
 
 ### Changed
 
 - Format of lock file.
 - Much better caching of already built packages. Version `1.0.0` was practically unusable for more than a couple of dependencies.
-- The CLI works now on `packages.dhall` instead of `spago.dhall`. This makes much more sense.
+- The CLI works now on `packages.dhall` instead of `spago.dhall`. This makes much more sense for e.g. mono repos.
 
-## [1.0.0]
+## [v0.1.1]
 
 ### Added
 
