@@ -7,14 +7,11 @@ module Spago2Nix.Data.PackagesDhall.PackageLocation
 
 import Prelude
 import Control.Alt ((<|>))
-import Data.Argonaut (Json)
-import Data.Codec (basicCodec, decode, encode)
-import Data.Codec.Argonaut (JsonCodec, JsonDecodeError(..))
+import Data.Codec (decode, encode)
+import Data.Codec.Argonaut (JsonCodec, json, prismaticCodec)
 import Data.Codec.Argonaut as Codec
 import Data.Codec.Argonaut.Record as Codec.Record
-import Data.Either (Either(..))
 import Data.Either as Either
-import Data.Maybe (Maybe, maybe)
 import Pathy (AnyDir)
 import Pathy as Pathy
 import Spago2Nix.Data.Codec.Argonaut.Compat.Pathy.Unsandboxed (codecAnyDir)
@@ -51,21 +48,13 @@ codecPackageLocal =
     }
 
 codecPackageLocation :: JsonCodec PackageLocation
-codecPackageLocation = jsonPrimCodec "PackageLocation" dec enc
+codecPackageLocation = prismaticCodec fromJson toJson json
   where
-  dec x =
+  fromJson x =
     (decode codecPackageRemote x <#> Remote)
-      <|> (decode codecPackageRemote x <#> Remote)
+      <|> (decode codecPackageLocal x <#> Local)
       # Either.hush
 
-  enc = case _ of
+  toJson = case _ of
     Remote x -> encode codecPackageRemote x
     Local x -> encode codecPackageLocal x
-
-jsonPrimCodec ::
-  forall a.
-  String ->
-  (Json -> Maybe a) ->
-  (a -> Json) ->
-  JsonCodec a
-jsonPrimCodec ty f = basicCodec (maybe (Left (TypeMismatch ty)) pure <<< f)
