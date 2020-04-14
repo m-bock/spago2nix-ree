@@ -22,7 +22,7 @@ let
           repo = pkgs.fetchgit {
             sha256 = package.value.nixSha256;
             url = package.value.repo;
-            inherit (package.value) rev;
+            rev = package.value.rev;
           };
         in pkgs.runCommand "src" { } "ln -s ${repo}/src $out"
       else if package.tag == "local" then
@@ -32,6 +32,8 @@ let
 
     in {
       name = package.value.name;
+      dependencies = package.value.dependencies;
+      version = package.value.version;
       inherit source;
     };
 

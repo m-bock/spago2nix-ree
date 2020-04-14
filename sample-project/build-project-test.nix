@@ -1,7 +1,7 @@
 { pkgs ? import <nixpkgs> { } }:
 
 let spago2nix-ree = import ../default.nix { };
-in spago2nix-ree.buildProject {
+in spago2nix-ree.buildProjectDependencies {
   src = pkgs.runCommand "src" { } ''
     mkdir $out
     ln -s ${./spago.dhall} $out/spago.dhall

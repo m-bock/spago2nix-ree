@@ -1,5 +1,4 @@
-{
-sources ? import ../sources.nix;
+{ sources ? import ../sources.nix,
 
 # PKGS
 
@@ -36,8 +35,8 @@ let
     src = pkgs.runCommand "src" { } ''
       mkdir $out
 
-      ln -s ${./package.json} $out/package.json
-      ln -s ${./yarn.lock} $out/yarn.lock
+      ln -s ${../../package.json} $out/package.json
+      ln -s ${../../yarn.lock} $out/yarn.lock
     '';
 
     publishBinsFor = [ "purescript-psa" "parcel" ];
@@ -67,9 +66,9 @@ let
     src = pkgs.runCommand "src" { } ''
       mkdir $out
 
-      ln -s ${./Makefile} $out/Makefile
-      ln -s ${./src} $out/src
-      ln -s ${./test} $out/test
+      ln -s ${../../Makefile} $out/Makefile
+      ln -s ${../../src} $out/src
+      ln -s ${../../test} $out/test
     '';
 
     preBuildPhase = ''
@@ -77,7 +76,7 @@ let
       cd $TMP
 
       ln -s $src/* -t .
-      bash ${(pkgs.callPackage ./spago-packages.nix { }).installSpagoStyle}
+      bash ${(pkgs.callPackage ../../spago-packages.nix { }).installSpagoStyle}
     '';
 
     installPhase = ''
