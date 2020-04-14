@@ -87,9 +87,9 @@ let
   };
 
 in pkgs.writeShellScriptBin "spago2nix-ree" ''
-  PURE=true
-  DHALL_TO_JSON=${dhall-json}/bin/dhall-to-json
-  NIX_PREFETCH_GIT=${nix-prefetch-git}/bin/nix-prefetch-git
+  export PURE=true
+  export DHALL_TO_JSON=${dhall-json}/bin/dhall-to-json
+  export NIX_PREFETCH_GIT=${nix-prefetch-git}/bin/nix-prefetch-git
 
   ${spago2nix-ree}/bin/spago2nix-ree $@
 ''
