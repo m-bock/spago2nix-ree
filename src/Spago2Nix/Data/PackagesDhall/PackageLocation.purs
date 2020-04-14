@@ -12,9 +12,9 @@ import Data.Codec.Argonaut (JsonCodec, json, prismaticCodec)
 import Data.Codec.Argonaut as Codec
 import Data.Codec.Argonaut.Record as Codec.Record
 import Data.Either as Either
-import Pathy (AnyDir)
+import Pathy (AnyFile)
 import Pathy as Pathy
-import Spago2Nix.Data.Codec.Argonaut.Compat.Pathy.Unsandboxed (codecAnyDir)
+import Spago2Nix.Data.Codec.Argonaut.Compat.Pathy.Unsandboxed (codecAnyFile)
 import Spago2Nix.Data.URI (URI)
 import Spago2Nix.Data.URI as URI
 
@@ -29,7 +29,7 @@ type PackageRemote
     }
 
 type PackageLocal
-  = AnyDir
+  = AnyFile
 
 codecPackageRemote :: JsonCodec PackageRemote
 codecPackageRemote =
@@ -42,7 +42,7 @@ codecPackageRemote =
 
 codecPackageLocal :: JsonCodec PackageLocal
 codecPackageLocal =
-  codecAnyDir
+  codecAnyFile
     { parser: Pathy.posixParser
     , printer: Pathy.posixPrinter
     }

@@ -35,6 +35,7 @@ type PackageRemote
 
 type PackageLocal
   = { name :: String
+    , dependencies :: Array String
     , location :: AnyDir
     }
 
@@ -55,6 +56,7 @@ codecPackageLocal =
   Codec.object "PackageLocal"
     $ Codec.Record.record
         { name: Codec.string
+        , dependencies: Codec.array Codec.string
         , location:
           codecAnyDir
             { parser: Pathy.posixParser

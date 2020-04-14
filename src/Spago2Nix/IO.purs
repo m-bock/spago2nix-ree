@@ -6,19 +6,21 @@ import Control.Monad.Except (ExceptT(..), mapExceptT, withExceptT)
 import Control.Parallel (class Parallel, parTraverse)
 import Data.Array (cons)
 import Data.Array as Array
-import Data.Bifunctor (lmap)
+import Data.Bifunctor (bimap, lmap)
 import Data.Codec.Argonaut as Codec
 import Data.Either (Either(..))
 import Data.Map as Map
 import Data.Maybe (Maybe(..))
 import Data.Traversable (sequence)
 import Data.TraversableWithIndex (traverseWithIndex)
+import Data.Tuple as Tuple
 import Data.Tuple.Nested ((/\), type (/\))
 import Effect.Aff (Aff, try)
 import Effect.Class.Console (log)
 import Node.ChildProcess (Exit(..), defaultSpawnOptions)
 import Node.Encoding (Encoding(..))
 import Node.FS.Aff as FS
+import Pathy (AnyFile, Dir, File)
 import Pathy as Pathy
 import Pathy.Extra.Unsandboxed (unsafePrintAnyFile)
 import Record (union)
@@ -30,6 +32,7 @@ import Spago2Nix.Data.PackagesDhall (PackagesDhall, codecPackagesDhall)
 import Spago2Nix.Data.PackagesDhall as PackagesDhall
 import Spago2Nix.Data.PackagesLock (PackagesLock, codecPackagesLock)
 import Spago2Nix.Data.PackagesLock as PackagesLock
+import Spago2Nix.Data.SpagoDhall (SpagoDhall, codecSpagoDhall)
 import Spago2Nix.Data.URI (URI)
 import Spago2Nix.Data.URI as URI
 import Sunde as Sunde
@@ -110,6 +113,23 @@ getPackagesDhall config =
           (jsonParser >=> decode codecPackagesDhall)
       # withExceptT (cons $ SimpleText.print $ errorMsg unit)
 
+getSpagoDhall :: Config -> AnyFile -> ExceptT ErrorStack Aff SpagoDhall
+getSpagoDhall config file =
+  let
+    fileStr = unsafePrintAnyFile Pathy.posixPrinter file
+
+    errorMsg _ =
+      SimpleText.Sentence
+        $ SimpleText.Texts
+            [ SimpleText.Text "Read spago config file at"
+            , SimpleText.Backtick $ SimpleText.Text $ fileStr
+            ]
+  in
+    dhallToJson config fileStr
+      # (mapExceptT <<< map <<< bindFlipped)
+          (jsonParser >=> decode codecSpagoDhall)
+      # withExceptT (cons $ SimpleText.print $ errorMsg unit)
+
 writePackagesLock :: Config -> PackagesLock -> ExceptT ErrorStack Aff Unit
 writePackagesLock config packagesLock =
   packagesLock
@@ -170,14 +190,15 @@ handleLocation ::
   String /\ PackagesDhall.PackageLocation ->
   ExceptT ErrorStack Aff (String /\ PackagesLock.PackageLocation)
 handleLocation config (key /\ packageLocation) = case packageLocation of
-  PackagesDhall.Local location ->
+  PackagesDhall.Local spagoFile -> do
+    spagoConfig <- getSpagoDhall config spagoFile
     let
       value =
         { name: key
-        , location
+        , dependencies: spagoConfig.dependencies
+        , location: spagoFile # bimap getDir getDir
         }
-    in
-      pure $ key /\ PackagesLock.Local value
+    pure $ key /\ PackagesLock.Local value
   PackagesDhall.Remote package -> do
     nixPrefetchGitResult <-
       nixPrefetchGit config
@@ -193,6 +214,9 @@ handleLocation config (key /\ packageLocation) = case packageLocation of
             , name: key
             }
     pure $ key /\ PackagesLock.Remote value
+  where
+  getDir :: forall a. Pathy.Path a File -> Pathy.Path a Dir
+  getDir = Pathy.peelFile >>> Tuple.fst
 
 parTraverse' :: forall m a b f. Parallel f m => { max :: Int } -> (a -> m b) -> Array a -> m (Array b)
 parTraverse' { max } f xs =
