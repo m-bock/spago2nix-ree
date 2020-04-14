@@ -9,9 +9,11 @@ module Spago2Nix.Data.Codec.Argonaut.Compat.Pathy.Unsandboxed
   ) where
 
 import Prelude
-import Data.Codec.Argonaut (JsonCodec, prismaticCodec)
+import Control.Alt ((<|>))
+import Data.Codec.Argonaut (JsonCodec, decode, encode, json, prismaticCodec)
 import Data.Codec.Argonaut as Codec
-import Data.Codec.Argonaut.Common as Codec.Common
+import Data.Either (Either(..))
+import Data.Either as Either
 import Data.Maybe (Maybe)
 import Pathy (class IsDirOrFile, class IsRelOrAbs, Abs, AnyDir, Dir, File, Path, Rel, AnyFile)
 import Pathy as Pathy
@@ -66,10 +68,28 @@ codecRelFile { printer, parser } =
   encoder = printAny printer
 
 codecAnyDir :: PathyConfig -> JsonCodec AnyDir
-codecAnyDir pathyConfig = Codec.Common.either (codecAbsDir pathyConfig) (codecRelDir pathyConfig)
+codecAnyDir pathyConfig = prismaticCodec fromJson toJson json
+  where
+  fromJson x =
+    (decode (codecAbsDir pathyConfig) x <#> Left)
+      <|> (decode (codecRelDir pathyConfig) x <#> Right)
+      # Either.hush
+
+  toJson = case _ of
+    Left x -> encode (codecAbsDir pathyConfig) x
+    Right x -> encode (codecRelDir pathyConfig) x
 
 codecAnyFile :: PathyConfig -> JsonCodec AnyFile
-codecAnyFile pathyConfig = Codec.Common.either (codecAbsFile pathyConfig) (codecRelFile pathyConfig)
+codecAnyFile pathyConfig = prismaticCodec fromJson toJson json
+  where
+  fromJson x =
+    (decode (codecAbsFile pathyConfig) x <#> Left)
+      <|> (decode (codecRelFile pathyConfig) x <#> Right)
+      # Either.hush
+
+  toJson = case _ of
+    Left x -> encode (codecAbsFile pathyConfig) x
+    Right x -> encode (codecRelFile pathyConfig) x
 
 printAny :: forall a b. IsRelOrAbs a => IsDirOrFile b => Pathy.Printer -> Path a b -> String
 printAny printer = Pathy.sandboxAny >>> Pathy.printPath printer
