@@ -1,0 +1,5910 @@
+{
+  "aff": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "effect",
+        "exceptions",
+        "functions",
+        "parallel",
+        "transformers",
+        "unsafe-coerce"
+      ],
+      "name": "aff",
+      "nixSha256": "1ygjxbm2bqw82sm17szhzz4jihvbg9mszx1ii0n3sj72bnz02avz",
+      "repo": "https://github.com/slamdata/purescript-aff.git",
+      "rev": "78916a9c7e6d203f1d9f441c8eaa257d6475e978",
+      "version": "v5.1.2"
+    }
+  },
+  "aff-bus": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "avar",
+        "prelude"
+      ],
+      "name": "aff-bus",
+      "nixSha256": "17y6gcd8y6sibfkdijl9w0g4vwia0b005nc8jbyhp4svgszcv11x",
+      "repo": "https://github.com/slamdata/purescript-aff-bus.git",
+      "rev": "5f60dc3b29b6a37f08eacd210c979dbdfbc8ed76",
+      "version": "v4.0.0"
+    }
+  },
+  "aff-coroutines": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "avar",
+        "console",
+        "coroutines"
+      ],
+      "name": "aff-coroutines",
+      "nixSha256": "1cbly4m2na5kf3halj68rjy5khydb71gzz0ry323z5h1i0fna2g9",
+      "repo": "https://github.com/purescript-contrib/purescript-aff-coroutines.git",
+      "rev": "f2f410f3cc9030487ddadf9ffdaab75ba508bde9",
+      "version": "v7.0.0"
+    }
+  },
+  "aff-promise": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "foreign"
+      ],
+      "name": "aff-promise",
+      "nixSha256": "0khm53lvxgvc7fbsvcr2h2wlhcgay8vq45755f0w8vpk1441dvww",
+      "repo": "https://github.com/nwolverson/purescript-aff-promise.git",
+      "rev": "033d6b90252e0390b0de7845e21de919bc4c3a0e",
+      "version": "v2.1.0"
+    }
+  },
+  "aff-retry": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "psci-support",
+        "console",
+        "aff",
+        "datetime",
+        "prelude",
+        "random",
+        "transformers",
+        "exceptions",
+        "test-unit"
+      ],
+      "name": "aff-retry",
+      "nixSha256": "08651ly153ywzviab0ipd0zrhwdr8nz4xfym45dlpbgabgrh8pra",
+      "repo": "https://github.com/Unisay/purescript-aff-retry.git",
+      "rev": "936fad803e3610f149df724ead288657a905cb84",
+      "version": "v1.2.1"
+    }
+  },
+  "affjax": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "argonaut-core",
+        "arraybuffer-types",
+        "foreign",
+        "form-urlencoded",
+        "http-methods",
+        "integers",
+        "math",
+        "media-types",
+        "nullable",
+        "refs",
+        "unsafe-coerce",
+        "web-xhr"
+      ],
+      "name": "affjax",
+      "nixSha256": "0n01xpc60xqd1gjxdh6jxbvc0m4i6h95j6dkayncbck5zrgnm2d7",
+      "repo": "https://github.com/slamdata/purescript-affjax.git",
+      "rev": "200bad76c420935550bb9ef0ea6a548caea2ba42",
+      "version": "v10.0.0"
+    }
+  },
+  "ansi": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "lists",
+        "strings"
+      ],
+      "name": "ansi",
+      "nixSha256": "16kgy9zbdms9appd69gad2bka44ijkcnc9p0kf5g7x672jypx3ar",
+      "repo": "https://github.com/hdgarrood/purescript-ansi.git",
+      "rev": "e060b4a7c9a0df9359871cb0c5773139e5525d2f",
+      "version": "v5.0.0"
+    }
+  },
+  "argonaut": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "argonaut-traversals"
+      ],
+      "name": "argonaut",
+      "nixSha256": "0b2jy5sf2lnn1r4kxnnm2vsr5iqkfas0jqp9yrrjmg7qngkd6qkw",
+      "repo": "https://github.com/purescript-contrib/purescript-argonaut.git",
+      "rev": "3365736b862ec6d8948ea31debebd04d0abf12fc",
+      "version": "v6.0.0"
+    }
+  },
+  "argonaut-codecs": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-core",
+        "arrays",
+        "foreign-object",
+        "integers",
+        "maybe",
+        "nonempty",
+        "ordered-collections",
+        "record"
+      ],
+      "name": "argonaut-codecs",
+      "nixSha256": "1i8dm95kbcl7k92jqnylhng1rjcqx5z12yhf6mwvp0z0bmsz250b",
+      "repo": "https://github.com/purescript-contrib/purescript-argonaut-codecs.git",
+      "rev": "b0317d576e10aa73600c43f835bfad45679d0aff",
+      "version": "v6.0.2"
+    }
+  },
+  "argonaut-core": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "control",
+        "either",
+        "foreign-object",
+        "functions",
+        "gen",
+        "maybe",
+        "nonempty",
+        "prelude",
+        "strings",
+        "tailrec"
+      ],
+      "name": "argonaut-core",
+      "nixSha256": "1rfd1brvzp9akx6hypxql2qv9bhlcqks1xwqfqqf31dqvcl7vvhc",
+      "repo": "https://github.com/purescript-contrib/purescript-argonaut-core.git",
+      "rev": "a9999bc4c10272ee188768bf90a455bd1a79ccd6",
+      "version": "v5.0.2"
+    }
+  },
+  "argonaut-generic": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "generics-rep",
+        "record"
+      ],
+      "name": "argonaut-generic",
+      "nixSha256": "0lll7wkgf4xzsbaagxbcjpjh9y4vj0hfvcg94plsz3sda597a6nv",
+      "repo": "https://github.com/purescript-contrib/purescript-argonaut-generic.git",
+      "rev": "fbaa763f8cc6771c66c6207bf9c00fa56cc44a57",
+      "version": "v5.0.0"
+    }
+  },
+  "argonaut-traversals": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "profunctor-lenses"
+      ],
+      "name": "argonaut-traversals",
+      "nixSha256": "0mr6c7c64c5b7ia0b68vsjyjxw06ac9908xpgxdd969kpvcwq9x3",
+      "repo": "https://github.com/purescript-contrib/purescript-argonaut-traversals.git",
+      "rev": "6613254947961686341eaa1ed23886c9d2587d93",
+      "version": "v7.0.0"
+    }
+  },
+  "array-views": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "control",
+        "foldable-traversable",
+        "generics-rep",
+        "maybe",
+        "nonempty",
+        "prelude",
+        "profunctor",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "array-views",
+      "nixSha256": "0fzxcl4sjyx8vc2dq9cbmg9b2n04w9pns7p2b67z9hg44pj7f14b",
+      "repo": "https://github.com/klntsky/purescript-array-views.git",
+      "rev": "3882708f782eed8979435ec4b159f04e5fcd1c63",
+      "version": "v0.0.2"
+    }
+  },
+  "arraybuffer": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "effect",
+        "float32",
+        "functions",
+        "maybe",
+        "nullable",
+        "partial",
+        "sized-vectors",
+        "typelevel",
+        "uint"
+      ],
+      "name": "arraybuffer",
+      "nixSha256": "0vg1pfmjqnay5lkzaqqh4n75nf212fky9gpk0hjxzvb714yiibjk",
+      "repo": "https://github.com/jacereda/purescript-arraybuffer.git",
+      "rev": "7f90bc44247dcbeab70caef5d373833286468266",
+      "version": "v10.0.2"
+    }
+  },
+  "arraybuffer-types": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "arraybuffer-types",
+      "nixSha256": "059a8n49yhl46l1b1j2qj4ichzq6dzj29ajkfvw88npzj5w2rshy",
+      "repo": "https://github.com/purescript-contrib/purescript-arraybuffer-types.git",
+      "rev": "505aa3de50a1400e5f2fce4a8e7b1a39abaa8fd9",
+      "version": "v2.0.0"
+    }
+  },
+  "arrays": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "foldable-traversable",
+        "maybe",
+        "nonempty",
+        "partial",
+        "prelude",
+        "st",
+        "tailrec",
+        "tuples",
+        "unfoldable",
+        "unsafe-coerce"
+      ],
+      "name": "arrays",
+      "nixSha256": "1z8i4mr30mjsvmw743g0m1yxfgqa9rhbgq7jq3955mg7j80j5r7w",
+      "repo": "https://github.com/purescript/purescript-arrays.git",
+      "rev": "463dcacb99455de5e28ac4a3312bb795f293d2d9",
+      "version": "v5.3.1"
+    }
+  },
+  "assert": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "prelude"
+      ],
+      "name": "assert",
+      "nixSha256": "06l3ldmlmpz9pcpy8k578haa3pq67b733rvcpl5i3f69h6ymhz0n",
+      "repo": "https://github.com/purescript/purescript-assert.git",
+      "rev": "2044562f3c7c49c36ef4e63490031ed534589f6c",
+      "version": "v4.1.0"
+    }
+  },
+  "avar": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "effect",
+        "either",
+        "exceptions",
+        "functions",
+        "maybe"
+      ],
+      "name": "avar",
+      "nixSha256": "14g05jm2xricy5b9vn4k4lhc9lzi5jvpvv85h10s17kn4wwi9igk",
+      "repo": "https://github.com/slamdata/purescript-avar.git",
+      "rev": "17914413130490318a475e9de6a9244aaaa097d2",
+      "version": "v3.0.0"
+    }
+  },
+  "b64": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "either",
+        "encoding",
+        "enums",
+        "exceptions",
+        "functions",
+        "partial",
+        "prelude",
+        "strings"
+      ],
+      "name": "b64",
+      "nixSha256": "1rbp94k2010yxs9b5yglh101imlzrmxymm87zrxn2lw36bjxd62z",
+      "repo": "https://github.com/menelaos/purescript-b64.git",
+      "rev": "694b9675cce744864c49a16c7c1c53b12fefa83f",
+      "version": "v0.0.6"
+    }
+  },
+  "basic-auth": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "crypto",
+        "node-http"
+      ],
+      "name": "basic-auth",
+      "nixSha256": "1hfadj2py7a7aqcx810kdqys2j8269z0mn0ibs1hhlyllglw10xi",
+      "repo": "https://github.com/oreshinya/purescript-basic-auth.git",
+      "rev": "c6e86a5153ccaee42211fb6471de9922c364acd4",
+      "version": "v1.0.3"
+    }
+  },
+  "behaviors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "event",
+        "filterable",
+        "nullable",
+        "ordered-collections",
+        "prelude",
+        "web-events",
+        "web-html",
+        "web-uievents"
+      ],
+      "name": "behaviors",
+      "nixSha256": "01dxhs5nl7n0w1ygdqaxpi9hxx9bakxm3vggjdfm0hmbhrf0q8my",
+      "repo": "https://github.com/paf31/purescript-behaviors.git",
+      "rev": "0fc50530f71a3026bba12dd8df435bdbd9ef076a",
+      "version": "v8.0.0"
+    }
+  },
+  "bifunctors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "newtype",
+        "prelude"
+      ],
+      "name": "bifunctors",
+      "nixSha256": "1bdra5fbkraglqrrm484vw8h0wwk48kzkn586v4y7fg106q1q386",
+      "repo": "https://github.com/purescript/purescript-bifunctors.git",
+      "rev": "1062425892b4a1c734ec653dded22546e3063b27",
+      "version": "v4.0.0"
+    }
+  },
+  "bigints": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "integers",
+        "maybe",
+        "strings"
+      ],
+      "name": "bigints",
+      "nixSha256": "1m9v4an4y55rhiknr2spyllf80chl61w2xzmg90p58f8q4mzih8r",
+      "repo": "https://github.com/sharkdp/purescript-bigints.git",
+      "rev": "b29a2487899abc3701124701b82993a5fe129378",
+      "version": "v4.0.0"
+    }
+  },
+  "biscotti-cookie": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "effect",
+        "either",
+        "foldable-traversable",
+        "formatters",
+        "gen",
+        "newtype",
+        "now",
+        "prelude",
+        "profunctor-lenses",
+        "psci-support",
+        "quickcheck",
+        "record",
+        "string-parsers",
+        "strings",
+        "test-unit"
+      ],
+      "name": "biscotti-cookie",
+      "nixSha256": "09l6sndf21dwwy7wqdbnv8q91phps7kcippl7l9nshlgrihcpfi2",
+      "repo": "https://github.com/drewolson/purescript-biscotti-cookie.git",
+      "rev": "f2483aa395a9ee296673bb62494c7697cb769ae6",
+      "version": "v0.2.0"
+    }
+  },
+  "biscotti-session": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "argonaut",
+        "biscotti-cookie",
+        "effect",
+        "newtype",
+        "ordered-collections",
+        "prelude",
+        "profunctor-lenses",
+        "psci-support",
+        "refs",
+        "test-unit",
+        "uuid"
+      ],
+      "name": "biscotti-session",
+      "nixSha256": "1r24mpcj0wdc72l8jwr8cm1xv08zz51jb6d0yxpqfgfyszzwdwx9",
+      "repo": "https://github.com/drewolson/purescript-biscotti-session.git",
+      "rev": "3508121be9a5e4f29b05187aecdefd09599f9cf3",
+      "version": "v0.1.1"
+    }
+  },
+  "bower-json": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "generics-rep",
+        "maybe",
+        "arrays",
+        "either",
+        "newtype",
+        "tuples",
+        "foldable-traversable",
+        "argonaut-codecs",
+        "foreign-object"
+      ],
+      "name": "bower-json",
+      "nixSha256": "109g38z85539a34bm75cm0zbj2qcycf9ih4b5n66c8qa292ylqnm",
+      "repo": "https://github.com/klntsky/purescript-bower-json.git",
+      "rev": "c2880c35a99d500e71964fe4831f43a1bb7a2228",
+      "version": "v1.0.0"
+    }
+  },
+  "bucketchain": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "console",
+        "node-http",
+        "node-streams",
+        "transformers"
+      ],
+      "name": "bucketchain",
+      "nixSha256": "0qmqc5rbck0m9yv15mqrz3yqbapd66cxp5xbpjfsb9cyar8bkpm9",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain.git",
+      "rev": "76b440a4f72ec50fea074098657c7392be5d23f9",
+      "version": "v0.3.0"
+    }
+  },
+  "bucketchain-basic-auth": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "basic-auth",
+        "bucketchain"
+      ],
+      "name": "bucketchain-basic-auth",
+      "nixSha256": "0wc2bax820wpcp6rjjchyrgy6740jypa54yg4wnv0iwhwwfg1sws",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-basic-auth.git",
+      "rev": "146dad06ba0b7042c275f25df4db56918a10aac9",
+      "version": "v0.2.0"
+    }
+  },
+  "bucketchain-conditional": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain",
+        "js-date"
+      ],
+      "name": "bucketchain-conditional",
+      "nixSha256": "0djvk4a1m5k7rvi8hkhmhxd552a26jc0h22w0sh3p9i0vxsnmv40",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-conditional.git",
+      "rev": "2a3e4e125f49d68c1641f3ec0022d3e908695c96",
+      "version": "v0.2.0"
+    }
+  },
+  "bucketchain-cors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain",
+        "bucketchain-header-utils",
+        "http-methods"
+      ],
+      "name": "bucketchain-cors",
+      "nixSha256": "15dczg6g9nd7d91qa92f6xbmkw4vyhbqa441d1hah01vdqs5nk7d",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-cors.git",
+      "rev": "df3d5c19af0177a0ed09df11d3edbbe66fe2711a",
+      "version": "v0.3.0"
+    }
+  },
+  "bucketchain-csrf": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-csrf",
+      "nixSha256": "0czvbwy6w5n9h2vkwjwbgfl260kk5ibpiy8ssflzdf16m14v2440",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-csrf.git",
+      "rev": "702d62c35e0fa5d498982a869e98e036009450d4",
+      "version": "v0.1.0"
+    }
+  },
+  "bucketchain-header-utils": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-header-utils",
+      "nixSha256": "0wmz8kjkifvalidpzgcchwdpyawa39l24lkgmrdp7av935i3pv0x",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-header-utils.git",
+      "rev": "899b4230d53a2d74e52e356e90f956d034e38e60",
+      "version": "v0.3.0"
+    }
+  },
+  "bucketchain-health": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-health",
+      "nixSha256": "1cils1kyhc81z3dpf0v5ykhhb4lxygj6rr3mja0w7qfj07qv0xm8",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-health.git",
+      "rev": "1022ee6cec55f49f624b904c824254cbc426cae8",
+      "version": "v0.2.0"
+    }
+  },
+  "bucketchain-history-api-fallback": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-history-api-fallback",
+      "nixSha256": "003ll15ijli5xfvxjh15xcki47d9aszfb1qizy8ab84a5h6add3d",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-history-api-fallback.git",
+      "rev": "125beca6f91e3b20cb0aad7f8eb48ec84f5c2b8f",
+      "version": "v0.3.0"
+    }
+  },
+  "bucketchain-logger": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain",
+        "js-date",
+        "node-process"
+      ],
+      "name": "bucketchain-logger",
+      "nixSha256": "15i043yvwr0qinvvmi05xbi6ixpqjkj7z6x4zms881iihra4g8qa",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-logger.git",
+      "rev": "e0d612384747eaeb630751ff33c0afcd9ded79f8",
+      "version": "v0.3.0"
+    }
+  },
+  "bucketchain-secure": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-secure",
+      "nixSha256": "1c9vh4j91xscwq7ms4r2cygd4dp5vkjb8lrjmp79c8navx1myzrh",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-secure.git",
+      "rev": "d51f484c5162b2b37c129efca6b5cba01ea68565",
+      "version": "v0.1.0"
+    }
+  },
+  "bucketchain-simple-api": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain",
+        "media-types",
+        "simple-json",
+        "freet"
+      ],
+      "name": "bucketchain-simple-api",
+      "nixSha256": "1bn6kmcd0b11kr7knn55dgh6v7k931h0fz34vd623l6zf9s5sfdk",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-simple-api.git",
+      "rev": "d1809a5371f96970b372669d5ec802866b395046",
+      "version": "v3.0.0"
+    }
+  },
+  "bucketchain-sslify": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain"
+      ],
+      "name": "bucketchain-sslify",
+      "nixSha256": "145dnylf976q9hz00xybvhdssanw6r9804sxz4mcsh7m4i0xznq1",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-sslify.git",
+      "rev": "4bb3dfdf8ea444ab43b4b81a7a48ecca509a778f",
+      "version": "v0.2.0"
+    }
+  },
+  "bucketchain-static": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bucketchain",
+        "node-fs-aff"
+      ],
+      "name": "bucketchain-static",
+      "nixSha256": "1p5px861pih2hran7fddgrr062z2q0vfxvjvdis32gdk0qq1ggmb",
+      "repo": "https://github.com/Bucketchain/purescript-bucketchain-static.git",
+      "rev": "0c8b21f957e6c8dd66c789cebf2ab92b1b26dc2d",
+      "version": "v0.3.0"
+    }
+  },
+  "bytestrings": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "effect",
+        "exceptions",
+        "foldable-traversable",
+        "integers",
+        "leibniz",
+        "maybe",
+        "newtype",
+        "node-buffer",
+        "prelude",
+        "quickcheck",
+        "quotient",
+        "unsafe-coerce"
+      ],
+      "name": "bytestrings",
+      "nixSha256": "13biw9bcj9chnhirfjb3aldwzlv7gmil0ji0hhb257mhwlbiffk9",
+      "repo": "https://github.com/rightfold/purescript-bytestrings.git",
+      "rev": "60a75042e0c1dd5663cf1f46bd2a737399843f38",
+      "version": "v8.0.0"
+    }
+  },
+  "call-by-name": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "unsafe-coerce",
+        "lazy",
+        "maybe",
+        "either",
+        "control"
+      ],
+      "name": "call-by-name",
+      "nixSha256": "0d2y49sngr2kivhyngjn8x47h23lri48jvriwjyj414sxzayxpdm",
+      "repo": "https://github.com/natefaubion/purescript-call-by-name.git",
+      "rev": "91565e90cacf176bcc45eb4ab495264137a4e9d7",
+      "version": "v2.0.0"
+    }
+  },
+  "canvas": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "effect",
+        "exceptions",
+        "functions",
+        "maybe"
+      ],
+      "name": "canvas",
+      "nixSha256": "0m7a523hr6jn8wg3d1jck1s3bar81gq4ar8bq658sbsysh73n1py",
+      "repo": "https://github.com/purescript-web/purescript-canvas.git",
+      "rev": "bbdc02388f2cc612324aa8c1eef7877666bf1bd2",
+      "version": "v4.0.0"
+    }
+  },
+  "cartesian": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "integers",
+        "psci-support"
+      ],
+      "name": "cartesian",
+      "nixSha256": "1y0i9sq31xm86sydkh917fwp78pkmilmql7lfh08q3kva935dzzb",
+      "repo": "https://github.com/Ebmtranceboy/purescript-cartesian.git",
+      "rev": "b752b0a53f007ca8aa9e319eb91fd6a997c14365",
+      "version": "v1.0.4"
+    }
+  },
+  "catenable-lists": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "foldable-traversable",
+        "lists",
+        "maybe",
+        "prelude",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "catenable-lists",
+      "nixSha256": "0mbpb8xr9a7a4bvawhki7js5cbv7c0lv0vdwb6r8nmv6b61gzg27",
+      "repo": "https://github.com/purescript/purescript-catenable-lists.git",
+      "rev": "d81b7df30d9879d0bb531b3102fb36f429c2f12e",
+      "version": "v5.0.1"
+    }
+  },
+  "checked-exceptions": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "transformers",
+        "variant"
+      ],
+      "name": "checked-exceptions",
+      "nixSha256": "1kfyihhsaz8g03vzvyir89adyzlcw4m95fr3xsmia8sd1vsb8646",
+      "repo": "https://github.com/natefaubion/purescript-checked-exceptions.git",
+      "rev": "b73844cfb6e128afb521a3d5aa61410fbe9992dc",
+      "version": "v3.1.0"
+    }
+  },
+  "cheerio": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "functions",
+        "prelude",
+        "test-unit"
+      ],
+      "name": "cheerio",
+      "nixSha256": "07py7jx21ql2pm3llhynk5ab91r5aw3lzj2gwba4lp9kwi16js52",
+      "repo": "https://github.com/icyrockcom/purescript-cheerio.git",
+      "rev": "a2f0cb8c4e3e591a9209d924a50f05bee6d33e0a",
+      "version": "v0.2.1"
+    }
+  },
+  "chirashi": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "exceptions",
+        "prelude",
+        "typelevel-prelude",
+        "variant"
+      ],
+      "name": "chirashi",
+      "nixSha256": "1wjh6lxg36fws4qm4myfw6xsy2p1vj3sb03iin10dyaz48j88ldz",
+      "repo": "https://github.com/justinwoo/purescript-chirashi.git",
+      "rev": "3589e247a0f269b0f7552828876b965eaa2fcafd",
+      "version": "v1.0.0"
+    }
+  },
+  "choco-pie": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "event",
+        "prelude",
+        "record",
+        "typelevel-prelude"
+      ],
+      "name": "choco-pie",
+      "nixSha256": "1q3xilbk8chsy3c07jal9j8nmcvmydk0kvdv9nrbffpxqc02n457",
+      "repo": "https://github.com/justinwoo/purescript-chocopie.git",
+      "rev": "c842beb9468e8cedb17f7a31b3e8166be05b0856",
+      "version": "v5.0.0"
+    }
+  },
+  "colors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "integers",
+        "lists",
+        "partial",
+        "strings"
+      ],
+      "name": "colors",
+      "nixSha256": "05bkfqllfpkh7nj0nzgd5p387hlpk0x35nam1i6xm3vzma9csj18",
+      "repo": "https://github.com/sharkdp/purescript-colors.git",
+      "rev": "fb582d3626e566371d20d4ef0b8d2795ee80f024",
+      "version": "v5.0.0"
+    }
+  },
+  "concur-core": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arrays",
+        "avar",
+        "console",
+        "foldable-traversable",
+        "free",
+        "nonempty",
+        "profunctor-lenses",
+        "tailrec"
+      ],
+      "name": "concur-core",
+      "nixSha256": "13y8rmhv2raca7dpkzqz85mr97rpw5kp3c4x8sryqa9x02jdqr4h",
+      "repo": "https://github.com/purescript-concur/purescript-concur-core.git",
+      "rev": "cf567149de0cff3e6fc4ea079204c3739ad0fa10",
+      "version": "v0.4.1"
+    }
+  },
+  "concur-react": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arrays",
+        "avar",
+        "concur-core",
+        "console",
+        "foldable-traversable",
+        "free",
+        "nonempty",
+        "react",
+        "react-dom",
+        "tailrec",
+        "web-dom",
+        "web-html"
+      ],
+      "name": "concur-react",
+      "nixSha256": "0lncfvg86krjxadbz5q52qs4pqaf83nidkrv5g1cz1a1cfrh786x",
+      "repo": "https://github.com/purescript-concur/purescript-concur-react.git",
+      "rev": "720879aba03c0cdfaad0d813d7b0fb5f32e8d614",
+      "version": "v0.4.1"
+    }
+  },
+  "console": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "prelude"
+      ],
+      "name": "console",
+      "nixSha256": "1w9k2g242lvyv4npb5rqfbdq1ngh7s7v12zarxn8yxgq15palh3m",
+      "repo": "https://github.com/purescript/purescript-console.git",
+      "rev": "9b48f83997168b94418d64d9e7b5c1763b30bdab",
+      "version": "v4.4.0"
+    }
+  },
+  "const": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "contravariant",
+        "foldable-traversable",
+        "invariant",
+        "newtype",
+        "prelude"
+      ],
+      "name": "const",
+      "nixSha256": "0qbd2aisax52yw6sybdhs7na943cbsd6mylhhgsamrf7hzh6v51p",
+      "repo": "https://github.com/purescript/purescript-const.git",
+      "rev": "bc5db27b0ed3947fa5e2074ccbab01236eec3fa4",
+      "version": "v4.1.0"
+    }
+  },
+  "contravariant": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "newtype",
+        "prelude",
+        "tuples"
+      ],
+      "name": "contravariant",
+      "nixSha256": "0dd17lwlybpz4i54cxnqdgy38rjlbw9p7bw1r43is6z3kdc8983a",
+      "repo": "https://github.com/purescript/purescript-contravariant.git",
+      "rev": "cb69db0253c2e2ed3fef784dad58f3418a8ee834",
+      "version": "v4.0.1"
+    }
+  },
+  "control": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "newtype"
+      ],
+      "name": "control",
+      "nixSha256": "1nm45khn2dvlyv059nzpz1w7d3nfsvq45hnb2qllrbzyv7rlxmi8",
+      "repo": "https://github.com/purescript/purescript-control.git",
+      "rev": "05d40c5855a0eda3bc396a3d815eaf213a0534e6",
+      "version": "v4.2.0"
+    }
+  },
+  "coroutines": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freet",
+        "parallel",
+        "profunctor"
+      ],
+      "name": "coroutines",
+      "nixSha256": "1is83blf44sflhwsaixpd1irlm33fsd1p919gbcn79mmmwi4bxdl",
+      "repo": "https://github.com/purescript-contrib/purescript-coroutines.git",
+      "rev": "67a076b704f4b176f9332e8dc82d531a357e00ac",
+      "version": "v5.0.1"
+    }
+  },
+  "crypto": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "node-buffer"
+      ],
+      "name": "crypto",
+      "nixSha256": "1cx2xjakgp3jlnqiqf9az3al0wbwazhf2zkzdngzx4lx60r9jxq9",
+      "repo": "https://github.com/oreshinya/purescript-crypto.git",
+      "rev": "0acc404042b5effa63d5aee08ffcc1b3e1e0e5ce",
+      "version": "v2.0.1"
+    }
+  },
+  "css": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "colors",
+        "console",
+        "generics-rep",
+        "nonempty",
+        "profunctor",
+        "strings",
+        "these",
+        "transformers"
+      ],
+      "name": "css",
+      "nixSha256": "0f6gib6rp20qz08vramw7k6kv2ck315lmshjpii8zmkjb5ya0w55",
+      "repo": "https://github.com/slamdata/purescript-css.git",
+      "rev": "0164325e66dd59b3b5a4ea53ac8adf7d389b4c8e",
+      "version": "v4.0.0"
+    }
+  },
+  "cssom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect"
+      ],
+      "name": "cssom",
+      "nixSha256": "0nq1jzp6ljhqrfflbvm6yqfynlm0kcddmxygnw3vzbbq1x07gjxv",
+      "repo": "https://github.com/danieljharvey/purescript-cssom.git",
+      "rev": "bd1fffc883f18cc6a79ce41e1e688b5a0f0351f7",
+      "version": "v0.0.2"
+    }
+  },
+  "data-algebrae": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "foreign-object",
+        "generics-rep",
+        "maybe",
+        "ordered-collections",
+        "prelude",
+        "spec",
+        "spec-quickcheck"
+      ],
+      "name": "data-algebrae",
+      "nixSha256": "0shjjfi7rr1snkvss1m9snm9hmb482sg1930f7r2j5vy5dzpw3bl",
+      "repo": "https://github.com/i-am-tom/purescript-data-algebrae.git",
+      "rev": "0085f81647b7a84f79d75e13428ce4eed35cc9be",
+      "version": "v4.0.0"
+    }
+  },
+  "datetime": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "either",
+        "enums",
+        "foldable-traversable",
+        "functions",
+        "gen",
+        "integers",
+        "lists",
+        "math",
+        "maybe",
+        "newtype",
+        "ordered-collections",
+        "partial",
+        "prelude",
+        "tuples"
+      ],
+      "name": "datetime",
+      "nixSha256": "06ghfvbvd5sd0q014qi8j8glk2g2j9f8z8cwq2318kllp92gz07q",
+      "repo": "https://github.com/purescript/purescript-datetime.git",
+      "rev": "9e76abe96f45a68eb0bb23d0afd56031a8070bee",
+      "version": "v4.1.1"
+    }
+  },
+  "debug": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "debug",
+      "nixSha256": "0gwjj80akys0h111i74n429fmny992gx0r4rk1n98gqlqm5cmi21",
+      "repo": "https://github.com/garyb/purescript-debug.git",
+      "rev": "b1484b8aac685dc83c1d938d71407495ae2a2259",
+      "version": "v4.0.0"
+    }
+  },
+  "decimals": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe"
+      ],
+      "name": "decimals",
+      "nixSha256": "1ad56xf8i7mwqlp718ik12dvc8aqwjxfpk7d8hdyjwzhf7b1ws2n",
+      "repo": "https://github.com/sharkdp/purescript-decimals.git",
+      "rev": "4911f744fb7db6519758b6993edc28d0f81e0a89",
+      "version": "v5.0.0"
+    }
+  },
+  "distributive": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "identity",
+        "newtype",
+        "prelude"
+      ],
+      "name": "distributive",
+      "nixSha256": "0zbn0yq1vv7fbbf1lncg80irz0vg7wnw9b9wrzxhdzpbkw4jinsl",
+      "repo": "https://github.com/purescript/purescript-distributive.git",
+      "rev": "3a43c0690883816e9ebeac510698423cfff5c174",
+      "version": "v4.0.0"
+    }
+  },
+  "dom-filereader": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arraybuffer-types",
+        "web-file",
+        "web-html"
+      ],
+      "name": "dom-filereader",
+      "nixSha256": "0337r9qrnrgmfpssdvls5rz03y97kmxp2s8fr72i5hycih93yv74",
+      "repo": "https://github.com/nwolverson/purescript-dom-filereader.git",
+      "rev": "14ef7eb23c7b90113c3a9d0e745359a6efecbff1",
+      "version": "v5.0.0"
+    }
+  },
+  "dom-indexed": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "media-types",
+        "prelude",
+        "web-clipboard",
+        "web-touchevents"
+      ],
+      "name": "dom-indexed",
+      "nixSha256": "18is75gsiix9w3f3lkly15cvs7ma1qc13hhi6wkl8nsj2g9g55ld",
+      "repo": "https://github.com/slamdata/purescript-dom-indexed.git",
+      "rev": "c449ae115bffe1fce89e145da62b862ad16ed935",
+      "version": "v7.0.0"
+    }
+  },
+  "dotenv": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "node-fs-aff",
+        "node-process",
+        "parsing",
+        "prelude",
+        "psci-support",
+        "run",
+        "spec",
+        "sunde"
+      ],
+      "name": "dotenv",
+      "nixSha256": "08pqs054nmy5plp1ixvlsz5pbcbm4vzkdn6mb2llrg4hkizs5hsv",
+      "repo": "https://github.com/nsaunders/purescript-dotenv.git",
+      "rev": "b327d1d4e7ba90b0d779cc303a4c30c069b80d95",
+      "version": "v1.1.0"
+    }
+  },
+  "drawing": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "canvas",
+        "colors",
+        "integers",
+        "lists",
+        "math",
+        "prelude"
+      ],
+      "name": "drawing",
+      "nixSha256": "1ad1f2c7rnhd25hidkbxxxm2mnc1sr3zsjzwivbynwv1fmyv54nz",
+      "repo": "https://github.com/paf31/purescript-drawing.git",
+      "rev": "60dafc4cf155896e307a8cc1696d95d53cff8acb",
+      "version": "v4.0.0"
+    }
+  },
+  "effect": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "effect",
+      "nixSha256": "1vqw5wrdxzh1ww6z7271xr4kg4mx0r3k3mwg18dmgmzj11wbn2wh",
+      "repo": "https://github.com/purescript/purescript-effect.git",
+      "rev": "6caa8e1e162a21eed025613c2c19194b996ef779",
+      "version": "v2.0.1"
+    }
+  },
+  "either": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "foldable-traversable",
+        "invariant",
+        "maybe",
+        "prelude"
+      ],
+      "name": "either",
+      "nixSha256": "12j7vvjly0bgxidxmb2pflx0zy7x425dnvxk2y1pm66n0hbsq7ns",
+      "repo": "https://github.com/purescript/purescript-either.git",
+      "rev": "8b4b38a729f8e88750b03e5c7baf2b3863ce4742",
+      "version": "v4.1.1"
+    }
+  },
+  "email-validate": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "generics-rep",
+        "string-parsers",
+        "transformers"
+      ],
+      "name": "email-validate",
+      "nixSha256": "1c7zsc6zskpidps3w2rcaad25zr2kfyd41aznnwrhisdhd0b86fx",
+      "repo": "https://github.com/cdepillabout/purescript-email-validate.git",
+      "rev": "b73471c0f479b6a5ad6fb903d3388013a9b79810",
+      "version": "v5.0.0"
+    }
+  },
+  "encoding": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "either",
+        "exceptions",
+        "functions",
+        "prelude"
+      ],
+      "name": "encoding",
+      "nixSha256": "1ccmlnk9k1ba8h7izbp7lkm2kxk6rpq4r0zb2h1436qspwkg51w0",
+      "repo": "https://github.com/menelaos/purescript-encoding.git",
+      "rev": "e45941150c75f26ab53cb5e34207cc347b375942",
+      "version": "v0.0.6"
+    }
+  },
+  "enums": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "either",
+        "gen",
+        "maybe",
+        "newtype",
+        "nonempty",
+        "partial",
+        "prelude",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "enums",
+      "nixSha256": "0qq0pgmq497nfml0y8xb2qdpga5xqp9sqq4ilv1rpyhg1v7nzb6v",
+      "repo": "https://github.com/purescript/purescript-enums.git",
+      "rev": "19800105b556798ea5650f8a01bfe5ea17cfc6eb",
+      "version": "v4.0.1"
+    }
+  },
+  "errors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "effect",
+        "either",
+        "maybe",
+        "transformers"
+      ],
+      "name": "errors",
+      "nixSha256": "09xph8rhd25l24az1bfyjkbrp0h7ymxm4b8kw180f8kn2qx6q99a",
+      "repo": "https://github.com/passy/purescript-errors.git",
+      "rev": "30abf43a6e6b62552e18769c0b624c1d7ef10f7d",
+      "version": "v4.1.0"
+    }
+  },
+  "event": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "filterable",
+        "js-timers",
+        "now",
+        "nullable",
+        "prelude",
+        "unsafe-reference"
+      ],
+      "name": "event",
+      "nixSha256": "0kqlywyzhlw108fq684zcq9bfj19jbwkajancm9w4bb3jd522ca8",
+      "repo": "https://github.com/paf31/purescript-event.git",
+      "rev": "5c3cf3866c01d8faed1763bb9f738db22a5ff4bb",
+      "version": "v1.3.0"
+    }
+  },
+  "exceptions": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "either",
+        "maybe",
+        "prelude"
+      ],
+      "name": "exceptions",
+      "nixSha256": "17s0rg9k4phivhx9j3l2vqqfdhk61gpj1xfqy8w6zj3rnxj0b2cv",
+      "repo": "https://github.com/purescript/purescript-exceptions.git",
+      "rev": "9012eb08749e9ccd5da45bdece5d576e5fc0b0db",
+      "version": "v4.0.0"
+    }
+  },
+  "exists": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "unsafe-coerce"
+      ],
+      "name": "exists",
+      "nixSha256": "0bbdbw3jaqyi8dj2d52zvfgx4vl84d8cr6hp43vy8lfjfcbj0wlk",
+      "repo": "https://github.com/purescript/purescript-exists.git",
+      "rev": "ef53359aebc09bf863800ca86ad1dcd76f0b08ae",
+      "version": "v4.0.0"
+    }
+  },
+  "exitcodes": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "enums"
+      ],
+      "name": "exitcodes",
+      "nixSha256": "16861bn1h6jz47i20sd2a0d3qdj52akkqpx43yllmsdggcawmjxc",
+      "repo": "https://github.com/Risto-Stevcev/purescript-exitcodes.git",
+      "rev": "8a9a93fd1776aba4a14cdc9a31094c9e05b05348",
+      "version": "v4.0.0"
+    }
+  },
+  "expect-inferred": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "typelevel-prelude"
+      ],
+      "name": "expect-inferred",
+      "nixSha256": "0vb36hl2znvrhzs4jvcd7nvzk3wcpzalbxxpc0fl13m5ibbq9dah",
+      "repo": "https://github.com/justinwoo/purescript-expect-inferred.git",
+      "rev": "68d560ed30919cb0146a1136e3826c9b4c8264a4",
+      "version": "v2.0.0"
+    }
+  },
+  "express": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "foreign",
+        "foreign-generic",
+        "node-http",
+        "test-unit"
+      ],
+      "name": "express",
+      "nixSha256": "11xq614r6zfwb0prkwl4lsjbnn5szskbmzlncqi762dzrbm45w70",
+      "repo": "https://github.com/nkly/purescript-express.git",
+      "rev": "7fb13122e864590abc71a0b1675a1818db399254",
+      "version": "v0.8.0"
+    }
+  },
+  "filterable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "either",
+        "foldable-traversable",
+        "identity",
+        "lists",
+        "ordered-collections"
+      ],
+      "name": "filterable",
+      "nixSha256": "0pn66mrgrpnlpd1lmywj5f0hbm9mnyjahqj276vz5v2xzlr0q63g",
+      "repo": "https://github.com/LiamGoodacre/purescript-filterable.git",
+      "rev": "b7bff31576261bc66bf29bfeca7679c2b107d68e",
+      "version": "v3.0.2"
+    }
+  },
+  "fixed-points": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "exists",
+        "newtype",
+        "prelude",
+        "transformers"
+      ],
+      "name": "fixed-points",
+      "nixSha256": "14acfi7897z2vd8mq52h0gz8x31wyrvalb490rqjf4nyk73vhg36",
+      "repo": "https://github.com/slamdata/purescript-fixed-points.git",
+      "rev": "44ae7a7135bd17dc6d865d31f166a8cf5fa65c7e",
+      "version": "v5.1.0"
+    }
+  },
+  "flare": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "canvas",
+        "datetime",
+        "drawing",
+        "foldable-traversable",
+        "nonempty",
+        "prelude",
+        "signal",
+        "smolder",
+        "tuples",
+        "web-dom"
+      ],
+      "name": "flare",
+      "nixSha256": "1ywyv722av7k4jbkdwp5nmrgkmbanag97wp5ckifcx9nydcyw12x",
+      "repo": "https://github.com/sharkdp/purescript-flare.git",
+      "rev": "1846a3d0cadd31945a4ee81e1ae5442c777c7479",
+      "version": "v6.0.0"
+    }
+  },
+  "float32": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "prelude"
+      ],
+      "name": "float32",
+      "nixSha256": "0g0yi4h9bdc1v8l7my2x19xqas5hbbkkhbj6z4r76559c9rbyvfr",
+      "repo": "https://github.com/athanclark/purescript-float32.git",
+      "rev": "1ca78fedb0b2da65b9ec0969d16c0bb7155e4f29",
+      "version": "v0.1.1"
+    }
+  },
+  "flow-id": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "simple-json"
+      ],
+      "name": "flow-id",
+      "nixSha256": "0kj5pk9nvap7yp9v0z7apcj0cshc5i224ww7pibwfg44y471kxig",
+      "repo": "https://github.com/i-am-the-slime/purescript-flow-id.git",
+      "rev": "127459a340241fe0e056237b19314bbf9b2d3caa",
+      "version": "v1.0.0"
+    }
+  },
+  "foldable-traversable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "maybe",
+        "newtype",
+        "orders",
+        "prelude"
+      ],
+      "name": "foldable-traversable",
+      "nixSha256": "03x89xcmphckzjlp4chc7swrpw347ll5bvr2yp7x9v2jqw2jlyi1",
+      "repo": "https://github.com/purescript/purescript-foldable-traversable.git",
+      "rev": "29d5b873cc86f17e0082d777629819a96bdbc7a1",
+      "version": "v4.1.1"
+    }
+  },
+  "folds": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "ordered-collections",
+        "profunctor"
+      ],
+      "name": "folds",
+      "nixSha256": "0wlsx2xq65f7nlz21acm8b5sraxfbdqcdrnjms3m5mbpdsndyn5y",
+      "repo": "https://github.com/paf31/purescript-folds.git",
+      "rev": "996d88ac0d71df73f3a2e80eca80e41347fef01a",
+      "version": "v5.2.0"
+    }
+  },
+  "foreign": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "functions",
+        "identity",
+        "integers",
+        "lists",
+        "maybe",
+        "prelude",
+        "strings",
+        "transformers"
+      ],
+      "name": "foreign",
+      "nixSha256": "15mz2s4f8crkd721z4df2aag4s0wil6fs07cpcmi7dpnkn7a4nab",
+      "repo": "https://github.com/purescript/purescript-foreign.git",
+      "rev": "3b8f3ae608db339ed5cff35d2017a07efb905b4d",
+      "version": "v5.0.0"
+    }
+  },
+  "foreign-generic": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "exceptions",
+        "foreign",
+        "foreign-object",
+        "generics-rep",
+        "identity",
+        "ordered-collections",
+        "proxy",
+        "record"
+      ],
+      "name": "foreign-generic",
+      "nixSha256": "1assvgmnim908plv7wzz4mrvq3lh4ayimgz5xk5njyz8p6pzkyvl",
+      "repo": "https://github.com/paf31/purescript-foreign-generic.git",
+      "rev": "46f09996bd54efc146bc1725783789dbac7d6a5b",
+      "version": "v10.0.0"
+    }
+  },
+  "foreign-object": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "foldable-traversable",
+        "functions",
+        "gen",
+        "lists",
+        "maybe",
+        "prelude",
+        "st",
+        "tailrec",
+        "tuples",
+        "typelevel-prelude",
+        "unfoldable"
+      ],
+      "name": "foreign-object",
+      "nixSha256": "07wiql59zfj901nk9526b6rykn9m24jjcs8v5dgxbr1c3hiab9n3",
+      "repo": "https://github.com/purescript/purescript-foreign-object.git",
+      "rev": "8a7dc21c48e3e6d31e253b0e58dd95a3bbd7f6e7",
+      "version": "v2.0.3"
+    }
+  },
+  "fork": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff"
+      ],
+      "name": "fork",
+      "nixSha256": "1jygqzyci40c28gw2ygnx8v52hilhajj1bdpn7ndvss4i7yh1lcp",
+      "repo": "https://github.com/slamdata/purescript-fork.git",
+      "rev": "27b9f223645a08b42731531a154892eaa263b590",
+      "version": "v4.0.0"
+    }
+  },
+  "form-urlencoded": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "globals",
+        "maybe",
+        "newtype",
+        "prelude",
+        "strings",
+        "tuples"
+      ],
+      "name": "form-urlencoded",
+      "nixSha256": "1kl937qxnbn9m1bn0ijpnfiizgpcvcrnzqcc1scwq2kxvxh8kqap",
+      "repo": "https://github.com/purescript-contrib/purescript-form-urlencoded.git",
+      "rev": "acccb8ae3e38ffc5d2803d576bb6e409adee7195",
+      "version": "v5.0.0"
+    }
+  },
+  "format": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "effect",
+        "integers",
+        "math",
+        "prelude",
+        "strings",
+        "unfoldable"
+      ],
+      "name": "format",
+      "nixSha256": "19f9vylx9ybxrwdkm16sh2bzv9xwlmq5yddj52a0s7yi80pkgmn9",
+      "repo": "https://github.com/sharkdp/purescript-format.git",
+      "rev": "764c4f4a9f7d01f9572cf34449d6a0ffbe3bb89a",
+      "version": "v4.0.0"
+    }
+  },
+  "format-nix": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "motsunabe",
+        "prelude"
+      ],
+      "name": "format-nix",
+      "nixSha256": "0s4q1lfm3sjcyrqcz28kpms23phi9h6sirkr8lgglsli33pfs5y9",
+      "repo": "https://github.com/justinwoo/format-nix.git",
+      "rev": "ca32a16deee11127b620470e63a1370d77a48975",
+      "version": "v0.3.0"
+    }
+  },
+  "formatters": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "fixed-points",
+        "generics-rep",
+        "lists",
+        "parsing",
+        "prelude",
+        "transformers"
+      ],
+      "name": "formatters",
+      "nixSha256": "1i9dnh7xr6wmmgaphy75m9jdrg3qbjm3ml5fwg4ihy87x9w1fv1l",
+      "repo": "https://github.com/slamdata/purescript-formatters.git",
+      "rev": "c39ae1fef63a4c5ed6ccb9faf80e6b99922a369b",
+      "version": "v4.0.1"
+    }
+  },
+  "free": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "catenable-lists",
+        "control",
+        "distributive",
+        "either",
+        "exists",
+        "foldable-traversable",
+        "invariant",
+        "lazy",
+        "maybe",
+        "prelude",
+        "tailrec",
+        "transformers",
+        "tuples",
+        "unsafe-coerce"
+      ],
+      "name": "free",
+      "nixSha256": "1bwj0ay7q9lm4ir29jy549m05jvaqik1s615biv23y51ngx3fn49",
+      "repo": "https://github.com/purescript/purescript-free.git",
+      "rev": "f686f5fc07766f3ca9abc83b47b6ad3da326759a",
+      "version": "v5.2.0"
+    }
+  },
+  "freeap": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "const",
+        "exists",
+        "gen",
+        "lists"
+      ],
+      "name": "freeap",
+      "nixSha256": "007840vpxa4gz0fvjbahyky2xzz625gzfaiy2wjpb50d9qacsr7y",
+      "repo": "https://github.com/ethul/purescript-freeap.git",
+      "rev": "8f7bebc36c267794c31d5af1a5737746645e59df",
+      "version": "v5.0.1"
+    }
+  },
+  "freedom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "foreign-object",
+        "safely",
+        "simple-emitter",
+        "web-html"
+      ],
+      "name": "freedom",
+      "nixSha256": "0ah9208bwkrqq056jymak7l4qivvx6k9w08mwqr48i5iw272krik",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom.git",
+      "rev": "47746a7e0431343944ba2dc293d6ec9aa6a73c63",
+      "version": "v2.0.0"
+    }
+  },
+  "freedom-now": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom",
+        "js-timers"
+      ],
+      "name": "freedom-now",
+      "nixSha256": "0cw2kv51ifwcqqhhdj6i6jwakr84g51jpf99cz4d33c2z9bax7cj",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-now.git",
+      "rev": "69a8442477dab302cadd1d8a3fc8237f70621c54",
+      "version": "v3.0.0"
+    }
+  },
+  "freedom-portal": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom"
+      ],
+      "name": "freedom-portal",
+      "nixSha256": "0p9f1v12gk4daqi0yx3ymzgqppbba5nbdyxji0qga0pnjzz10swh",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-portal.git",
+      "rev": "be997a2077f8b6655982edbdc7609c6137a6b7c2",
+      "version": "v2.0.0"
+    }
+  },
+  "freedom-router": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom",
+        "profunctor"
+      ],
+      "name": "freedom-router",
+      "nixSha256": "13l0d6dswpxwqdxn270bnaipkkf8gsipq7z6mdgpkhq52bzjp34k",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-router.git",
+      "rev": "2a262e3b86cd1eb2667404477888e3f782b55a5b",
+      "version": "v2.0.0"
+    }
+  },
+  "freedom-transition": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom",
+        "js-timers"
+      ],
+      "name": "freedom-transition",
+      "nixSha256": "1l21fqpa318y2spphnm2nm2pma3545qdysyv98i705r97c9lfjcv",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-transition.git",
+      "rev": "6e98719d8bc3c660387b2b4ebafee59a81274f5f",
+      "version": "v2.0.0"
+    }
+  },
+  "freedom-virtualized": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom"
+      ],
+      "name": "freedom-virtualized",
+      "nixSha256": "0adifgl0qxb398vkmi8ikl5mpwd66xx16yxw0ykn182i0amv4zb5",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-virtualized.git",
+      "rev": "26951e28fcae2f2b6d14e64ddd9969864ec01b59",
+      "version": "v3.0.0"
+    }
+  },
+  "freedom-window-resize": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freedom"
+      ],
+      "name": "freedom-window-resize",
+      "nixSha256": "1znbml509wbmjda40pz1sw02wq4jjjgivma7l83wajy22gsvzyp0",
+      "repo": "https://github.com/purescript-freedom/purescript-freedom-window-resize.git",
+      "rev": "d451c22b09f488b7322488833ee9c67d7206e30a",
+      "version": "v2.0.0"
+    }
+  },
+  "freet": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "effect",
+        "either",
+        "exists",
+        "prelude",
+        "tailrec",
+        "transformers",
+        "aff"
+      ],
+      "name": "freet",
+      "nixSha256": "0j8y47x672z8h809hxl1n502yj0y3yv8zsln8bk17rcz06x8frv9",
+      "repo": "https://github.com/purescript-contrib/purescript-freet.git",
+      "rev": "aecca5b389aecf15a37e369b76d7d0064223996d",
+      "version": "v5.0.0"
+    }
+  },
+  "functions": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "functions",
+      "nixSha256": "0675k5kxxwdvsjs6a3is8pwm3hmv0vbcza1b8ls10gymmfz3k3hj",
+      "repo": "https://github.com/purescript/purescript-functions.git",
+      "rev": "c63451ae74f6fba7a4eede5f87208a73c537af77",
+      "version": "v4.0.0"
+    }
+  },
+  "functors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "const",
+        "control",
+        "either",
+        "foldable-traversable",
+        "maybe",
+        "newtype",
+        "prelude",
+        "tuples",
+        "unsafe-coerce"
+      ],
+      "name": "functors",
+      "nixSha256": "1cnn3zhk6qcyiwbbpvrdqgsbch4qihx2y9d6sv45bvd8kzrbd306",
+      "repo": "https://github.com/purescript/purescript-functors.git",
+      "rev": "96bcf8a970a40115a76a20d19e50aa3b524adcf3",
+      "version": "v3.1.1"
+    }
+  },
+  "fuzzy": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "foreign-object",
+        "generics-rep",
+        "newtype",
+        "ordered-collections",
+        "prelude",
+        "rationals",
+        "strings",
+        "strongcheck",
+        "tuples"
+      ],
+      "name": "fuzzy",
+      "nixSha256": "1sn46sqkc3ygxsn003b4q1ff7x73315mpfhz9n0jj5nvbjd345ir",
+      "repo": "https://github.com/citizennet/purescript-fuzzy.git",
+      "rev": "3c63d2a61b582f795644c3e2697746a87f96427a",
+      "version": "v0.2.1"
+    }
+  },
+  "gen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "foldable-traversable",
+        "identity",
+        "maybe",
+        "newtype",
+        "nonempty",
+        "prelude",
+        "tailrec",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "gen",
+      "nixSha256": "0pk68cn1s89hql30ydks9gh34gbxg391smi2albx3qvxnfkrpxca",
+      "repo": "https://github.com/purescript/purescript-gen.git",
+      "rev": "36f36f03f082b57e402c27f1513f8935caa54101",
+      "version": "v2.1.1"
+    }
+  },
+  "generics-rep": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "enums",
+        "foldable-traversable",
+        "maybe",
+        "newtype",
+        "prelude"
+      ],
+      "name": "generics-rep",
+      "nixSha256": "15vchzbcvf6byks90q14lvcwb8hnxqzm2mrlxi7v1f7has4s74kn",
+      "repo": "https://github.com/purescript/purescript-generics-rep.git",
+      "rev": "aae27ba1de21dda342dcdfc8b3cc5b951bd5b3ec",
+      "version": "v6.1.1"
+    }
+  },
+  "globals": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "functions",
+        "maybe"
+      ],
+      "name": "globals",
+      "nixSha256": "03h4npdbsjr1mkjasdi071l0cl7zdf3l76a8f0x4ghx47yvpgadn",
+      "repo": "https://github.com/purescript/purescript-globals.git",
+      "rev": "8e6d69c36b6fd8c988a3664fc033ad11dbdd5860",
+      "version": "v4.1.0"
+    }
+  },
+  "gomtang-basic": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "prelude",
+        "record",
+        "web-html"
+      ],
+      "name": "gomtang-basic",
+      "nixSha256": "11zp6id0hrq9hmr0w395ldf403p6v6ldz0miisrxmdmpcrcm3j54",
+      "repo": "https://github.com/justinwoo/purescript-gomtang-basic.git",
+      "rev": "8c47355f29b85a6a64c61f90190d525dcc9221d9",
+      "version": "v0.2.0"
+    }
+  },
+  "group": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "lists"
+      ],
+      "name": "group",
+      "nixSha256": "1f0bzfn6vb9vgsynas2sq5a0vf34avjd934jymv0pf3w6rid8h0w",
+      "repo": "https://github.com/morganthomas/purescript-group.git",
+      "rev": "8e1fcc20c636d3c67732f09c30b46f9e14ba8af4",
+      "version": "v4.1.1"
+    }
+  },
+  "halogen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "avar",
+        "console",
+        "const",
+        "coroutines",
+        "dom-indexed",
+        "foreign",
+        "fork",
+        "free",
+        "freeap",
+        "halogen-vdom",
+        "media-types",
+        "nullable",
+        "ordered-collections",
+        "parallel",
+        "profunctor",
+        "transformers",
+        "unsafe-coerce",
+        "unsafe-reference",
+        "web-uievents"
+      ],
+      "name": "halogen",
+      "nixSha256": "1dm0jbhxns496ac43kvvikzkav87ldwcxm7f76xxmqgqwqp8mq9c",
+      "repo": "https://github.com/slamdata/purescript-halogen.git",
+      "rev": "bb715fe5c06ba3048f4d8b377ec842cd8cf37833",
+      "version": "v5.0.0-rc.8"
+    }
+  },
+  "halogen-bootstrap": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen"
+      ],
+      "name": "halogen-bootstrap",
+      "nixSha256": "0cvhq977jd5zs1j6jy9x2cs8yl2mhwy2kmywpvnl5a0sypcza56x",
+      "repo": "https://github.com/slamdata/purescript-halogen-bootstrap.git",
+      "rev": "9289a84f989c2572fbdbd49af2fcdd8175d3d7a0",
+      "version": "v8.0.0"
+    }
+  },
+  "halogen-bootstrap4": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen"
+      ],
+      "name": "halogen-bootstrap4",
+      "nixSha256": "0gaf7n9mgr927xbr6ssbld11z6y30imnp6bnwvfmw9hshfcfn6ki",
+      "repo": "https://github.com/mschristiansen/purescript-halogen-bootstrap4.git",
+      "rev": "1f3c45119b1679766dfcaf6402c0a52d313991ea",
+      "version": "v0.1.4"
+    }
+  },
+  "halogen-css": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "css",
+        "halogen"
+      ],
+      "name": "halogen-css",
+      "nixSha256": "1a8sj8ydfnvj3vh2l3f0yyd69y7v4qki1a5m99n0v2aqc1y6nrzl",
+      "repo": "https://github.com/slamdata/purescript-halogen-css.git",
+      "rev": "1600df2902eccc3e3c73559a3446c99469885af6",
+      "version": "v8.0.0"
+    }
+  },
+  "halogen-formless": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen",
+        "variant",
+        "heterogeneous",
+        "generics-rep",
+        "profunctor-lenses"
+      ],
+      "name": "halogen-formless",
+      "nixSha256": "00b7a21cav3aznys1niz6m3i0nv2y2shg55k8cagm8bb2z2x81s9",
+      "repo": "https://github.com/thomashoneyman/purescript-halogen-formless.git",
+      "rev": "97aaa24d411cc061ee5da3d611477aa0cc4aa084",
+      "version": "v1.0.0-rc.1"
+    }
+  },
+  "halogen-hooks": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen",
+        "indexed-monad"
+      ],
+      "name": "halogen-hooks",
+      "nixSha256": "0zlj6ipb2h29778m2anwhf2q6ql103kq6vr6rp17arvzrg1rpzsq",
+      "repo": "https://github.com/thomashoneyman/purescript-halogen-hooks.git",
+      "rev": "96bba1b7b1da4bd7d695d804894d78aceb9150ef",
+      "version": "v0.1.0"
+    }
+  },
+  "halogen-select": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen",
+        "record"
+      ],
+      "name": "halogen-select",
+      "nixSha256": "0i8srqa4n5qy2vihkwgjqxr3vkk3yg9x5rs0c41xr8ali9spqpf8",
+      "repo": "https://github.com/citizennet/purescript-halogen-select.git",
+      "rev": "f0a1ce0b45bb0e8c39bb123bb4d6577ce43b1a2d",
+      "version": "v5.0.0-rc.4"
+    }
+  },
+  "halogen-storybook": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen",
+        "prelude",
+        "routing",
+        "foreign-object"
+      ],
+      "name": "halogen-storybook",
+      "nixSha256": "1iax9qa0c6smw79iyzcydszkznv6jizp3f9x9zfywp64s6c7k25a",
+      "repo": "https://github.com/rnons/purescript-halogen-storybook.git",
+      "rev": "de336410dde6e59ad4930f7e4296d066cb236628",
+      "version": "v1.0.0-rc.1"
+    }
+  },
+  "halogen-vdom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "effect",
+        "foreign",
+        "foreign-object",
+        "maybe",
+        "prelude",
+        "refs",
+        "tuples",
+        "unsafe-coerce",
+        "web-html"
+      ],
+      "name": "halogen-vdom",
+      "nixSha256": "0x9pvh0fnlg4wc60rj3sblc2ixmw2wxdkh56aknrsar3bxi4vraw",
+      "repo": "https://github.com/slamdata/purescript-halogen-vdom.git",
+      "rev": "0e9f126e4c411b6dcff7c08a157e2658938ad0a6",
+      "version": "v6.1.2"
+    }
+  },
+  "heterogeneous": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "functors",
+        "prelude",
+        "record",
+        "tuples",
+        "variant"
+      ],
+      "name": "heterogeneous",
+      "nixSha256": "0kbp6k6nbqwyzf12lrgf1v18ln5rakmxzb8s2dha1lfnk1r2f92m",
+      "repo": "https://github.com/natefaubion/purescript-heterogeneous.git",
+      "rev": "854e6fe8e52c570954c22275aaf657ef068c73f8",
+      "version": "v0.4.1"
+    }
+  },
+  "higher-order": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "catenable-lists",
+        "const",
+        "effect",
+        "errors",
+        "generics-rep",
+        "lists",
+        "ordered-collections",
+        "orders",
+        "profunctor"
+      ],
+      "name": "higher-order",
+      "nixSha256": "13942zcicfm23yhbh2wjqy2d9k1v0bskvr1ci6b2ly0f3v6crh1x",
+      "repo": "https://github.com/matthew-hilty/purescript-higher-order.git",
+      "rev": "ca9dfe863a816ab7a210b8f895984965fe9a11b5",
+      "version": "v0.2.0"
+    }
+  },
+  "html-parser-halogen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "halogen",
+        "prelude",
+        "string-parsers"
+      ],
+      "name": "html-parser-halogen",
+      "nixSha256": "02fmd62ynwrnmxzlz2fvj0plrv34cl5ls4lcddz2123qks6d7fjg",
+      "repo": "https://github.com/rnons/purescript-html-parser-halogen.git",
+      "rev": "b4bd43e6ce7b3426e6b78f89a150b31bf4c1d7be",
+      "version": "v1.0.0-rc.2"
+    }
+  },
+  "http-methods": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "prelude",
+        "strings"
+      ],
+      "name": "http-methods",
+      "nixSha256": "1wfgrlnl33bcqw54hbc8icah2fi0rvi5zxhz07665vy9p5ppvkqs",
+      "repo": "https://github.com/purescript-contrib/purescript-http-methods.git",
+      "rev": "f3672edd166d323849b9dfd1e01c6eeb978fd56c",
+      "version": "v4.0.2"
+    }
+  },
+  "httpure": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arrays",
+        "bifunctors",
+        "console",
+        "control",
+        "effect",
+        "either",
+        "exceptions",
+        "foldable-traversable",
+        "foreign",
+        "lists",
+        "maybe",
+        "newtype",
+        "node-buffer",
+        "node-child-process",
+        "node-fs",
+        "node-fs-aff",
+        "node-http",
+        "node-streams",
+        "nullable",
+        "options",
+        "ordered-collections",
+        "prelude",
+        "psci-support",
+        "refs",
+        "spec",
+        "strings",
+        "tuples",
+        "type-equality",
+        "unsafe-coerce"
+      ],
+      "name": "httpure",
+      "nixSha256": "1690abxprc1ynpr0gz53z32qg8qm70h4x719va6jx8iry67y2dn0",
+      "repo": "https://github.com/cprussin/purescript-httpure.git",
+      "rev": "a12e63b87984e3df3cf36bf931392f97790906fd",
+      "version": "v0.10.0"
+    }
+  },
+  "httpure-contrib-biscotti": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "argonaut",
+        "biscotti-cookie",
+        "biscotti-session",
+        "effect",
+        "either",
+        "generics-rep",
+        "httpure",
+        "maybe",
+        "profunctor-lenses",
+        "psci-support",
+        "test-unit",
+        "tuples",
+        "type-equality"
+      ],
+      "name": "httpure-contrib-biscotti",
+      "nixSha256": "1a20xvqxssckgrk5w59nlqyyj7ymh5m0121nqxf1y4mj0ijisqbj",
+      "repo": "https://github.com/drewolson/purescript-httpure-contrib-biscotti.git",
+      "rev": "5594edadc3c958cc9f8e98e6610854104ba6c104",
+      "version": "v0.1.1"
+    }
+  },
+  "hyper": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "avar",
+        "argonaut",
+        "arrays",
+        "console",
+        "control",
+        "effect",
+        "foldable-traversable",
+        "generics-rep",
+        "http-methods",
+        "indexed-monad",
+        "media-types",
+        "node-fs-aff",
+        "node-http",
+        "ordered-collections",
+        "proxy",
+        "random",
+        "smolder",
+        "strings",
+        "transformers",
+        "record-extra",
+        "typelevel-prelude"
+      ],
+      "name": "hyper",
+      "nixSha256": "1qrjqcxdzn8724pc6qqjplw6777h78miaymmyml3iiacp2sws1fp",
+      "repo": "https://github.com/purescript-hyper/hyper.git",
+      "rev": "c3498d2e2d41e1bb86a1aaeae64058fd6ffe4c2d",
+      "version": "v0.11.0"
+    }
+  },
+  "hypertrout": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-generic",
+        "console",
+        "hyper",
+        "prelude",
+        "trout"
+      ],
+      "name": "hypertrout",
+      "nixSha256": "09h521g9nf7zlvfvbzyy590vv0zzwh3cbwmdc5cdy2n8q6s20mx7",
+      "repo": "https://github.com/purescript-hyper/purescript-hypertrout.git",
+      "rev": "b1643fed848e317c10f86eae34ec96d9c6b87b1b",
+      "version": "v0.11.0"
+    }
+  },
+  "identity": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "foldable-traversable",
+        "invariant",
+        "newtype",
+        "prelude"
+      ],
+      "name": "identity",
+      "nixSha256": "1scdgbfkphfmapw7p9rnsiynpmqzyvnal2glzj450q51f8g1dhld",
+      "repo": "https://github.com/purescript/purescript-identity.git",
+      "rev": "1b7938abdc8cb28c0ac5f80f63405d53e3173a8e",
+      "version": "v4.1.0"
+    }
+  },
+  "identy": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "simple-json"
+      ],
+      "name": "identy",
+      "nixSha256": "00yhn1b1xs86xznm9s0072y4vq7b15zvcy61ncl4c1dw2calq9xz",
+      "repo": "https://github.com/oreshinya/purescript-identy.git",
+      "rev": "aa7ec7233f29d19893f4cf416a4dcc566ee822bc",
+      "version": "v2.1.0"
+    }
+  },
+  "indexed-monad": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "newtype"
+      ],
+      "name": "indexed-monad",
+      "nixSha256": "05qdzxh771jda3m88rk0z1y8i8pawcj0y91d7h820g2y5iwb8ixj",
+      "repo": "https://github.com/garyb/purescript-indexed-monad.git",
+      "rev": "7793cdc95e583174b71e36a97c0a25529b220e42",
+      "version": "v1.2.0"
+    }
+  },
+  "int-53": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "integers",
+        "math",
+        "strings"
+      ],
+      "name": "int-53",
+      "nixSha256": "097igbprf796f05a0zvzf6w179j8x9z1dfx8vp7r49slabiiccy5",
+      "repo": "https://github.com/rgrempel/purescript-int-53.git",
+      "rev": "da531f0df07b7f2a946e1196c09612ea2bedc3d6",
+      "version": "v4.0.0"
+    }
+  },
+  "integers": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "globals",
+        "math",
+        "maybe",
+        "prelude"
+      ],
+      "name": "integers",
+      "nixSha256": "17d4bfpnrmbxlc7hhhrvnli70ydaqyr26zgvc9q52a76zgdcb4cf",
+      "repo": "https://github.com/purescript/purescript-integers.git",
+      "rev": "3850da9cd96b37c71685b6bc3bf0cb489baefc93",
+      "version": "v4.0.0"
+    }
+  },
+  "interpolate": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "interpolate",
+      "nixSha256": "0c7lf5mgjq641sdb1srpd3qrnqb4sh88dc0xl0gd6znp1xwpa36k",
+      "repo": "https://github.com/jordanmartinez/purescript-interpolate.git",
+      "rev": "72f9d9c52dbc7dffb754fdbde9e9851a2e73a479",
+      "version": "v2.0.1"
+    }
+  },
+  "invariant": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "invariant",
+      "nixSha256": "1fimpbh3yb7clvqxcdf4yf9im64z0v2s9pbspfacgq5b4vshjas9",
+      "repo": "https://github.com/purescript/purescript-invariant.git",
+      "rev": "b704c5bda262719ca5cc88a3f8554edff8f03256",
+      "version": "v4.1.0"
+    }
+  },
+  "jajanmen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "node-sqlite3",
+        "prelude",
+        "typelevel-prelude"
+      ],
+      "name": "jajanmen",
+      "nixSha256": "0qzim7arpdz0byvg3s4bj1ybrf1svi1z5x9kpai2a7l5y6adg8hz",
+      "repo": "https://github.com/justinwoo/purescript-jajanmen.git",
+      "rev": "91c2ed5a54fd539d8d94f741a2027b774d0816a7",
+      "version": "v1.0.0"
+    }
+  },
+  "jquery": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "foreign",
+        "web-dom"
+      ],
+      "name": "jquery",
+      "nixSha256": "0nbsjggnd4hy0pd7sr0slm4mvdqvzvn47lrg8vwhcq29nb3l7w7v",
+      "repo": "https://github.com/purescript-contrib/purescript-jquery.git",
+      "rev": "cb46882fc478fa01e9189561a146d3e9526e2a4c",
+      "version": "v5.0.0"
+    }
+  },
+  "js-date": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "exceptions",
+        "foreign",
+        "integers",
+        "now"
+      ],
+      "name": "js-date",
+      "nixSha256": "19qyzbr4a1ca8znbd8gcbz0a801f5p1v238ky3408gdx4ba32zjd",
+      "repo": "https://github.com/purescript-contrib/purescript-js-date.git",
+      "rev": "f332c15f14322434ddd1945ca2db8040294447bf",
+      "version": "v6.0.0"
+    }
+  },
+  "js-timers": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect"
+      ],
+      "name": "js-timers",
+      "nixSha256": "1a8092sli7zqw1wflibhjza1ww21dxl7x7r602iazzwh2g70v4dg",
+      "repo": "https://github.com/purescript-contrib/purescript-js-timers.git",
+      "rev": "8206d3d8034357b4665828e52f7ff1b8cb46611e",
+      "version": "v4.0.1"
+    }
+  },
+  "json-pointer": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "foreign",
+        "generics-rep",
+        "prelude",
+        "psci-support",
+        "spec-quickcheck",
+        "strings"
+      ],
+      "name": "json-pointer",
+      "nixSha256": "1ahwvs8lcj7cwy4g4lb6bv73njqbxnm2ccn72s7ff43295l7vvss",
+      "repo": "https://github.com/reactormonk/purescript-json-pointer.git",
+      "rev": "db72b946e9a58ee8283026578e9ce30a84d95ba4",
+      "version": "v1.1.0"
+    }
+  },
+  "json-schema": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "prelude",
+        "simple-json"
+      ],
+      "name": "json-schema",
+      "nixSha256": "09ha1q62lvr45nnck9mfidlwcwrsm0iwpgxdqnirfyc9lvv80m10",
+      "repo": "https://github.com/felixmulder/purescript-json-schema.git",
+      "rev": "43a7e7fcb29ea80fabef128a55d166032baa959f",
+      "version": "v0.0.1"
+    }
+  },
+  "jwt": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-core",
+        "arrays",
+        "b64",
+        "either",
+        "errors",
+        "exceptions",
+        "prelude",
+        "profunctor-lenses",
+        "strings"
+      ],
+      "name": "jwt",
+      "nixSha256": "17m1l009cqrk9n5payqa2cip7bhkd8r3qgvy9fpjyc8yf1ayccwf",
+      "repo": "https://github.com/menelaos/purescript-jwt.git",
+      "rev": "d543bcd54f4854057f2272654a8bf69f07bd9031",
+      "version": "v0.0.7"
+    }
+  },
+  "kancho": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foreign",
+        "newtype",
+        "strings",
+        "typelevel-prelude"
+      ],
+      "name": "kancho",
+      "nixSha256": "0ylf15vy7xmdag77nzcgv1y768fvcx8sw8j69rzkb4dnfrrmms1h",
+      "repo": "https://github.com/justinwoo/purescript-kancho.git",
+      "rev": "81df453734ea516a63940b4964810f01531d18b4",
+      "version": "v2.0.0"
+    }
+  },
+  "kishimen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "prelude",
+        "typelevel-prelude",
+        "variant"
+      ],
+      "name": "kishimen",
+      "nixSha256": "153d0mlf2x7xvbql5w0s4jl56s51aq0bg8ldxd3fm2kj7m0bay22",
+      "repo": "https://github.com/justinwoo/purescript-kishimen.git",
+      "rev": "8a9b11f9bcdaf4ff63c2e572def3d0b2a4e2c870",
+      "version": "v1.0.1"
+    }
+  },
+  "lazy": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "foldable-traversable",
+        "invariant",
+        "prelude"
+      ],
+      "name": "lazy",
+      "nixSha256": "156q89l4nvvn14imbhp6xvvm82q7kqh1pyndmldmnkhiqyr84vqv",
+      "repo": "https://github.com/purescript/purescript-lazy.git",
+      "rev": "5bbd04f507a704f39aa756b5e12ed6665205fe2e",
+      "version": "v4.0.0"
+    }
+  },
+  "lcg": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "integers",
+        "math",
+        "maybe",
+        "partial",
+        "prelude",
+        "random"
+      ],
+      "name": "lcg",
+      "nixSha256": "1851cq2g84jzjbvbmncbivbhaqzj9zv5ni3gs14k04nmx2brxmvj",
+      "repo": "https://github.com/purescript/purescript-lcg.git",
+      "rev": "596bcb17bd550397735220f919df52bcd0038fe0",
+      "version": "v2.0.0"
+    }
+  },
+  "leibniz": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "unsafe-coerce"
+      ],
+      "name": "leibniz",
+      "nixSha256": "1xxc84jx9qd4z89mlhjw602l6350cilvw8kd67ixsmsnd0krnl3f",
+      "repo": "https://github.com/paf31/purescript-leibniz.git",
+      "rev": "ed1fa97012a01126c499f2d0e28dfea2919296b3",
+      "version": "v5.0.0"
+    }
+  },
+  "lenient-html-parser": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "generics-rep",
+        "prelude",
+        "string-parsers"
+      ],
+      "name": "lenient-html-parser",
+      "nixSha256": "19i4vcj93nz400yiyl4rj190alp5yv9lxm4vw83a5nrk32pll5xi",
+      "repo": "https://github.com/justinwoo/purescript-lenient-html-parser.git",
+      "rev": "9e249aa16279d6a63de0d87ef0b624203e9a7f7c",
+      "version": "v4.0.0"
+    }
+  },
+  "lib1": {
+    "tag": "local",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "psci-support"
+      ],
+      "location": "./packages/lib1/",
+      "name": "lib1"
+    }
+  },
+  "lists": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "foldable-traversable",
+        "lazy",
+        "maybe",
+        "newtype",
+        "nonempty",
+        "partial",
+        "prelude",
+        "tailrec",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "lists",
+      "nixSha256": "0l0jiqhcjzkg4nv2a6h2vdf4izr9mf7cxc86cq1hf3j4dh6spym1",
+      "repo": "https://github.com/purescript/purescript-lists.git",
+      "rev": "62900a56f6864638c952575dfd211a1cc55be7da",
+      "version": "v5.4.1"
+    }
+  },
+  "logging": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "contravariant",
+        "console",
+        "effect",
+        "transformers",
+        "tuples",
+        "either"
+      ],
+      "name": "logging",
+      "nixSha256": "0dhc3a3w68vgf03pycwxwspcqdhp1j8l140q5dbqy0a0wmmmknac",
+      "repo": "https://github.com/rightfold/purescript-logging.git",
+      "rev": "148c371aa97e30663532d548faaca3555fbd3fca",
+      "version": "v3.0.0"
+    }
+  },
+  "logging-journald": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "logging",
+        "systemd-journald"
+      ],
+      "name": "logging-journald",
+      "nixSha256": "1d1gv420rjd5w9grcrwmnkcyy7jbpfankgrdnvcxzpprpb6i0d2i",
+      "repo": "https://github.com/paluh/purescript-logging-journald.git",
+      "rev": "656f784d4d4e5aa61690525f01e033fb5d3caa20",
+      "version": "v0.3.2"
+    }
+  },
+  "machines": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "control",
+        "effect",
+        "lists",
+        "maybe",
+        "prelude",
+        "profunctor",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "machines",
+      "nixSha256": "0yhbhnsdf0cnvwr199ydhfh7n6z1sanyspscnfzqqavz4zj0isxc",
+      "repo": "https://github.com/purescript-contrib/purescript-machines.git",
+      "rev": "a600c024ce9a2a391898cc2195f1e144ef72e22f",
+      "version": "v5.1.0"
+    }
+  },
+  "makkori": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "functions",
+        "node-http",
+        "prelude",
+        "record"
+      ],
+      "name": "makkori",
+      "nixSha256": "09i5j2xqp6rjmljc6kbn3h1ybw1j3dfwdl6bxzr0wqk3y14wpdlq",
+      "repo": "https://github.com/justinwoo/purescript-makkori.git",
+      "rev": "bdd0e3899075b86e860b310fd69353ac80a85a98",
+      "version": "v1.0.0"
+    }
+  },
+  "math": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "math",
+      "nixSha256": "1msmy9w7y6fij62sdc55w68gpwkhm6lhgc8qjisjk4sxx1wdg1rr",
+      "repo": "https://github.com/purescript/purescript-math.git",
+      "rev": "8be36d24f9d2d8795adf04791446bbc458297b9b",
+      "version": "v2.1.1"
+    }
+  },
+  "matrices": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "strings"
+      ],
+      "name": "matrices",
+      "nixSha256": "1y2g4jmz8gg21blis8aa2bs2ap941vga31r4f1fs5xm91ryhafja",
+      "repo": "https://github.com/kritzcreek/purescript-matrices.git",
+      "rev": "f2e314dbbe700f5a810d15c48d4f106ff2399165",
+      "version": "v5.0.1"
+    }
+  },
+  "maybe": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "invariant",
+        "newtype",
+        "prelude"
+      ],
+      "name": "maybe",
+      "nixSha256": "073wa0d51daxdwacfcxg5pf6ch63n4ii55xm1ih87bxrg8mp52mx",
+      "repo": "https://github.com/purescript/purescript-maybe.git",
+      "rev": "81f0397636bcbca28642f62421aebfd9e1afa7fb",
+      "version": "v4.0.1"
+    }
+  },
+  "media-types": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "newtype",
+        "prelude"
+      ],
+      "name": "media-types",
+      "nixSha256": "0ykwmxrhmwfy6c5mxjxa43xdf5xqakrqyvr5fn986yad50gjqj75",
+      "repo": "https://github.com/purescript-contrib/purescript-media-types.git",
+      "rev": "e304498356539547b4ed9a7f79513a847c907962",
+      "version": "v4.0.1"
+    }
+  },
+  "memoize": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "generics-rep",
+        "integers",
+        "lazy",
+        "lists",
+        "maybe",
+        "strings",
+        "tuples"
+      ],
+      "name": "memoize",
+      "nixSha256": "191dsdp2znx028y8jg2c7iz2zpj8xfgd0zvnb5bx2zqky934a4dv",
+      "repo": "https://github.com/paf31/purescript-memoize.git",
+      "rev": "7f116edf1a8418d55dd864964456fe2b51dbf0a5",
+      "version": "v5.0.0"
+    }
+  },
+  "metadata": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "metadata",
+      "nixSha256": "1ck7aa13ny3mb0c586dc8shakcg7v2mlj0ixbzpjykj2jzfrdn62",
+      "repo": "https://github.com/spacchetti/purescript-metadata.git",
+      "rev": "05a4fd5dd0f8269f3ebceb9b7a99ad289b1c65a7",
+      "version": "v0.13.6"
+    }
+  },
+  "milkis": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff-promise",
+        "arraybuffer-types",
+        "foreign-object",
+        "prelude",
+        "typelevel-prelude"
+      ],
+      "name": "milkis",
+      "nixSha256": "10ahz4idcb3qwys7x15k3za5gkw9zbk15cdmcqsi8lfh6fg2w2db",
+      "repo": "https://github.com/justinwoo/purescript-milkis.git",
+      "rev": "cedf35448832cbb6fd56f0dcf26abc5a6ec6b76f",
+      "version": "v7.4.0"
+    }
+  },
+  "minibench": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "globals",
+        "integers",
+        "math",
+        "partial",
+        "prelude",
+        "refs"
+      ],
+      "name": "minibench",
+      "nixSha256": "166hbl30bd3x14fld77f97h9bpkq3z775g3ymk61nsnfpf640p22",
+      "repo": "https://github.com/purescript/purescript-minibench.git",
+      "rev": "a9cc6d74730bdcf21bd6962cd640a3744fe6c14b",
+      "version": "v2.0.0"
+    }
+  },
+  "mmorph": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "free",
+        "functors",
+        "transformers"
+      ],
+      "name": "mmorph",
+      "nixSha256": "1lvdclqi9wzs4j8xj8ygnj2b87hhpbnl0c6m28zac05rz87s09mg",
+      "repo": "https://github.com/Thimoteus/purescript-mmorph.git",
+      "rev": "e067ee63c9c08e67b632a8b55930f744ddfad980",
+      "version": "v5.1.0"
+    }
+  },
+  "monad-logger": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "ansi",
+        "argonaut",
+        "arrays",
+        "console",
+        "control",
+        "effect",
+        "foldable-traversable",
+        "foreign-object",
+        "integers",
+        "js-date",
+        "maybe",
+        "newtype",
+        "ordered-collections",
+        "prelude",
+        "strings",
+        "transformers",
+        "tuples"
+      ],
+      "name": "monad-logger",
+      "nixSha256": "0r1cp2x6mamjca5r5rm5mp1gidlll72paqrjd3z0j69l7iy7dgas",
+      "repo": "https://github.com/cprussin/purescript-monad-logger.git",
+      "rev": "55441b4caf390bc38078a9c5c865efb105549cef",
+      "version": "v1.3.1"
+    }
+  },
+  "monad-loops": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe",
+        "tailrec",
+        "prelude",
+        "tuples",
+        "lists"
+      ],
+      "name": "monad-loops",
+      "nixSha256": "08w7cx48lx4r5yfj077ipc7zny4qw3pbrkj6c6z4838l7fif2zyh",
+      "repo": "https://github.com/mlang/purescript-monad-loops.git",
+      "rev": "9324b29cda6a4be8f896d42f2018fc6143607fe8",
+      "version": "v0.5.0"
+    }
+  },
+  "money": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "globals",
+        "integers",
+        "lists",
+        "math",
+        "prelude",
+        "ring-modules",
+        "newtype",
+        "rationals"
+      ],
+      "name": "money",
+      "nixSha256": "1yi8207g7q7gx2bbgjsh7j1s1xslg02d3szj38kxm1ifhhgy7wvd",
+      "repo": "https://github.com/i-am-tom/purescript-money.git",
+      "rev": "a57e25ea6e2db4c5319079902c052d48d86a7d55",
+      "version": "v8.0.0"
+    }
+  },
+  "motsunabe": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "lists",
+        "strings"
+      ],
+      "name": "motsunabe",
+      "nixSha256": "03r81xs0gw5nchm93ap2lpirkng8bzgsb8xc5jxlii4sw8wn8ndh",
+      "repo": "https://github.com/justinwoo/purescript-motsunabe.git",
+      "rev": "d016e6319fef40119abba726e31d066e7c211875",
+      "version": "v2.0.0"
+    }
+  },
+  "mysql": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "js-date",
+        "simple-json"
+      ],
+      "name": "mysql",
+      "nixSha256": "1gysvcmppx5rrq8fs8r4ffzcryxs795bf30cf64kk2i2sj0bj4m7",
+      "repo": "https://github.com/oreshinya/purescript-mysql.git",
+      "rev": "1551c8cca5982305965fc843821562a693e99748",
+      "version": "v4.1.0"
+    }
+  },
+  "naporitan": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "record",
+        "typelevel-prelude"
+      ],
+      "name": "naporitan",
+      "nixSha256": "0d7krc91cda623ajarnwp5s1d35x4nr18y3095rz97yxw00lajzj",
+      "repo": "https://github.com/justinwoo/purescript-naporitan.git",
+      "rev": "e911d10260897f5dec7caa034604691c7146f7ff",
+      "version": "v1.0.0"
+    }
+  },
+  "naturals": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe",
+        "prelude",
+        "enums"
+      ],
+      "name": "naturals",
+      "nixSha256": "0jaly95g46rbb7xwfv655pgm2bsp11p1iriasa0w79ryv0p488hi",
+      "repo": "https://github.com/LiamGoodacre/purescript-naturals.git",
+      "rev": "53aaa11516cd1bb8429f33032802bf43a5b04644",
+      "version": "v3.0.0"
+    }
+  },
+  "newtype": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "newtype",
+      "nixSha256": "0qvk9p41miy806b05b4ikbr3if0fcyc35gfrwd2mflcxxp46011c",
+      "repo": "https://github.com/purescript/purescript-newtype.git",
+      "rev": "7d85fa6a040208c010b05f7c23af6a943ba08763",
+      "version": "v3.0.0"
+    }
+  },
+  "node-buffer": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "effect",
+        "maybe",
+        "st",
+        "unsafe-coerce"
+      ],
+      "name": "node-buffer",
+      "nixSha256": "0pgl8r1rwzmbvwgbibk24jpgf6m7xcw3y7zfn6psgzca44c4hgsv",
+      "repo": "https://github.com/purescript-node/purescript-node-buffer.git",
+      "rev": "dac7d4734a739cea2cd379f6bae5226dbab26da2",
+      "version": "v6.0.0"
+    }
+  },
+  "node-child-process": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "exceptions",
+        "foreign",
+        "foreign-object",
+        "functions",
+        "node-fs",
+        "node-streams",
+        "nullable",
+        "posix-types",
+        "unsafe-coerce"
+      ],
+      "name": "node-child-process",
+      "nixSha256": "1r5gx9gr5xkrbvdnv6704zmpb987dgpblmhq5yhwq2xir6w35qnn",
+      "repo": "https://github.com/purescript-node/purescript-node-child-process.git",
+      "rev": "887b252ef85975f4cf31dfd9079f6d98d905fc1b",
+      "version": "v6.0.0"
+    }
+  },
+  "node-electron": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign",
+        "halogen",
+        "maybe",
+        "options",
+        "prelude",
+        "transformers",
+        "unsafe-coerce",
+        "web-dom",
+        "web-events",
+        "web-html"
+      ],
+      "name": "node-electron",
+      "nixSha256": "1vgvjs0fi4p6cfgp61cnh7vj2czmyvxdsdyr535jqs9x61r2zwwh",
+      "repo": "https://github.com/cprussin/purescript-node-electron.git",
+      "rev": "19734790aa42c7a09e0efd725dad3828f6246c46",
+      "version": "v0.0.2"
+    }
+  },
+  "node-fs": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "effect",
+        "either",
+        "enums",
+        "exceptions",
+        "functions",
+        "globals",
+        "integers",
+        "js-date",
+        "maybe",
+        "node-buffer",
+        "node-path",
+        "node-streams",
+        "nullable",
+        "partial",
+        "prelude",
+        "strings",
+        "unsafe-coerce"
+      ],
+      "name": "node-fs",
+      "nixSha256": "0i3bd7aw16vyb5sh5fzlvgg9q6cjdvmnfs57in6rxm34z8d8c0p8",
+      "repo": "https://github.com/purescript-node/purescript-node-fs.git",
+      "rev": "02d610f237dc130edb5ee594fd46b16c691b79eb",
+      "version": "v5.0.1"
+    }
+  },
+  "node-fs-aff": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "either",
+        "node-fs",
+        "node-path"
+      ],
+      "name": "node-fs-aff",
+      "nixSha256": "0vjc9zag7y20yxhhv45hrwv9fbpmp0szv40vaxl5x8mnd5wv28x7",
+      "repo": "https://github.com/purescript-node/purescript-node-fs-aff.git",
+      "rev": "d02c0a209824c3fce8254dddd94d85990e9ad1b6",
+      "version": "v6.0.0"
+    }
+  },
+  "node-he": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "node-he",
+      "nixSha256": "00ha94m5ysv1r5lqfh90rnada9xp4jnncxqf4id1iskxhhkg3h28",
+      "repo": "https://github.com/justinwoo/purescript-node-he.git",
+      "rev": "d2e3b78863c163e62713ef776059b92a5a91d8f5",
+      "version": "v0.2.0"
+    }
+  },
+  "node-http": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "contravariant",
+        "effect",
+        "foreign",
+        "foreign-object",
+        "maybe",
+        "node-buffer",
+        "node-streams",
+        "node-url",
+        "nullable",
+        "options",
+        "prelude",
+        "unsafe-coerce"
+      ],
+      "name": "node-http",
+      "nixSha256": "0jr9mm0kdvkd3nf1g4l8w9p7n16qqji03fg1agxn7hngr4ja43pw",
+      "repo": "https://github.com/purescript-node/purescript-node-http.git",
+      "rev": "b18d054de436ad589d41acee0aca7f3bd6762aab",
+      "version": "v5.0.2"
+    }
+  },
+  "node-net": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "either",
+        "exceptions",
+        "foreign",
+        "maybe",
+        "node-buffer",
+        "node-fs",
+        "nullable",
+        "options",
+        "prelude",
+        "transformers"
+      ],
+      "name": "node-net",
+      "nixSha256": "0ya6k6lnva1d7cm93nzb7q8wg5527yjsb04g72acnw4mnqsns5fs",
+      "repo": "https://github.com/purescript-node/purescript-node-net.git",
+      "rev": "1fd91c872ecff202ae86b848f2c8d054f7a751f3",
+      "version": "v1.0.0"
+    }
+  },
+  "node-path": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect"
+      ],
+      "name": "node-path",
+      "nixSha256": "0j1ni52m62dpcrfakl1ik131i31bkg91yv0p1c40sdw0f59fzf6x",
+      "repo": "https://github.com/purescript-node/purescript-node-path.git",
+      "rev": "e3a704d5fc7d25fa93c6cd0eb92dbce9e5ebd69a",
+      "version": "v3.0.0"
+    }
+  },
+  "node-postgres": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arrays",
+        "datetime",
+        "either",
+        "foldable-traversable",
+        "foreign",
+        "integers",
+        "nullable",
+        "prelude",
+        "transformers",
+        "unsafe-coerce"
+      ],
+      "name": "node-postgres",
+      "nixSha256": "1lcsm2n1vqiji6hgm2nwd4q12iwhbq5a6n4ab2sqyk79ndk2vd8i",
+      "repo": "https://github.com/epost/purescript-node-postgres.git",
+      "rev": "798526465af865381d8b4565c9766e89320a2fab",
+      "version": "v5.0.0"
+    }
+  },
+  "node-process": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign-object",
+        "maybe",
+        "node-streams",
+        "posix-types",
+        "prelude",
+        "unsafe-coerce"
+      ],
+      "name": "node-process",
+      "nixSha256": "1sbhpz3d3r6z12cx1k7rb6nycxf9cyc61zdx6mvk2q2lmzfdm1if",
+      "repo": "https://github.com/purescript-node/purescript-node-process.git",
+      "rev": "88871d84a69f47dd2d1d9eccd7cc942be4457d46",
+      "version": "v7.0.0"
+    }
+  },
+  "node-readline": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign",
+        "node-process",
+        "node-streams",
+        "options",
+        "prelude"
+      ],
+      "name": "node-readline",
+      "nixSha256": "1qc0wgcmhcjv15xlq2iqmhr7nphsnsipazpf2flnh7z109kmxj30",
+      "repo": "https://github.com/purescript-node/purescript-node-readline.git",
+      "rev": "0d61e645aa33142ddd46f63048fe16605f9b8b2a",
+      "version": "v4.0.1"
+    }
+  },
+  "node-sqlite3": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "foreign"
+      ],
+      "name": "node-sqlite3",
+      "nixSha256": "0xrby3w76i7ig26jgfvr8lmiih0rkj2d3rbzm5d7x476444n7l56",
+      "repo": "https://github.com/justinwoo/purescript-node-sqlite3.git",
+      "rev": "84f1b4333800edf5db2477a5aec4f93aa5f301f0",
+      "version": "v6.0.0"
+    }
+  },
+  "node-streams": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "either",
+        "exceptions",
+        "node-buffer",
+        "prelude"
+      ],
+      "name": "node-streams",
+      "nixSha256": "12dki2li0d7s54kvcr6gksb5nxf6kzs93gwxnq4bh1flri8p0i7r",
+      "repo": "https://github.com/purescript-node/purescript-node-streams.git",
+      "rev": "88740eeda2017d3ddcde50eea59d57c7749d8524",
+      "version": "v4.0.1"
+    }
+  },
+  "node-telegram-bot-api": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "foreign",
+        "simple-json",
+        "strings"
+      ],
+      "name": "node-telegram-bot-api",
+      "nixSha256": "17srhm44210phyhd5ik936h9c8igz105g9mrfzi1qax6xcadkdgk",
+      "repo": "https://github.com/justinwoo/purescript-node-telegram-bot-api.git",
+      "rev": "eaa1302f5daada0307c47993370d05239dc6f7c6",
+      "version": "v4.0.0"
+    }
+  },
+  "node-url": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "nullable"
+      ],
+      "name": "node-url",
+      "nixSha256": "0qbpdz62psy7hb34hw5rw2x1pq7yhd214ysza0xh46c3nlp0ib9y",
+      "repo": "https://github.com/purescript-node/purescript-node-url.git",
+      "rev": "20eecd603124bf07b477f1f2be2135ae99c885fe",
+      "version": "v4.0.0"
+    }
+  },
+  "nodemailer": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "node-streams",
+        "simple-json"
+      ],
+      "name": "nodemailer",
+      "nixSha256": "1pf32zjghgppci9gyqv1wmq2f4hzqdykwij8yncn81bdqrz9v0sn",
+      "repo": "https://github.com/oreshinya/purescript-nodemailer.git",
+      "rev": "5883df3b8e90eeb90a7780ba17c82da6b36f8fa6",
+      "version": "v2.0.2"
+    }
+  },
+  "nodetrout": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "form-urlencoded",
+        "http-methods",
+        "node-http",
+        "trout"
+      ],
+      "name": "nodetrout",
+      "nixSha256": "1lznjrgqnjl43fr3xds8prwi4jdafckzqma8clanr91a7drjjmf2",
+      "repo": "https://github.com/nsaunders/purescript-nodetrout.git",
+      "rev": "ff685ca2c7d6682adcccdecd8305ff3d177c1408",
+      "version": "v0.0.1"
+    }
+  },
+  "nonempty": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "foldable-traversable",
+        "maybe",
+        "prelude",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "nonempty",
+      "nixSha256": "1vz174sg32cqrp52nwb2vz9frrzmdwzzlgl4vc2cm5wlf2anirxj",
+      "repo": "https://github.com/purescript/purescript-nonempty.git",
+      "rev": "36ca3b2fa6d98b1c9d2ee05643341e496fbeab57",
+      "version": "v5.0.0"
+    }
+  },
+  "now": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "effect"
+      ],
+      "name": "now",
+      "nixSha256": "18h5pif2dy4r7w1xg2zw4mvdqlar9xqp3rawkiavmsc946ncf3zs",
+      "repo": "https://github.com/purescript-contrib/purescript-now.git",
+      "rev": "090feddf7c7dec2a812eca090cd211e87ccad606",
+      "version": "v4.0.0"
+    }
+  },
+  "nullable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "functions",
+        "maybe"
+      ],
+      "name": "nullable",
+      "nixSha256": "14qaxxga8gqlr4pijyvqycdyhjr6qpz3h4aarficw5j75b7x8nyv",
+      "repo": "https://github.com/purescript-contrib/purescript-nullable.git",
+      "rev": "8d413f02224b8281bfa8037e45fbbf9fe2e254fd",
+      "version": "v4.1.1"
+    }
+  },
+  "numbers": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "globals",
+        "math",
+        "maybe"
+      ],
+      "name": "numbers",
+      "nixSha256": "1l9s22fkjf7wc0zd3wjax4hlif7gqh6ij0ijb8sq20mfh2xl4hj8",
+      "repo": "https://github.com/sharkdp/purescript-numbers.git",
+      "rev": "6262a5f17dcdfba11dfae03f4fa8eec02f7ed29f",
+      "version": "v7.0.0"
+    }
+  },
+  "options": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "contravariant",
+        "foreign",
+        "foreign-object",
+        "maybe",
+        "tuples"
+      ],
+      "name": "options",
+      "nixSha256": "1n25pp0xsxfdxsnfdjjwlxz79iam9kapx4al9aj24yi148xhqckl",
+      "repo": "https://github.com/purescript-contrib/purescript-options.git",
+      "rev": "bc0109fb1a18d5f51aa32914618e96d1ec9d8cf5",
+      "version": "v5.0.0"
+    }
+  },
+  "optparse": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "console",
+        "effect",
+        "exists",
+        "exitcodes",
+        "free",
+        "memoize",
+        "node-process",
+        "ordered-collections",
+        "prelude",
+        "strings",
+        "transformers"
+      ],
+      "name": "optparse",
+      "nixSha256": "01pqq0h9f91j275pd4ph53j49lddp6b4pwdwm78chfbyvjir7z2x",
+      "repo": "https://github.com/f-o-a-m/purescript-optparse.git",
+      "rev": "14eb29f6d7c1ad455f39ace45f1c0dc53f1f7f4f",
+      "version": "v3.0.1"
+    }
+  },
+  "ordered-collections": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "foldable-traversable",
+        "gen",
+        "lists",
+        "maybe",
+        "partial",
+        "prelude",
+        "st",
+        "tailrec",
+        "tuples",
+        "unfoldable",
+        "unsafe-coerce"
+      ],
+      "name": "ordered-collections",
+      "nixSha256": "0r48p94d3cyzni2z7ikzcap472k23dx8zq37c1prmjb01v03mfvc",
+      "repo": "https://github.com/purescript/purescript-ordered-collections.git",
+      "rev": "54af8b281bf01acfc14e147debec76974901e93c",
+      "version": "v1.6.1"
+    }
+  },
+  "orders": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "newtype",
+        "prelude"
+      ],
+      "name": "orders",
+      "nixSha256": "13p1sm4dxkmxhld9x5qqg62iiajjb3qpzs66c1r24y5fs4zsfry4",
+      "repo": "https://github.com/purescript/purescript-orders.git",
+      "rev": "80e22c22c72c846e09ef9dfcdb40b3eee39118d6",
+      "version": "v4.0.0"
+    }
+  },
+  "pairing": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "free",
+        "functors",
+        "transformers"
+      ],
+      "name": "pairing",
+      "nixSha256": "1lh3lna84rrmqlcab2p012cjjndhi9wyx2f3lv3bgwfgj65r2nbx",
+      "repo": "https://github.com/paf31/purescript-pairing.git",
+      "rev": "779ac384f911a1ddb5b713864b9236203046c20c",
+      "version": "v5.1.0"
+    }
+  },
+  "pairs": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "distributive",
+        "foldable-traversable",
+        "quickcheck"
+      ],
+      "name": "pairs",
+      "nixSha256": "1zd3fvxw3kpyb066rhmadh97ppfmypsl2q1w23xqaywwzpx2n3a3",
+      "repo": "https://github.com/sharkdp/purescript-pairs.git",
+      "rev": "8c220e4f51c33ef04291cab60af69729f768f8ea",
+      "version": "v7.0.0"
+    }
+  },
+  "parallel": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "effect",
+        "either",
+        "foldable-traversable",
+        "functors",
+        "maybe",
+        "newtype",
+        "prelude",
+        "refs",
+        "transformers"
+      ],
+      "name": "parallel",
+      "nixSha256": "1d5bnagabw2k8yxywkygwrpblb2ggqh2fhpqfrx2sj1y53x332hg",
+      "repo": "https://github.com/purescript/purescript-parallel.git",
+      "rev": "4d6c8b05041a36c300dfca2ba8f1f3443ca26bc6",
+      "version": "v4.0.0"
+    }
+  },
+  "parsing": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "either",
+        "foldable-traversable",
+        "identity",
+        "integers",
+        "lists",
+        "maybe",
+        "strings",
+        "transformers",
+        "unicode"
+      ],
+      "name": "parsing",
+      "nixSha256": "0m5xvb5kis28laj3navyyakyq408vw115c2dvngf1vljzh1hk5kj",
+      "repo": "https://github.com/purescript-contrib/purescript-parsing.git",
+      "rev": "e801a0ef42f3211b1602a94a269eef7ce551423f",
+      "version": "v5.0.3"
+    }
+  },
+  "partial": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "partial",
+      "nixSha256": "11qr80989g7xmvw1brnrclsbg2wdkbr5k3cqpngfip3nnirrypcn",
+      "repo": "https://github.com/purescript/purescript-partial.git",
+      "rev": "76b63a324f7eafbb859256771b5bb7404082af96",
+      "version": "v2.0.1"
+    }
+  },
+  "pathy": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "exceptions",
+        "lists",
+        "partial",
+        "profunctor",
+        "quickcheck",
+        "strings",
+        "transformers",
+        "unsafe-coerce",
+        "typelevel-prelude"
+      ],
+      "name": "pathy",
+      "nixSha256": "09nnwb51sr0mfma0hfrh23f314h3zrn2gwanq3n75asx3r6vqjif",
+      "repo": "https://github.com/slamdata/purescript-pathy.git",
+      "rev": "350ac0bc770c5492786cd40b9998d35fef510b09",
+      "version": "v7.0.1"
+    }
+  },
+  "phoenix": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "options"
+      ],
+      "name": "phoenix",
+      "nixSha256": "1v054b511vig4r2m4z6g53bagfwx523s9p662fq09jhwbf94v4ip",
+      "repo": "https://github.com/brandonhamilton/purescript-phoenix.git",
+      "rev": "93d24c8b93e8ff1008bf3a2da429e36d1216d51b",
+      "version": "v4.0.0"
+    }
+  },
+  "pipes": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "lists",
+        "mmorph",
+        "prelude",
+        "tailrec",
+        "transformers",
+        "tuples"
+      ],
+      "name": "pipes",
+      "nixSha256": "0vl37f42dy4w4hswiay22w0n14k7sr670x54iwn7428larzrzs8y",
+      "repo": "https://github.com/felixSchl/purescript-pipes.git",
+      "rev": "a9533035f6fe8e59a65c6d11a3a7c767f3c9ae67",
+      "version": "v6.0.0"
+    }
+  },
+  "pointed-list": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "lists",
+        "prelude"
+      ],
+      "name": "pointed-list",
+      "nixSha256": "15mzg2812v4vnb27fdgkw0yc6qsn81yc3jg1jl7rxfjsdaa9z95r",
+      "repo": "https://github.com/paluh/purescript-pointed-list.git",
+      "rev": "606de7f6ebd953aea822747c21fa4d73ef5187bc",
+      "version": "v0.4.0"
+    }
+  },
+  "polyform": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foreign",
+        "foreign-object",
+        "generics-rep",
+        "invariant",
+        "newtype",
+        "ordered-collections",
+        "profunctor",
+        "quickcheck-laws",
+        "run",
+        "transformers",
+        "validation",
+        "variant"
+      ],
+      "name": "polyform",
+      "nixSha256": "0b6jbnh432xmcjhg3cipdqjhmdj2k1pqq8zg6iwx0ssdmbhnlqsd",
+      "repo": "https://github.com/paluh/purescript-polyform.git",
+      "rev": "45bfb16045e18de5fe074f85a1bc729e34231170",
+      "version": "v0.8.2"
+    }
+  },
+  "polyform-validators": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "affjax",
+        "argonaut",
+        "debug",
+        "numbers",
+        "polyform",
+        "prelude",
+        "record-extra",
+        "test-unit"
+      ],
+      "name": "polyform-validators",
+      "nixSha256": "15yk9wjxx25pzp4kf2kkldwhl8ny44pwxwvby3q0p780mgv6ppjr",
+      "repo": "https://github.com/lambdaterms/purescript-polyform-validators.git",
+      "rev": "1fdcdf9e28ddf9d2b2198a204dbf2f265a3fa29e",
+      "version": "v0.0.6"
+    }
+  },
+  "posix-types": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe",
+        "prelude"
+      ],
+      "name": "posix-types",
+      "nixSha256": "0xvxjvxr7n4dv53p8w5qfmgx37cga5bp2rjhkbfvj89rb74vm3i1",
+      "repo": "https://github.com/purescript-node/purescript-posix-types.git",
+      "rev": "1d4cd274436cc1e470dc6bf7735bcfdf0092d884",
+      "version": "v4.0.0"
+    }
+  },
+  "precise-datetime": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "console",
+        "datetime",
+        "either",
+        "enums",
+        "foldable-traversable",
+        "formatters",
+        "integers",
+        "js-date",
+        "lists",
+        "maybe",
+        "newtype",
+        "prelude",
+        "strings",
+        "tuples",
+        "unicode",
+        "numbers",
+        "decimals"
+      ],
+      "name": "precise-datetime",
+      "nixSha256": "11c0nwavc6sn5d2795wclg43grqmzblhr7xvd7dzzya6ap6aw0v1",
+      "repo": "https://github.com/awakesecurity/purescript-precise-datetime.git",
+      "rev": "2355b3471b758e16d17078e09bb79ee26d82b90a",
+      "version": "v5.1.1"
+    }
+  },
+  "prelude": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "prelude",
+      "nixSha256": "1frvjrv0mr508r6683l1mp5rzm1y2dz76fz40zf4k2c64sy6y1xm",
+      "repo": "https://github.com/purescript/purescript-prelude.git",
+      "rev": "a96663b34364fdd0885a200955e35b99f4e58c43",
+      "version": "v4.1.1"
+    }
+  },
+  "prettier": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe",
+        "prelude"
+      ],
+      "name": "prettier",
+      "nixSha256": "17fkkdiiwd4ydqg606ragawxlf8kkl9nnizpsciginzw85jzpy5s",
+      "repo": "https://github.com/gcanti/purescript-prettier.git",
+      "rev": "f79667f01f25ddc2e10b5fc8e7d18348f34f6fca",
+      "version": "v0.2.0"
+    }
+  },
+  "profunctor": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "contravariant",
+        "control",
+        "distributive",
+        "either",
+        "exists",
+        "invariant",
+        "newtype",
+        "prelude",
+        "tuples"
+      ],
+      "name": "profunctor",
+      "nixSha256": "1zwbxgimpknmashmq2rb773kbwbksr4ahcdkpnvvcapasxhds0a7",
+      "repo": "https://github.com/purescript/purescript-profunctor.git",
+      "rev": "9b3d014b38c69ea2dd4b1f597330b095034fe2c4",
+      "version": "v4.1.0"
+    }
+  },
+  "profunctor-lenses": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "bifunctors",
+        "const",
+        "control",
+        "distributive",
+        "either",
+        "foldable-traversable",
+        "foreign-object",
+        "functors",
+        "identity",
+        "lists",
+        "maybe",
+        "newtype",
+        "ordered-collections",
+        "partial",
+        "prelude",
+        "profunctor",
+        "record",
+        "transformers",
+        "tuples"
+      ],
+      "name": "profunctor-lenses",
+      "nixSha256": "07py52ngnhab0pc0ca42pnypbwk1lcm7mhz29kp4ap0qhi2z4n2y",
+      "repo": "https://github.com/purescript-contrib/purescript-profunctor-lenses.git",
+      "rev": "2be610e104ab733a4dcc9d63f03d8eaee1e1b1c2",
+      "version": "v6.3.0"
+    }
+  },
+  "promises": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "datetime",
+        "exceptions",
+        "functions",
+        "prelude",
+        "transformers"
+      ],
+      "name": "promises",
+      "nixSha256": "17vc9ambjad1sjlkv72d5zrhq3m1m5wix2fkqflbbfwabk5qisvz",
+      "repo": "https://github.com/thimoteus/purescript-promises.git",
+      "rev": "76aac1f6583c39a3745f862636d16c7292d29690",
+      "version": "v3.1.1"
+    }
+  },
+  "proxy": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "proxy",
+      "nixSha256": "0rqf25b1n9p5sgx7gdsxwrfv9rb3sqxgqmqpp5kdm30lfk7snz24",
+      "repo": "https://github.com/purescript/purescript-proxy.git",
+      "rev": "4a529b1f874fa2f32fc4c575cafaf46e0ab69fb6",
+      "version": "v3.0.0"
+    }
+  },
+  "proxying": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "generics-rep",
+        "prelude",
+        "typelevel-prelude"
+      ],
+      "name": "proxying",
+      "nixSha256": "1xhk0b9jb10vxrmhzicr2gg0h9gwqq1y30annvi3fcahr9dlr1nb",
+      "repo": "https://github.com/matthew-hilty/purescript-proxying.git",
+      "rev": "996711d2aabaa71c03727b02e059183dd2f36f5b",
+      "version": "v1.1.0"
+    }
+  },
+  "psa-utils": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "ansi",
+        "argonaut-codecs",
+        "argonaut-core",
+        "arrays",
+        "console",
+        "control",
+        "effect",
+        "either",
+        "foldable-traversable",
+        "maybe",
+        "node-path",
+        "ordered-collections",
+        "prelude",
+        "strings",
+        "tuples",
+        "unsafe-coerce"
+      ],
+      "name": "psa-utils",
+      "nixSha256": "10z910i9d99fw3aiknskn6psvrndab0vrfh8bbx7ix497vy1gymn",
+      "repo": "https://github.com/natefaubion/purescript-psa-utils.git",
+      "rev": "3191b19ef0ca6863658e5f73cbf5baca7a9487fc",
+      "version": "v6.0.0"
+    }
+  },
+  "psc-ide": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "argonaut",
+        "arrays",
+        "console",
+        "maybe",
+        "node-child-process",
+        "node-fs",
+        "parallel",
+        "random"
+      ],
+      "name": "psc-ide",
+      "nixSha256": "05cdjf8n329xhsa0cnk0v8ani5ss70ma9s445z9ysfgmcmmfgfds",
+      "repo": "https://github.com/kRITZCREEK/purescript-psc-ide.git",
+      "rev": "0f5c433c57391ae68ce1b285a0964bd19fdae073",
+      "version": "v15.0.1"
+    }
+  },
+  "psci-support": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "prelude"
+      ],
+      "name": "psci-support",
+      "nixSha256": "0jd773zcklr6hjddqingzmk20a0afpm2r9pczfjbj0d93pbxb4xh",
+      "repo": "https://github.com/purescript/purescript-psci-support.git",
+      "rev": "a66a0fa8661eb8b5fe75cc862f4e2df2835c058d",
+      "version": "v4.0.0"
+    }
+  },
+  "quantities": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "lists",
+        "foldable-traversable",
+        "numbers",
+        "pairs",
+        "decimals"
+      ],
+      "name": "quantities",
+      "nixSha256": "0dw2rmvzapfwpjlyvvggghkn9yv261zx8r9ayyfrfbqympyl044m",
+      "repo": "https://github.com/sharkdp/purescript-quantities.git",
+      "rev": "92feca4ec665d129d40aa31dbd70da34414cb483",
+      "version": "v10.0.0"
+    }
+  },
+  "querydsl": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "effect",
+        "arrays",
+        "lists",
+        "record",
+        "strings",
+        "tuples",
+        "typelevel-prelude",
+        "either",
+        "transformers",
+        "node-sqlite3",
+        "datetime",
+        "formatters",
+        "node-buffer",
+        "nullable"
+      ],
+      "name": "querydsl",
+      "nixSha256": "0w4knqcryhzfkfs92mrpp0iwil6zz0b0kz5k00y0yrfypzawkc78",
+      "repo": "https://github.com/Dretch/purescript-querydsl.git",
+      "rev": "26c112e6291ff2ff23f5fb27e8b632d9adecec82",
+      "version": "v0.10.1"
+    }
+  },
+  "queue": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "refs",
+        "aff",
+        "foreign-object",
+        "avar"
+      ],
+      "name": "queue",
+      "nixSha256": "1lhm5fs51ixcy6zpfffxxqxq5i0w542fywjkfswqdbi748c7hybs",
+      "repo": "https://github.com/athanclark/purescript-queue.git",
+      "rev": "33207e1815b333e44a774b8faccd94f249b53e78",
+      "version": "v8.0.1"
+    }
+  },
+  "quickcheck": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "console",
+        "control",
+        "effect",
+        "either",
+        "enums",
+        "exceptions",
+        "foldable-traversable",
+        "gen",
+        "generics-rep",
+        "identity",
+        "integers",
+        "lazy",
+        "lcg",
+        "lists",
+        "math",
+        "maybe",
+        "newtype",
+        "nonempty",
+        "partial",
+        "prelude",
+        "record",
+        "st",
+        "strings",
+        "tailrec",
+        "transformers",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "quickcheck",
+      "nixSha256": "0b6208067krf81kzq2hbxs68386hcicbscwxbj5nck07ivjjvqh0",
+      "repo": "https://github.com/purescript/purescript-quickcheck.git",
+      "rev": "6289a80570acd5aec3ea89dc673cf10cdaf5794a",
+      "version": "v6.1.0"
+    }
+  },
+  "quickcheck-laws": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "enums",
+        "proxy",
+        "quickcheck"
+      ],
+      "name": "quickcheck-laws",
+      "nixSha256": "0mdarbrszp1qpmq8l98q38yn1a660ppcc0yx4w76740wn4jja2n4",
+      "repo": "https://github.com/garyb/purescript-quickcheck-laws.git",
+      "rev": "21d2e44d45d14cd70792a457683b5fe560d7e448",
+      "version": "v5.1.0"
+    }
+  },
+  "quotient": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "proxy",
+        "quickcheck"
+      ],
+      "name": "quotient",
+      "nixSha256": "0qkdw2kyf0p7mchi84dw8wm2jw58a2gii7wfjnddgn3j5jg36l2y",
+      "repo": "https://github.com/rightfold/purescript-quotient.git",
+      "rev": "cd7ab1fd0ece7f14ba85a0e6a5b87d863426c054",
+      "version": "v3.0.0"
+    }
+  },
+  "radox": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "effect",
+        "variant",
+        "refs",
+        "aff"
+      ],
+      "name": "radox",
+      "nixSha256": "1plji702ffhpfmxl8d7cl3400irq1q72va0dsjng4c90in7q8anf",
+      "repo": "https://github.com/danieljharvey/purescript-radox.git",
+      "rev": "5ce2e46694a7391b921b975498bc4619b27b02e0",
+      "version": "v1.0.0"
+    }
+  },
+  "random": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "integers",
+        "math"
+      ],
+      "name": "random",
+      "nixSha256": "0k37v7z529adx6ypxj0xjyfrz45qia6p0vki2wpvi8lik7c698gf",
+      "repo": "https://github.com/purescript/purescript-random.git",
+      "rev": "75e6b21edbe0eec78c28ff3bd8265998f2ea0b45",
+      "version": "v4.0.0"
+    }
+  },
+  "rationals": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "integers",
+        "prelude"
+      ],
+      "name": "rationals",
+      "nixSha256": "1idvjvvx5kwmi8kj2ps95bcvlsgij1xgin4jfw3rmcqd930wqq6q",
+      "repo": "https://github.com/anttih/purescript-rationals.git",
+      "rev": "8c52d8cc891d1223150a31416220aa9b99404442",
+      "version": "v5.0.0"
+    }
+  },
+  "rave": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "checked-exceptions",
+        "console",
+        "effect",
+        "exceptions",
+        "prelude",
+        "record",
+        "variant"
+      ],
+      "name": "rave",
+      "nixSha256": "0avia2yix0vqi4r817c2yll2s5ng8ycglcpn1iygibji4w0dkr1a",
+      "repo": "https://github.com/reactormonk/purescript-rave.git",
+      "rev": "5375bba51f57ab272994da335b36ddfaedbc5940",
+      "version": "v0.1.1"
+    }
+  },
+  "react": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "exceptions",
+        "maybe",
+        "nullable",
+        "prelude",
+        "typelevel-prelude",
+        "unsafe-coerce"
+      ],
+      "name": "react",
+      "nixSha256": "1agpsxwz1i8pavcrpgnir5sk9vwrwk406psykjxmyahxby1dhwqi",
+      "repo": "https://github.com/purescript-contrib/purescript-react.git",
+      "rev": "4bf5a5a46ceb485f6941820f717f4507cc030674",
+      "version": "v8.0.0"
+    }
+  },
+  "react-basic": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "console",
+        "effect",
+        "exceptions",
+        "foreign-object",
+        "functions",
+        "nullable",
+        "record",
+        "unsafe-coerce",
+        "web-dom",
+        "web-events",
+        "web-html"
+      ],
+      "name": "react-basic",
+      "nixSha256": "0ar40a54l1zzmpwxlapmmf3h5yk3i7par6003rwwd6kma32v9gbg",
+      "repo": "https://github.com/lumihq/purescript-react-basic.git",
+      "rev": "feee3a51a531f65ff0c0802bffa77e9cd0bd0164",
+      "version": "v13.0.0"
+    }
+  },
+  "react-basic-hooks": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "console",
+        "effect",
+        "indexed-monad",
+        "prelude",
+        "react-basic",
+        "unsafe-reference"
+      ],
+      "name": "react-basic-hooks",
+      "nixSha256": "1xln6k8217l57g1pnj8273j2hhi08v75d6wpndmazxsiinr1v1v0",
+      "repo": "https://github.com/spicydonuts/purescript-react-basic-hooks.git",
+      "rev": "6314a92c3196e3d0d4b9d379ef60982c1dc7810d",
+      "version": "v4.2.2"
+    }
+  },
+  "react-basic-native": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign-object",
+        "js-date",
+        "react-basic",
+        "undefinable"
+      ],
+      "name": "react-basic-native",
+      "nixSha256": "1n6dxn0740qpqq05wy5dq5d5my6kgsi1z0k5ribh48nbxaiv7g2f",
+      "repo": "https://github.com/dwhitney/purescript-react-basic-native.git",
+      "rev": "f5a963df87ffa0cc8b2810cc5df78c724c9afcbe",
+      "version": "v0.1.3"
+    }
+  },
+  "react-dom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "react",
+        "web-dom"
+      ],
+      "name": "react-dom",
+      "nixSha256": "19kzsahx3kvgbi9bhnnz50fjmqvvgslsg6rk028bj4v28m8gra40",
+      "repo": "https://github.com/purescript-contrib/purescript-react-dom.git",
+      "rev": "441e1705ab8fc5fb382d9b3b3516f40ef7234e6c",
+      "version": "v6.1.0"
+    }
+  },
+  "react-radox": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "effect",
+        "radox",
+        "react"
+      ],
+      "name": "react-radox",
+      "nixSha256": "1w0pv9rvx84hr5mjc37n0g1jf62p7w3i220ym2ziws8gvwinxsig",
+      "repo": "https://github.com/danieljharvey/purescript-react-radox.git",
+      "rev": "8004820fa46f3078169638915174e77abdc7d38a",
+      "version": "v0.0.5"
+    }
+  },
+  "react-stylesheet": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "react",
+        "cssom",
+        "stylesheet"
+      ],
+      "name": "react-stylesheet",
+      "nixSha256": "03d4sdp57pij2zl2h76iv92n0ipinamia1p7mj9ddx6d6jz6ch52",
+      "repo": "https://github.com/danieljharvey/purescript-react-stylesheet.git",
+      "rev": "f8079e5446a73fbc53ba3a8e841905029e1a0d37",
+      "version": "v0.0.2"
+    }
+  },
+  "read": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "maybe",
+        "prelude",
+        "strings"
+      ],
+      "name": "read",
+      "nixSha256": "0q8c1xbwh781c1jngy04lbbaq44idy33klq7q1j5ax4vzgd54z0f",
+      "repo": "https://github.com/truqu/purescript-read.git",
+      "rev": "b3969a2091fea50c57ed806820e3d725c8ef8992",
+      "version": "v1.0.1"
+    }
+  },
+  "record": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "functions",
+        "prelude",
+        "st",
+        "unsafe-coerce"
+      ],
+      "name": "record",
+      "nixSha256": "0ap1mc7bi8a20c5g11lxif6q68s2sc31khirfabngr1jpsm3r4lw",
+      "repo": "https://github.com/purescript/purescript-record.git",
+      "rev": "93c235249d4f47a3c8300089596c2afe67e27577",
+      "version": "v2.0.2"
+    }
+  },
+  "record-extra": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "functions",
+        "lists",
+        "record",
+        "typelevel-prelude"
+      ],
+      "name": "record-extra",
+      "nixSha256": "0n1zj2mngizl3bi999yrsv7z6bvb5caxxwrgpyykx29m63w0ghnb",
+      "repo": "https://github.com/justinwoo/purescript-record-extra.git",
+      "rev": "987932b882e0e4eb920015804a73ea652c649138",
+      "version": "v3.0.1"
+    }
+  },
+  "record-format": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "record",
+        "strings",
+        "typelevel-prelude"
+      ],
+      "name": "record-format",
+      "nixSha256": "13fngd0aw3hhpw4b911a3wyk974jdlhhr5myrkwh6blgrhxqq6wx",
+      "repo": "https://github.com/kcsongor/purescript-record-format.git",
+      "rev": "c277a20030b8c3d831b9ef8b50fc70b1edd26831",
+      "version": "v2.0.0"
+    }
+  },
+  "redis-client": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "arrays",
+        "bytestrings",
+        "console",
+        "effect",
+        "either",
+        "int-53",
+        "maybe",
+        "nullable",
+        "prelude",
+        "psci-support",
+        "test-unit",
+        "transformers"
+      ],
+      "name": "redis-client",
+      "nixSha256": "0nnqlqx0f8wdzrd601havms56fv32fa4ibm4xjzkrji7p28fzk2s",
+      "repo": "https://github.com/paluh/purescript-redis-client.git",
+      "rev": "082be3f774fb0fc7510375375642d7d8e63b8f7f",
+      "version": "v1.0.1"
+    }
+  },
+  "redis-hotqueue": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "debug",
+        "effect",
+        "prelude",
+        "psci-support",
+        "redis-client",
+        "simple-json",
+        "sunde"
+      ],
+      "name": "redis-hotqueue",
+      "nixSha256": "09mn81yyhwwfa67hdr1pl4grqnnccy38x723zcldb8s21x4y9p1d",
+      "repo": "https://github.com/paluh/purescript-redis-hotqueue.git",
+      "rev": "098978c9c3ee821b028fcdb191a1f3d874243b1d",
+      "version": "v0.2.1"
+    }
+  },
+  "redux-devtools": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign",
+        "nullable",
+        "prelude"
+      ],
+      "name": "redux-devtools",
+      "nixSha256": "1bsi8b0gzxk4s2qm1mlasgmkwkz6f0bggwy7rxwnpfklid8yxdxm",
+      "repo": "https://github.com/justinwoo/purescript-redux-devtools.git",
+      "rev": "e9fae256f444c5a3d63c54bdc99e0623c4f07208",
+      "version": "v0.1.0"
+    }
+  },
+  "refined": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut",
+        "effect",
+        "generics-rep",
+        "prelude",
+        "quickcheck",
+        "typelevel"
+      ],
+      "name": "refined",
+      "nixSha256": "0fhpdka3q7r43iy49f1wqjmlg0q57gccd420m55ry220v5k2nd1h",
+      "repo": "https://github.com/danieljharvey/purescript-refined.git",
+      "rev": "145e40a9f5d4131651020d2955a0490e6e040edf",
+      "version": "v0.2.0"
+    }
+  },
+  "refs": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "prelude"
+      ],
+      "name": "refs",
+      "nixSha256": "08161iy1xbafzblv033v84156azpcqkiw9v9d6gliphrq5fm17gm",
+      "repo": "https://github.com/purescript/purescript-refs.git",
+      "rev": "e8b175477661e433175e76548168290c40e0ce4b",
+      "version": "v4.1.0"
+    }
+  },
+  "remotedata": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "either",
+        "generics-rep",
+        "profunctor-lenses"
+      ],
+      "name": "remotedata",
+      "nixSha256": "15ab34s3bz2kbzrhbxixzwpxmgj356px8z1s77r2pa9fjnmkn40v",
+      "repo": "https://github.com/krisajenkins/purescript-remotedata.git",
+      "rev": "8dbd12110f6a338c36afd6c3208dd5fa031c0573",
+      "version": "v4.2.0"
+    }
+  },
+  "result": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "either",
+        "foldable-traversable",
+        "prelude"
+      ],
+      "name": "result",
+      "nixSha256": "18s19kp8n659fx36q46qrn2imks43mqs3k7y96cxwdl60smj74pk",
+      "repo": "https://github.com/ad-si/purescript-result.git",
+      "rev": "a09ebc3749e3b902f8144fa4a22c95840ce46701",
+      "version": "v1.0.3"
+    }
+  },
+  "ring-modules": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude"
+      ],
+      "name": "ring-modules",
+      "nixSha256": "15bra3nxdffxqy35ab6ivby605740zqdlnvj02zhgqkmwgbrh2rj",
+      "repo": "https://github.com/f-o-a-m/purescript-ring-modules.git",
+      "rev": "48f72122e7f80dfd1efcc2bd5bb2f8fb92942f68",
+      "version": "v5.0.1"
+    }
+  },
+  "routing": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "console",
+        "control",
+        "effect",
+        "either",
+        "foldable-traversable",
+        "globals",
+        "integers",
+        "lists",
+        "maybe",
+        "prelude",
+        "semirings",
+        "tuples",
+        "validation",
+        "web-html"
+      ],
+      "name": "routing",
+      "nixSha256": "1d8zxb3q91gv11bbg2wpvi5qnrlwfac0np2lqqylyqzlzwnz7gs1",
+      "repo": "https://github.com/slamdata/purescript-routing.git",
+      "rev": "12ff339eab48b491d73164f24cd43403ce08ce69",
+      "version": "v9.0.1"
+    }
+  },
+  "routing-duplex": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "control",
+        "either",
+        "generics-rep",
+        "globals",
+        "lazy",
+        "prelude",
+        "profunctor",
+        "record",
+        "strings",
+        "typelevel-prelude"
+      ],
+      "name": "routing-duplex",
+      "nixSha256": "0cpihagrbldymd108x9isxwrckac1h1mb3rrj224m1p5bgv83ixi",
+      "repo": "https://github.com/natefaubion/purescript-routing-duplex.git",
+      "rev": "eceaba4ee9921250cc6640d5ead98bbfc44310f5",
+      "version": "v0.4.1"
+    }
+  },
+  "run": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "effect",
+        "either",
+        "free",
+        "maybe",
+        "newtype",
+        "prelude",
+        "profunctor",
+        "tailrec",
+        "tuples",
+        "type-equality",
+        "unsafe-coerce",
+        "variant"
+      ],
+      "name": "run",
+      "nixSha256": "1lb95hxmmv3ndrxxwl1rwja8sply5na2bsgy1iym82cm96xcxib3",
+      "repo": "https://github.com/natefaubion/purescript-run.git",
+      "rev": "68eec5b5957e6f36fc4e206a1d4dd2adc3095587",
+      "version": "v3.0.1"
+    }
+  },
+  "run-profunctor-lenses": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "console",
+        "psci-support",
+        "run",
+        "profunctor-lenses"
+      ],
+      "name": "run-profunctor-lenses",
+      "nixSha256": "0j7lhdq4jirfkg6m8xyp636rchym3x0kn7h6z4nsha8hrgwqp8gx",
+      "repo": "https://github.com/sigilion/purescript-run-profunctor-lenses.git",
+      "rev": "7ba2c63b9a8ed3b71768242add2a491e1c7236c8",
+      "version": "v0.1.0"
+    }
+  },
+  "run-streaming": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "run"
+      ],
+      "name": "run-streaming",
+      "nixSha256": "0gpk81244512lw6kw0l3rjh0dd7ymr5808hy6q1gcdrz973cyc6g",
+      "repo": "https://github.com/natefaubion/purescript-run-streaming.git",
+      "rev": "ff42f0526db9e3b03f9729dcda64852e006c03d2",
+      "version": "v2.0.0"
+    }
+  },
+  "safely": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "freet",
+        "lists"
+      ],
+      "name": "safely",
+      "nixSha256": "1mrpz19smjsamz4cci287z89q715chzxna0gpbvdgivlca4z6879",
+      "repo": "https://github.com/paf31/purescript-safely.git",
+      "rev": "19f854737e17b4d058e5a1504a960821db36e4ab",
+      "version": "v4.0.1"
+    }
+  },
+  "search-trie": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "arrays",
+        "ordered-collections",
+        "lists",
+        "foldable-traversable",
+        "bifunctors"
+      ],
+      "name": "search-trie",
+      "nixSha256": "0z8i0n0jyx07jvjz1b4a6gjg76a4l3ba3cj1w1bizgijc3rz99r2",
+      "repo": "https://github.com/klntsky/purescript-search-trie.git",
+      "rev": "028405e35e7b6cf085c4b68a86fa5364bb6775d0",
+      "version": "v1.0.0"
+    }
+  },
+  "selection-foldable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "filterable",
+        "foldable-traversable",
+        "maybe",
+        "prelude"
+      ],
+      "name": "selection-foldable",
+      "nixSha256": "1ai4k1h3d6y305qvjngl51h9imrnq3dhqn2f6ghp3nmhjxwli5fy",
+      "repo": "https://github.com/jamieyung/purescript-selection-foldable.git",
+      "rev": "9e362beb4886263de1386a129b1519a54bcf82b8",
+      "version": "v0.2.0"
+    }
+  },
+  "semirings": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "lists",
+        "newtype",
+        "prelude"
+      ],
+      "name": "semirings",
+      "nixSha256": "0bhrhn2yvcgil7g63spb2xw966mdhlk9mpspnqfijdpb9n3b79ds",
+      "repo": "https://github.com/purescript/purescript-semirings.git",
+      "rev": "36aedc601d296607439eec1e71f8483adc373ffc",
+      "version": "v5.0.0"
+    }
+  },
+  "server-sent-events": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "functions",
+        "generics-rep",
+        "maybe",
+        "prelude",
+        "web-events"
+      ],
+      "name": "server-sent-events",
+      "nixSha256": "0n482cn7sydgiy3d4iw5bw7v9rvjqzkd36114l9ihlair8k130c6",
+      "repo": "https://github.com/MichaelXavier/purescript-server-sent-events.git",
+      "rev": "9797621c151e0becb24580d97cf771b62df78259",
+      "version": "v0.2.0"
+    }
+  },
+  "shoronpo": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "record-format"
+      ],
+      "name": "shoronpo",
+      "nixSha256": "0vyzs7yzc8dxvci2y6qzbwa82ag8big5qwiffx73fzvk52k5hfy6",
+      "repo": "https://github.com/justinwoo/purescript-shoronpo.git",
+      "rev": "6427a2f64816ad005b152e11ef467ba513a18e22",
+      "version": "v0.3.0"
+    }
+  },
+  "signal": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "foldable-traversable",
+        "js-timers",
+        "maybe",
+        "prelude"
+      ],
+      "name": "signal",
+      "nixSha256": "03jkc6l01vv28drg1rjx9ymc2bndx9933ckf60bi4ar909kx64v5",
+      "repo": "https://github.com/bodil/purescript-signal.git",
+      "rev": "58e44e7f8c20e9d057bcaffbd231893935548bb5",
+      "version": "v10.1.0"
+    }
+  },
+  "sijidou": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "record",
+        "typelevel-prelude"
+      ],
+      "name": "sijidou",
+      "nixSha256": "0i56nxkjks8lgav1m1m3b40l615kdsq45x8dwznqsqn269ks0xjl",
+      "repo": "https://github.com/justinwoo/purescript-sijidou.git",
+      "rev": "1535631b8659c40450f9d48de49f2420ff30c27d",
+      "version": "v1.0.0"
+    }
+  },
+  "simple-emitter": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "ordered-collections",
+        "refs"
+      ],
+      "name": "simple-emitter",
+      "nixSha256": "0hy7pbw6qfczns0yvfjyiqkkl0fqj0nf7jcwyf1q5sdcn3xm3b0x",
+      "repo": "https://github.com/oreshinya/purescript-simple-emitter.git",
+      "rev": "b24c088297d981e480857184c67abb706aae2374",
+      "version": "v1.0.0"
+    }
+  },
+  "simple-i18n": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "record-extra",
+        "foreign-object"
+      ],
+      "name": "simple-i18n",
+      "nixSha256": "1gccfvp2xbb7jipzmh1483a1pv94fwb25sw2hgpp7b5as5j5l8l5",
+      "repo": "https://github.com/oreshinya/purescript-simple-i18n.git",
+      "rev": "c70562ec3075408aa33d0c16428f4d04928efe7b",
+      "version": "v0.1.0"
+    }
+  },
+  "simple-json": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "exceptions",
+        "foreign",
+        "foreign-object",
+        "globals",
+        "nullable",
+        "prelude",
+        "record",
+        "typelevel-prelude",
+        "variant"
+      ],
+      "name": "simple-json",
+      "nixSha256": "1x2f4zq1m9r3vg9hdpjld98jd56w7fss8fzvlrmnrw6xzd1gi456",
+      "repo": "https://github.com/justinwoo/purescript-simple-json.git",
+      "rev": "d6c4163f6ad65be97b148ebf86c900cb821da5a8",
+      "version": "v7.0.0"
+    }
+  },
+  "simple-json-generics": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "simple-json"
+      ],
+      "name": "simple-json-generics",
+      "nixSha256": "1izbrh9614yi0lzpnqbn9q7hbllhvvhrgyziganj7rzgphwn3ywx",
+      "repo": "https://github.com/justinwoo/purescript-simple-json-generics.git",
+      "rev": "f7127b94bd2da73b28e863c299edb72a42ee4bce",
+      "version": "v0.1.0"
+    }
+  },
+  "simple-json-utils": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "motsunabe",
+        "simple-json"
+      ],
+      "name": "simple-json-utils",
+      "nixSha256": "05mpvn3hrl86sapns88h7k9ccv29d8xmcnll8iz6ix5ibmh9vk2v",
+      "repo": "https://github.com/justinwoo/purescript-simple-json-utils.git",
+      "rev": "ec5df413e1058959454e380de42f590046a43373",
+      "version": "v0.1.0"
+    }
+  },
+  "simple-jwt": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "crypto",
+        "simple-json",
+        "strings"
+      ],
+      "name": "simple-jwt",
+      "nixSha256": "15d2gph12h0g9izyakp310mjl8l8gp2m4ffppiqprfsw1y3gi8xm",
+      "repo": "https://github.com/oreshinya/purescript-simple-jwt.git",
+      "rev": "9c79227bdb2ed8cce3fafe2643ceeacaaca3e597",
+      "version": "v2.0.0"
+    }
+  },
+  "simple-timestamp": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "datetime",
+        "effect",
+        "foreign",
+        "formatters",
+        "prelude",
+        "psci-support",
+        "simple-json",
+        "spec"
+      ],
+      "name": "simple-timestamp",
+      "nixSha256": "0s4g2lcyi6gn0h4mj283inxdfhk6dyv1ypz89ry121l6xmilws9w",
+      "repo": "https://github.com/reactormonk/purescript-simple-timestamp.git",
+      "rev": "a4a294153e9e6f82abe8daf8f69e0056dd39056d",
+      "version": "v3.0.0"
+    }
+  },
+  "sized-matrices": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "sized-vectors",
+        "prelude",
+        "foldable-traversable",
+        "maybe",
+        "arrays",
+        "unfoldable",
+        "typelevel",
+        "distributive",
+        "vectorfield",
+        "strings"
+      ],
+      "name": "sized-matrices",
+      "nixSha256": "1csabdl8s61825zsip5x2j6vf15jwi66bi53xma7p1canwhifvpg",
+      "repo": "https://github.com/csicar/purescript-sized-matrices",
+      "rev": "af677f80367f837240edbbfe4f6eeaa2f65daa77",
+      "version": "v1.0.0"
+    }
+  },
+  "sized-vectors": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut",
+        "arrays",
+        "distributive",
+        "foldable-traversable",
+        "maybe",
+        "prelude",
+        "quickcheck",
+        "typelevel",
+        "unfoldable"
+      ],
+      "name": "sized-vectors",
+      "nixSha256": "0rl60bf0ppvs21plhfq42n4h0yfr9fix5cl2hqbby9ic7vq4hav1",
+      "repo": "https://github.com/bodil/purescript-sized-vectors.git",
+      "rev": "7a40c339835d6d40bffd5c9f613935407bc13215",
+      "version": "v5.0.0"
+    }
+  },
+  "slug": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "maybe",
+        "strings",
+        "unicode",
+        "generics-rep",
+        "argonaut-codecs"
+      ],
+      "name": "slug",
+      "nixSha256": "1apikpa1888lagysbmbv0x7lzl7bivy8n2709aa0r99y5dswracl",
+      "repo": "https://github.com/thomashoneyman/purescript-slug.git",
+      "rev": "51b5ce3f98105f8dd0d49390597517161797b455",
+      "version": "v1.0.0"
+    }
+  },
+  "smolder": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "catenable-lists",
+        "free",
+        "globals",
+        "ordered-collections",
+        "strings",
+        "transformers",
+        "tuples"
+      ],
+      "name": "smolder",
+      "nixSha256": "06galacn3346ghf4w56qwj5d4z06zmlf9prd24vrvnaiwhpf42d7",
+      "repo": "https://github.com/bodil/purescript-smolder.git",
+      "rev": "5548710e5467cf7b08d7def62c8fcf5ebfb6d9ae",
+      "version": "v12.3.0"
+    }
+  },
+  "snabbdom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "ordered-collections",
+        "prelude",
+        "web-dom",
+        "web-html"
+      ],
+      "name": "snabbdom",
+      "nixSha256": "0khzsd4rsljs189hc64lw7da2sbwzgizlxfq0gq1rj7y99lhlvsd",
+      "repo": "https://github.com/LukaJCB/purescript-snabbdom.git",
+      "rev": "fad4049c3cf70c466748d2d723def5c36f3e106c",
+      "version": "v1.0.1"
+    }
+  },
+  "sodium": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "nullable",
+        "numbers",
+        "quickcheck-laws",
+        "test-unit"
+      ],
+      "name": "sodium",
+      "nixSha256": "01v7gz08ls145m4wxd95gk7wiii2crf8mjnhzjyzmph6pgbb77xb",
+      "repo": "https://github.com/SodiumFRP/purescript-sodium.git",
+      "rev": "913674e2f30d84c1790bead9c1888ea636176c17",
+      "version": "v2.1.0"
+    }
+  },
+  "spec": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "ansi",
+        "avar",
+        "console",
+        "exceptions",
+        "foldable-traversable",
+        "fork",
+        "generics-rep",
+        "now",
+        "pipes",
+        "prelude",
+        "strings",
+        "transformers"
+      ],
+      "name": "spec",
+      "nixSha256": "0svz079yvykx4dj89qgaqi0zwy7d3l1yhkrcll2m81y3idhr1c2p",
+      "repo": "https://github.com/purescript-spec/purescript-spec.git",
+      "rev": "a91d77654c4a6ac314b42bae941892dd576c4916",
+      "version": "v4.0.1"
+    }
+  },
+  "spec-discovery": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "effect",
+        "node-fs",
+        "prelude",
+        "spec"
+      ],
+      "name": "spec-discovery",
+      "nixSha256": "0kwc4nvy6rpbnhayang92h74fgyr28bh82pskwj7lm4sy513vhfw",
+      "repo": "https://github.com/owickstrom/purescript-spec-discovery.git",
+      "rev": "b90ca588dc054c951201488d982765226a8393e9",
+      "version": "v4.0.0"
+    }
+  },
+  "spec-quickcheck": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "prelude",
+        "quickcheck",
+        "random",
+        "spec"
+      ],
+      "name": "spec-quickcheck",
+      "nixSha256": "1l51v2j4z2cwdnf9hyx69jmlzlkk24l8gj38iphfspaiwyqwcmpg",
+      "repo": "https://github.com/owickstrom/purescript-spec-quickcheck.git",
+      "rev": "77a426996f7869f8424ed2720ab55c1f8d45bc84",
+      "version": "v3.1.0"
+    }
+  },
+  "spork": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "console",
+        "tailrec",
+        "arrays",
+        "refs",
+        "foldable-traversable",
+        "maybe",
+        "aff",
+        "halogen-vdom",
+        "dom-indexed",
+        "unsafe-reference",
+        "web-dom",
+        "web-html",
+        "web-events",
+        "web-uievents",
+        "effect",
+        "foreign",
+        "ordered-collections"
+      ],
+      "name": "spork",
+      "nixSha256": "00qgap0jmnsgv0w9mkgbxjp2vnkfqly404l3igb75i8s0gp1fxp2",
+      "repo": "https://github.com/natefaubion/purescript-spork.git",
+      "rev": "131f07d669f2c09175faed39c3445c6a46ca924f",
+      "version": "v1.0.0"
+    }
+  },
+  "st": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "partial",
+        "prelude",
+        "tailrec",
+        "unsafe-coerce"
+      ],
+      "name": "st",
+      "nixSha256": "1jpz8rpk2ac6kshflri8pdw4s1hf8g4alz5bw69x23sj9sccxgs0",
+      "repo": "https://github.com/purescript/purescript-st.git",
+      "rev": "8133841b8b545f3a273caebb6103f7c640fc35eb",
+      "version": "v4.1.1"
+    }
+  },
+  "string-parsers": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "bifunctors",
+        "control",
+        "either",
+        "foldable-traversable",
+        "lists",
+        "maybe",
+        "prelude",
+        "strings",
+        "tailrec"
+      ],
+      "name": "string-parsers",
+      "nixSha256": "0qz9zry17hwvbhsbx25lj3g15yki22pdfz4slbqpv64mh6clb1iz",
+      "repo": "https://github.com/paf31/purescript-string-parsers.git",
+      "rev": "6e0752ede167479c8d2b38e9a5a1524ecf3046a8",
+      "version": "v5.0.1"
+    }
+  },
+  "strings": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "control",
+        "either",
+        "enums",
+        "foldable-traversable",
+        "gen",
+        "integers",
+        "maybe",
+        "newtype",
+        "nonempty",
+        "partial",
+        "prelude",
+        "tailrec",
+        "tuples",
+        "unfoldable",
+        "unsafe-coerce"
+      ],
+      "name": "strings",
+      "nixSha256": "147l3l3fzn7liparhm2y3p8j4ck1lblra5j493p2hy5yy5ndznc8",
+      "repo": "https://github.com/purescript/purescript-strings.git",
+      "rev": "94c843b93142d0edf1c31ec075c40b6984c3dc7b",
+      "version": "v4.0.1"
+    }
+  },
+  "strings-extra": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "either",
+        "foldable-traversable",
+        "maybe",
+        "partial",
+        "prelude",
+        "strings",
+        "unicode"
+      ],
+      "name": "strings-extra",
+      "nixSha256": "1kwc3i8rypfyg2yjcqbp060dajl6f2gfa206yy3rijy3z1zk9l88",
+      "repo": "https://github.com/purescript-contrib/purescript-strings-extra.git",
+      "rev": "371883284f8f598690d16f75d8a73d6552986513",
+      "version": "v2.0.0"
+    }
+  },
+  "stringutils": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "either",
+        "integers",
+        "maybe",
+        "partial",
+        "prelude",
+        "strings"
+      ],
+      "name": "stringutils",
+      "nixSha256": "1l6ljz55l8pl2lmnzq1f881rsiz8il12k4xgir41qfm1c0hch235",
+      "repo": "https://github.com/menelaos/purescript-stringutils.git",
+      "rev": "093a07ba7894dd9bdb3b91edccc372c65e362dd8",
+      "version": "v0.0.10"
+    }
+  },
+  "strongcheck": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "console",
+        "control",
+        "datetime",
+        "effect",
+        "either",
+        "enums",
+        "exceptions",
+        "foldable-traversable",
+        "free",
+        "gen",
+        "identity",
+        "integers",
+        "invariant",
+        "lazy",
+        "lists",
+        "machines",
+        "math",
+        "newtype",
+        "partial",
+        "prelude",
+        "profunctor",
+        "random",
+        "strings",
+        "tailrec",
+        "transformers",
+        "tuples"
+      ],
+      "name": "strongcheck",
+      "nixSha256": "0c30w9y6mabphjiizk69hv43ahb1x8rg960nz4mccxb8hnj26z9x",
+      "repo": "https://github.com/purescript-contrib/purescript-strongcheck.git",
+      "rev": "6e681e66882c8bd6d7f99cc5cbcaf6fe0d3e6ee8",
+      "version": "v4.1.1"
+    }
+  },
+  "struct": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut",
+        "argonaut-codecs",
+        "effect",
+        "proxying",
+        "record",
+        "record-extra",
+        "subcategory",
+        "variant"
+      ],
+      "name": "struct",
+      "nixSha256": "1fabc6zlmcdgv0byzfqdn4zbg2yinvhr11vpx9mbcihw609mwsmq",
+      "repo": "https://github.com/matthew-hilty/purescript-struct.git",
+      "rev": "c1c51a63930e4ec1d3d5187b0902cadf2e839f6e",
+      "version": "v1.1.0"
+    }
+  },
+  "stylesheet": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "foreign",
+        "generics-rep",
+        "ordered-collections",
+        "prelude",
+        "refs",
+        "unordered-collections",
+        "cssom"
+      ],
+      "name": "stylesheet",
+      "nixSha256": "1dwga99r64gn1hc7jvcgplj8qc2rpqs2hk0f22ikkb2pvc7w02wq",
+      "repo": "https://github.com/danieljharvey/purescript-stylesheet.git",
+      "rev": "baa2d1abeba470a1ff35a429ea618d9d081c4252",
+      "version": "v0.0.3"
+    }
+  },
+  "subcategory": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "profunctor",
+        "record",
+        "proxy",
+        "typelevel-prelude"
+      ],
+      "name": "subcategory",
+      "nixSha256": "1nsr2hfr3kwa871sn0fsgg8fy30ppvwx5c3i61blnml8gh0f593m",
+      "repo": "https://github.com/matthew-hilty/purescript-subcategory.git",
+      "rev": "8fe8d65928a4c6a028986393a413c28ee780741f",
+      "version": "v0.2.0"
+    }
+  },
+  "suggest": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "node-buffer",
+        "node-fs",
+        "node-process",
+        "node-streams",
+        "psa-utils",
+        "refs"
+      ],
+      "name": "suggest",
+      "nixSha256": "15vl0i9rf2xfdc5rsdax7mxjraaq9qx41lrq805ws5p20yqh9b4d",
+      "repo": "https://github.com/nwolverson/purescript-suggest.git",
+      "rev": "bdce2322ddc5deef1c226937580c10df7d1930c1",
+      "version": "v5.0.0"
+    }
+  },
+  "sunde": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "effect",
+        "node-child-process",
+        "prelude"
+      ],
+      "name": "sunde",
+      "nixSha256": "051kfqc06fbhavd3anvfhi5wfj76a6q4piis4lplypaw9g4n64l2",
+      "repo": "https://github.com/justinwoo/purescript-sunde.git",
+      "rev": "e9c898ac0ffd5e61d82a6c02606ab84241278709",
+      "version": "v2.0.0"
+    }
+  },
+  "svg-parser": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "prelude",
+        "string-parsers"
+      ],
+      "name": "svg-parser",
+      "nixSha256": "0a397vkj67j3rkmq25q85m8n8336kwz0vdfpg28m295i49vlhn6s",
+      "repo": "https://github.com/rnons/purescript-svg-parser.git",
+      "rev": "3497fadad2af220f13fb01ef3c7d45cdd505a786",
+      "version": "v1.0.0"
+    }
+  },
+  "svg-parser-halogen": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "halogen",
+        "prelude",
+        "svg-parser"
+      ],
+      "name": "svg-parser-halogen",
+      "nixSha256": "1b0l2f4m0532pc3khj84wlmqpg6pgwsvxhkgdp7g7v0gs3nrw9p9",
+      "repo": "https://github.com/rnons/purescript-svg-parser-halogen.git",
+      "rev": "559d2213f5cd87d4ad9086da308c66776862ad43",
+      "version": "v2.0.0-rc.1"
+    }
+  },
+  "systemd-journald": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "functions",
+        "prelude"
+      ],
+      "name": "systemd-journald",
+      "nixSha256": "0dbyhimbj8jyiak9i3kilwcwh76jg8ygwqq1jk92njvkr4xp15z6",
+      "repo": "https://github.com/paluh/purescript-systemd-journald.git",
+      "rev": "924c15a39caea9383849573d9e82007c790c5faf",
+      "version": "v0.2.1"
+    }
+  },
+  "tailrec": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "effect",
+        "either",
+        "identity",
+        "maybe",
+        "partial",
+        "prelude",
+        "refs"
+      ],
+      "name": "tailrec",
+      "nixSha256": "0n0sxr44d1lwlrgv8b48ml6vg0r5abfvyywn50jb0i1agnm53i4n",
+      "repo": "https://github.com/purescript/purescript-tailrec.git",
+      "rev": "5a32aa5a4f3651b66cc0e87bcb9861116f9913a3",
+      "version": "v4.1.1"
+    }
+  },
+  "test-unit": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff",
+        "avar",
+        "effect",
+        "either",
+        "free",
+        "js-timers",
+        "lists",
+        "prelude",
+        "quickcheck",
+        "strings"
+      ],
+      "name": "test-unit",
+      "nixSha256": "06lb90vppa7naqqwz7wbvlkkyz86pbdd3ycw3d2iygvxbzkz8xjn",
+      "repo": "https://github.com/bodil/purescript-test-unit.git",
+      "rev": "351c55b632e0c0ebffae05837909995a03de3406",
+      "version": "v15.0.0"
+    }
+  },
+  "these": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "gen",
+        "tuples"
+      ],
+      "name": "these",
+      "nixSha256": "0ywwpbcz1d0pdi3f9h9kla52vq1if8zwdz7jq7lqz5s8zj8kyg5r",
+      "repo": "https://github.com/purescript-contrib/purescript-these.git",
+      "rev": "fc19af52b34f8f128f9981aa27aab4becd7a79d5",
+      "version": "v4.0.0"
+    }
+  },
+  "tolerant-argonaut": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut-codecs",
+        "argonaut-core",
+        "arrays",
+        "effect",
+        "higher-order",
+        "lists",
+        "record",
+        "struct",
+        "typelevel-prelude"
+      ],
+      "name": "tolerant-argonaut",
+      "nixSha256": "1mxmvp499j7s5jddigplp7wxlaj9risq0kmsly2ipj55fmnqnjqb",
+      "repo": "https://github.com/matthew-hilty/purescript-tolerant-argonaut.git",
+      "rev": "db221e8e0335221c0d2c644dc3980a44394ace78",
+      "version": "v1.1.0"
+    }
+  },
+  "toppokki": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "aff-promise",
+        "functions",
+        "node-buffer",
+        "node-http",
+        "prelude",
+        "record"
+      ],
+      "name": "toppokki",
+      "nixSha256": "1yjyz7qh481xvwg9222r2c8mzfvjhs1yan8hwn5pssmjhs9k86hb",
+      "repo": "https://github.com/justinwoo/purescript-toppokki.git",
+      "rev": "7247906f8126d70b17d4b3493bd051ddf76eb1c1",
+      "version": "v2.3.0"
+    }
+  },
+  "tortellini": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foreign-object",
+        "integers",
+        "lists",
+        "motsunabe",
+        "numbers",
+        "prelude",
+        "record",
+        "string-parsers",
+        "strings",
+        "transformers",
+        "typelevel-prelude"
+      ],
+      "name": "tortellini",
+      "nixSha256": "00difmyxp5374gqfxf46zyjpphi87lx5ylwfjd8m8idap901gzh7",
+      "repo": "https://github.com/justinwoo/purescript-tortellini.git",
+      "rev": "1ef407cb5e241209fb6207c48f4790d9bf38eaa3",
+      "version": "v5.1.0"
+    }
+  },
+  "transformers": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "control",
+        "distributive",
+        "effect",
+        "either",
+        "exceptions",
+        "foldable-traversable",
+        "identity",
+        "lazy",
+        "maybe",
+        "newtype",
+        "prelude",
+        "tailrec",
+        "tuples",
+        "unfoldable"
+      ],
+      "name": "transformers",
+      "nixSha256": "03qmvl9s7lbvm73dy9ps6qp39pdcm91hb8yakgj7aq8hgpj7b6bg",
+      "repo": "https://github.com/purescript/purescript-transformers.git",
+      "rev": "0e473e5ef0e294615ca0d9aab0bcffee47b2870d",
+      "version": "v4.2.0"
+    }
+  },
+  "trout": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "argonaut",
+        "media-types",
+        "prelude",
+        "smolder",
+        "uri"
+      ],
+      "name": "trout",
+      "nixSha256": "1abhjg75p0vvj3lmfn9gd0k3pgjkibxfsckga397j9ld4lvc7034",
+      "repo": "https://github.com/purescript-hyper/purescript-trout.git",
+      "rev": "0bdf220531c31af8a519eb34d12c0201a0d9230b",
+      "version": "v0.12.2"
+    }
+  },
+  "trout-client": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "affjax",
+        "argonaut-generic",
+        "prelude",
+        "trout"
+      ],
+      "name": "trout-client",
+      "nixSha256": "16h7lgvycdrz5j08m8jv2m14dhl89sz2c6jxzra0f0xc54lshlxr",
+      "repo": "https://github.com/purescript-hyper/purescript-trout-client.git",
+      "rev": "b852e7f104195e1f388b3e385b9d2e304ac1e578",
+      "version": "v0.12.0"
+    }
+  },
+  "tuples": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "distributive",
+        "foldable-traversable",
+        "invariant",
+        "maybe",
+        "newtype",
+        "prelude",
+        "type-equality"
+      ],
+      "name": "tuples",
+      "nixSha256": "045nsy0r2g51gih0wjhcvhl6gfr8947mlrqwg644ygz72rjm8wq4",
+      "repo": "https://github.com/purescript/purescript-tuples.git",
+      "rev": "0036bf9d99b721fd0f2e539d24e18e484b016927",
+      "version": "v5.1.0"
+    }
+  },
+  "type-equality": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "type-equality",
+      "nixSha256": "1b7szyca5s96gaawvgwrw7fa8r7gqsdff7xhz3vvngnylv2scl3w",
+      "repo": "https://github.com/purescript/purescript-type-equality.git",
+      "rev": "2cdae51c394401cd5fc04b03c341273b41532b7d",
+      "version": "v3.0.0"
+    }
+  },
+  "type-isequal": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "typelevel-prelude"
+      ],
+      "name": "type-isequal",
+      "nixSha256": "0bsz9d160kpih35xdbd617x48c394spdmk1dj9v6mhsii87hwa54",
+      "repo": "https://github.com/justinwoo/purescript-type-isequal.git",
+      "rev": "f54e8071e75b979b1f711c354fd7c8a690273f25",
+      "version": "v0.1.0"
+    }
+  },
+  "typedenv": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foreign-object",
+        "generics-rep",
+        "integers",
+        "numbers",
+        "record",
+        "strings",
+        "typelevel-prelude"
+      ],
+      "name": "typedenv",
+      "nixSha256": "05cgrn4fb89yssai069nwdpc67zjq7z9c2pbfqsx5p53580kpf7h",
+      "repo": "https://github.com/nsaunders/purescript-typedenv.git",
+      "rev": "1a6caaa7181783b8efcd3abddb1d2c8cd6377e27",
+      "version": "v0.0.1"
+    }
+  },
+  "typelevel": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "partial",
+        "prelude",
+        "tuples",
+        "typelevel-prelude",
+        "unsafe-coerce"
+      ],
+      "name": "typelevel",
+      "nixSha256": "0gxj926ppx6d8inir589x0a30iv29hqc2y6vsa1n1c2vlcqv2zgd",
+      "repo": "https://github.com/bodil/purescript-typelevel.git",
+      "rev": "c7917aa6d43440608e6e04332e4c916a45976313",
+      "version": "v6.0.0"
+    }
+  },
+  "typelevel-peano": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "unsafe-coerce",
+        "arrays",
+        "console",
+        "effect",
+        "typelevel-prelude",
+        "prelude",
+        "psci-support"
+      ],
+      "name": "typelevel-peano",
+      "nixSha256": "0ic9ps3dj0g4g4yh4h4rhcckb98j41h54xgf6prilflgx30m1wck",
+      "repo": "https://github.com/csicar/purescript-typelevel-peano.git",
+      "rev": "8542c1b937c4cad44d692f34f9b598d96e6fc6a1",
+      "version": "v0.1.8"
+    }
+  },
+  "typelevel-prelude": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "prelude",
+        "proxy",
+        "type-equality"
+      ],
+      "name": "typelevel-prelude",
+      "nixSha256": "1kp1b35y8wzin9m5lfyp239nclq703xz2b4373x3075xfp6qdcwf",
+      "repo": "https://github.com/purescript/purescript-typelevel-prelude.git",
+      "rev": "9f8788ba16ddda8f70e54e5228422348c13c817c",
+      "version": "v5.0.2"
+    }
+  },
+  "uint": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "generics-rep",
+        "math",
+        "maybe",
+        "quickcheck"
+      ],
+      "name": "uint",
+      "nixSha256": "1k9kj0ms7373klhbrhjrz1iaaar4bxgmsjrbzwh8vha13ysb0brc",
+      "repo": "https://github.com/zaquest/purescript-uint.git",
+      "rev": "82c9cd148442169bdd74a48df9f347a300055a9d",
+      "version": "v5.1.3"
+    }
+  },
+  "undefinable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "functions",
+        "maybe"
+      ],
+      "name": "undefinable",
+      "nixSha256": "03z91g1n6zmiqgqqxi65g99a9qxfb8dcnzg2wnb16i2rl8frsl3v",
+      "repo": "https://github.com/ethul/purescript-undefinable.git",
+      "rev": "9c5c863e638b93cf73e2cfde8dfbde91480ee011",
+      "version": "v4.0.0"
+    }
+  },
+  "undefined": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "undefined",
+      "nixSha256": "0kj504j3r9wr7m3yhm53bcfdzai0c2g99d2pdxlfinxk4pmixyrd",
+      "repo": "https://github.com/bklaric/purescript-undefined.git",
+      "rev": "4012dc06b58feae301140bc081135d0f24c432b0",
+      "version": "v1.0.2"
+    }
+  },
+  "unfoldable": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "maybe",
+        "partial",
+        "prelude",
+        "tuples"
+      ],
+      "name": "unfoldable",
+      "nixSha256": "03g2zz26ai8a44z07jhdj0yvv8q6nq6ifcrzc7qjmdkjywg2cj9v",
+      "repo": "https://github.com/purescript/purescript-unfoldable.git",
+      "rev": "077e787108e02bd16a1b27e57847d5baede7dd61",
+      "version": "v4.1.0"
+    }
+  },
+  "unicode": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foldable-traversable",
+        "maybe",
+        "strings"
+      ],
+      "name": "unicode",
+      "nixSha256": "1a53jv7pzyjk5v6kmwwy50d3l8d26k0id59sn8g3lzkih24nalhp",
+      "repo": "https://github.com/purescript-contrib/purescript-unicode.git",
+      "rev": "bb70f5a17aa9bcad05104c5a3f191fd75bb3d2ce",
+      "version": "v4.0.1"
+    }
+  },
+  "unordered-collections": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "enums",
+        "functions",
+        "integers",
+        "lists",
+        "prelude",
+        "record",
+        "tuples",
+        "typelevel-prelude"
+      ],
+      "name": "unordered-collections",
+      "nixSha256": "15zcx49aq1cwms29lmhar7yc4580cclmhxa9krpqbi6d9d6sw050",
+      "repo": "https://github.com/fehrenbach/purescript-unordered-collections.git",
+      "rev": "b7b54285f9a55e5f367f7e8b71b1ca1001672ee8",
+      "version": "v1.8.3"
+    }
+  },
+  "unsafe-coerce": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "unsafe-coerce",
+      "nixSha256": "0k9255mk2mz6xjb11pwkgfcblmmyvr86ig5kr92jwy95xim09zip",
+      "repo": "https://github.com/purescript/purescript-unsafe-coerce.git",
+      "rev": "fa6a5ca9b4581c00ee0b8539306a49badb7bee60",
+      "version": "v4.0.0"
+    }
+  },
+  "unsafe-reference": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [],
+      "name": "unsafe-reference",
+      "nixSha256": "0q758dz59qz0li4s3w1qcg921xp5i5rh6i1l611iv7rr8cbj11al",
+      "repo": "https://github.com/purescript-contrib/purescript-unsafe-reference.git",
+      "rev": "79d7de7b9351346a73e6c060d80532c95ba1c7c1",
+      "version": "v3.0.1"
+    }
+  },
+  "uri": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arrays",
+        "generics-rep",
+        "globals",
+        "integers",
+        "parsing",
+        "profunctor-lenses",
+        "quickcheck",
+        "spec",
+        "unfoldable",
+        "these"
+      ],
+      "name": "uri",
+      "nixSha256": "1ry5h5656k2hn3y5s35y7pz0rngbkvj9jc783i4h9ai3hndi00py",
+      "repo": "https://github.com/slamdata/purescript-uri.git",
+      "rev": "e48b2e9153aeb06e6b234be98c79159dfc0f6d10",
+      "version": "v7.0.0"
+    }
+  },
+  "uuid": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "effect",
+        "maybe",
+        "foreign-generic",
+        "console",
+        "spec"
+      ],
+      "name": "uuid",
+      "nixSha256": "1ldrhjavv9vngdnh9i7pbg93iwaslrs6rfcv8jh5cjywpin8n6zx",
+      "repo": "https://github.com/spicydonuts/purescript-uuid.git",
+      "rev": "e5d74beef8b33aad9f9b0824950152c46ac2c7f1",
+      "version": "v6.1.0"
+    }
+  },
+  "validation": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "bifunctors",
+        "control",
+        "either",
+        "foldable-traversable",
+        "newtype",
+        "prelude"
+      ],
+      "name": "validation",
+      "nixSha256": "03irk6n7jgsimhp9ckrg2ns7qbc8d383ls3sslxgir5mr8xdc44g",
+      "repo": "https://github.com/purescript/purescript-validation.git",
+      "rev": "bef3f9da737516e69f00d35310334004c29355cb",
+      "version": "v4.2.0"
+    }
+  },
+  "variant": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "enums",
+        "lists",
+        "maybe",
+        "partial",
+        "prelude",
+        "proxy",
+        "record",
+        "tuples",
+        "unsafe-coerce"
+      ],
+      "name": "variant",
+      "nixSha256": "0cn227q57zbqm6r1aw5kvnp1x8zkc1x7wx28yyz311lmy7k1mkql",
+      "repo": "https://github.com/natefaubion/purescript-variant.git",
+      "rev": "31e620334124d2ca8b1e608c27d74b607a5831e9",
+      "version": "v6.0.1"
+    }
+  },
+  "vectorfield": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "effect",
+        "group",
+        "prelude",
+        "psci-support"
+      ],
+      "name": "vectorfield",
+      "nixSha256": "1mljg7pbm58xv4ilsc2kq7dll2l314cqa77dz4vaqgj12vfpv1lc",
+      "repo": "https://github.com/csicar/purescript-vectorfield.git",
+      "rev": "13ff5f45e190b5d7dd31825d443182514892b946",
+      "version": "v1.0.1"
+    }
+  },
+  "web-clipboard": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "web-html"
+      ],
+      "name": "web-clipboard",
+      "nixSha256": "17i7rpzxi7pgas32xz8vjcs54m94gnmca3my0p70gzvf3rasnxyx",
+      "repo": "https://github.com/purescript-web/purescript-web-clipboard.git",
+      "rev": "5c4fe20111b9e37d74c805101b5c558928808971",
+      "version": "v2.0.0"
+    }
+  },
+  "web-dom": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "web-events"
+      ],
+      "name": "web-dom",
+      "nixSha256": "03awc83ggbwcvklzss48yf1bvm898pyim8zri1vjnnyy9yxyx7g0",
+      "repo": "https://github.com/purescript-web/purescript-web-dom.git",
+      "rev": "5bbf40aa543c3a3eb18adf1f86ce1c505c762108",
+      "version": "v4.0.1"
+    }
+  },
+  "web-events": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "datetime",
+        "enums",
+        "nullable"
+      ],
+      "name": "web-events",
+      "nixSha256": "1vd1gfh6zv50bq4v1ppl2wvc5mskcw9n1bfj29qjg0dx0ffxzv2f",
+      "repo": "https://github.com/purescript-web/purescript-web-events.git",
+      "rev": "7f19f24d7b61066bef0813734964f2dc6b085e3d",
+      "version": "v2.0.1"
+    }
+  },
+  "web-file": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "foreign",
+        "media-types",
+        "web-dom"
+      ],
+      "name": "web-file",
+      "nixSha256": "1pn3cp8kkvxlg0vx3m53i83n8c92agpxd7dj96ma3bnyskd17fxv",
+      "repo": "https://github.com/purescript-web/purescript-web-file.git",
+      "rev": "32fa296ff8103a72d52fc900b195f2ee05dc5627",
+      "version": "v2.3.0"
+    }
+  },
+  "web-html": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "js-date",
+        "web-dom",
+        "web-file",
+        "web-storage"
+      ],
+      "name": "web-html",
+      "nixSha256": "1gz2wkph49rkwd7cm6j0mx9sv6a3nzxcidv50mrxydhl3h8153gy",
+      "repo": "https://github.com/purescript-web/purescript-web-html.git",
+      "rev": "0aa27db6d393fc53454f549566f9058147cc008a",
+      "version": "v2.3.0"
+    }
+  },
+  "web-socket": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "web-file"
+      ],
+      "name": "web-socket",
+      "nixSha256": "0kp4rmrqmsjmih7nw7dl75d36pny3ikafnhnfchpc834ap9451zh",
+      "repo": "https://github.com/purescript-web/purescript-web-socket.git",
+      "rev": "00f4ab583efb6fc60e0517d782d2ba2a89d8ec66",
+      "version": "v2.0.0"
+    }
+  },
+  "web-storage": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "nullable",
+        "web-events"
+      ],
+      "name": "web-storage",
+      "nixSha256": "1ycb2s29aw9w6lqik6hfmp9nf9i2yhn0q26hc4p3450jam5mj8bx",
+      "repo": "https://github.com/purescript-web/purescript-web-storage.git",
+      "rev": "c2dedea1ee10ca7e94af5547c90274fb63ab3bc6",
+      "version": "v3.0.0"
+    }
+  },
+  "web-touchevents": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "web-uievents"
+      ],
+      "name": "web-touchevents",
+      "nixSha256": "0mhsfqlglx04q3vkjg4k33bkxcpx2cmbq4x1zxyhl48q1qqmnic8",
+      "repo": "https://github.com/purescript-web/purescript-web-touchevents.git",
+      "rev": "cde8ea42d92035b1c46df4f1e1c38205aba7742a",
+      "version": "v2.0.0"
+    }
+  },
+  "web-uievents": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "web-html"
+      ],
+      "name": "web-uievents",
+      "nixSha256": "04032nl0z9hjq7b799zhbn7in10dz9kgrrcs0adjbaf08rc2kcwh",
+      "repo": "https://github.com/purescript-web/purescript-web-uievents.git",
+      "rev": "bdbc845bf8b06649c8361411085a0c0f788c9511",
+      "version": "v2.0.0"
+    }
+  },
+  "web-xhr": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "arraybuffer-types",
+        "datetime",
+        "http-methods",
+        "web-dom",
+        "web-file"
+      ],
+      "name": "web-xhr",
+      "nixSha256": "1g35z2j9i5lqfms4yi8hgbgc85x6dy9lr3ygbr2f5fgkz86x3hqj",
+      "repo": "https://github.com/purescript-web/purescript-web-xhr.git",
+      "rev": "ca6e7b3b8186c026809e705ec6d8c2c943828ca8",
+      "version": "v3.0.2"
+    }
+  },
+  "xiaomian": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "naporitan"
+      ],
+      "name": "xiaomian",
+      "nixSha256": "1n2ghz1z04xqxmjqdh0phnslq6fc7027j70si0lbp7njic6xljjp",
+      "repo": "https://github.com/justinwoo/purescript-xiaomian.git",
+      "rev": "811264fd65cad9fa958ad3d0a5cff59450193b2a",
+      "version": "v0.1.0"
+    }
+  },
+  "yargs": {
+    "tag": "remote",
+    "value": {
+      "dependencies": [
+        "console",
+        "either",
+        "exceptions",
+        "foreign",
+        "unsafe-coerce"
+      ],
+      "name": "yargs",
+      "nixSha256": "10xbiyghplg54n9p7vs7mba9gmqfsbyiz0045c5p4p3v6djj60w3",
+      "repo": "https://github.com/paf31/purescript-yargs.git",
+      "rev": "a517d190f15e7817a3144a982663281f125d28e8",
+      "version": "v4.0.0"
+    }
+  }
+}

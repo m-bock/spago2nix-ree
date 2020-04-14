@@ -92,4 +92,4 @@ codecAnyFile pathyConfig = prismaticCodec fromJson toJson json
     Right x -> encode (codecRelFile pathyConfig) x
 
 printAny :: forall a b. IsRelOrAbs a => IsDirOrFile b => Pathy.Printer -> Path a b -> String
-printAny printer = Pathy.sandboxAny >>> Pathy.printPath printer
+printAny printer = Pathy.sandboxAny >>> Pathy.unsafePrintPath printer
