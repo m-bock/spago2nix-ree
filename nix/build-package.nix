@@ -16,26 +16,30 @@ let
   forEach = f: xs: builtins.concatStringsSep "\n" (map f xs);
 
   resolvePackage = package:
-    let
-      source = if package.tag == "remote" then
-        let
-          repo = pkgs.fetchgit {
-            sha256 = package.value.nixSha256;
-            url = package.value.repo;
-            rev = package.value.rev;
-          };
-        in pkgs.runCommand "src" { } "ln -s ${repo}/src $out"
-      else if package.tag == "local" then
-        package.value + "/src"
-      else
-        { };
-
-    in {
+    if package.tag == "remote" then
+      let
+        repo = pkgs.fetchgit {
+          sha256 = package.value.nixSha256;
+          url = package.value.repo;
+          rev = package.value.rev;
+        };
+      in {
+        name = package.value.name;
+        dependencies = package.value.dependencies;
+        version = package.value.version;
+        source = pkgs.runCommand "src" { } "ln -s ${repo}/src $out";
+      }
+    else if package.tag == "local" then {
       name = package.value.name;
       dependencies = package.value.dependencies;
-      version = package.value.version;
-      inherit source;
-    };
+      version = "local-package";
+      source =
+        pkgs.runCommand "src" { } "ln -s ${package.value.location}src $out";
+
+    }
+
+    else
+      { };
 
   buildPackage = { packagesLock, package }:
     (buildPackage' {
