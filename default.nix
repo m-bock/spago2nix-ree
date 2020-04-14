@@ -104,14 +104,14 @@ let
 
     src,
 
-    packagesLock ? "packages-lock.json",
+    packagesLock,
 
     spagoDhall ? "spago.dhall"
 
     }:
     let
 
-      spagoConfig = fromJSON (readFile (runCommand "spago.json" { } ''
+      spagoConfig = fromJSON (readFile (pkgs.runCommand "spago.json" { } ''
         cat ${src + "/" + spagoDhall} | ${dhall-json}/bin/dhall-to-json > $out
       ''));
 
