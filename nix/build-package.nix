@@ -1,6 +1,5 @@
-let sources = import ./nix/sources.nix;
+{ sources ? import ./sources.nix,
 
-in {
 # PKGS
 pkgs ? import sources.nixpkgs { },
 
@@ -16,9 +15,29 @@ with builtins;
 let
   forEach = f: xs: builtins.concatStringsSep "\n" (map f xs);
 
-  buildPackage = { spagoPackages, package }:
+  resolvePackage = package:
+    let
+      source = if package.tag == "remote" then
+        let
+          repo = pkgs.fetchgit {
+            sha256 = package.value.nixSha256;
+            url = package.value.repo;
+            inherit (package.value) rev;
+          };
+        in pkgs.runCommand "src" { } "ln -s ${repo}/src $out"
+      else if package.tag == "local" then
+        package.value + "/src"
+      else
+        { };
+
+    in {
+      name = package.value.name;
+      inherit source;
+    };
+
+  buildPackage = { packagesLock, package }:
     (buildPackage' {
-      inherit spagoPackages;
+      spagoPackages = mapAttrs (_: resolvePackage) packagesLock;
       inherit package;
       cache = { };
     }).package;

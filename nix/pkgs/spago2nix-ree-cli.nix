@@ -1,6 +1,6 @@
-let sources = import ./nix/sources.nix;
+{
+sources ? import ../sources.nix;
 
-in {
 # PKGS
 
 pkgs ? import sources.nixpkgs { },
