@@ -15,7 +15,16 @@ let
 
 in rec {
 
+  getPackages = { packagesLock, localSrcDirs }:
+
+    util.resolvePackages {
+      packagesLock = util.getPackagesConfig packagesLock;
+      inherit localSrcDirs;
+    };
+
   buildProjectDependencies = {
+
+    spagoPackages,
 
     configFiles,
 
@@ -30,6 +39,8 @@ in rec {
 
       buildPackageConfig = {
 
+        inherit spagoPackages;
+
         package = rec {
           name = spagoConfig.name + "-dependencies";
           dependencies = spagoConfig.dependencies;
@@ -41,9 +52,11 @@ in rec {
 
       };
 
-    in buildPackage buildPackageConfig;
+    in buildPackage.buildPackage buildPackageConfig;
 
   buildProject = {
+
+    spagoPackages,
 
     srcDirs,
 
@@ -61,6 +74,7 @@ in rec {
       projectSources = util.createFiles srcDirs;
 
       projectDepenedencies = buildProjectDependencies {
+        inherit spagoPackages;
         inherit configFiles;
         inherit spagoDhall;
         inherit packagesLock;
@@ -74,6 +88,8 @@ in rec {
     in util.compileSpagoProject compileSpagoProjectConfig;
 
   buildCLI = {
+
+    spagoPackages,
 
     name ? let
 
@@ -95,6 +111,7 @@ in rec {
     let
 
       project = buildProject {
+        inherit spagoPackages;
         inherit srcDirs;
         inherit configFiles;
         inherit packagesLock;
@@ -121,6 +138,8 @@ in rec {
 
   buildWebApp = {
 
+    spagoPackages,
+
     name,
 
     title ? name,
@@ -144,6 +163,7 @@ in rec {
     let
 
       project = buildProject {
+        inherit spagoPackages;
         inherit srcDirs;
         inherit configFiles;
         inherit packagesLock;

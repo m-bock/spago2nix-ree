@@ -27,6 +27,8 @@ let
 
   packagesLock = ../../packages-lock.json;
 
+  localSrcDirs = { lib1 = ../lib1/src; };
+
 in rec {
   yarnModules = yarn2nix.mkYarnModules rec {
     name = "app";
@@ -37,7 +39,14 @@ in rec {
     yarnNix = ../../yarn.nix;
   };
 
+  spagoPackages = spago2nix-ree.getPackages {
+    inherit packagesLock;
+    inherit localSrcDirs;
+  };
+
   projectDependencies = spago2nix-ree.buildProjectDependencies {
+
+    inherit spagoPackages;
 
     inherit configFiles;
 
@@ -47,6 +56,8 @@ in rec {
   };
 
   project = spago2nix-ree.buildProject {
+
+    inherit spagoPackages;
 
     inherit srcDirs;
 
@@ -59,6 +70,8 @@ in rec {
 
   cli = spago2nix-ree.buildCLI {
 
+    inherit spagoPackages;
+
     inherit srcDirs;
 
     inherit configFiles;
@@ -69,6 +82,8 @@ in rec {
   };
 
   webApp = spago2nix-ree.buildWebApp {
+
+    inherit spagoPackages;
 
     name = "webApp";
 

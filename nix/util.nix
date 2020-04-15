@@ -39,6 +39,38 @@ rec {
 
   emptyDir = pkgs.runCommand "empty-dir" { } "mkdir $out";
 
+  resolvePackage = { package, localSrcDirs }:
+    if package.tag == "remote" then
+      let
+        repo = pkgs.fetchgit {
+          sha256 = package.value.nixSha256;
+          url = package.value.repo;
+          rev = package.value.rev;
+        };
+      in {
+        name = package.value.name;
+        dependencies = package.value.dependencies;
+        version = package.value.version;
+        source = pkgs.runCommand "src" { } "ln -s ${repo}/src $out";
+      }
+    else if package.tag == "local" then rec {
+      name = package.value.name;
+      dependencies = package.value.dependencies;
+      version = "local-package";
+      source =
+        pkgs.runCommand "src" { } "ln -s  ${getAttr name localSrcDirs}  $out";
+    }
+
+    else
+      { };
+
+  resolvePackages = { packagesLock, localSrcDirs }:
+    mapAttrs (_: package:
+      resolvePackage {
+        inherit package;
+        inherit localSrcDirs;
+      }) packagesLock;
+
   getSpagoConfig = configSrc: spagoDhall:
     pipe configSrc [
       createFiles
