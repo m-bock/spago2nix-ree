@@ -58,15 +58,13 @@ in rec {
     let
       spagoConfig = util.getSpagoConfig configFiles spagoDhall;
 
-      src = util.createFiles srcDirs;
+      projectSources = util.createFiles srcDirs;
 
       projectDepenedencies = buildProjectDependencies {
         inherit configFiles;
         inherit spagoDhall;
         inherit packagesLock;
       };
-
-      projectSources = util.createFiles srcDirs;
 
       compileSpagoProjectConfig = {
         inherit projectDepenedencies;

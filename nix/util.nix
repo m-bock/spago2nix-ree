@@ -99,8 +99,8 @@ rec {
       cp -r --preserve=all ${projectDepenedencies}/.spago .spago
 
       mkdir sources
-      cp -r ${projectSources}/* -t sources
-      ls ${projectSources}/src
+      cp -rL ${projectSources}/* -t sources
+
       ${pkgs.psa}/bin/psa \
         --is-lib=.spago \
         --stash \
