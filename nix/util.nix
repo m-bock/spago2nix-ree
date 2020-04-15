@@ -60,10 +60,18 @@ rec {
 
   compileSpagoProject = { alreadyBuilt, projectSources }:
     pkgs.runCommand "spago-project" { } ''
+      PATH=${pkgs.purs}/bin:$PATH
+
       tmp=`mktemp -d`
       cd $tmp
 
-      cp -r --preserve=all ${alreadyBuilt}/* -t .
+      shopt -s globstar
+
+      cp -r --preserve=all ${alreadyBuilt}/output output
+      chmod -R +w output
+      cp -r --preserve=all ${alreadyBuilt}/.spago .spago
+
+      mkdir sources
       cp -r ${projectSources}/* -t sources
 
       ${pkgs.psa}/bin/psa \
@@ -71,11 +79,11 @@ rec {
         --stash \
         --censor-lib \
         --strict \
-        '.spago/*/*/src/**/*.purs' \
-        ${sources}/**/*.purs
+        .spago/*/*/src/**/*.purs \
+        sources/**/*.purs
 
       mkdir $out
-      cp -r $tmp/output $out
-      cp -r $tmp/.spago $out
+      cp -r $tmp/output -t $out
+      cp -r $tmp/.spago -t $out
     '';
 }
