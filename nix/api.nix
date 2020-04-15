@@ -17,7 +17,7 @@ in rec {
 
   buildProjectDependencies = {
 
-    configSrc,
+    configFiles,
 
     packagesLock,
 
@@ -26,7 +26,7 @@ in rec {
     }:
 
     let
-      spagoConfig = util.getSpagoConfig configSrc spagoDhall;
+      spagoConfig = util.getSpagoConfig configFiles spagoDhall;
 
       buildPackageConfig = {
 
@@ -45,9 +45,9 @@ in rec {
 
   buildProject = {
 
-    src,
+    srcDirs,
 
-    configSrc,
+    configFiles,
 
     packagesLock,
 
@@ -56,25 +56,71 @@ in rec {
     }:
 
     let
-      spagoConfig = util.getSpagoConfig configSrc spagoDhall;
+      spagoConfig = util.getSpagoConfig configFiles spagoDhall;
 
-      src' = util.createFiles src;
+      src = util.createFiles srcDirs;
 
       projectDepenedencies = buildProjectDependencies {
-        inherit configSrc;
+        inherit configFiles;
         inherit spagoDhall;
         inherit packagesLock;
       };
 
       projectSources = util.createProjectSources {
         inherit spagoConfig;
-        src = src';
+        inherit src;
       };
 
       compileSpagoProjectConfig = {
-        alreadyBuilt = projectDepenedencies;
-        projectSources = projectSources;
+        inherit projectDepenedencies;
+        inherit projectSources;
       };
 
     in util.compileSpagoProject compileSpagoProjectConfig;
+
+  buildCLI = {
+
+    name ? let
+
+      spagoConfig = util.getSpagoConfig configFiles spagoDhall;
+    in spagoConfig.name,
+
+    srcDirs,
+
+    configFiles,
+
+    packagesLock,
+
+    spagoDhall ? util.defaultSpagoDhall,
+
+    entryModule ? util.defaultEntry,
+
+    node_modules ? util.emptyDir }:
+
+    let
+
+      project = buildProject {
+        inherit srcDirs;
+        inherit configFiles;
+        inherit packagesLock;
+        inherit spagoDhall;
+      };
+
+      buildParcelConfigNode = {
+        src = util.createFiles {
+          "." = project + "/*";
+          "index.js" = util.defaultEntryJS { inherit entryModule; };
+        };
+        entry = "index.js";
+        inherit node_modules;
+      };
+
+    in pipe buildParcelConfigNode [
+      util.buildParcelNode
+      (src:
+        util.createNodeBinary {
+          inherit src;
+          inherit name;
+        })
+    ];
 }

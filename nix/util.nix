@@ -13,6 +13,15 @@ with pkgs.lib;
 rec {
   defaultSpagoDhall = "spago.dhall";
 
+  defaultEntryJS = { entryModule ? defaultEntry, outputPath ? "output" }:
+    pkgs.writeText "index.js" ''
+      require("./${outputPath}/${entryModule}").main();
+    '';
+
+  defaultEntry = "Main";
+
+  emptyDir = pkgs.runCommand "empty-dir" { } "mkdir $out";
+
   getSpagoConfig = configSrc: spagoDhall:
     pipe configSrc [
       createFiles
@@ -58,7 +67,7 @@ rec {
       done
     '';
 
-  compileSpagoProject = { alreadyBuilt, projectSources }:
+  compileSpagoProject = { projectDepenedencies, projectSources }:
     pkgs.runCommand "spago-project" { } ''
       PATH=${pkgs.purs}/bin:$PATH
 
@@ -67,9 +76,9 @@ rec {
 
       shopt -s globstar
 
-      cp -r --preserve=all ${alreadyBuilt}/output output
+      cp -r --preserve=all ${projectDepenedencies}/output output
       chmod -R +w output
-      cp -r --preserve=all ${alreadyBuilt}/.spago .spago
+      cp -r --preserve=all ${projectDepenedencies}/.spago .spago
 
       mkdir sources
       cp -r ${projectSources}/* -t sources
@@ -86,4 +95,36 @@ rec {
       cp -r $tmp/output -t $out
       cp -r $tmp/.spago -t $out
     '';
+
+  buildParcelNode = { src, entry, node_modules }:
+    pkgs.runCommand "parcel-bundle" { } ''
+      tmp=`mktemp -d`
+      cd $tmp
+      ln -s ${src}/* -t .
+      ${pkgs.parcel}/bin/parcel build --target node --no-source-maps ${entry}
+
+      mkdir $out
+      cp -r $tmp/dist/* -t $out
+      ln -s ${node_modules}  $out/node_modules
+      ln -s ${src}/output $out/output
+    '';
+
+  createNodeBinary = { name, src }:
+    pkgs.stdenv.mkDerivation {
+      inherit name;
+
+      buildCommand = ''
+        mkdir -p $out/bin
+        cp -r ${src}/node_modules -t $out/bin
+        cp -r ${src}/output -t $out/bin
+
+        echo "#!${pkgs.nodejs}/bin/node" > $out/bin/${name}
+
+        cat ${src}/index.js >> $out/bin/${name}
+
+        chmod +x $out/bin/${name}
+      '';
+    }
+
+  ;
 }

@@ -48,6 +48,26 @@ let
         '')
     ];
 
+    parcel = lib'.pipe {
+
+      src = pkgs.runCommand "src" { } ''
+        mkdir $out
+        ln -s ${./package.json} $out/package.json
+        ln -s ${./yarn.lock} $out/yarn.lock
+      '';
+
+      yarnNix = ./yarn.nix;
+
+      publishBinsFor = [ "parcel" ];
+
+    } [
+      yarn2nix.mkYarnPackage
+      (yarnPackage:
+        pkgs.writeShellScriptBin "parcel" ''
+          ${yarnPackage}/bin/parcel $@
+        '')
+    ];
+
     purs = purs;
 
   };
@@ -60,4 +80,5 @@ in {
   };
   inherit (api) buildProject;
   inherit (api) buildProjectDependencies;
+  inherit (api) buildCLI;
 }
