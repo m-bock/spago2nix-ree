@@ -138,7 +138,11 @@ in rec {
 
     entryModule ? util.defaultEntry,
 
-    node_modules ? util.emptyDir }:
+    node_modules ? util.emptyDir,
+
+    containerId ? "app"
+
+    }:
 
     let
 
@@ -156,6 +160,7 @@ in rec {
           "index.html" = util.defaultEntryHTML {
             inherit title;
             script = "index.js";
+            inherit containerId;
           };
         };
         entry = "index.html";

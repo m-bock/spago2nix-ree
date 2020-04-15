@@ -18,7 +18,7 @@ rec {
       require("./${outputPath}/${entryModule}").main();
     '';
 
-  defaultEntryHTML = { title ? "", script }:
+  defaultEntryHTML = { title ? "", script, containerId }:
     pkgs.writeText "index.html" ''
       <!DOCTYPE html>
       <html>
@@ -29,6 +29,7 @@ rec {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
         </head>
         <body>
+          <div id="${containerId}"></div>
           <script src="${script}"></script>
         </body>
       </html>

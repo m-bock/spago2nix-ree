@@ -1,71 +1,64 @@
 { pkgs ? import <nixpkgs> { } }:
 
-let spago2nix-ree = import ../../../default.nix { };
+let
+
+  spago2nix-ree = import ../../../default.nix { };
+
+  srcDirs = {
+    "src" = ./src;
+    "test" = ./test;
+  };
+
+  configFiles = {
+    "packages.dhall" = ../../packages.dhall;
+    "packages-upstream.dhall" = ../../packages-upstream.dhall;
+    "packages/app/spago.dhall" = ./spago.dhall;
+  };
+
+  spagoDhall = "packages/app/spago.dhall";
+
+  packagesLock = ../../packages-lock.json;
+
 in {
   projectDependencies = spago2nix-ree.buildProjectDependencies {
 
-    configFiles = {
-      "packages.dhall" = ../../packages.dhall;
-      "packages-upstream.dhall" = ../../packages-upstream.dhall;
-      "packages/app/spago.dhall" = ./spago.dhall;
-    };
+    inherit configFiles;
 
-    spagoDhall = "packages/app/spago.dhall";
+    inherit spagoDhall;
 
-    packagesLock = ../../packages-lock.json;
+    inherit packagesLock;
   };
 
   project = spago2nix-ree.buildProject {
 
-    srcDirs = {
-      "src" = ./src;
-      "test" = ./test;
-    };
+    inherit srcDirs;
 
-    configFiles = {
-      "packages.dhall" = ../../packages.dhall;
-      "packages-upstream.dhall" = ../../packages-upstream.dhall;
-      "packages/app/spago.dhall" = ./spago.dhall;
-    };
+    inherit configFiles;
 
-    spagoDhall = "packages/app/spago.dhall";
+    inherit spagoDhall;
 
-    packagesLock = ../../packages-lock.json;
+    inherit packagesLock;
   };
 
   cli = spago2nix-ree.buildCLI {
 
-    srcDirs = {
-      "src" = ./src;
-      "test" = ./test;
-    };
+    inherit srcDirs;
 
-    configFiles = {
-      "packages.dhall" = ../../packages.dhall;
-      "packages-upstream.dhall" = ../../packages-upstream.dhall;
-      "packages/app/spago.dhall" = ./spago.dhall;
-    };
+    inherit configFiles;
 
-    spagoDhall = "packages/app/spago.dhall";
+    inherit spagoDhall;
 
-    packagesLock = ../../packages-lock.json;
+    inherit packagesLock;
   };
 
   webApp = spago2nix-ree.buildWebApp {
 
-    srcDirs = {
-      "src" = ./src;
-      "test" = ./test;
-    };
+    inherit srcDirs;
 
-    configFiles = {
-      "packages.dhall" = ../../packages.dhall;
-      "packages-upstream.dhall" = ../../packages-upstream.dhall;
-      "packages/app/spago.dhall" = ./spago.dhall;
-    };
+    inherit configFiles;
 
-    spagoDhall = "packages/app/spago.dhall";
+    inherit spagoDhall;
 
-    packagesLock = ../../packages-lock.json;
+    inherit packagesLock;
   };
 }
