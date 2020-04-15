@@ -51,4 +51,21 @@ in {
     packagesLock = ../../packages-lock.json;
   };
 
+  webApp = spago2nix-ree.buildWebApp {
+
+    srcDirs = {
+      "src" = ./src;
+      "test" = ./test;
+    };
+
+    configFiles = {
+      "packages.dhall" = ../../packages.dhall;
+      "packages-upstream.dhall" = ../../packages-upstream.dhall;
+      "packages/app/spago.dhall" = ./spago.dhall;
+    };
+
+    spagoDhall = "packages/app/spago.dhall";
+
+    packagesLock = ../../packages-lock.json;
+  };
 }

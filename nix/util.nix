@@ -18,6 +18,22 @@ rec {
       require("./${outputPath}/${entryModule}").main();
     '';
 
+  defaultEntryHTML = { title ? "", script }:
+    pkgs.writeText "index.html" ''
+      <!DOCTYPE html>
+      <html>
+        <head>
+          <meta charset="utf-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <title>${title}</title>
+          <meta name="viewport" content="width=device-width, initial-scale=1" />
+        </head>
+        <body>
+          <script src="${script}"></script>
+        </body>
+      </html>
+    '';
+
   defaultEntry = "Main";
 
   emptyDir = pkgs.runCommand "empty-dir" { } "mkdir $out";
@@ -124,7 +140,16 @@ rec {
 
         chmod +x $out/bin/${name}
       '';
-    }
+    };
 
-  ;
+  buildParcelWeb = { src, entry, node_modules }:
+    pkgs.runCommand "parcel-bundle" { } ''
+      tmp=`mktemp -d`
+      cd $tmp
+      ln -s ${src}/* -t .
+      ${pkgs.parcel}/bin/parcel build --no-source-maps ${entry}
+
+      mkdir $out
+      cp -r $tmp/dist/* -t $out
+    '';
 }

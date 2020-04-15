@@ -123,4 +123,45 @@ in rec {
           inherit name;
         })
     ];
+
+  buildWebApp = {
+
+    title ? "",
+
+    srcDirs,
+
+    configFiles,
+
+    packagesLock,
+
+    spagoDhall ? util.defaultSpagoDhall,
+
+    entryModule ? util.defaultEntry,
+
+    node_modules ? util.emptyDir }:
+
+    let
+
+      project = buildProject {
+        inherit srcDirs;
+        inherit configFiles;
+        inherit packagesLock;
+        inherit spagoDhall;
+      };
+
+      buildParcelConfigWeb = {
+        src = util.createFiles {
+          "." = project + "/*";
+          "index.js" = util.defaultEntryJS { inherit entryModule; };
+          "index.html" = util.defaultEntryHTML {
+            inherit title;
+            script = "index.js";
+          };
+        };
+        entry = "index.html";
+        inherit node_modules;
+      };
+
+    in util.buildParcelWeb buildParcelConfigWeb;
+
 }

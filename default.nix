@@ -81,4 +81,5 @@ in {
   inherit (api) buildProject;
   inherit (api) buildProjectDependencies;
   inherit (api) buildCLI;
+  inherit (api) buildWebApp;
 }
