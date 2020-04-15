@@ -66,10 +66,7 @@ in rec {
         inherit packagesLock;
       };
 
-      projectSources = util.createProjectSources {
-        inherit spagoConfig;
-        inherit src;
-      };
+      projectSources = util.createFiles srcDirs;
 
       compileSpagoProjectConfig = {
         inherit projectDepenedencies;

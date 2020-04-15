@@ -94,12 +94,13 @@ rec {
       shopt -s globstar
 
       cp -r --preserve=all ${projectDepenedencies}/output output
+
       chmod -R +w output
       cp -r --preserve=all ${projectDepenedencies}/.spago .spago
 
       mkdir sources
       cp -r ${projectSources}/* -t sources
-
+      ls ${projectSources}/src
       ${pkgs.psa}/bin/psa \
         --is-lib=.spago \
         --stash \
@@ -148,6 +149,7 @@ rec {
       tmp=`mktemp -d`
       cd $tmp
       ln -s ${src}/* -t .
+      ln -s ${node_modules} ./node_modules
       ${pkgs.parcel}/bin/parcel build --no-source-maps ${entry}
 
       mkdir $out

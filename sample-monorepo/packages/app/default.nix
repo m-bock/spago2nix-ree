@@ -1,4 +1,12 @@
-{ pkgs ? import <nixpkgs> { } }:
+{
+
+pkgs ? import <nixpkgs> { },
+
+yarn2nix ?
+  import (builtins.fetchGit { url = "https://github.com/moretea/yarn2nix"; })
+  { }
+
+}:
 
 let
 
@@ -19,7 +27,16 @@ let
 
   packagesLock = ../../packages-lock.json;
 
-in {
+in rec {
+  yarnModules = yarn2nix.mkYarnModules rec {
+    name = "app";
+    pname = name;
+    version = "1.0.0";
+    packageJSON = ./package.json;
+    yarnLock = ../../yarn.lock;
+    yarnNix = ../../yarn.nix;
+  };
+
   projectDependencies = spago2nix-ree.buildProjectDependencies {
 
     inherit configFiles;
@@ -53,6 +70,8 @@ in {
 
   webApp = spago2nix-ree.buildWebApp {
 
+    name = "webApp";
+
     inherit srcDirs;
 
     inherit configFiles;
@@ -60,5 +79,7 @@ in {
     inherit spagoDhall;
 
     inherit packagesLock;
+
+    node_modules = yarnModules + "/node_modules";
   };
 }
