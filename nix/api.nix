@@ -126,7 +126,9 @@ in rec {
 
   buildWebApp = {
 
-    title ? "",
+    name,
+
+    title ? name,
 
     srcDirs,
 

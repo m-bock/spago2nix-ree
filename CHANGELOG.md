@@ -7,12 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.0] - 2020-04-13
+## [v1.0.0] - 2020-04-13
+
+## TODO
+
+- [ ] Adjust API on Readme
 
 ### Added
 
 - Support for local packages.
 - Better CLI documentation.
+- `buildCLI`
+- `buildWebApp`
 
 ### Changed
 
