@@ -1,90 +1,80 @@
-{ sources ? import ../sources.nix,
+{ sources ? import ./sources.nix,
 
 # PKGS
 
 pkgs ? import sources.nixpkgs { },
 
-dhall-json ? pkgs.haskellPackages.dhall-json_1_4_0.override {
-  dhall = pkgs.haskellPackages.dhall_1_25_0;
-}
+dhall-json ? pkgs.dhall-json
 
 }:
 with builtins;
+with pkgs.lib;
 let
   buildPackage = import ./build-package.nix { inherit sources; };
+  util = import ./util.nix { inherit pkgs; };
 
-  getSpagoConfig = src: spagoDhall:
-    fromJSON (readFile (pkgs.runCommand "spago.json" { } ''
-      cd ${src}/`dirname ${spagoDhall}`
-      cat `basename ${spagoDhall}` | ${dhall-json}/bin/dhall-to-json > $out
-    ''));
+in rec {
 
-  getPackagesConfig = packagesLock: fromJSON (readFile packagesLock);
+  buildProjectDependencies = {
+
+    configSrc,
+
+    packagesLock,
+
+    spagoDhall ? util.defaultSpagoDhall
+
+    }:
+
+    let
+      spagoConfig = util.getSpagoConfig configSrc spagoDhall;
+
+      buildPackageConfig = {
+
+        package = rec {
+          name = spagoConfig.name + "-dependencies";
+          dependencies = spagoConfig.dependencies;
+          version = "no-version";
+          source = pkgs.runCommand "${name}-source" { } "mkdir $out";
+        };
+
+        packagesLock = util.getPackagesConfig packagesLock;
+
+      };
+
+    in buildPackage buildPackageConfig;
 
   buildProject = {
 
     src,
 
-    packagesLock,
-
-    spagoDhall ? "spago.dhall"
-
-    }:
-
-    let spagoConfig = getSpagoConfig src spagoDhall;
-
-    in buildPackage {
-
-      package = rec {
-        name = spagoConfig.name;
-        dependencies = spagoConfig.dependencies;
-        version = "no-version";
-        source = pkgs.runCommand "${name}-source" { } ''
-          mkdir $out
-
-          shopt -s globstar
-
-          pushd ${src}
-            for path in ${toString (spagoConfig.sources)}
-            do
-              mkdir -p $out/src/`dirname $path`
-              cp $path $out/src/$path 
-            done
-          popd
-
-        '';
-      };
-
-      packagesLock = getPackagesConfig packagesLock;
-
-    };
-
-  buildProjectDependencies = {
-
-    src,
+    configSrc,
 
     packagesLock,
 
-    spagoDhall ? "spago.dhall"
+    spagoDhall ? util.defaultSpagoDhall
 
     }:
 
-    let spagoConfig = getSpagoConfig src spagoDhall;
+    let
+      spagoConfig = util.getSpagoConfig configSrc spagoDhall;
 
-    in buildPackage {
+      src' = util.createFiles src;
 
-      package = rec {
-        name = spagoConfig.name + "-dependencies";
-        dependencies = spagoConfig.dependencies;
-        version = "no-version";
-        source = pkgs.runCommand "${name}-source" { } "mkdir $out";
+      projectDepenedencies = buildProjectDependencies {
+        inherit configSrc;
+        inherit spagoDhall;
+        inherit packagesLock;
       };
 
-      packagesLock = getPackagesConfig packagesLock;
+      projectSources = util.createProjectSources {
+        inherit spagoConfig;
+        src = src';
+      };
 
-    };
+      compileSpagoProjectConfig = {
+        alreadyBuilt = projectDepenedencies;
+        projectSources = projectSources;
+      };
 
-in {
-  inherit buildProject;
-  inherit buildProjectDependencies;
+    in util.compileSpagoProject compileSpagoProjectConfig;
 }
