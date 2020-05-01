@@ -186,4 +186,48 @@ in rec {
 
     in util.buildParcelWeb buildParcelConfigWeb;
 
+  writePureScriptBin = name:
+    {
+
+    spagoPackages,
+
+    packagesLock,
+
+    node_modules ? util.emptyDir,
+
+    dependencies ? [ ],
+
+    configFiles
+
+    }:
+    src:
+
+    let
+
+      buildCLIConfig = {
+        inherit spagoPackages;
+        inherit name;
+        inherit packagesLock;
+        inherit node_modules;
+
+        srcDirs = {
+          "src/Main.purs" = pkgs.writeText "Main.purs" src;
+
+        };
+
+        configFiles = {
+          "spago.dhall" = pipe {
+            inherit name;
+            inherit dependencies;
+          } [
+            util.defaultSpagoDhallContent
+            (pkgs.writeText "spago.dhall")
+
+          ];
+        } // configFiles;
+
+      };
+
+    in buildCLI buildCLIConfig;
+
 }

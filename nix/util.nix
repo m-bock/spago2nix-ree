@@ -13,6 +13,22 @@ with pkgs.lib;
 rec {
   defaultSpagoDhall = "spago.dhall";
 
+  defaultSpagoDhallContent = { name, dependencies }:
+    let
+      dependenciesStr = pipe dependencies [
+        (map (dep: ''"${dep}"''))
+
+        (concatStringsSep ", ")
+      ];
+    in ''
+      { name = "${name}"
+      , dependencies =
+        [ ${dependenciesStr} ] : List Text
+      , packages = ./packages.dhall
+      , sources = [ "src/**/*.purs"] : List Text
+      }
+    '';
+
   defaultEntryJS = { entryModule ? defaultEntry, outputPath ? "output" }:
     pkgs.writeText "index.js" ''
       require("./${outputPath}/${entryModule}").main();

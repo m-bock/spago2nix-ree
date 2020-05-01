@@ -83,4 +83,5 @@ in {
   inherit (api) buildCLI;
   inherit (api) buildWebApp;
   inherit (api) getPackages;
+  inherit (api) writePureScriptBin;
 }
