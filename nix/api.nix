@@ -64,7 +64,9 @@ in rec {
 
     packagesLock,
 
-    spagoDhall ? util.defaultSpagoDhall
+    spagoDhall ? util.defaultSpagoDhall,
+
+    psaConfig ? ""
 
     }:
 
@@ -83,6 +85,7 @@ in rec {
       compileSpagoProjectConfig = {
         inherit projectDepenedencies;
         inherit projectSources;
+        inherit psaConfig;
       };
 
     in util.compileSpagoProject compileSpagoProjectConfig;
@@ -106,7 +109,11 @@ in rec {
 
     entryModule ? util.defaultEntry,
 
-    node_modules ? util.emptyDir }:
+    node_modules ? util.emptyDir,
+
+    psaConfig ? ""
+
+    }:
 
     let
 
@@ -116,6 +123,7 @@ in rec {
         inherit configFiles;
         inherit packagesLock;
         inherit spagoDhall;
+        inherit psaConfig;
       };
 
       buildParcelConfigNode = {
@@ -156,7 +164,11 @@ in rec {
 
     node_modules ? util.emptyDir,
 
-    containerId ? "app"
+    containerId ? "app",
+
+    psaConfig ? "",
+
+    buildEnv ? { }
 
     }:
 
@@ -168,6 +180,7 @@ in rec {
         inherit configFiles;
         inherit packagesLock;
         inherit spagoDhall;
+        inherit psaConfig;
       };
 
       buildParcelConfigWeb = {
@@ -182,6 +195,7 @@ in rec {
         };
         entry = "index.html";
         inherit node_modules;
+        inherit buildEnv;
       };
 
     in util.buildParcelWeb buildParcelConfigWeb;
@@ -197,7 +211,9 @@ in rec {
 
     dependencies ? [ ],
 
-    configFiles
+    configFiles,
+
+    psaConfig ? ""
 
     }:
     src:
@@ -209,6 +225,7 @@ in rec {
         inherit name;
         inherit packagesLock;
         inherit node_modules;
+        inherit psaConfig;
 
         srcDirs = {
           "src/Main.purs" = pkgs.writeText "Main.purs" src;

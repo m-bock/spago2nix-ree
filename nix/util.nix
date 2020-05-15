@@ -132,7 +132,9 @@ rec {
       done
     '';
 
-  compileSpagoProject = { projectDepenedencies, projectSources }:
+  compileSpagoProject =
+    { projectDepenedencies, projectSources, psaConfig ? "" }:
+
     pkgs.runCommand "spago-project" { } ''
       PATH=${pkgs.purs}/bin:$PATH
 
@@ -154,6 +156,7 @@ rec {
         --stash \
         --censor-lib \
         --strict \
+        ${psaConfig} \
         .spago/*/*/src/**/*.purs \
         sources/**/*.purs
 
@@ -192,8 +195,8 @@ rec {
       '';
     };
 
-  buildParcelWeb = { src, entry, node_modules }:
-    pkgs.runCommand "parcel-bundle" { } ''
+  buildParcelWeb = { src, entry, node_modules, buildEnv }:
+    pkgs.runCommand "parcel-bundle" buildEnv ''
       tmp=`mktemp -d`
       cd $tmp
       ln -s ${src}/* -t .
